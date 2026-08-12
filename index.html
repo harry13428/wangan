@@ -412,7 +412,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='2.6';
+const APP_VER='2.7';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -586,6 +586,7 @@ const GUIDES={
 let curTab='train';
 function switchTab(t){
   curTab=t;
+  try{ sessionStorage.setItem('wangan_tab',t); }catch(e){}
   document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
   ['train','radar','ledger','lib','review'].forEach(k=>{
     document.getElementById('tab-'+k).hidden=(k!==t);
@@ -1201,6 +1202,13 @@ document.getElementById('obStart').addEventListener('click',()=>{
   S.onboarded=true; save();
   document.getElementById('onboard').hidden=true;
 });
-document.getElementById('guide').textContent=GUIDES.train;
-render();
+/* 重整後留在原分頁（完全關掉重開才回到今日訓練） */
+let savedTab=null;
+try{ savedTab=sessionStorage.getItem('wangan_tab'); }catch(e){}
+if(savedTab&&savedTab!=='train'&&GUIDES[savedTab]){
+  switchTab(savedTab);
+}else{
+  document.getElementById('guide').textContent=GUIDES.train;
+  render();
+}
 </script>
