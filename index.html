@@ -292,7 +292,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 <div id="app">
   <div class="topbar">
     <div class="logo"><em>網感</em>訓練</div>
-    <div class="ver">v1.9</div>
+    <div class="ver">v2.0</div>
     <div class="streak">連續打卡<br><b id="streakNum">0</b> 天</div>
   </div>
   <div class="storwarn" id="storWarn" hidden>⚠️ 這個打開方式「存不了紀錄」，關掉就會全部消失。請改用 Safari 開這個網址，再加入主畫面。</div>
@@ -553,7 +553,7 @@ function scanHTML(d){
   d.scan.forEach((s,k)=>{
     const lv=s.v||s.l||'';
     if(s.ok){
-      const note=(s.a[0]||'').trim()||linkLabel(lv);
+      const note=(s.t||'').trim()||(s.a[0]||'').trim()||linkLabel(lv);
       h+='<div class="done-card">'+thumbHTML(s.img,lv,"'scan',"+k)
         +'<div class="dc-body"><div class="dc-top"><span class="dc-tag">快掃 '+(k+1)+'/5</span><span class="dc-ok">✓ 完成</span></div>'
         +'<div class="dc-note">'+esc(note)+'</div>'
@@ -568,6 +568,7 @@ function scanHTML(d){
     const s=d.scan[k];
     h+='<div class="card"><h3>快掃　第 '+(k+1)+' 支／5</h3><div class="sub">在 IG 按分享→複製連結 → 切回來按「貼上」→ 想再看一次就按「開影片」。三題各寫一句就好，練的是反應速度。</div>'
     +'<div class="field"><label>IG 連結</label><div class="linkrow"><input type="text" id="scanL'+k+'" value="'+esc(s.v)+'" oninput="d0scan('+k+',\'v\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'scanL'+k+'\')">貼上</button>'+openBtnHTML('scanL'+k,s.v)+'</div></div>'
+    +'<div class="field"><label>標題 <span class="opt">（選填，幫影片取個名）</span></label><input type="text" value="'+esc(s.t||'')+'" oninput="d0scan('+k+',\'t\',this.value)" placeholder="例：貓咪開箱失敗"></div>'
     +SCAN_QS.map((q,qi)=>'<div class="field"><label>'+(qi+1)+'. '+q+'</label><textarea oninput="d0scanA('+k+','+qi+',this.value)" placeholder="一句話">'+esc(s.a[qi])+'</textarea></div>').join('')
     +'<div class="hint-err" id="errScan"></div>'
     +'<div class="btnrow"><button class="btn main" onclick="saveScan('+k+')">存這支，下一支</button></div></div>';
@@ -592,7 +593,7 @@ function deepHTML(d){
   const dp=d.deep;
   const dlv=dp.v||dp.l||'';
   if(dp.ok){
-    const dnote=(dp.qs[0]||'').trim()||linkLabel(dlv);
+    const dnote=(dp.t||'').trim()||(dp.qs[0]||'').trim()||linkLabel(dlv);
     return '<div class="done-card">'+thumbHTML(dp.img,dlv,"'deep'")
       +'<div class="dc-body"><div class="dc-top"><span class="dc-tag">深拆</span><span class="dc-ok">✓ 完成</span></div>'
       +'<div class="dc-note">'+esc(dnote)+'</div>'
@@ -603,6 +604,7 @@ function deepHTML(d){
   }
   return '<div class="card"><h3>深拆這一支</h3><div class="sub">挑今天看到最有感的一支，12 題一路往下答，最後把五段骨架填完（內容拿掉、只留結構）。答題中隨時按「開影片」回去看。</div>'
   +'<div class="field"><label>IG 連結</label><div class="linkrow"><input type="text" id="deepL" value="'+esc(dp.v)+'" oninput="d0deep(\'v\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'deepL\')">貼上</button>'+openBtnHTML('deepL',dp.v)+'</div></div>'
+  +'<div class="field"><label>標題 <span class="opt">（選填，幫影片取個名）</span></label><input type="text" value="'+esc(dp.t||'')+'" oninput="d0deep(\'t\',this.value)" placeholder="例：貓咪開箱失敗"></div>'
   +DEEP_QS.map((q,i)=>'<div class="field"><label>第 '+(i+1)+' 題／12　'+q+'</label><textarea oninput="d0deepQ('+i+',this.value)">'+esc(dp.qs[i])+'</textarea></div>').join('')
   +'<div class="field"><label>五段骨架（換個主題也能套的那種寫法）</label>'
   +BONES.map((b,i)=>'<div style="display:flex;gap:8px;margin-bottom:8px;align-items:center;"><span style="flex:none;background:var(--ink);color:var(--yellow);font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;white-space:nowrap;">'+b.split('　')[0]+'</span><input type="text" value="'+esc(dp.bones[i])+'" oninput="d0deepB('+i+',this.value)" placeholder="'+b.split('　')[1]+'"></div>').join('')+'</div>'
@@ -648,6 +650,7 @@ function predictHTML(d){
     const p=d.preds[k];
     h+='<div class="card"><h3>預測　第 '+(k+1)+' 支／3</h3><div class="sub">先蓋牌：不要先看觀看數。憑感覺猜檔位＋寫理由，存了才准看真實數據。7 天後帳本會提醒你對答案。</div>'
     +'<div class="field"><label>IG 連結（7天後對答案要靠它回去看數據）</label><div class="linkrow"><input type="text" id="predL'+k+'" value="'+esc(p.link)+'" oninput="d0pred('+k+',\'link\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'predL'+k+'\')">貼上</button>'+openBtnHTML('predL'+k,p.link)+'</div></div>'
+    +'<div class="field"><label>標題 <span class="opt">（選填，7天後對答案時比較好認）</span></label><input type="text" value="'+esc(p.title)+'" oninput="d0pred('+k+',\'title\',this.value)" placeholder="例：情侶吵架還原"></div>'
     +'<div class="field"><label>我猜 7 天內觀看數落在</label><div class="chips">'
     +TIERS.map((t,i)=>'<button class="chip '+(p.guess===i?'pick':'')+'" onclick="d0predG('+k+','+i+')">'+t+'</button>').join('')+'</div></div>'
     +'<div class="field"><label>我的理由（之後對答案就看這段）</label><textarea oninput="d0pred('+k+',\'reason\',this.value)" placeholder="例：Hook 強但題材普通，猜中段">'+esc(p.reason)+'</textarea></div>'
