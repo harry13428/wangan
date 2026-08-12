@@ -412,7 +412,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='2.4';
+const APP_VER='2.5';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -836,6 +836,24 @@ window.rkAddIg=()=>{
   wlDraft.ig.push(v); el.value=''; renderRadar();
   toast('已加入，記得按「儲存名單」');
 };
+window.rkKeySave=async()=>{
+  const el=document.getElementById('rkKeyIn');
+  const v=(el.value||'').trim();
+  if(!v){ toast('先把鑰匙貼進來'); return; }
+  toast('檢查鑰匙中⋯');
+  try{
+    const res=await fetch('https://api.github.com/repos/harry13428/wangan/contents/data/watchlist.json',{headers:{Authorization:'Bearer '+v}});
+    if(!res.ok) throw 0;
+    try{ localStorage.setItem('wangan_gh_token',v); }catch(e){}
+    el.value='';
+    toast('鑰匙有效，已存進這支手機');
+    renderRadar();
+  }catch(e){ toast('這把鑰匙不對或權限不足，重新對一下申請步驟'); }
+};
+window.rkKeyDel=()=>{
+  try{ localStorage.removeItem('wangan_gh_token'); }catch(e){}
+  toast('鑰匙已從這支手機移除'); renderRadar();
+};
 window.rkSave=async()=>{
   let tok=null; try{ tok=localStorage.getItem('wangan_gh_token'); }catch(e){}
   if(!tok){ toast('還差一次性設定：跟 Claude 說「幫我設定名單鑰匙」'); return; }
@@ -944,6 +962,14 @@ function renderRadar(){
       +'<div class="linkrow" style="margin-top:12px;"><input type="text" id="rkNewIg" placeholder="IG 帳號名（instagram.com/ 後面那段）"><button class="btn side mini" onclick="rkAddIg()">加入</button></div>'
       +'<div class="btnrow"><button class="btn main wide" onclick="rkSave()">儲存名單（明早 8 點生效）</button></div>'
       +'<div class="rk-note">YouTube 頻道要用頻道 ID 才抓得到，想加 YT 直接跟 Claude 講頻道名字。TikTok 和 Threads 平台不開放抓取，目前加不了。</div>';
+      const hasKey=(()=>{ try{ return !!localStorage.getItem('wangan_gh_token'); }catch(e){ return false; } })();
+      h+='<div class="mtitle" style="margin-top:14px;">名單鑰匙</div>';
+      if(hasKey){
+        h+='<div class="rk-note">✅ 鑰匙已設定，「儲存名單」會直接生效。　<span style="color:var(--red);text-decoration:underline;cursor:pointer;" onclick="rkKeyDel()">移除鑰匙</span></div>';
+      }else{
+        h+='<div class="linkrow"><input type="password" id="rkKeyIn" placeholder="貼上 github_pat_ 開頭的鑰匙"><button class="btn side mini" onclick="pasteTo(\'rkKeyIn\')">貼上</button><button class="btn side mini" onclick="rkKeySave()">存鑰匙</button></div>'
+        +'<div class="rk-note">鑰匙只會存在這支手機裡。還沒有鑰匙？跟 Claude 說，它會一步步帶你申請。</div>';
+      }
     }else h+='<div class="rk-note">名單載入中⋯再點一下試試。</div>';
     h+='</div>';
   }
