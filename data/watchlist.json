@@ -1,8 +1,7 @@
 {
   "_說明": "風向雷達盯梢名單。ig 放 Instagram 帳號名（網址 instagram.com/後面那段）；yt 放 YouTube 頻道 ID。改完存檔，隔天早上自動生效。",
-  "ig": ["cattt.q", "instagram"],
-  "yt": [
-    {"id": "UCPRWWKG0VkBA0Pqa4Jr5j0Q", "name": "Joeman"},
-    {"id": "UCLW_SzI9txZvtOFTPDswxqg", "name": "木曜4超玩"}
-  ]
+  "ig": [
+    "cattt.q"
+  ],
+  "yt": []
 }
