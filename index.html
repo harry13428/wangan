@@ -412,7 +412,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='2.5';
+const APP_VER='2.6';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -865,7 +865,14 @@ window.rkSave=async()=>{
       content:btoa(unescape(encodeURIComponent(JSON.stringify(out,null,2))))};
     const res=await fetch(api,{method:'PUT',headers:{'Authorization':'Bearer '+tok,'Content-Type':'application/json'},body:JSON.stringify(body)});
     if(!res.ok) throw 0;
-    toast('名單已存，明天早上 8 點生效');
+    /* 名單存好 → 當場叫機器人加開一班抓資料（需要鑰匙有 Actions 權限） */
+    let live=false;
+    try{
+      const disp=await fetch('https://api.github.com/repos/harry13428/wangan/actions/workflows/radar.yml/dispatches',
+        {method:'POST',headers:{'Authorization':'Bearer '+tok,'Content-Type':'application/json'},body:JSON.stringify({ref:'main'})});
+      live=disp.ok||disp.status===204;
+    }catch(e){}
+    toast(live?'名單已存！雷達更新中，2～3 分鐘後點左上 ↻ 看新資料':'名單已存，明天早上 8 點自動生效');
   }catch(e){ toast('存檔失敗，跟 Claude 說一聲'); }
 };
 function renderRadar(){
@@ -960,7 +967,7 @@ function renderRadar(){
       h+=wlDraft.ig.map(u=>'<div class="mrow"><span class="rk-avatar" style="width:26px;height:26px;font-size:11px;'+avStyle(u)+'">'+esc(u.slice(0,1).toUpperCase())+'</span>@'+esc(u)+'<span class="plat">IG</span><span class="del" onclick="rkDelIg(\''+esc(u)+'\')">移除</span></div>').join('')
       +wlDraft.yt.map(c=>'<div class="mrow"><span class="rk-avatar" style="width:26px;height:26px;font-size:11px;'+avStyle(c.name)+'">'+esc(String(c.name).slice(0,1))+'</span>'+esc(c.name)+'<span class="plat">YouTube</span><span class="del" onclick="rkDelYt(\''+esc(c.id)+'\')">移除</span></div>').join('')
       +'<div class="linkrow" style="margin-top:12px;"><input type="text" id="rkNewIg" placeholder="IG 帳號名（instagram.com/ 後面那段）"><button class="btn side mini" onclick="rkAddIg()">加入</button></div>'
-      +'<div class="btnrow"><button class="btn main wide" onclick="rkSave()">儲存名單（明早 8 點生效）</button></div>'
+      +'<div class="btnrow"><button class="btn main wide" onclick="rkSave()">儲存名單</button></div>'
       +'<div class="rk-note">YouTube 頻道要用頻道 ID 才抓得到，想加 YT 直接跟 Claude 講頻道名字。TikTok 和 Threads 平台不開放抓取，目前加不了。</div>';
       const hasKey=(()=>{ try{ return !!localStorage.getItem('wangan_gh_token'); }catch(e){ return false; } })();
       h+='<div class="mtitle" style="margin-top:14px;">名單鑰匙</div>';
