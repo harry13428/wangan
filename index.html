@@ -412,7 +412,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='2.7';
+const APP_VER='2.8';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -830,7 +830,7 @@ window.rkDelIg=(u)=>{ if(wlDraft){ wlDraft.ig=wlDraft.ig.filter(x=>x!==u); rende
 window.rkDelYt=(id)=>{ if(wlDraft){ wlDraft.yt=wlDraft.yt.filter(x=>x.id!==id); renderRadar(); } };
 window.rkAddIg=()=>{
   const el=document.getElementById('rkNewIg');
-  const v=(el.value||'').trim().replace(/^@/,'').replace(/^https?:\/\/(www\.)?instagram\.com\//i,'').replace(/\/.*$/,'');
+  const v=(el.value||'').trim().replace(/^@/,'').replace(/^https?:\/\/(www\.)?instagram\.com\//i,'').replace(/[/?#].*$/,'');
   if(!v){ toast('先輸入 IG 帳號名'); return; }
   if(!wlDraft) return;
   if(wlDraft.ig.includes(v)){ toast('名單裡已經有了'); return; }
