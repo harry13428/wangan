@@ -1,8 +1,34 @@
 {
-  "_說明": "風向雷達盯梢名單。ig 放 Instagram 帳號名（網址 instagram.com/後面那段）；yt 放 YouTube 頻道 ID。改完存檔，隔天早上自動生效。",
+  "_說明": "風向雷達盯梢名單。ig 放 Instagram 帳號名（網址 instagram.com/後面那段）；yt 放 YouTube 頻道 ID。改完存檔後按 App 的「儲存名單」或等每天早上 8 點自動生效。",
   "ig": [
     "cattt.q",
-    "tom._bbb?igsh=MW1xbWUyeWNqbTQxOQ=="
+    "instagram",
+    "fumeancat",
+    "soybeanmilk_cat",
+    "yga0721",
+    "87acup",
+    "rayduenglish",
+    "raydudaily",
+    "muyao4",
+    "shasha77.daily",
+    "chuchushoetw"
   ],
-  "yt": []
+  "yt": [
+    {
+      "id": "UCPRWWKG0VkBA0Pqa4Jr5j0Q",
+      "name": "Joeman"
+    },
+    {
+      "id": "UCLW_SzI9txZvtOFTPDswxqg",
+      "name": "木曜4超玩"
+    },
+    {
+      "id": "UCOz7W0VH--2WlqAE_3jtL4w",
+      "name": "好味小姐"
+    },
+    {
+      "id": "UCIF_gt4BfsWyM_2GOcKXyEQ",
+      "name": "啾啾鞋"
+    }
+  ]
 }
