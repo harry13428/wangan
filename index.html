@@ -128,6 +128,17 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .done-line b{color:var(--green);}
 .done-line .redo{margin-left:auto;font-size:13px;color:var(--grey);text-decoration:underline;cursor:pointer;white-space:nowrap;}
 
+/* ── 封面縮圖 ── */
+.thumbwrap{
+  position:relative;flex:none;width:56px;height:56px;border-radius:9px;
+  overflow:hidden;border:1px solid var(--line);background:var(--card2);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+.thumbwrap .thumb{width:100%;height:100%;object-fit:cover;display:block;}
+.thumbwrap .thumb-add{display:none;font-size:10.5px;color:var(--grey);text-align:center;line-height:1.35;padding:2px;}
+.thumbwrap.noimg .thumb{display:none;}
+.thumbwrap.noimg .thumb-add{display:block;}
+
 /* ── 關卡進度 ── */
 .stages{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
 .stage{
@@ -295,6 +306,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
     </div>
   </div>
   <div class="toast" id="toast"></div>
+  <input type="file" id="coverPick" accept="image/*" hidden>
 </div>
 
 <script>
@@ -415,6 +427,42 @@ window.chkA=(a)=>{
 function openBtnHTML(inputId,val){
   return '<a class="btn side mini" href="'+(String(val||'').trim()?esc(linkHref(val)):'#')+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>';
 }
+/* ── 封面縮圖：自動試抓 IG 封面，抓不到顯示「＋封面」讓使用者從相簿選 ── */
+function igThumb(v){
+  const m=String(v||'').match(/instagram\.com\/(?:p|reel|reels|tv)\/([A-Za-z0-9_-]{5,})/);
+  return m?'https://www.instagram.com/p/'+m[1]+'/media/?size=m':null;
+}
+function thumbHTML(img,link,pick){
+  const src=img||igThumb(link);
+  return '<span class="thumbwrap'+(src?'':' noimg')+'" onclick="pickCover('+pick+')" title="點一下換封面">'
+    +(src?'<img class="thumb" src="'+esc(src)+'" alt="" referrerpolicy="no-referrer" onerror="this.closest(\'.thumbwrap\').classList.add(\'noimg\')">':'')
+    +'<span class="thumb-add">＋封面<br>(相簿選圖)</span></span>';
+}
+let coverTarget=null;
+window.pickCover=(...args)=>{ coverTarget=args; document.getElementById('coverPick').click(); };
+document.getElementById('coverPick').addEventListener('change',function(){
+  const f=this.files[0]; this.value='';
+  if(!f||!coverTarget) return;
+  const rd=new FileReader();
+  rd.onload=()=>{
+    const img=new Image();
+    img.onload=()=>{
+      const c=document.createElement('canvas');
+      const sc=Math.min(1,320/Math.max(img.width,img.height));
+      c.width=Math.round(img.width*sc); c.height=Math.round(img.height*sc);
+      c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+      const d=c.toDataURL('image/jpeg',0.72);
+      const t=coverTarget[0], k=coverTarget[1];
+      if(t==='scan') day().scan[k].img=d;
+      else if(t==='deep') day().deep.img=d;
+      else if(t==='pred'){ const p=S.predictions.find(x=>x.id===k); if(p) p.img=d; }
+      coverTarget=null;
+      save(); render(); toast('封面已設定');
+    };
+    img.src=rd.result;
+  };
+  rd.readAsDataURL(f);
+});
 function showErr(id,msg){
   const el=document.getElementById(id);
   if(!el) return;
@@ -487,7 +535,7 @@ function scanHTML(d){
   let h='';
   d.scan.forEach((s,k)=>{
     const lv=s.v||s.l||'';
-    if(s.ok) h+='<div class="done-line"><b>✓</b> 第 '+(k+1)+' 支：'+esc(linkLabel(lv))
+    if(s.ok) h+='<div class="done-line">'+thumbHTML(s.img,lv,"'scan',"+k)+'<b>✓</b> 第 '+(k+1)+' 支：'+esc(linkLabel(lv))
       +(lv?'　<a href="'+esc(linkHref(lv))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片↗</a>':'')
       +'<span class="redo" onclick="reopenScan('+k+')">改答案</span></div>';
   });
@@ -519,7 +567,7 @@ window.saveScan=(k)=>{
 function deepHTML(d){
   const dp=d.deep;
   const dlv=dp.v||dp.l||'';
-  if(dp.ok) return '<div class="done-line"><b>✓</b> 深拆完成：'+esc(linkLabel(dlv))
+  if(dp.ok) return '<div class="done-line">'+thumbHTML(dp.img,dlv,"'deep'")+'<b>✓</b> 深拆完成：'+esc(linkLabel(dlv))
     +(dlv?'　<a href="'+esc(linkHref(dlv))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片↗</a>':'')
     +'<span class="redo" onclick="reopenDeep()">改答案</span></div>';
   return '<div class="card"><h3>深拆這一支</h3><div class="sub">挑今天看到最有感的一支，12 題一路往下答，最後把五段骨架填完（內容拿掉、只留結構）。答題中隨時按「開影片」回去看。</div>'
@@ -553,7 +601,9 @@ window.saveDeep=()=>{
 function predictHTML(d){
   let h='';
   d.preds.forEach((p,k)=>{
-    if(p.saved){ h+='<div class="done-line"><b>✓</b> 已預測：'+esc(p.title)+'（猜 '+TIERS[p.guess]+'）'
+    if(p.saved){
+      const lp=S.predictions.find(x=>x.id===p.ledgerId);
+      h+='<div class="done-line">'+thumbHTML(lp&&lp.img,p.link,"'pred','"+(p.ledgerId||'')+"'")+'<b>✓</b> 已預測：'+esc(p.title)+'（猜 '+TIERS[p.guess]+'）'
       +(p.link?'　<a href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片↗</a>':'')+'</div>'; }
   });
   const k=d.preds.findIndex(p=>!p.saved);
@@ -630,7 +680,7 @@ function renderLedger(){
     if(p.actualSet) badge='<span class="badge '+(p.result==='命中'?'hit':'miss')+'">'+p.result+'</span>';
     else if(dueNow) badge='<span class="badge miss">到期</span>';
     else badge='<span class="badge wait">第 '+daysSince(p.date)+'/7 天</span>';
-    h+='<div class="pred'+(dueNow?' due':'')+'"><div class="p-top"><div class="p-title">'+esc(p.title)+'</div><div class="p-date">'+shortDate(p.date)+'</div></div>'
+    h+='<div class="pred'+(dueNow?' due':'')+'"><div class="p-top">'+thumbHTML(p.img,p.link,"'pred','"+p.id+"'")+'<div class="p-title">'+esc(p.title)+'</div><div class="p-date">'+shortDate(p.date)+'</div></div>'
     +'<div class="p-line">我猜 <b>'+TIERS[p.guess]+'</b>'+(p.actualSet?'　→　實際 <b>'+TIERS[p.actual]+'</b>　':'　')+badge+'</div>'
     +'<div class="p-line">理由：'+esc(p.reason)+'</div>'
     +(p.link?'<div class="p-line"><a href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片 ↗</a></div>':'');
