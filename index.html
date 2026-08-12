@@ -66,7 +66,17 @@ body{
 }
 .logo{font-weight:800;font-size:18px;letter-spacing:.5px;}
 .logo em{font-style:normal;background:var(--yellow);color:#16161A;padding:2px 8px;border-radius:7px;margin-right:2px;}
-.ver{font-size:11px;color:var(--grey);align-self:flex-end;padding-bottom:3px;}
+.ver{
+  font-size:11px;color:var(--grey);align-self:center;
+  border:1px solid var(--line);border-radius:99px;padding:4px 10px;
+  cursor:pointer;white-space:nowrap;user-select:none;
+}
+.ver:active{transform:scale(.94);}
+.updbar{
+  background:var(--yellow);color:#16161A;font-weight:800;
+  padding:13px 18px;font-size:14.5px;text-align:center;cursor:pointer;
+}
+.updbar[hidden]{display:none;}
 .streak{margin-left:auto;font-size:13px;color:var(--grey);text-align:right;line-height:1.3;}
 .streak b{color:var(--ink);font-size:17px;font-variant-numeric:tabular-nums;}
 
@@ -292,10 +302,11 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 <div id="app">
   <div class="topbar">
     <div class="logo"><em>網感</em>訓練</div>
-    <div class="ver">v2.0</div>
+    <div class="ver" id="verBadge" onclick="appReload()" title="點一下重新整理拿最新版"></div>
     <div class="streak">連續打卡<br><b id="streakNum">0</b> 天</div>
   </div>
   <div class="storwarn" id="storWarn" hidden>⚠️ 這個打開方式「存不了紀錄」，關掉就會全部消失。請改用 Safari 開這個網址，再加入主畫面。</div>
+  <div class="updbar" id="updBar" hidden onclick="appReload()">有新版本 → 點這裡立即更新</div>
   <div class="guide" id="guide"></div>
   <main>
     <section id="tab-train"></section>
@@ -328,6 +339,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
+const APP_VER='2.1';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -885,6 +897,17 @@ window.bakIn=()=>{
 };
 
 /* ══════════ 啟動 ══════════ */
+/* 版本徽章＋App 內重新整理（帶時間戳繞過快取，一定拿到最新版） */
+window.appReload=()=>{ location.href=location.pathname+'?u='+Date.now(); };
+document.getElementById('verBadge').textContent='v'+APP_VER+' ↻';
+/* 每次打開自動檢查有沒有新版，有就亮黃色更新條 */
+fetch(location.pathname+'?chk='+Date.now(),{cache:'no-store'})
+  .then(r=>r.text())
+  .then(t=>{
+    const m=t.match(/APP_VER='([0-9.]+)'/);
+    if(m&&m[1]!==APP_VER) document.getElementById('updBar').hidden=false;
+  })
+  .catch(()=>{});
 /* 儲存自我檢測：存不了就亮紅色警告條 */
 try{
   localStorage.setItem('_probe','1');
