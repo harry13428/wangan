@@ -242,53 +242,67 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 }
 
 /* ── 風向雷達 ── */
-.rk-alert{
+.rk-header{display:flex;align-items:center;gap:8px;margin:2px 2px 0;}
+.rk-header .dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(92,196,136,.18);}
+.rk-header .h{font-size:18px;font-weight:800;}
+.rk-sub{color:var(--grey);font-size:12.5px;margin:6px 2px 14px;line-height:1.6;}
+.rk-sechead{display:flex;align-items:baseline;justify-content:space-between;margin:18px 2px 10px;gap:10px;}
+.rk-sechead h2{font-size:16px;font-weight:800;}
+.rk-sechead .more{font-size:12.5px;color:var(--grey);cursor:pointer;white-space:nowrap;font-weight:700;}
+.rk-plats{display:flex;gap:8px;margin:0 0 12px;}
+.rk-plat{border:1.5px solid var(--line);border-radius:99px;padding:7px 16px;font-size:13.5px;font-weight:700;color:var(--grey);background:var(--card);cursor:pointer;font-family:inherit;}
+.rk-plat.on{background:var(--yellow);color:#16161A;border-color:#16161A;}
+.trend-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:10px;display:flex;gap:10px;margin-bottom:10px;
+  text-decoration:none;color:var(--ink);
+}
+.rk-rank{font-size:18px;font-weight:800;color:var(--grey);width:22px;flex:none;display:flex;align-items:center;justify-content:center;}
+.rk-rank.top{color:var(--ink);}
+.rk-thumb{
+  width:96px;height:60px;border-radius:9px;flex:none;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;
+}
+.rk-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.rk-thumb .play{position:absolute;font-size:14px;color:rgba(255,255,255,.9);background:rgba(0,0,0,.35);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.rk-info{flex:1;min-width:0;display:block;}
+.rk-info .title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:14px;font-weight:700;line-height:1.35;}
+.rk-info .meta{display:block;font-size:12px;color:var(--grey);margin-top:4px;}
+.rk-badges{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;}
+.rk-chip{font-size:11px;padding:2px 8px;border-radius:99px;font-weight:700;border:1px solid var(--line);color:var(--grey);}
+.rk-chip.boom{background:var(--red-bg);color:var(--red);border-color:var(--red);}
+.rk-chip.up{background:var(--green-bg);color:var(--green);border-color:var(--green);}
+.ig-alert{
   background:var(--card2);border:1.5px solid var(--yellow);border-radius:14px;
   box-shadow:var(--shadow);padding:12px;margin-bottom:10px;
 }
-.rk-alert.calm{border-color:var(--line);}
-.rk-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.rk-head .who{font-weight:700;font-size:14px;}
-.rk-head .when{font-size:11.5px;color:var(--grey);}
+.ig-top{display:flex;align-items:center;gap:8px;}
+.rk-avatar{width:34px;height:34px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;}
+.ig-top .name{font-weight:700;font-size:14px;}
+.ig-top .time{font-size:11.5px;color:var(--grey);}
 .rk-boom{margin-left:auto;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:3px 9px;border-radius:99px;white-space:nowrap;}
 .rk-boom.rise{background:var(--green);}
-.rk-cap{font-size:13px;margin-top:8px;line-height:1.55;color:var(--ink);}
-.rk-nums{
+.ig-desc{font-size:13px;margin-top:8px;line-height:1.5;}
+.rk-growth{
   display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap;
   background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;
 }
-.rk-nums .a{font-size:13px;color:var(--grey);}
-.rk-nums .b{font-size:16px;font-weight:800;color:var(--green);}
-.rk-nums .go{margin-left:auto;font-size:12.5px;color:var(--grey);text-decoration:none;font-weight:700;}
-.rk-row{
-  display:flex;gap:10px;background:var(--card);border:1px solid var(--line);
-  border-radius:14px;padding:10px;margin-bottom:10px;box-shadow:var(--shadow);
-  text-decoration:none;color:var(--ink);
+.rk-growth .num{font-size:13px;color:var(--grey);}
+.rk-growth .arrow{color:var(--green);font-weight:800;font-size:15px;}
+.rk-growth .now{font-size:17px;font-weight:800;color:var(--green);}
+.rk-growth .go{margin-left:auto;font-size:12.5px;color:var(--grey);text-decoration:none;font-weight:700;}
+.ig-ok{display:flex;align-items:center;gap:8px;color:var(--grey);font-size:13px;padding:4px 2px 0;line-height:1.6;}
+.watch-btn{
+  display:block;width:100%;margin-top:10px;text-align:center;
+  background:var(--card);border:1.5px dashed var(--line);border-radius:12px;
+  padding:11px;font-size:13.5px;color:var(--grey);font-weight:700;cursor:pointer;font-family:inherit;
 }
-.rk-rank{font-size:17px;font-weight:800;color:var(--grey);width:20px;flex:none;display:flex;align-items:center;justify-content:center;}
-.rk-thumb{width:92px;height:58px;border-radius:8px;flex:none;object-fit:cover;border:1px solid var(--line);background:var(--card2);}
-.rk-thumb.tall{width:44px;height:58px;}
-.rk-body{flex:1;min-width:0;}
-.rk-title{font-size:13.5px;font-weight:700;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.rk-meta{font-size:12px;color:var(--grey);margin-top:3px;}
-.rk-tags{display:flex;gap:6px;margin-top:5px;flex-wrap:wrap;}
-.rk-tag{font-size:10.5px;padding:2px 8px;border-radius:99px;font-weight:700;border:1px solid var(--line);color:var(--grey);}
-.rk-tag.hot{background:var(--hl);color:#B27B00;border-color:var(--yellow);}
-.rk-tag.boomtag{background:var(--red-bg);color:var(--red);border-color:var(--red);}
-.rk-tag.up{background:var(--green-bg);color:var(--green);border-color:var(--green);}
-.rk-kws{display:flex;flex-wrap:wrap;gap:8px;}
-.rk-kw{
-  background:var(--card);border:1px solid var(--line);border-radius:99px;
-  padding:7px 13px;font-size:13.5px;font-weight:700;box-shadow:var(--shadow);
-  display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);
-}
-.rk-kw .tr{color:var(--green);font-size:11px;font-weight:800;}
-.rk-kw.new{border-color:var(--yellow);background:var(--hl);}
-.rk-kw .nw{font-size:10px;background:var(--yellow);color:#16161A;border-radius:4px;padding:1px 4px;font-weight:800;}
-.rk-sec{font-size:15px;font-weight:800;margin:18px 2px 10px;}
-.rk-sec em{font-style:normal;background:linear-gradient(transparent 62%,var(--yellow) 62%);}
+.rk-mgr{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-top:10px;}
+.rk-mgr .mtitle{font-weight:700;font-size:14px;margin-bottom:6px;}
+.rk-mgr .mrow{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px;}
+.rk-mgr .mrow .plat{color:var(--grey);font-size:12px;}
+.rk-mgr .mrow .del{margin-left:auto;color:var(--red);font-size:13px;text-decoration:underline;cursor:pointer;}
 .rk-note{font-size:12px;color:var(--grey);line-height:1.7;margin:14px 2px 4px;}
-.rk-upd{font-size:12px;color:var(--grey);margin:2px 2px 12px;}
 
 /* ── 底部分頁列 ── */
 .tabbar{
@@ -374,10 +388,10 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
   </main>
   <nav class="tabbar"><div class="in">
     <button class="tb on" data-tab="train"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>今日訓練</button>
-    <button class="tb" data-tab="radar"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 12 L19 5"/><path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 16.5a4.5 4.5 0 1 1 4.5-4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>風向雷達</button>
     <button class="tb" data-tab="ledger" id="tbLedger"><span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8 8.5h8M8 12h8M8 15.5h4"/></svg></span>預測帳本</button>
     <button class="tb" data-tab="lib"><span class="ico"><svg viewBox="0 0 24 24"><path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v15.5L12 16.5 5.5 20.5V5A1.5 1.5 0 0 1 7 3.5z"/></svg></span>素材庫</button>
     <button class="tb" data-tab="review" id="tbReview"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4.5V9h4.5"/></svg></span>復盤</button>
+    <button class="tb" data-tab="radar"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 12 L19 5"/><path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 16.5a4.5 4.5 0 1 1 4.5-4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>風向雷達</button>
   </div></nav>
   <div id="onboard" hidden>
     <div class="ob">
@@ -398,7 +412,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='2.3';
+const APP_VER='2.4';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -564,7 +578,7 @@ function showErr(id,msg){
 /* ══════════ 分頁切換 ══════════ */
 const GUIDES={
   train:'怎麼用：照順序做完四關，每關答完按黑色「存檔」鍵。四關全綠＝今天打卡完成，約 30 分鐘。',
-  radar:'怎麼用：每天早上 8 點自動更新。先看有沒有紅色「爆量」警報，再掃新片榜和竄升關鍵字找今天的題材。',
+  radar:'怎麼用：每天早上 8 點自動更新。發燒榜看名單裡誰的片衝起來（可切 IG／YouTube），下面「管理名單」加你想盯的帳號。',
   ledger:'怎麼用：黃框卡片＝到期要對答案的預測。去看那支影片的實際觀看數，按「對答案」選檔位，命中率自動更新。',
   lib:'怎麼用：剪片卡住就來搜。收藏新招要寫得出「什麼時候用」才存得進來——寫不出來代表還沒學會。',
   review:'怎麼用：每週日打開，逐支回答「當初判斷錯在哪」並寫一句修正。錯誤寫過一次，下次才不會再犯。'
@@ -792,7 +806,9 @@ window.saveScript=()=>{
 };
 
 /* ══════════ 畫面①b：風向雷達 ══════════ */
-let radarData=null, radarErr=false, radarLoading=false;
+let radarData=null, radarErr=false, radarLoading=false, radarPlat='all', mgrOpen=false, wlDraft=null;
+const AV_G=[['#E8964A','#C4622F'],['#4AB8E8','#2F7BC4'],['#8A5BD6','#5B2FA8'],['#43A06B','#2C6E48'],['#E8734A','#C43E2F']];
+function avStyle(n){ const i=[...String(n||'?')].reduce((a,c)=>a+c.charCodeAt(0),0)%AV_G.length; return 'background:linear-gradient(135deg,'+AV_G[i][0]+','+AV_G[i][1]+')'; }
 function fmtN(n){
   if(n==null) return '—';
   if(n>=1e8) return (n/1e8).toFixed(1)+' 億';
@@ -807,6 +823,33 @@ function agoTs(ts){
 function agoIso(s){
   try{ return agoTs(new Date(s).getTime()/1000); }catch(e){ return ''; }
 }
+window.rkPlat=(p)=>{ radarPlat=p; renderRadar(); };
+window.rkMgr=()=>{ mgrOpen=!mgrOpen; renderRadar(); };
+window.rkDelIg=(u)=>{ if(wlDraft){ wlDraft.ig=wlDraft.ig.filter(x=>x!==u); renderRadar(); } };
+window.rkDelYt=(id)=>{ if(wlDraft){ wlDraft.yt=wlDraft.yt.filter(x=>x.id!==id); renderRadar(); } };
+window.rkAddIg=()=>{
+  const el=document.getElementById('rkNewIg');
+  const v=(el.value||'').trim().replace(/^@/,'').replace(/^https?:\/\/(www\.)?instagram\.com\//i,'').replace(/\/.*$/,'');
+  if(!v){ toast('先輸入 IG 帳號名'); return; }
+  if(!wlDraft) return;
+  if(wlDraft.ig.includes(v)){ toast('名單裡已經有了'); return; }
+  wlDraft.ig.push(v); el.value=''; renderRadar();
+  toast('已加入，記得按「儲存名單」');
+};
+window.rkSave=async()=>{
+  let tok=null; try{ tok=localStorage.getItem('wangan_gh_token'); }catch(e){}
+  if(!tok){ toast('還差一次性設定：跟 Claude 說「幫我設定名單鑰匙」'); return; }
+  try{
+    const api='https://api.github.com/repos/harry13428/wangan/contents/data/watchlist.json';
+    const cur=await fetch(api,{headers:{Authorization:'Bearer '+tok}}).then(r=>r.json());
+    const out={"_說明":wlDraft["_說明"]||'風向雷達盯梢名單',ig:wlDraft.ig,yt:wlDraft.yt};
+    const body={message:'watchlist: 手機更新',sha:cur.sha,
+      content:btoa(unescape(encodeURIComponent(JSON.stringify(out,null,2))))};
+    const res=await fetch(api,{method:'PUT',headers:{'Authorization':'Bearer '+tok,'Content-Type':'application/json'},body:JSON.stringify(body)});
+    if(!res.ok) throw 0;
+    toast('名單已存，明天早上 8 點生效');
+  }catch(e){ toast('存檔失敗，跟 Claude 說一聲'); }
+};
 function renderRadar(){
   const el=document.getElementById('tab-radar');
   if(!radarData){
@@ -817,6 +860,8 @@ function renderRadar(){
         .then(d=>{ radarData=d; })
         .catch(()=>{ radarErr=true; })
         .finally(()=>{ radarLoading=false; if(curTab==='radar') renderRadar(); });
+      fetch('data/watchlist.json?v='+Date.now())
+        .then(r=>r.json()).then(w=>{ wlDraft=w; if(curTab==='radar') renderRadar(); }).catch(()=>{});
       el.innerHTML='<div class="empty">雷達掃描中⋯</div>';
       return;
     }
@@ -828,16 +873,49 @@ function renderRadar(){
     return;
   }
   const d=radarData;
-  let h='<div class="rk-upd">上次更新：'+esc(d.updated||'—')+'（每天早上 8 點自動掃一輪）</div>';
+  let h='<div class="rk-header"><span class="dot"></span><span class="h">風向雷達</span></div>'
+  +'<div class="rk-sub">每天早上 8 點自動更新（上次：'+esc(d.updated||'—')+'）｜來源：你的盯梢名單（IG＋YouTube）</div>';
 
-  /* ① 爆量警報 */
+  /* ① 今日發燒榜（可切平台） */
+  const fresh=[];
+  (d.ig||[]).forEach(a=>{ if(a.ok)(a.posts||[]).forEach(p=>{
+    if(p.isVideo&&p.ts&&(Date.now()/1000-p.ts)<7*86400&&p.views!=null)
+      fresh.push({t:'ig',who:'@'+a.username,title:p.caption||'（無文字）',views:p.views,when:agoTs(p.ts),
+        url:'https://www.instagram.com/p/'+p.code+'/',thumb:'https://www.instagram.com/p/'+p.code+'/media/?size=m',boom:p.boom,growth:p.growth});
+  }); });
+  (d.yt||[]).forEach(c=>{ if(c.ok)(c.videos||[]).forEach(v=>{
+    if(v.fresh&&v.views!=null)
+      fresh.push({t:'yt',who:c.name,title:v.title,views:v.views,when:agoIso(v.published),
+        url:'https://youtu.be/'+v.id,thumb:'https://i.ytimg.com/vi/'+v.id+'/mqdefault.jpg',boom:v.boom,growth:v.growth});
+  }); });
+  fresh.sort((a,b)=>b.views-a.views);
+  const shown=fresh.filter(v=>radarPlat==='all'||v.t===radarPlat);
+  h+='<div class="rk-sechead"><h2>🔥 今日發燒榜</h2><span class="more">盯梢名單・7 天內發布</span></div>'
+  +'<div class="rk-plats">'
+  +[['all','全部'],['ig','IG'],['yt','YouTube']].map(p=>'<button class="rk-plat'+(radarPlat===p[0]?' on':'')+'" onclick="rkPlat(\''+p[0]+'\')">'+p[1]+'</button>').join('')
+  +'</div>';
+  if(!shown.length) h+='<div class="empty">這個分類 7 天內沒有新影片。</div>';
+  shown.slice(0,10).forEach((v,i)=>{
+    h+='<a class="trend-card" href="'+esc(v.url)+'" target="_blank" rel="noopener" onclick="return chkA(this)">'
+    +'<span class="rk-rank'+(i<2?' top':'')+'">'+(i+1)+'</span>'
+    +'<span class="rk-thumb" style="'+avStyle(v.who)+'">'+(v.t==='ig'?'IG':'YT')
+    +(v.thumb?'<img src="'+esc(v.thumb)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">':'')
+    +'<span class="play">▶</span></span>'
+    +'<span class="rk-info"><span class="title">'+esc(v.title)+'</span>'
+    +'<span class="meta">'+esc(v.who)+'・'+fmtN(v.views)+' 次觀看・'+esc(v.when)+'發布</span>'
+    +'<span class="rk-badges"><span class="rk-chip">'+(v.t==='ig'?'IG':'YouTube')+'</span>'
+    +(v.boom?'<span class="rk-chip boom">⚠️ 爆量</span>':'')
+    +(v.growth&&v.growth>0?'<span class="rk-chip up">↑'+v.growth+'%</span>':'')
+    +'</span></span></a>';
+  });
+
+  /* ② 盯梢名單（警報＋管理） */
   const alerts=[];
   (d.ig||[]).forEach(a=>{ if(a.ok)(a.posts||[]).forEach(p=>{ if(p.boom||p.rising) alerts.push({t:'ig',a,p}); }); });
   (d.yt||[]).forEach(c=>{ if(c.ok)(c.videos||[]).forEach(v=>{ if(v.boom||(v.growth&&v.growth>=80&&v.fresh)) alerts.push({t:'yt',a:c,p:v}); }); });
-  h+='<div class="rk-sec">🚨 <em>爆量警報</em></div>';
-  if(!alerts.length){
-    h+='<div class="rk-alert calm"><div class="rk-cap">今天盯梢名單裡沒有異常爆量，不用一支支去翻。名單裡誰的片突然衝起來，這裡會亮紅燈。</div></div>';
-  }
+  const wlCount=wlDraft?(wlDraft.ig.length+wlDraft.yt.length):null;
+  h+='<div class="rk-sechead"><h2>👀 盯梢名單'+(wlCount!==null?'（'+wlCount+' 個帳號）':'')+'</h2>'
+  +'<span class="more" onclick="rkMgr()">'+(mgrOpen?'收起 ‹':'管理名單 ›')+'</span></div>';
   alerts.forEach(x=>{
     const ig=x.t==='ig';
     const url=ig?'https://www.instagram.com/p/'+x.p.code+'/':'https://youtu.be/'+x.p.id;
@@ -846,62 +924,29 @@ function renderRadar(){
     const cap=ig?(x.p.caption||'（無文字）'):x.p.title;
     const metric=ig?(x.p.isVideo?x.p.views:x.p.likes):x.p.views;
     const unit=ig&&!x.p.isVideo?'讚':'次觀看';
-    const badge=x.p.boom?'<span class="rk-boom">爆量</span>':'<span class="rk-boom rise">竄升 +'+x.p.growth+'%</span>';
-    h+='<div class="rk-alert"><div class="rk-head"><span class="who">'+esc(who)+'</span><span class="when">'+esc(when)+'發布・'+(ig?'IG':'YouTube')+'</span>'+badge+'</div>'
-    +'<div class="rk-cap">'+esc(cap)+'</div>'
-    +'<div class="rk-nums">'+(x.p.prev?'<span class="a">昨天 '+fmtN(x.p.prev)+'</span><span class="b">→ 今天 '+fmtN(metric)+' '+unit+'</span>':'<span class="b">'+fmtN(metric)+' '+unit+'</span><span class="a">（'+esc(when)+'發的新片）</span>')
-    +'<a class="go" href="'+esc(url)+'" target="_blank" rel="noopener" onclick="return chkA(this)">看片 ›</a></div></div>';
+    h+='<div class="ig-alert"><div class="ig-top">'
+    +'<span class="rk-avatar" style="'+avStyle(who)+'">'+esc(String(who).replace('@','').slice(0,1).toUpperCase())+'</span>'
+    +'<div><div class="name">'+esc(who)+'</div><div class="time">'+esc(when)+'發布・'+(ig?'IG':'YouTube')+'</div></div>'
+    +(x.p.boom?'<span class="rk-boom">爆量</span>':'<span class="rk-boom rise">起飛 +'+x.p.growth+'%</span>')
+    +'</div><div class="ig-desc">'+esc(cap)+'</div>'
+    +'<div class="rk-growth">'
+    +(x.p.prev?'<span class="num">昨天 '+fmtN(x.p.prev)+'</span><span class="arrow">→</span><span class="now">今天 '+fmtN(metric)+'</span><span class="num">'+unit+'</span>'
+              :'<span class="now">'+fmtN(metric)+'</span><span class="num">'+unit+'（'+esc(when)+'發的新片）</span>')
+    +'<a class="go" href="'+esc(url)+'" target="_blank" rel="noopener" onclick="return chkA(this)">點我看片 ›</a></div></div>';
   });
-
-  /* ② 本週新片榜 */
-  const fresh=[];
-  (d.ig||[]).forEach(a=>{ if(a.ok)(a.posts||[]).forEach(p=>{
-    if(p.isVideo&&p.ts&&(Date.now()/1000-p.ts)<7*86400&&p.views!=null)
-      fresh.push({t:'ig',who:'@'+a.username,title:p.caption||'（無文字）',views:p.views,when:agoTs(p.ts),
-        url:'https://www.instagram.com/p/'+p.code+'/',thumb:'https://www.instagram.com/p/'+p.code+'/media/?size=m',tall:true,boom:p.boom,growth:p.growth});
-  }); });
-  (d.yt||[]).forEach(c=>{ if(c.ok)(c.videos||[]).forEach(v=>{
-    if(v.fresh&&v.views!=null)
-      fresh.push({t:'yt',who:c.name,title:v.title,views:v.views,when:agoIso(v.published),
-        url:'https://youtu.be/'+v.id,thumb:'https://i.ytimg.com/vi/'+v.id+'/mqdefault.jpg',tall:false,boom:v.boom,growth:v.growth});
-  }); });
-  fresh.sort((a,b)=>b.views-a.views);
-  h+='<div class="rk-sec">🔥 <em>本週新片榜</em>（盯梢名單・7 天內發布）</div>';
-  if(!fresh.length) h+='<div class="empty">名單裡這 7 天沒有新影片。</div>';
-  fresh.slice(0,8).forEach((v,i)=>{
-    h+='<a class="rk-row" href="'+esc(v.url)+'" target="_blank" rel="noopener" onclick="return chkA(this)">'
-    +'<span class="rk-rank">'+(i+1)+'</span>'
-    +'<img class="rk-thumb'+(v.tall?' tall':'')+'" src="'+esc(v.thumb)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility=\'hidden\'">'
-    +'<span class="rk-body"><span class="rk-title">'+esc(v.title)+'</span>'
-    +'<span class="rk-meta">'+esc(v.who)+'・'+fmtN(v.views)+' 次觀看・'+esc(v.when)+'發布</span>'
-    +'<span class="rk-tags"><span class="rk-tag">'+(v.t==='ig'?'IG':'YouTube')+'</span>'
-    +(v.boom?'<span class="rk-tag boomtag">爆量</span>':'')
-    +(v.growth&&v.growth>0?'<span class="rk-tag up">↑'+v.growth+'%</span>':'')
-    +'</span></span></a>';
-  });
-
-  /* ③ 竄升關鍵字 */
-  h+='<div class="rk-sec">📈 <em>竄升關鍵字</em>(台灣・Google 熱搜)</div>';
-  if(!(d.keywords||[]).length) h+='<div class="empty">今天沒抓到關鍵字資料。</div>';
+  if(!alerts.length) h+='<div class="ig-ok">✅ 名單裡的帳號今天沒有異常爆量，不用一支支去翻。誰的片突然衝起來，這裡會亮紅燈。</div>';
+  if(!mgrOpen) h+='<button class="watch-btn" onclick="rkMgr()">＋ 把帳號加進盯梢名單</button>';
   else{
-    h+='<div class="rk-kws">'+d.keywords.map(k=>
-      '<a class="rk-kw'+(k.isNew?' new':'')+'" href="https://www.google.com/search?q='+encodeURIComponent(k.kw)+'" target="_blank" rel="noopener" onclick="return chkA(this)">'
-      +(k.isNew?'<span class="nw">NEW</span>':'')+esc(k.kw)
-      +(k.traffic?'<span class="tr">'+esc(k.traffic)+'</span>':'')+'</a>').join('')+'</div>';
-    const news=d.keywords.filter(k=>k.news&&k.news.title).slice(0,3);
-    news.forEach(k=>{
-      h+='<a class="rk-row" style="margin-top:10px" href="'+esc(k.news.url)+'" target="_blank" rel="noopener" onclick="return chkA(this)">'
-      +(k.news.img?'<img class="rk-thumb" src="'+esc(k.news.img)+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.visibility=\'hidden\'">':'')
-      +'<span class="rk-body"><span class="rk-title">'+esc(k.news.title)+'</span>'
-      +'<span class="rk-meta">「'+esc(k.kw)+'」相關・'+esc(k.news.source||'')+'</span></span></a>';
-    });
+    h+='<div class="rk-mgr"><div class="mtitle">盯梢名單管理</div>';
+    if(wlDraft){
+      h+=wlDraft.ig.map(u=>'<div class="mrow"><span class="rk-avatar" style="width:26px;height:26px;font-size:11px;'+avStyle(u)+'">'+esc(u.slice(0,1).toUpperCase())+'</span>@'+esc(u)+'<span class="plat">IG</span><span class="del" onclick="rkDelIg(\''+esc(u)+'\')">移除</span></div>').join('')
+      +wlDraft.yt.map(c=>'<div class="mrow"><span class="rk-avatar" style="width:26px;height:26px;font-size:11px;'+avStyle(c.name)+'">'+esc(String(c.name).slice(0,1))+'</span>'+esc(c.name)+'<span class="plat">YouTube</span><span class="del" onclick="rkDelYt(\''+esc(c.id)+'\')">移除</span></div>').join('')
+      +'<div class="linkrow" style="margin-top:12px;"><input type="text" id="rkNewIg" placeholder="IG 帳號名（instagram.com/ 後面那段）"><button class="btn side mini" onclick="rkAddIg()">加入</button></div>'
+      +'<div class="btnrow"><button class="btn main wide" onclick="rkSave()">儲存名單（明早 8 點生效）</button></div>'
+      +'<div class="rk-note">YouTube 頻道要用頻道 ID 才抓得到，想加 YT 直接跟 Claude 講頻道名字。TikTok 和 Threads 平台不開放抓取，目前加不了。</div>';
+    }else h+='<div class="rk-note">名單載入中⋯再點一下試試。</div>';
+    h+='</div>';
   }
-
-  /* 名單近況＋說明 */
-  const okIg=(d.ig||[]).filter(a=>a.ok).map(a=>'@'+a.username);
-  const okYt=(d.yt||[]).filter(c=>c.ok).map(c=>c.name);
-  h+='<div class="rk-note">目前盯梢中：IG '+(okIg.join('、')||'（無）')+'　｜　YouTube '+(okYt.join('、')||'（無）')
-  +'<br>想加誰進名單？跟 Claude 說帳號名就能加。TikTok 與全平台榜單目前抓不到（平台不開放），先用盯梢法補。</div>';
 
   el.innerHTML=h;
 }
