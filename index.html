@@ -1,0 +1,813 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>網感訓練</title>
+<style>
+:root{
+  --yellow:#FFD400;
+  --bg:#F6F5F1;
+  --card:#FFFFFF;
+  --card2:#FFFDF4;
+  --line:#E5E2DA;
+  --ink:#16161A;
+  --grey:#8A8880;
+  --green:#3FA96C;
+  --green-bg:#F0F9F3;
+  --red:#D95050;
+  --red-bg:#FBEFEF;
+  --hl:#FFF8D6;
+  --shadow:0 4px 18px rgba(22,22,26,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141416;
+    --card:#1E1E22;
+    --card2:#232320;
+    --line:#33333A;
+    --ink:#F2F1EC;
+    --grey:#9B998F;
+    --green:#5CC488;
+    --green-bg:#1C2B22;
+    --red:#E37070;
+    --red-bg:#2E1E1E;
+    --hl:#2E2A18;
+    --shadow:0 4px 18px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141416;
+  --card:#1E1E22;
+  --card2:#232320;
+  --line:#33333A;
+  --ink:#F2F1EC;
+  --grey:#9B998F;
+  --green:#5CC488;
+  --green-bg:#1C2B22;
+  --red:#E37070;
+  --red-bg:#2E1E1E;
+  --hl:#2E2A18;
+  --shadow:0 4px 18px rgba(0,0,0,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{font-size:16px;}
+body{
+  font-family:"PingFang TC","Heiti TC","Microsoft JhengHei",sans-serif;
+  background:var(--bg);color:var(--ink);
+  min-height:100vh;
+}
+#app{max-width:560px;margin:0 auto;padding-bottom:calc(84px + env(safe-area-inset-bottom));}
+
+/* ── 頂欄 ── */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  display:flex;align-items:center;gap:10px;
+  padding:14px 18px calc(12px);
+  padding-top:calc(14px + env(safe-area-inset-top));
+  background:var(--bg);border-bottom:1px solid var(--line);
+}
+.logo{font-weight:800;font-size:18px;letter-spacing:.5px;}
+.logo em{font-style:normal;background:var(--yellow);color:#16161A;padding:2px 8px;border-radius:7px;margin-right:2px;}
+.streak{margin-left:auto;font-size:13px;color:var(--grey);text-align:right;line-height:1.3;}
+.streak b{color:var(--ink);font-size:17px;font-variant-numeric:tabular-nums;}
+
+.guide{
+  background:var(--hl);border-bottom:1px solid var(--line);
+  padding:10px 18px;font-size:13.5px;line-height:1.6;color:var(--ink);
+}
+.storwarn{
+  background:var(--red);color:#fff;
+  padding:10px 18px;font-size:13.5px;line-height:1.6;font-weight:600;
+}
+.storwarn[hidden]{display:none;}
+
+main{padding:16px 14px 24px;}
+section[hidden]{display:none;}
+
+/* ── 通用元件 ── */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:18px 16px;margin-bottom:14px;box-shadow:var(--shadow);
+}
+.card h3{font-size:16px;margin-bottom:4px;}
+.card .sub{font-size:13px;color:var(--grey);margin-bottom:12px;line-height:1.6;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;line-height:1.5;}
+.field label .opt{color:var(--grey);font-weight:400;font-size:12px;}
+input[type=text],textarea{
+  width:100%;border:1.5px solid var(--line);border-radius:10px;
+  padding:11px 12px;font-size:15px;font-family:inherit;
+  background:var(--card);color:var(--ink);line-height:1.6;
+}
+textarea{min-height:64px;resize:vertical;}
+input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 2px var(--yellow);}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{
+  border:1.5px solid var(--line);border-radius:999px;
+  padding:9px 16px;font-size:14px;color:var(--grey);background:var(--card);
+  cursor:pointer;user-select:none;font-family:inherit;
+}
+.chip.pick{background:var(--yellow);color:#16161A;border-color:#16161A;font-weight:700;}
+.btnrow{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+.btn{
+  border:none;border-radius:12px;padding:13px 20px;
+  font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;
+}
+.btn.main{background:var(--ink);color:var(--bg);}
+.btn.side{background:var(--card);border:1.5px solid var(--line);color:var(--ink);}
+.btn.warn{background:var(--red);color:#fff;}
+.btn:active{transform:scale(.97);}
+.btn.wide{width:100%;}
+.linkrow{display:flex;gap:8px;}
+.linkrow input{flex:1;min-width:0;}
+.btn.mini{padding:11px 13px;font-size:13.5px;flex:none;white-space:nowrap;}
+.hint-err{color:var(--red);font-size:13px;margin-top:8px;display:none;line-height:1.6;}
+.done-line{
+  display:flex;align-items:center;gap:10px;
+  background:var(--green-bg);border:1px solid var(--green);
+  border-radius:12px;padding:12px 14px;font-size:14px;margin-bottom:10px;
+}
+.done-line b{color:var(--green);}
+.done-line .redo{margin-left:auto;font-size:13px;color:var(--grey);text-decoration:underline;cursor:pointer;white-space:nowrap;}
+
+/* ── 關卡進度 ── */
+.stages{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.stage{
+  border:1.5px solid var(--line);border-radius:12px;
+  padding:11px 12px;background:var(--card);cursor:pointer;
+}
+.stage .st-name{font-weight:700;font-size:14px;}
+.stage .st-mark{font-size:12px;margin-top:4px;color:var(--grey);}
+.stage.done{border-color:var(--green);background:var(--green-bg);}
+.stage.done .st-mark{color:var(--green);font-weight:700;}
+.stage.now{border-color:var(--ink);box-shadow:0 0 0 2px var(--yellow);}
+.stage.now .st-mark{color:#16161A;background:var(--yellow);display:inline-block;padding:1px 8px;border-radius:99px;font-weight:700;}
+
+.day-done{
+  background:var(--ink);color:var(--bg);border-radius:16px;
+  padding:20px 18px;margin-bottom:14px;text-align:center;
+}
+.day-done b{color:var(--yellow);font-size:18px;}
+.day-done p{font-size:13.5px;margin-top:6px;opacity:.85;line-height:1.6;}
+
+/* ── 帳本 ── */
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;}
+.stat{
+  border:1px solid var(--line);border-radius:14px;
+  padding:13px 12px;background:var(--card2);
+}
+.stat .num{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums;}
+.stat .num em{font-style:normal;font-size:13px;color:var(--grey);font-weight:400;}
+.stat .cap{font-size:11.5px;color:var(--grey);margin-top:3px;line-height:1.4;}
+.pred{
+  border:1px solid var(--line);border-radius:14px;background:var(--card);
+  padding:14px;margin-bottom:10px;
+}
+.pred.due{border:1.5px solid var(--yellow);background:var(--hl);}
+.pred .p-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.pred .p-title{font-weight:700;font-size:15px;line-height:1.5;flex:1;min-width:60%;}
+.pred .p-date{font-size:12px;color:var(--grey);white-space:nowrap;}
+.pred .p-line{font-size:13.5px;color:var(--grey);margin-top:6px;line-height:1.7;}
+.pred .p-line b{color:var(--ink);font-weight:600;}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;}
+.badge.hit{background:var(--green-bg);color:var(--green);border:1px solid var(--green);}
+.badge.miss{background:var(--red-bg);color:var(--red);border:1px solid var(--red);}
+.badge.wait{background:var(--card2);color:var(--grey);border:1px solid var(--line);}
+.answer-zone{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;}
+.answer-zone .az-t{font-size:13.5px;font-weight:700;margin-bottom:8px;}
+
+/* ── 素材庫 ── */
+.searchbar{display:flex;gap:8px;margin-bottom:12px;}
+.searchbar input{flex:1;}
+.libcard{
+  border:1px solid var(--line);border-radius:14px;background:var(--card);
+  padding:14px;margin-bottom:10px;
+}
+.libcard .tag{
+  display:inline-block;background:var(--ink);color:var(--yellow);
+  font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;margin-bottom:8px;
+}
+.libcard h4{font-size:15px;margin-bottom:6px;line-height:1.5;}
+.libcard p{font-size:13px;color:var(--grey);line-height:1.75;}
+.libcard p b{color:var(--ink);font-weight:600;}
+.libcard .l-foot{display:flex;gap:14px;margin-top:8px;font-size:12.5px;}
+.libcard .l-foot a{color:var(--grey);}
+.libcard .l-del{color:var(--red);cursor:pointer;text-decoration:underline;}
+.empty{
+  text-align:center;color:var(--grey);font-size:14px;
+  padding:32px 16px;line-height:1.8;
+}
+
+/* ── 底部分頁列 ── */
+.tabbar{
+  position:fixed;bottom:0;left:0;right:0;z-index:30;
+  display:flex;justify-content:center;
+  background:var(--card);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.tabbar .in{display:flex;width:100%;max-width:560px;}
+.tb{
+  flex:1;border:none;background:none;cursor:pointer;
+  padding:9px 4px 8px;font-family:inherit;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  color:var(--grey);font-size:11.5px;font-weight:600;
+}
+.tb svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.tb.on{color:var(--ink);}
+.tb.on .ico{background:var(--yellow);border-radius:9px;}
+.tb .ico{padding:3px 12px;}
+.tb.on svg{stroke:#16161A;}
+.tb .dot{position:relative;}
+.tb .dot::after{
+  content:"";position:absolute;top:-1px;right:6px;width:8px;height:8px;
+  border-radius:99px;background:var(--red);
+}
+
+/* ── 首次導覽 ── */
+#onboard{
+  position:fixed;inset:0;z-index:50;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  overflow-y:auto;
+}
+#onboard[hidden]{display:none;}
+#onboard .ob{
+  max-width:420px;background:var(--card);border:1px solid var(--line);
+  border-radius:20px;padding:28px 24px;box-shadow:var(--shadow);
+}
+#onboard h2{font-size:21px;margin-bottom:4px;}
+#onboard h2 em{font-style:normal;background:var(--yellow);color:#16161A;padding:2px 8px;border-radius:7px;}
+#onboard .ob-sub{font-size:13.5px;color:var(--grey);margin-bottom:18px;}
+#onboard ol{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:20px;}
+#onboard li{display:flex;gap:12px;font-size:14.5px;line-height:1.65;}
+#onboard li .n{
+  flex:none;width:26px;height:26px;border-radius:99px;
+  background:var(--ink);color:var(--yellow);font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+#onboard .tip{
+  background:var(--hl);border-radius:10px;padding:10px 12px;
+  font-size:13px;line-height:1.7;margin-bottom:18px;
+}
+.toast{
+  position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom));
+  transform:translateX(-50%);z-index:60;
+  background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;
+  padding:11px 20px;border-radius:99px;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .25s;white-space:nowrap;
+}
+.toast.show{opacity:1;}
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important;animation:none !important;}
+}
+.backup{margin-top:22px;}
+.backup summary{font-size:13.5px;color:var(--grey);cursor:pointer;padding:6px 2px;}
+.backup textarea{font-size:12px;min-height:90px;margin:10px 0;}
+</style>
+
+<div id="app">
+  <div class="topbar">
+    <div class="logo"><em>網感</em>訓練</div>
+    <div class="streak">連續打卡<br><b id="streakNum">0</b> 天</div>
+  </div>
+  <div class="storwarn" id="storWarn" hidden>⚠️ 這個打開方式「存不了紀錄」，關掉就會全部消失。請改用 Safari 開這個網址，再加入主畫面。</div>
+  <div class="guide" id="guide"></div>
+  <main>
+    <section id="tab-train"></section>
+    <section id="tab-ledger" hidden></section>
+    <section id="tab-lib" hidden></section>
+    <section id="tab-review" hidden></section>
+  </main>
+  <nav class="tabbar"><div class="in">
+    <button class="tb on" data-tab="train"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>今日訓練</button>
+    <button class="tb" data-tab="ledger" id="tbLedger"><span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8 8.5h8M8 12h8M8 15.5h4"/></svg></span>預測帳本</button>
+    <button class="tb" data-tab="lib"><span class="ico"><svg viewBox="0 0 24 24"><path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v15.5L12 16.5 5.5 20.5V5A1.5 1.5 0 0 1 7 3.5z"/></svg></span>素材庫</button>
+    <button class="tb" data-tab="review" id="tbReview"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4.5V9h4.5"/></svg></span>復盤</button>
+  </div></nav>
+  <div id="onboard" hidden>
+    <div class="ob">
+      <h2><em>網感</em>訓練</h2>
+      <div class="ob-sub">每天 30 分鐘，把「感覺」練成可以驗證的判斷力。</div>
+      <ol>
+        <li><span class="n">1</span><div><b>今日訓練</b>：每天四關——快掃 5 支、深拆 1 支、預測 3 支、仿做腳本。做完自動打卡。</div></li>
+        <li><span class="n">2</span><div><b>預測帳本</b>：猜的每支影片 7 天後回來對答案，命中率就是你的網感成績單。</div></li>
+        <li><span class="n">3</span><div><b>素材庫＋復盤</b>：好招存起來（要寫得出什麼時候用），猜錯的每週回頭寫「錯在哪」。</div></li>
+      </ol>
+      <div class="tip"><b>裝到手機桌面：</b>用 Safari 打開這頁 → 點下方「分享」按鈕 → 「加入主畫面」，以後點圖示就能開，跟 App 一樣。</div>
+      <button class="btn main wide" id="obStart">開始第一天</button>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+/* ══════════ 資料 ══════════ */
+const KEY='wangan_v1';
+const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
+const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
+const DEEP_QS=[
+ '我為什麼停下來看（或為什麼滑走）？','前 1–3 秒用了什麼 Hook？或是什麼畫面？','這支拍給誰看？（目標觀眾）',
+ '情緒主軸是什麼？（好笑／療癒／憤怒／實用／獵奇）','節奏：多久換一次畫面或資訊點？',
+ '字幕怎麼做重點？（顏色／放大／位置）','聲音在哪裡推情緒？（BGM 斷點／音效）',
+ '高潮或反轉出現在第幾秒？','觀眾為什麼會分享或 tag 朋友？','留言區在討論什麼？',
+ '如果是我做，我會改哪一點？','這支最值得偷的一招是什麼？'];
+const BONES=['0–3秒　Hook','3–10秒　鋪陳／衝突','10–20秒　推進','20–40秒　高潮／反轉','結尾　CTA／收尾'];
+const LIB_TYPES=['Hook','轉場','字幕','B-roll','CTA','BGM'];
+const WRONG_TAGS=['題材','Hook','節奏','情緒','人設','分享價值','高估剪輯的重要性'];
+
+let S=null;
+try{ S=JSON.parse(localStorage.getItem(KEY)); }catch(e){}
+if(!S) S={days:{},predictions:[],library:[],onboarded:false,seq:1};
+
+let saveTimer=null;
+function save(){ clearTimeout(saveTimer); saveTimer=setTimeout(()=>{
+  try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){}
+},150); }
+function uid(){ return 'p'+(S.seq++)+'_'+todayStr().replace(/-/g,''); }
+function pad(n){ return String(n).padStart(2,'0'); }
+function todayStr(){ const d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()); }
+function shortDate(s){ return (+s.slice(5,7))+'/'+pad(+s.slice(8,10)); }
+function daysSince(s){
+  const a=new Date(s+'T00:00:00'), b=new Date(todayStr()+'T00:00:00');
+  return Math.round((b-a)/86400000);
+}
+function esc(t){ return String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function blankPred(){ return {title:'',link:'',guess:-1,reason:'',saved:false,ledgerId:null}; }
+function day(){
+  const t=todayStr();
+  if(!S.days[t]) S.days[t]={
+    scan:Array.from({length:5},()=>({v:'',a:['','',''],ok:false})),
+    deep:{v:'',qs:Array(12).fill(''),bones:['','','','',''],structOk:null,ok:false},
+    preds:[blankPred(),blankPred(),blankPred()],
+    script:'',scriptOk:false,done:false
+  };
+  return S.days[t];
+}
+function stageDone(d,i){
+  if(i===0) return d.scan.every(s=>s.ok);
+  if(i===1) return d.deep.ok;
+  if(i===2) return d.preds.every(p=>p.saved);
+  return d.scriptOk;
+}
+function checkDayDone(){
+  const d=day();
+  const was=d.done;
+  d.done=[0,1,2,3].every(i=>stageDone(d,i));
+  if(d.done&&!was) toast('今天打卡完成！連續 '+streak()+' 天');
+  return d.done;
+}
+function streak(){
+  let n=0, t=new Date(todayStr()+'T00:00:00');
+  const dd=S.days[todayStr()];
+  if(!(dd&&dd.done)) t.setDate(t.getDate()-1); // 今天還沒完成 → 從昨天往回數
+  for(;;){
+    const k=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate());
+    const rec=S.days[k];
+    if(rec&&rec.done){ n++; t.setDate(t.getDate()-1); } else break;
+  }
+  if(dd&&dd.done) n=n; // 今天已完成時上面迴圈已含今天
+  return n;
+}
+
+/* ══════════ 共用 ══════════ */
+function toast(msg){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(el._t); el._t=setTimeout(()=>el.classList.remove('show'),2200);
+}
+function linkHref(v){ v=String(v||'').trim(); return /^https?:\/\//i.test(v)?v:'https://'+v; }
+window.pasteTo=async(inputId)=>{
+  const el=document.getElementById(inputId);
+  try{
+    const t=(await navigator.clipboard.readText()||'').trim();
+    if(!t){ toast('剪貼簿是空的，先去 IG 複製連結'); return; }
+    el.value=t;
+    el.dispatchEvent(new Event('input',{bubbles:true}));
+    toast('已貼上');
+  }catch(e){
+    el.focus();
+    toast('沒抓到：長按輸入框，選「貼上」');
+  }
+};
+function linkLabel(v){
+  v=String(v||'').trim().replace(/^https?:\/\//i,'').replace(/^www\./i,'').split('?')[0].replace(/\/$/,'');
+  if(!v) return '（無連結）';
+  return v.length>32 ? v.slice(0,32)+'…' : v;
+}
+/* 開影片＝真正的 <a> 連結（手機不會被當彈窗擋掉）；輸入時同步網址 */
+window.syncA=(inp)=>{
+  const a=inp.parentElement.querySelector('a');
+  if(a) a.href=inp.value.trim()?linkHref(inp.value):'#';
+};
+window.chkA=(a)=>{
+  const href=a.getAttribute('href');
+  if(!href||href==='#'){ toast('還沒有連結，先按「貼上」'); return false; }
+  // 有些環境會擋新分頁：1.2 秒內畫面沒切走，就改用原視窗直接開（回來時資料都在）
+  const t=setTimeout(()=>{ location.href=href; },1200);
+  const cancel=()=>{ clearTimeout(t);
+    document.removeEventListener('visibilitychange',cancel);
+    window.removeEventListener('blur',cancel);
+    window.removeEventListener('pagehide',cancel);
+  };
+  document.addEventListener('visibilitychange',cancel);
+  window.addEventListener('blur',cancel);
+  window.addEventListener('pagehide',cancel);
+  return true;
+};
+function openBtnHTML(inputId,val){
+  return '<a class="btn side mini" href="'+(String(val||'').trim()?esc(linkHref(val)):'#')+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>';
+}
+function showErr(id,msg){
+  const el=document.getElementById(id);
+  if(!el) return;
+  el.textContent=msg; el.style.display=msg?'block':'none';
+}
+
+/* ══════════ 分頁切換 ══════════ */
+const GUIDES={
+  train:'怎麼用：照順序做完四關，每關答完按黑色「存檔」鍵。四關全綠＝今天打卡完成，約 30 分鐘。',
+  ledger:'怎麼用：黃框卡片＝到期要對答案的預測。去看那支影片的實際觀看數，按「對答案」選檔位，命中率自動更新。',
+  lib:'怎麼用：剪片卡住就來搜。收藏新招要寫得出「什麼時候用」才存得進來——寫不出來代表還沒學會。',
+  review:'怎麼用：每週日打開，逐支回答「當初判斷錯在哪」並寫一句修正。錯誤寫過一次，下次才不會再犯。'
+};
+let curTab='train';
+function switchTab(t){
+  curTab=t;
+  document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
+  ['train','ledger','lib','review'].forEach(k=>{
+    document.getElementById('tab-'+k).hidden=(k!==t);
+  });
+  document.getElementById('guide').textContent=GUIDES[t];
+  render();
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('.tb').forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+
+function render(){
+  document.getElementById('streakNum').textContent=streak();
+  if(curTab==='train') renderTrain();
+  if(curTab==='ledger') renderLedger();
+  if(curTab==='lib') renderLib();
+  if(curTab==='review') renderReview();
+  renderBadges();
+}
+function renderBadges(){
+  const dueN=S.predictions.filter(p=>!p.actualSet&&daysSince(p.date)>=7).length;
+  document.getElementById('tbLedger').querySelector('.ico').classList.toggle('dot',dueN>0);
+  const missN=S.predictions.filter(p=>p.actualSet&&p.result!=='命中'&&!p.reviewed).length;
+  document.getElementById('tbReview').querySelector('.ico').classList.toggle('dot',missN>0);
+}
+
+/* ══════════ 畫面①：今日訓練 ══════════ */
+let openStage=null;
+function renderTrain(){
+  const d=day();
+  if(openStage===null){ openStage=[0,1,2,3].find(i=>!stageDone(d,i)); if(openStage===undefined) openStage=-1; }
+  const names=['第1關 快掃 5 支','第2關 深拆 1 支','第3關 預測 3 支','第4關 仿做腳本'];
+  const times=['每支 3 題・約10分','12 題＋骨架・約12分','先猜再看・約5分','寫前10秒・約3分'];
+  let h='';
+  if(d.done) h+='<div class="day-done"><b>今天打卡完成</b><p>連續 '+streak()+' 天。明天見。想補改答案，點下面任一關都還能編輯。</p></div>';
+  h+='<div class="stages">'+names.map((n,i)=>{
+    const done=stageDone(d,i);
+    const cls=done?'done':(i===openStage?'now':'');
+    let mark=done?'✓ 完成':(i===openStage?'進行中':'未開始');
+    if(i===0&&!done) mark=(i===openStage?'進行中 ':'')+d.scan.filter(s=>s.ok).length+'/5';
+    if(i===2&&!done) mark=(i===openStage?'進行中 ':'')+d.preds.filter(p=>p.saved).length+'/3';
+    return '<div class="stage '+cls+'" onclick="openStage='+i+';renderTrain()"><div class="st-name">'+n+'</div><div class="st-mark">'+mark+'</div><div style="font-size:11px;color:var(--grey);margin-top:3px;">'+times[i]+'</div></div>';
+  }).join('')+'</div>';
+
+  if(openStage===0) h+=scanHTML(d);
+  if(openStage===1) h+=deepHTML(d);
+  if(openStage===2) h+=predictHTML(d);
+  if(openStage===3) h+=scriptHTML(d);
+  document.getElementById('tab-train').innerHTML=h;
+}
+
+/* — 第1關 快掃 — */
+function scanHTML(d){
+  const i=d.scan.findIndex(s=>!s.ok);
+  let h='';
+  d.scan.forEach((s,k)=>{
+    const lv=s.v||s.l||'';
+    if(s.ok) h+='<div class="done-line"><b>✓</b> 第 '+(k+1)+' 支：'+esc(linkLabel(lv))
+      +(lv?'　<a href="'+esc(linkHref(lv))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片↗</a>':'')
+      +'<span class="redo" onclick="reopenScan('+k+')">改答案</span></div>';
+  });
+  const k=(i===-1)?null:i;
+  if(k!==null){
+    const s=d.scan[k];
+    h+='<div class="card"><h3>快掃　第 '+(k+1)+' 支／5</h3><div class="sub">在 IG 按分享→複製連結 → 切回來按「貼上」→ 想再看一次就按「開影片」。三題各寫一句就好，練的是反應速度。</div>'
+    +'<div class="field"><label>IG 連結</label><div class="linkrow"><input type="text" id="scanL'+k+'" value="'+esc(s.v)+'" oninput="d0scan('+k+',\'v\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'scanL'+k+'\')">貼上</button>'+openBtnHTML('scanL'+k,s.v)+'</div></div>'
+    +SCAN_QS.map((q,qi)=>'<div class="field"><label>'+(qi+1)+'. '+q+'</label><textarea oninput="d0scanA('+k+','+qi+',this.value)" placeholder="一句話">'+esc(s.a[qi])+'</textarea></div>').join('')
+    +'<div class="hint-err" id="errScan"></div>'
+    +'<div class="btnrow"><button class="btn main" onclick="saveScan('+k+')">存這支，下一支</button></div></div>';
+  }
+  return h;
+}
+window.d0scan=(k,f,v)=>{ day().scan[k][f]=v; save(); };
+window.d0scanA=(k,qi,v)=>{ day().scan[k].a[qi]=v; save(); };
+window.reopenScan=(k)=>{ const d=day(); d.scan[k].ok=false; d.done=false; openStage=0; save(); renderTrain(); };
+window.saveScan=(k)=>{
+  const s=day().scan[k];
+  const miss=[];
+  if(!s.v.trim()) miss.push('IG 連結（按「貼上」）');
+  s.a.forEach((a,i)=>{ if(!a.trim()) miss.push('第'+(i+1)+'題'); });
+  if(miss.length){ showErr('errScan','還缺：'+miss.join('、')); return; }
+  s.ok=true; checkDayDone(); save(); openStage=day().scan.every(x=>x.ok)?null:0; renderTrain();
+  toast('已存，第 '+day().scan.filter(x=>x.ok).length+'/5 支');
+};
+
+/* — 第2關 深拆 — */
+function deepHTML(d){
+  const dp=d.deep;
+  const dlv=dp.v||dp.l||'';
+  if(dp.ok) return '<div class="done-line"><b>✓</b> 深拆完成：'+esc(linkLabel(dlv))
+    +(dlv?'　<a href="'+esc(linkHref(dlv))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片↗</a>':'')
+    +'<span class="redo" onclick="reopenDeep()">改答案</span></div>';
+  return '<div class="card"><h3>深拆這一支</h3><div class="sub">挑今天看到最有感的一支，12 題一路往下答，最後把五段骨架填完（內容拿掉、只留結構）。答題中隨時按「開影片」回去看。</div>'
+  +'<div class="field"><label>IG 連結</label><div class="linkrow"><input type="text" id="deepL" value="'+esc(dp.v)+'" oninput="d0deep(\'v\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'deepL\')">貼上</button>'+openBtnHTML('deepL',dp.v)+'</div></div>'
+  +DEEP_QS.map((q,i)=>'<div class="field"><label>第 '+(i+1)+' 題／12　'+q+'</label><textarea oninput="d0deepQ('+i+',this.value)">'+esc(dp.qs[i])+'</textarea></div>').join('')
+  +'<div class="field"><label>五段骨架（換個主題也能套的那種寫法）</label>'
+  +BONES.map((b,i)=>'<div style="display:flex;gap:8px;margin-bottom:8px;align-items:center;"><span style="flex:none;background:var(--ink);color:var(--yellow);font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;white-space:nowrap;">'+b.split('　')[0]+'</span><input type="text" value="'+esc(dp.bones[i])+'" oninput="d0deepB('+i+',this.value)" placeholder="'+b.split('　')[1]+'"></div>').join('')+'</div>'
+  +'<div class="field"><label>換一個主題，這個結構還能用嗎？</label><div class="chips">'
+  +'<button class="chip '+(dp.structOk===true?'pick':'')+'" onclick="d0struct(true)">能用（我抓到的是結構）</button>'
+  +'<button class="chip '+(dp.structOk===false?'pick':'')+'" onclick="d0struct(false)">不能（我只是在記內容）</button></div></div>'
+  +'<div class="hint-err" id="errDeep"></div>'
+  +'<div class="btnrow"><button class="btn main" onclick="saveDeep()">存檔，進第3關</button><button class="btn side" onclick="toast(\'已存草稿，隨時回來繼續\')">存一半，待會繼續</button></div></div>';
+}
+window.d0deep=(f,v)=>{ day().deep[f]=v; save(); };
+window.d0deepQ=(i,v)=>{ day().deep.qs[i]=v; save(); };
+window.d0deepB=(i,v)=>{ day().deep.bones[i]=v; save(); };
+window.d0struct=(v)=>{ day().deep.structOk=v; save(); renderTrain(); };
+window.reopenDeep=()=>{ const d=day(); d.deep.ok=false; d.done=false; openStage=1; save(); renderTrain(); };
+window.saveDeep=()=>{
+  const dp=day().deep, miss=[];
+  if(!dp.v.trim()) miss.push('IG 連結（按「貼上」）');
+  const answered=dp.qs.filter(q=>q.trim()).length;
+  if(answered<6) miss.push('12 題至少答 6 題（現在 '+answered+' 題）');
+  dp.bones.forEach((b,i)=>{ if(!b.trim()) miss.push('骨架第'+(i+1)+'格'); });
+  if(dp.structOk===null) miss.push('最後的結構自問');
+  if(miss.length){ showErr('errDeep','還缺：'+miss.join('、')); return; }
+  dp.ok=true; checkDayDone(); save(); openStage=null; renderTrain(); toast('深拆完成');
+};
+
+/* — 第3關 預測 — */
+function predictHTML(d){
+  let h='';
+  d.preds.forEach((p,k)=>{
+    if(p.saved){ h+='<div class="done-line"><b>✓</b> 已預測：'+esc(p.title)+'（猜 '+TIERS[p.guess]+'）'
+      +(p.link?'　<a href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片↗</a>':'')+'</div>'; }
+  });
+  const k=d.preds.findIndex(p=>!p.saved);
+  if(k!==-1){
+    const p=d.preds[k];
+    h+='<div class="card"><h3>預測　第 '+(k+1)+' 支／3</h3><div class="sub">先蓋牌：不要先看觀看數。憑感覺猜檔位＋寫理由，存了才准看真實數據。7 天後帳本會提醒你對答案。</div>'
+    +'<div class="field"><label>IG 連結（7天後對答案要靠它回去看數據）</label><div class="linkrow"><input type="text" id="predL'+k+'" value="'+esc(p.link)+'" oninput="d0pred('+k+',\'link\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'predL'+k+'\')">貼上</button>'+openBtnHTML('predL'+k,p.link)+'</div></div>'
+    +'<div class="field"><label>我猜 7 天內觀看數落在</label><div class="chips">'
+    +TIERS.map((t,i)=>'<button class="chip '+(p.guess===i?'pick':'')+'" onclick="d0predG('+k+','+i+')">'+t+'</button>').join('')+'</div></div>'
+    +'<div class="field"><label>我的理由（之後對答案就看這段）</label><textarea oninput="d0pred('+k+',\'reason\',this.value)" placeholder="例：Hook 強但題材普通，猜中段">'+esc(p.reason)+'</textarea></div>'
+    +'<div class="hint-err" id="errPred"></div>'
+    +'<div class="btnrow"><button class="btn main" onclick="savePred('+k+')">鎖定這筆預測</button></div></div>';
+  }
+  return h;
+}
+window.d0pred=(k,f,v)=>{ day().preds[k][f]=v; save(); };
+window.d0predG=(k,i)=>{ day().preds[k].guess=i; save(); renderTrain(); };
+window.savePred=(k)=>{
+  const p=day().preds[k], miss=[];
+  if(!p.link.trim()) miss.push('IG 連結（按「貼上」）');
+  if(p.guess===-1) miss.push('猜一個檔位');
+  if(!p.reason.trim()) miss.push('理由');
+  if(miss.length){ showErr('errPred','還缺：'+miss.join('、')); return; }
+  const id=uid();
+  p.saved=true; p.ledgerId=id;
+  p.title=p.title.trim()||linkLabel(p.link);
+  S.predictions.unshift({id,date:todayStr(),title:p.title,link:p.link.trim(),guess:p.guess,reason:p.reason.trim(),actual:-1,actualSet:false,result:null,reviewed:false,wrongTags:[],fix:''});
+  checkDayDone(); save();
+  openStage=day().preds.every(x=>x.saved)?null:2;
+  renderTrain(); toast('預測已入帳，7 天後對答案');
+};
+
+/* — 第4關 仿做腳本 — */
+function scriptHTML(d){
+  if(d.scriptOk) return '<div class="done-line"><b>✓</b> 今日腳本已寫<span class="redo" onclick="reopenScript()">改內容</span></div>';
+  return '<div class="card"><h3>仿做腳本：只寫前 10 秒</h3><div class="sub">從今天看過的影片挑一支，把它的結構套到你的題材（貓咪／剪輯都行），寫出前 10 秒的畫面＋台詞。</div>'
+  +'<div class="field"><label>前 10 秒腳本</label><textarea style="min-height:120px" oninput="d0script(this.value)" placeholder="例：第一幀＝阿寶把紙箱撞倒的瞬間（動作進行中）。台詞：「牠已經連續七天這樣⋯」">'+esc(d.script)+'</textarea></div>'
+  +'<div class="hint-err" id="errScript"></div>'
+  +'<div class="btnrow"><button class="btn main" onclick="saveScript()">存檔，完成今天</button></div></div>';
+}
+window.d0script=(v)=>{ day().script=v; save(); };
+window.reopenScript=()=>{ const d=day(); d.scriptOk=false; d.done=false; openStage=3; save(); renderTrain(); };
+window.saveScript=()=>{
+  const d=day();
+  if(d.script.trim().length<10){ showErr('errScript','至少寫個兩三句，前 10 秒的畫面＋一句台詞。'); return; }
+  d.scriptOk=true; checkDayDone(); save(); openStage=null; renderTrain();
+};
+
+/* ══════════ 畫面②：預測帳本 ══════════ */
+let answering=null;
+function renderLedger(){
+  const P=S.predictions;
+  const resolved=P.filter(p=>p.actualSet);
+  const mon=todayStr().slice(0,7);
+  const monRes=resolved.filter(p=>p.date.slice(0,7)===mon);
+  const monRate=monRes.length?Math.round(monRes.filter(p=>p.result==='命中').length/monRes.length*100):null;
+  const over=resolved.filter(p=>p.result==='高估').length, under=resolved.filter(p=>p.result==='低估').length;
+  let bias='—';
+  if(over||under) bias=over>under?'愛高估':(under>over?'愛低估':'平衡');
+  const due=P.filter(p=>!p.actualSet&&daysSince(p.date)>=7);
+
+  let h='<div class="statrow">'
+  +'<div class="stat"><div class="num">'+(monRate===null?'—':monRate+'<em>%</em>')+'</div><div class="cap">本月命中率</div></div>'
+  +'<div class="stat"><div class="num">'+P.length+'</div><div class="cap">累計預測支數</div></div>'
+  +'<div class="stat"><div class="num" style="font-size:19px;padding-top:4px;">'+bias+'</div><div class="cap">我的失誤傾向</div></div></div>';
+
+  if(due.length) h+='<div style="font-weight:700;font-size:14.5px;margin:4px 2px 10px;">今天有 '+due.length+' 支到期，該對答案了</div>';
+  if(!P.length) h+='<div class="empty">還沒有任何預測。<br>到「今日訓練」第 3 關猜第一支，7 天後回來對答案。</div>';
+
+  P.forEach(p=>{
+    const dueNow=!p.actualSet&&daysSince(p.date)>=7;
+    const wait=!p.actualSet&&!dueNow;
+    let badge='';
+    if(p.actualSet) badge='<span class="badge '+(p.result==='命中'?'hit':'miss')+'">'+p.result+'</span>';
+    else if(dueNow) badge='<span class="badge miss">到期</span>';
+    else badge='<span class="badge wait">第 '+daysSince(p.date)+'/7 天</span>';
+    h+='<div class="pred'+(dueNow?' due':'')+'"><div class="p-top"><div class="p-title">'+esc(p.title)+'</div><div class="p-date">'+shortDate(p.date)+'</div></div>'
+    +'<div class="p-line">我猜 <b>'+TIERS[p.guess]+'</b>'+(p.actualSet?'　→　實際 <b>'+TIERS[p.actual]+'</b>　':'　')+badge+'</div>'
+    +'<div class="p-line">理由：'+esc(p.reason)+'</div>'
+    +(p.link?'<div class="p-line"><a href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片 ↗</a></div>':'');
+    if(!p.actualSet){
+      if(answering===p.id){
+        h+='<div class="answer-zone"><div class="az-t">實際 7 天觀看數落在哪一檔？</div><div class="chips">'
+        +TIERS.map((t,i)=>'<button class="chip" onclick="setActual(\''+p.id+'\','+i+')">'+t+'</button>').join('')
+        +'</div><div class="btnrow"><button class="btn side" onclick="answering=null;renderLedger()">先不填</button></div></div>';
+      }else{
+        h+='<div class="btnrow"><button class="btn '+(dueNow?'main':'side')+'" onclick="answering=\''+p.id+'\';renderLedger()">對答案</button></div>';
+      }
+    }
+    h+='</div>';
+  });
+  document.getElementById('tab-ledger').innerHTML=h;
+}
+window.setActual=(id,tier)=>{
+  const p=S.predictions.find(x=>x.id===id);
+  if(!p) return;
+  p.actual=tier; p.actualSet=true;
+  p.result=(tier===p.guess)?'命中':(p.guess>tier?'高估':'低估');
+  answering=null; save(); renderLedger(); renderBadges();
+  toast(p.result==='命中'?'命中！':'記下來了，週日復盤見');
+};
+
+/* ══════════ 畫面③：素材庫 ══════════ */
+let libFilter='全部', libSearch='', libAdding=false, libDraft=null, libDelId=null;
+function renderLib(){
+  const L=S.library;
+  const counts={'全部':L.length};
+  LIB_TYPES.forEach(t=>counts[t]=L.filter(x=>x.type===t).length);
+  let h='<div class="searchbar"><input type="text" placeholder="搜尋：例如「數字開場」「留言釣魚」" value="'+esc(libSearch)+'" oninput="libSearchIn(this.value)"><button class="btn main" onclick="libAddOpen()">＋收藏</button></div>';
+  h+='<div class="chips" style="margin-bottom:14px;">'+['全部',...LIB_TYPES].map(t=>'<button class="chip '+(libFilter===t?'pick':'')+'" onclick="libFilter=\''+t+'\';renderLib()">'+t+' '+counts[t]+'</button>').join('')+'</div>';
+
+  if(libAdding){
+    const d=libDraft;
+    const bgm=d.type==='BGM';
+    const ph=bgm
+      ?{t:'歌名／哪段 BGM（一句話）',tp:'例：Mixkit – Feeling Happy，前奏兩秒就有記憶點',w:'哪裡好',wp:'例：鼓點乾淨，斷點好切，情緒是輕快不吵',u:'什麼情緒／段落的片用（必填）',up:'例：貓咪日常片開頭；高潮前一拍靜音再切入',l:'歌曲或原影片連結',lp:'https://…'}
+      :{t:'這招是什麼（一句話）',tp:'例：先給結論的一半，只說結果不說原因',w:'收藏原因',wp:'為什麼有效？',u:'什麼時候用（必填）',up:'例：貓咪帳號的行為解謎題材',l:'原影片連結',lp:'https://…'};
+    h+='<div class="card"><h3>收藏新素材</h3><div class="sub">規矩：寫不出「什麼時候用」的招，代表還不是你的，存不進來。</div>'
+    +'<div class="field"><label>類型</label><div class="chips">'+LIB_TYPES.map(t=>'<button class="chip '+(d.type===t?'pick':'')+'" onclick="libDraft.type=\''+t+'\';renderLib()">'+t+'</button>').join('')+'</div></div>'
+    +'<div class="field"><label>'+ph.t+'</label><input type="text" value="'+esc(d.title)+'" oninput="libDraft.title=this.value" placeholder="'+ph.tp+'"></div>'
+    +'<div class="field"><label>'+ph.w+'</label><textarea oninput="libDraft.why=this.value" placeholder="'+ph.wp+'">'+esc(d.why)+'</textarea></div>'
+    +'<div class="field"><label>'+ph.u+'</label><textarea oninput="libDraft.when=this.value" placeholder="'+ph.up+'">'+esc(d.when)+'</textarea></div>'
+    +'<div class="field"><label>'+ph.l+' <span class="opt">（選填）</span></label><div class="linkrow"><input type="text" id="libL" value="'+esc(d.link)+'" oninput="libDraft.link=this.value" placeholder="'+ph.lp+'"><button class="btn side mini" onclick="pasteTo(\'libL\')">貼上</button></div></div>'
+    +'<div class="hint-err" id="errLib"></div>'
+    +'<div class="btnrow"><button class="btn main" onclick="libSave()">存進素材庫</button><button class="btn side" onclick="libAdding=false;renderLib()">取消</button></div></div>';
+  }
+
+  const q=libSearch.trim().toLowerCase();
+  const list=L.filter(x=>(libFilter==='全部'||x.type===libFilter))
+              .filter(x=>!q||(x.title+x.why+x.when).toLowerCase().includes(q));
+  if(!L.length&&!libAdding) h+='<div class="empty">素材庫還是空的。<br>看到好招就按「＋收藏」存進來，剪片卡住時回來搜。</div>';
+  else if(!list.length&&!libAdding) h+='<div class="empty">沒有符合的素材，換個關鍵字或分類試試。</div>';
+  list.forEach(x=>{
+    const bgmCard=x.type==='BGM';
+    h+='<div class="libcard"><span class="tag">'+esc(x.type)+'</span><h4>'+esc(x.title)+'</h4>'
+    +'<p><b>'+(bgmCard?'哪裡好：':'收藏原因：')+'</b>'+esc(x.why||'—')+'<br><b>'+(bgmCard?'什麼片用：':'什麼時候用：')+'</b>'+esc(x.when)+'</p>'
+    +'<div class="l-foot">'+(x.link?'<a href="'+esc(linkHref(x.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)">'+(bgmCard?'聽這首':'原影片')+' ↗</a>':'')
+    +'<span style="color:var(--grey)">'+shortDate(x.date)+'</span>'
+    +(libDelId===x.id
+      ?'<span class="l-del" onclick="libDel(\''+x.id+'\')">確定刪除？再點一次</span>'
+      :'<span class="l-del" style="margin-left:auto" onclick="libDelId=\''+x.id+'\';renderLib()">刪除</span>')
+    +'</div></div>';
+  });
+  document.getElementById('tab-lib').innerHTML=h;
+}
+window.libSearchIn=(v)=>{ libSearch=v;
+  clearTimeout(window._libT); window._libT=setTimeout(()=>{ renderLib();
+    const inp=document.querySelector('#tab-lib .searchbar input');
+    if(inp){ inp.focus(); inp.setSelectionRange(inp.value.length,inp.value.length); }
+  },300);
+};
+window.libAddOpen=()=>{ libAdding=true; libDraft={type:'Hook',title:'',why:'',when:'',link:''}; renderLib(); };
+window.libSave=()=>{
+  const d=libDraft, miss=[];
+  if(!d.title.trim()) miss.push('這招是什麼');
+  if(!d.when.trim()) miss.push('什麼時候用（規矩就是規矩）');
+  if(miss.length){ showErr('errLib','還缺：'+miss.join('、')); return; }
+  S.library.unshift({id:uid(),date:todayStr(),type:d.type,title:d.title.trim(),why:d.why.trim(),when:d.when.trim(),link:d.link.trim()});
+  libAdding=false; save(); renderLib(); toast('已收藏');
+};
+window.libDel=(id)=>{ S.library=S.library.filter(x=>x.id!==id); libDelId=null; save(); renderLib(); toast('已刪除'); };
+
+/* ══════════ 畫面④：每週復盤 ══════════ */
+function renderReview(){
+  const P=S.predictions;
+  const wk=P.filter(p=>p.actualSet&&daysSince(p.date)<=14);
+  const wkRate=wk.length?Math.round(wk.filter(p=>p.result==='命中').length/wk.length*100):null;
+  const misses=P.filter(p=>p.actualSet&&p.result!=='命中'&&!p.reviewed);
+  const over=misses.filter(p=>p.result==='高估').slice(0,3);
+  const under=misses.filter(p=>p.result==='低估').slice(0,3);
+  const queue=[...under,...over];
+
+  let h='<div class="statrow">'
+  +'<div class="stat"><div class="num">'+under.length+'</div><div class="cap">我看走眼（低估爆片）</div></div>'
+  +'<div class="stat"><div class="num">'+over.length+'</div><div class="cap">我以為會爆（高估）</div></div>'
+  +'<div class="stat"><div class="num">'+(wkRate===null?'—':wkRate+'<em>%</em>')+'</div><div class="cap">近兩週命中率</div></div></div>';
+
+  if(!queue.length){
+    h+='<div class="empty">目前沒有待復盤的失誤。<br>預測對完答案、有猜錯的，會自動排進來。</div>';
+  }
+  queue.forEach((p,i)=>{
+    h+='<div class="card"><h3>'+(p.result==='低估'?'看走眼':'想太美')+' '+(i+1)+'／'+queue.length+'　「'+esc(p.title)+'」</h3>'
+    +'<div class="sub">猜 '+TIERS[p.guess]+'，實際 '+TIERS[p.actual]+'（'+p.result+'）。當時理由：'+esc(p.reason)+'</div>'
+    +'<div class="field"><label>錯的是哪一環？（可多選）</label><div class="chips">'
+    +WRONG_TAGS.map(t=>'<button class="chip '+(p.wrongTags.includes(t)?'pick':'')+'" onclick="rvTag(\''+p.id+'\',\''+t+'\')">'+t+'</button>').join('')+'</div></div>'
+    +'<div class="field"><label>一句話寫下修正（下次遇到同型影片怎麼調）</label><textarea oninput="rvFix(\''+p.id+'\',this.value)" placeholder="例：「寵物＋意外」自帶轉傳慾，這類基準直接上調一級">'+esc(p.fix)+'</textarea></div>'
+    +'<div class="hint-err" id="errRv'+p.id+'"></div>'
+    +'<div class="btnrow"><button class="btn main" onclick="rvSave(\''+p.id+'\')">存檔，下一支</button></div></div>';
+  });
+
+  const doneRv=P.filter(p=>p.reviewed);
+  if(doneRv.length){
+    h+='<div style="font-weight:700;font-size:14.5px;margin:18px 2px 10px;">已寫過的修正（'+doneRv.length+' 條）</div>';
+    doneRv.forEach(p=>{
+      h+='<div class="pred"><div class="p-top"><div class="p-title">'+esc(p.title)+'</div><div class="p-date">'+shortDate(p.date)+'</div></div>'
+      +'<div class="p-line">'+p.result+'（'+TIERS[p.guess]+' → '+TIERS[p.actual]+'）・錯在：<b>'+ (p.wrongTags.length?p.wrongTags.map(esc).join('、'):'—') +'</b></div>'
+      +'<div class="p-line">修正：<b>'+esc(p.fix)+'</b></div></div>';
+    });
+  }
+
+  h+='<details class="backup"><summary>資料備份／搬家（換手機前用）</summary>'
+  +'<div style="font-size:13px;color:var(--grey);line-height:1.7;margin-top:6px;">所有紀錄都存在這支手機的瀏覽器裡。換裝置前：點「匯出」→ 全選複製 → 存到備忘錄；新裝置貼回下面按「匯入」。</div>'
+  +'<textarea id="bakBox" placeholder="匯出的資料會出現在這裡；匯入時把備份貼進來"></textarea>'
+  +'<div class="btnrow" style="margin-top:0"><button class="btn side" onclick="bakOut()">匯出</button><button class="btn side" onclick="bakIn()">匯入</button></div></details>';
+
+  document.getElementById('tab-review').innerHTML=h;
+}
+window.rvTag=(id,t)=>{
+  const p=S.predictions.find(x=>x.id===id); if(!p) return;
+  const i=p.wrongTags.indexOf(t);
+  if(i===-1) p.wrongTags.push(t); else p.wrongTags.splice(i,1);
+  save(); renderReview();
+};
+window.rvFix=(id,v)=>{ const p=S.predictions.find(x=>x.id===id); if(p){ p.fix=v; save(); } };
+window.rvSave=(id)=>{
+  const p=S.predictions.find(x=>x.id===id); if(!p) return;
+  const miss=[];
+  if(!p.wrongTags.length) miss.push('至少點一個「錯在哪」');
+  if(!p.fix.trim()) miss.push('一句話修正');
+  if(miss.length){ showErr('errRv'+id,'還缺：'+miss.join('、')); return; }
+  p.reviewed=true; save(); renderReview(); renderBadges(); toast('修正已入庫');
+};
+window.bakOut=()=>{
+  const box=document.getElementById('bakBox');
+  box.value=JSON.stringify(S);
+  box.focus(); box.select();
+  try{ document.execCommand('copy'); toast('已複製，貼到備忘錄存好'); }
+  catch(e){ toast('已放進框裡，全選複製它'); }
+};
+window.bakIn=()=>{
+  const box=document.getElementById('bakBox');
+  try{
+    const d=JSON.parse(box.value);
+    if(!d||typeof d!=='object'||!d.days) throw 0;
+    S=Object.assign({days:{},predictions:[],library:[],onboarded:true,seq:1},d);
+    try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){}
+    toast('匯入成功'); render();
+  }catch(e){ toast('這段不是有效的備份資料'); }
+};
+
+/* ══════════ 啟動 ══════════ */
+/* 儲存自我檢測：存不了就亮紅色警告條 */
+try{
+  localStorage.setItem('_probe','1');
+  if(localStorage.getItem('_probe')!=='1') throw 0;
+  localStorage.removeItem('_probe');
+}catch(e){
+  document.getElementById('storWarn').hidden=false;
+}
+if(!S.onboarded) document.getElementById('onboard').hidden=false;
+document.getElementById('obStart').addEventListener('click',()=>{
+  S.onboarded=true; save();
+  document.getElementById('onboard').hidden=true;
+});
+document.getElementById('guide').textContent=GUIDES.train;
+render();
+</script>
