@@ -484,7 +484,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
       <div class="ob-sub">每天 30 分鐘，把「感覺」練成可以驗證的判斷力。</div>
       <ol>
         <li><span class="n">1</span><div><b>今日訓練</b>：每天四關——快掃 5 支、深拆 1 支、預測 3 支、仿做腳本。做完自動打卡。</div></li>
-        <li><span class="n">2</span><div><b>預測帳本</b>：猜的每支影片 7 天後回來對答案，命中率就是你的網感成績單。</div></li>
+        <li><span class="n">2</span><div><b>預測帳本</b>：每支猜完都要對答案——猜中率就是你的網感成績單。</div></li>
         <li><span class="n">3</span><div><b>素材庫＋復盤</b>：好招存起來（要寫得出什麼時候用），猜錯的每週回頭寫「錯在哪」。</div></li>
       </ol>
       <div class="tip"><b>裝到手機桌面：</b>用 Safari 打開這頁 → 點下方「分享」按鈕 → 「加入主畫面」，以後點圖示就能開，跟 App 一樣。</div>
@@ -498,7 +498,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.3';
+const APP_VER='3.4';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -530,7 +530,7 @@ function daysSince(s){
 }
 function esc(t){ return String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-function blankPred(){ return {title:'',link:'',guess:-1,reason:'',saved:false,ledgerId:null}; }
+function blankPred(){ return {title:'',link:'',guess:-1,reason:'',saved:false,ledgerId:null,mode:null}; }
 function day(){
   const t=todayStr();
   if(!S.days[t]) S.days[t]={
@@ -829,20 +829,34 @@ function predictHTML(d){
     if(p.saved){
       const lp=S.predictions.find(x=>x.id===p.ledgerId);
       const pnote=(p.reason||'').trim()||p.title;
+      let topExtra='<span class="dc-ok">✓</span>';
+      if(lp&&lp.actualSet){
+        const hitP=lp.result==='命中';
+        topExtra='<span class="lg-verdict '+(hitP?'ok':'low')+'" style="margin-left:auto;">'+(hitP?'猜中了！':(lp.result==='高估'?'猜太高了':'猜太低了'))+'</span>';
+      }
       h+='<div class="done-card"><div class="dc-row">'+thumbHTML(lp&&lp.img,p.link,"'pred','"+(p.ledgerId||'')+"'")
-        +'<div class="dc-body"><div class="dc-top"><span class="dc-tag">預測 '+(k+1)+'/3</span><span class="dc-chip">猜 '+TIERS[p.guess]+'</span><span class="dc-ok">✓</span></div>'
+        +'<div class="dc-body"><div class="dc-top"><span class="dc-tag">預測 '+(k+1)+'/3</span><span class="dc-chip">猜 '+TIERS[p.guess]+'</span>'+topExtra+'</div>'
         +'<div class="dc-note">'+esc(pnote)+'</div>'
         +'<div class="dc-btns">'
         +(p.link?'<a class="dc-btn primary" href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)">▶ 開影片</a>':'')
-        +'</div></div></div></div>';
+        +'</div>'
+        +(lp&&!lp.actualSet&&lp.mode==='now'
+          ?'<div class="lg-q" style="margin-top:12px;">去看它「現在」的實際觀看數，回來選：</div>'
+           +'<div class="chips">'+TIERS.map((t,i)=>'<button class="chip" onclick="setActual(\''+lp.id+'\','+i+')">'+t+'</button>').join('')+'</div>'
+          :'')
+        +'</div></div></div>';
     }
   });
   const k=d.preds.findIndex(p=>!p.saved);
   if(k!==-1){
     const p=d.preds[k];
-    h+='<div class="card"><h3>預測　第 '+(k+1)+' 支／3</h3><div class="sub">先蓋牌：不要先看觀看數。憑感覺猜檔位＋寫理由，存了才准看真實數據。7 天後帳本會提醒你對答案。</div>'
+    h+='<div class="card"><h3>預測　第 '+(k+1)+' 支／3</h3><div class="sub">先蓋牌：不要先看觀看數！憑感覺猜檔位＋寫理由。舊片存完馬上對答案，新片等 3 天開獎。</div>'
     +'<div class="field"><label>IG 連結（7天後對答案要靠它回去看數據）</label><div class="linkrow"><input type="text" id="predL'+k+'" value="'+esc(p.link)+'" oninput="d0pred('+k+',\'link\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'predL'+k+'\')">貼上</button>'+openBtnHTML('predL'+k,p.link)+'</div></div>'
-    +'<div class="field"><label>標題 <span class="opt">（選填，7天後對答案時比較好認）</span></label><input type="text" value="'+esc(p.title)+'" oninput="d0pred('+k+',\'title\',this.value)" placeholder="例：情侶吵架還原"></div>'
+    +'<div class="field"><label>標題 <span class="opt">（選填，對答案時比較好認）</span></label><input type="text" value="'+esc(p.title)+'" oninput="d0pred('+k+',\'title\',this.value)" placeholder="例：情侶吵架還原"></div>'
+    +'<div class="field"><label>這支影片是？</label><div class="chips">'
+    +'<button class="chip '+(p.mode==='now'?'pick':'')+'" onclick="d0predM('+k+',\'now\')">發一陣子了（馬上對答案）</button>'
+    +'<button class="chip '+(p.mode==='wait'?'pick':'')+'" onclick="d0predM('+k+',\'wait\')">3 天內的新片（等 3 天開獎）</button>'
+    +'</div></div>'
     +'<div class="field"><label>我猜 7 天內觀看數落在</label><div class="chips">'
     +TIERS.map((t,i)=>'<button class="chip '+(p.guess===i?'pick':'')+'" onclick="d0predG('+k+','+i+')">'+t+'</button>').join('')+'</div></div>'
     +'<div class="field"><label>我的理由（之後對答案就看這段）</label><textarea oninput="d0pred('+k+',\'reason\',this.value)" placeholder="例：Hook 強但題材普通，猜中段">'+esc(p.reason)+'</textarea></div>'
@@ -853,19 +867,22 @@ function predictHTML(d){
 }
 window.d0pred=(k,f,v)=>{ day().preds[k][f]=v; save(); };
 window.d0predG=(k,i)=>{ day().preds[k].guess=i; save(); renderTrain(); };
+window.d0predM=(k,m)=>{ day().preds[k].mode=m; save(); renderTrain(); };
 window.savePred=(k)=>{
   const p=day().preds[k], miss=[];
   if(!p.link.trim()) miss.push('IG 連結（按「貼上」）');
+  if(!p.mode) miss.push('選這支是新片還是發一陣子的片');
   if(p.guess===-1) miss.push('猜一個檔位');
   if(!p.reason.trim()) miss.push('理由');
   if(miss.length){ showErr('errPred','還缺：'+miss.join('、')); return; }
   const id=uid();
   p.saved=true; p.ledgerId=id;
   p.title=p.title.trim()||linkLabel(p.link);
-  S.predictions.unshift({id,date:todayStr(),title:p.title,link:p.link.trim(),guess:p.guess,reason:p.reason.trim(),actual:-1,actualSet:false,result:null,reviewed:false,wrongTags:[],fix:''});
+  S.predictions.unshift({id,date:todayStr(),title:p.title,link:p.link.trim(),guess:p.guess,reason:p.reason.trim(),mode:p.mode,actual:-1,actualSet:false,result:null,reviewed:false,wrongTags:[],fix:''});
   checkDayDone(); save();
-  openStage=day().preds.every(x=>x.saved)?null:2;
-  renderTrain(); toast('預測已入帳，7 天後對答案');
+  openStage=2;
+  renderTrain();
+  toast(p.mode==='now'?'存好了！現在去看實際數字，回來選檔位':'已入帳，3 天後開獎');
 };
 
 /* — 第4關 仿做腳本 — */
@@ -1088,8 +1105,8 @@ function renderLedger(){
   const over=resolved.filter(p=>p.result==='高估').length, under=resolved.filter(p=>p.result==='低估').length;
   let bias='—';
   if(over||under) bias=over>under?'愛猜太高':(under>over?'愛猜太低':'平衡');
-  const due=P.filter(p=>!p.actualSet&&daysSince(p.date)>=7);
-  const waiting=P.filter(p=>!p.actualSet&&daysSince(p.date)<7);
+  const due=P.filter(p=>!p.actualSet&&(p.mode==='now'||daysSince(p.date)>=3));
+  const waiting=P.filter(p=>!p.actualSet&&p.mode!=='now'&&daysSince(p.date)<3);
 
   let h='<div class="statrow">'
   +'<div class="stat"><div class="num">'+(monRate===null?'—':monRate+'<em>%</em>')+'</div><div class="cap">本月猜中率</div></div>'
@@ -1097,7 +1114,7 @@ function renderLedger(){
   +'<div class="stat"><div class="num" style="font-size:17px;padding-top:5px;">'+bias+'</div><div class="cap">我的失誤傾向</div></div></div>';
 
   if(!P.length){
-    h+='<div class="empty">還沒有任何預估。<br>到「今日訓練」第 3 關猜第一支，7 天後回來對答案。</div>';
+    h+='<div class="empty">還沒有任何預估。<br>到「今日訓練」第 3 關猜第一支。</div>';
     document.getElementById('tab-ledger').innerHTML=h; return;
   }
 
@@ -1108,7 +1125,9 @@ function renderLedger(){
       h+='<div class="lg-due">'+thumbHTML(p.img,p.link,"'pred','"+p.id+"'")
       +'<div style="flex:1;min-width:0;">'
       +'<div class="lg-t">'+esc(p.title)+'</div>'
-      +'<div class="lg-sub">'+daysSince(p.date)+' 天前你預估它會有 <b>'+TIERS_LONG[p.guess]+'</b> 次觀看</div>'
+      +'<div class="lg-sub">'+(p.mode==='now'
+        ?'盲猜：你預估它現在有 <b>'+TIERS_LONG[p.guess]+'</b> 次觀看，去看真實數字'
+        :daysSince(p.date)+' 天前你預估它會有 <b>'+TIERS_LONG[p.guess]+'</b> 次觀看')+'</div>'
       +(p.link?'<a class="dc-btn primary" style="display:inline-block;margin-top:10px;padding:10px 18px;flex:none;" href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)">▶ 開影片看數字</a>':'')
       +'<div class="lg-q">實際落在哪一檔？</div>'
       +'<div class="chips">'+TIERS.map((t,i)=>'<button class="chip" onclick="setActual(\''+p.id+'\','+i+')">'+t+'</button>').join('')+'</div>'
@@ -1134,13 +1153,13 @@ function renderLedger(){
 
   /* ③ 預估中 */
   if(waiting.length){
-    h+='<div class="lg-h">⏳ 預估中<small>不用做任何事，7 天到自動變黃卡</small></div>';
+    h+='<div class="lg-h">⏳ 預估中<small>不用做任何事，3 天到自動變黃卡</small></div>';
     waiting.forEach(p=>{
-      const d=daysSince(p.date), left=Math.max(1,7-d);
+      const d=daysSince(p.date), left=Math.max(1,3-d);
       h+='<div class="lg-wait">'+thumbHTML(p.img,p.link,"'pred','"+p.id+"'")
       +'<div style="flex:1;min-width:0;">'
       +'<div class="lg-t sm">'+esc(p.title)+'</div>'
-      +'<div class="lg-wmeta"><span class="lg-bar"><i style="width:'+Math.round(d/7*100)+'%"></i></span><span class="lg-wday">還要 '+left+' 天・我猜 '+TIERS[p.guess]+'</span></div>'
+      +'<div class="lg-wmeta"><span class="lg-bar"><i style="width:'+Math.round(d/3*100)+'%"></i></span><span class="lg-wday">還要 '+left+' 天・我猜 '+TIERS[p.guess]+'</span></div>'
       +'</div></div>';
     });
   }
@@ -1152,8 +1171,8 @@ window.setActual=(id,tier)=>{
   if(!p) return;
   p.actual=tier; p.actualSet=true;
   p.result=(tier===p.guess)?'命中':(p.guess>tier?'高估':'低估');
-  save(); renderLedger(); renderBadges();
-  toast(p.result==='命中'?'命中！':'記下來了，週日復盤見');
+  save(); render(); renderBadges();
+  toast(p.result==='命中'?'猜中了！':'記下來了，週日復盤見');
 };
 
 /* ══════════ 畫面③：素材庫 ══════════ */
