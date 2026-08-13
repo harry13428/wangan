@@ -166,7 +166,20 @@ history['days'][TODAY] = today_snap
 for d in sorted(history['days'])[:-30]:
     del history['days'][d]
 
+# ── 台灣熱門歌曲榜（Apple Music 每日榜，給素材庫「找音樂」用） ──
+def get_music():
+    raw = fetch('https://rss.marketingtools.apple.com/api/v2/tw/music/most-played/25/songs.json')
+    rs = json.loads(raw)['feed']['results']
+    return [{'rank': i + 1, 'id': r['id'], 'name': r['name'], 'artist': r['artistName'],
+             'art': r.get('artworkUrl100', ''), 'url': r.get('url', '')} for i, r in enumerate(rs)]
+
+music = {'updated': datetime.now(TPE).strftime('%Y-%m-%d %H:%M'), 'tracks': []}
+try: music['tracks'] = get_music()
+except Exception as ex: errors.append('music: %s' % ex)
+
 os.makedirs(DATA, exist_ok=True)
+with open(os.path.join(DATA, 'music.json'), 'w', encoding='utf-8') as f:
+    json.dump(music, f, ensure_ascii=False, separators=(',', ':'))
 with open(os.path.join(DATA, 'radar.json'), 'w', encoding='utf-8') as f:
     json.dump(radar, f, ensure_ascii=False, separators=(',', ':'))
 with open(os.path.join(DATA, 'history.json'), 'w', encoding='utf-8') as f:
