@@ -498,7 +498,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.1';
+const APP_VER='3.2';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -1214,15 +1214,21 @@ window.musicOpen=()=>{
   renderMusic();
 };
 window.musicClose=()=>{ musAudio.pause(); musPlaying=null; document.getElementById('musicSheet').hidden=true; };
+/* 情緒 → 配樂搜尋詞（打中文情緒或點 chip，幫你翻成找得到配樂的關鍵字） */
+const MOODS={'輕快':'happy upbeat instrumental','悲傷':'sad emotional piano','感人':'emotional cinematic piano','緊張':'suspense tension instrumental','熱血':'epic workout rock','療癒':'calm healing lofi','搞笑':'funny quirky comedy instrumental','浪漫':'romantic acoustic love','放鬆':'chill lofi beats','大氣':'epic cinematic orchestra'};
+let musErr='';
+window.musicMood=(m)=>{ const el=document.getElementById('msKw'); if(el) el.value=m; musicSearch(); };
 window.musicSearch=async()=>{
   const el=document.getElementById('msKw');
   const q=(el&&el.value.trim())||'';
-  if(!q){ toast('先打歌名、歌手或風格'); return; }
-  musQuery=q; musResults='loading'; renderMusic();
+  if(!q){ toast('打歌名、歌手，或點下面的情緒'); return; }
+  musQuery=q; musErr='';
+  const query=MOODS[q]||q;
+  musResults='loading'; renderMusic();
   try{
-    const d=await fetch('https://itunes.apple.com/search?term='+encodeURIComponent(q)+'&country=TW&media=music&limit=20').then(r=>r.json());
+    const d=await fetch('https://itunes.apple.com/search?term='+encodeURIComponent(query)+'&country=TW&media=music&limit=20').then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); });
     musResults=(d.results||[]).map(r=>({id:String(r.trackId),name:r.trackName,artist:r.artistName,art:r.artworkUrl100,preview:r.previewUrl,url:r.trackViewUrl}));
-  }catch(e){ musResults=[]; toast('搜尋失敗，網路不穩再試一次'); }
+  }catch(e){ musResults=[]; musErr=String((e&&e.message)||e); }
   renderMusic();
 };
 function musList(chart){ return chart?((musChart&&musChart.tracks)||[]):(Array.isArray(musResults)?musResults:[]); }
@@ -1266,12 +1272,14 @@ function renderMusic(){
   const el=document.getElementById('musicSheet');
   if(el.hidden) return;
   let h='<div class="ms-top"><span class="t">🎵 找音樂</span><button class="ms-close" onclick="musicClose()">關閉 ✕</button></div>'
-  +'<div class="linkrow" style="margin-bottom:4px;"><input type="text" id="msKw" value="'+esc(musQuery)+'" placeholder="搜歌名、歌手或風格（例：lofi）" onkeydown="if(event.key===\'Enter\')musicSearch()"><button class="btn side mini" onclick="musicSearch()">搜尋</button></div>';
+  +'<div class="linkrow" style="margin-bottom:4px;"><input type="text" id="msKw" value="'+esc(musQuery)+'" placeholder="搜歌名、歌手，或打情緒（例：悲傷）" onkeydown="if(event.key===\'Enter\')musicSearch()"><button class="btn side mini" onclick="musicSearch()">搜尋</button></div>'
+  +'<div class="rk-note" style="margin:8px 2px 4px;">用情緒找配樂：</div>'
+  +'<div class="chips" style="margin-bottom:6px;">'+Object.keys(MOODS).map(m=>'<button class="chip'+(musQuery===m?' pick':'')+'" onclick="musicMood(\''+m+'\')">'+m+'</button>').join('')+'</div>';
   if(musResults==='loading'){
     h+='<div class="empty">搜尋中⋯</div>';
   }else if(Array.isArray(musResults)){
-    h+='<div class="ms-sec">搜尋結果<small>'+esc(musQuery)+'</small>　<span class="ms-clear" onclick="musResults=null;musQuery=\'\';renderMusic()">✕ 清除，回排行榜</span></div>';
-    if(!musResults.length) h+='<div class="empty">沒搜到，換個關鍵字試試。</div>';
+    h+='<div class="ms-sec">搜尋結果<small>'+esc(musQuery)+(MOODS[musQuery]?'（情緒→自動幫你搜配樂）':'')+'</small>　<span class="ms-clear" onclick="musResults=null;musQuery=\'\';musErr=\'\';renderMusic()">✕ 清除，回排行榜</span></div>';
+    if(!musResults.length) h+='<div class="empty">'+(musErr?'搜尋連不上（'+esc(musErr)+'）。<br>網路不穩的話等幾秒再按一次搜尋。':'沒搜到，換個關鍵字或點上面的情緒試試。')+'</div>';
     musResults.forEach((t,i)=>{ h+=musRow(t,i,false); });
   }else{
     h+='<div class="ms-sec">🔥 台灣熱門歌曲榜<small>'+(musChart?(musChart.updated?'每天早上更新・'+esc(musChart.updated):'今天還沒抓到，明早 8 點自動補上'):'載入中⋯')+'</small></div>';
