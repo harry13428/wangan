@@ -499,7 +499,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.5';
+const APP_VER='3.6';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -1302,6 +1302,31 @@ function jsonp(url){
     document.body.appendChild(s);
   });
 }
+/* Apple 資料通道：直連 → JSONP 備援，都失敗回報兩層的錯誤 */
+async function appleGet(url){
+  let e1=null,e2=null;
+  try{
+    const r=await Promise.race([fetch(url),new Promise((_,rej)=>setTimeout(()=>rej(new Error('逾時')),6000))]);
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    return await r.json();
+  }catch(e){ e1=(e&&e.message)||String(e); }
+  try{ return await jsonp(url); }catch(e){ e2=(e&&e.message)||String(e); }
+  throw new Error('直連:'+e1+'／備援:'+e2);
+}
+/* 連線測試：一鍵檢查各通路，結果彈窗顯示（回報給 Claude 用） */
+window.musicDiag=async()=>{
+  toast('測試中，約 15 秒⋯');
+  const out=[];
+  try{ const r=await fetch('data/music.json?v='+Date.now()); out.push('App 排行榜資料：'+(r.ok?'✓ 正常':'✗ HTTP '+r.status)); }
+  catch(e){ out.push('App 排行榜資料：✗ '+((e&&e.message)||e)); }
+  try{
+    const r=await Promise.race([fetch('https://itunes.apple.com/search?term=test&limit=1'),new Promise((_,rej)=>setTimeout(()=>rej(new Error('逾時')),8000))]);
+    out.push('Apple 直連：'+(r.ok?'✓ 正常':'✗ HTTP '+r.status));
+  }catch(e){ out.push('Apple 直連：✗ '+((e&&e.message)||e)); }
+  try{ await jsonp('https://itunes.apple.com/search?term=test&limit=1'); out.push('Apple 備援線：✓ 正常'); }
+  catch(e){ out.push('Apple 備援線：✗ '+((e&&e.message)||e)); }
+  alert('連線測試（版本 v'+APP_VER+'）\n\n'+out.join('\n')+'\n\n把這個畫面截圖給 Claude');
+};
 /* 情緒 → 配樂搜尋詞（打中文情緒或點 chip，幫你翻成找得到配樂的關鍵字） */
 const MOODS={'輕快':'happy upbeat instrumental','悲傷':'sad emotional piano','感人':'emotional cinematic piano','緊張':'suspense tension instrumental','熱血':'epic workout rock','療癒':'calm healing lofi','搞笑':'funny quirky comedy instrumental','浪漫':'romantic acoustic love','放鬆':'chill lofi beats','大氣':'epic cinematic orchestra'};
 let musErr='';
@@ -1314,9 +1339,9 @@ window.musicSearch=async()=>{
   const query=MOODS[q]||q;
   musResults='loading'; renderMusic();
   try{
-    const d=await jsonp('https://itunes.apple.com/search?term='+encodeURIComponent(query)+'&country=TW&media=music&limit=20');
+    const d=await appleGet('https://itunes.apple.com/search?term='+encodeURIComponent(query)+'&country=TW&media=music&limit=20');
     musResults=(d.results||[]).map(r=>({id:String(r.trackId),name:r.trackName,artist:r.artistName,art:r.artworkUrl100,preview:r.previewUrl,url:r.trackViewUrl}));
-  }catch(e){ musResults=[]; musErr=String((e&&e.message)||e); }
+  }catch(e){ musResults=[]; musErr='v'+APP_VER+'・'+String((e&&e.message)||e); }
   renderMusic();
 };
 function musList(chart){ return chart?((musChart&&musChart.tracks)||[]):(Array.isArray(musResults)?musResults:[]); }
@@ -1329,7 +1354,7 @@ window.musicPlayIdx=async(i,chart)=>{
   let src=t.preview;
   if(!src){
     try{
-      const d=await jsonp('https://itunes.apple.com/lookup?id='+pid+'&country=TW');
+      const d=await appleGet('https://itunes.apple.com/lookup?id='+pid+'&country=TW');
       src=d.results&&d.results[0]&&d.results[0].previewUrl;
       if(src) t.preview=src;
     }catch(e){}
@@ -1374,7 +1399,7 @@ function renderMusic(){
     h+='<div class="ms-sec">🔥 台灣熱門歌曲榜<small>'+(musChart?(musChart.updated?'每天早上更新・'+esc(musChart.updated):'今天還沒抓到，明早 8 點自動補上'):'載入中⋯')+'</small></div>';
     if(musChart) musChart.tracks.forEach((t,i)=>{ h+=musRow(t,i,true); });
   }
-  h+='<div class="ms-ext">找可商用配樂（免版稅、接案安全）：<a href="https://mixkit.co/free-stock-music/" target="_blank" rel="noopener" onclick="return chkA(this)">Mixkit ↗</a>　<a href="https://pixabay.com/music/" target="_blank" rel="noopener" onclick="return chkA(this)">Pixabay ↗</a>　｜　<a href="https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en" target="_blank" rel="noopener" onclick="return chkA(this)">抖音熱門音樂榜 ↗</a><br>榜上是商業歌曲，當「現在流行什麼」的參考；實際配樂用剪映／IG 內建的授權版本。</div>';
+  h+='<div class="ms-ext"><span style="text-decoration:underline;cursor:pointer;" onclick="musicDiag()">🔧 搜尋有問題？點我做連線測試</span><br>找可商用配樂（免版稅、接案安全）：<a href="https://mixkit.co/free-stock-music/" target="_blank" rel="noopener" onclick="return chkA(this)">Mixkit ↗</a>　<a href="https://pixabay.com/music/" target="_blank" rel="noopener" onclick="return chkA(this)">Pixabay ↗</a>　｜　<a href="https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en" target="_blank" rel="noopener" onclick="return chkA(this)">抖音熱門音樂榜 ↗</a><br>榜上是商業歌曲，當「現在流行什麼」的參考；實際配樂用剪映／IG 內建的授權版本。</div>';
   el.innerHTML=h;
 }
 window.libSearchIn=(v)=>{ libSearch=v;
