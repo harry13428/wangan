@@ -459,7 +459,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='2.9';
+const APP_VER='3.0';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -1126,6 +1126,14 @@ function renderLib(){
   let h='<div class="searchbar"><input type="text" placeholder="搜尋：例如「數字開場」「留言釣魚」" value="'+esc(libSearch)+'" oninput="libSearchIn(this.value)"><button class="btn main" onclick="libAddOpen()">＋收藏</button></div>';
   h+='<div class="chips" style="margin-bottom:14px;">'+['全部',...LIB_TYPES].map(t=>'<button class="chip '+(libFilter===t?'pick':'')+'" onclick="libFilter=\''+t+'\';renderLib()">'+t+' '+counts[t]+'</button>').join('')+'</div>';
 
+  if(libFilter==='BGM'){
+    h+='<div class="card"><h3>🎵 找音樂</h3><div class="sub">點風格或打關鍵字（英文比較準）→ 跳到可商用的免費音樂庫搜尋。找到好歌回來按「＋收藏」存成 BGM。</div>'
+    +'<div class="chips" style="margin-bottom:12px;">'+MUSIC_STYLES.map(s=>'<button class="chip" onclick="musicKwSet(\''+s[1]+'\')">'+s[0]+'</button>').join('')+'</div>'
+    +'<div class="linkrow"><input type="text" id="musicKw" placeholder="例：lofi、cat、happy…"><button class="btn side mini" onclick="musicGo(\'mixkit\')">搜 Mixkit</button><button class="btn side mini" onclick="musicGo(\'pixabay\')">搜 Pixabay</button></div>'
+    +'<div class="btnrow"><a class="dc-btn" href="https://ads.tiktok.com/business/creativecenter/inspiration/popular/music/pc/en" target="_blank" rel="noopener" onclick="return chkA(this)">🔥 看抖音熱門音樂榜（TikTok 官方）</a></div>'
+    +'<div class="rk-note" style="margin:10px 0 0;">Mixkit／Pixabay 可商用免版稅（Mixkit 免標註）。剪映曲庫沒有對外入口，聽到好歌把歌名存進 BGM 素材就好。</div></div>';
+  }
+
   if(libAdding){
     const d=libDraft;
     const bgm=d.type==='BGM';
@@ -1160,6 +1168,23 @@ function renderLib(){
   });
   document.getElementById('tab-lib').innerHTML=h;
 }
+/* 找音樂：關鍵字跳轉可商用音樂庫搜尋 */
+const MUSIC_STYLES=[['輕快','upbeat'],['勵志','motivational'],['抒情','emotional'],['電子','electronic'],['Lofi','lofi'],['大氣','cinematic epic']];
+window.musicKwSet=(en)=>{ const el=document.getElementById('musicKw'); if(el){ el.value=en; el.focus(); } };
+window.musicGo=(site)=>{
+  const el=document.getElementById('musicKw');
+  const kw=(el&&el.value.trim())||'';
+  if(!kw){ toast('先打關鍵字或點一個風格'); return null; }
+  const url=site==='mixkit'
+    ? 'https://mixkit.co/search/?q='+encodeURIComponent(kw)
+    : 'https://pixabay.com/music/search/'+encodeURIComponent(kw)+'/';
+  const a=document.createElement('a');
+  a.href=url; a.target='_blank'; a.rel='noopener';
+  document.body.appendChild(a);
+  if(chkA(a)) a.click();
+  a.remove();
+  return url;
+};
 window.libSearchIn=(v)=>{ libSearch=v;
   clearTimeout(window._libT); window._libT=setTimeout(()=>{ renderLib();
     const inp=document.querySelector('#tab-lib .searchbar input');
