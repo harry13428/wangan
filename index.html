@@ -499,7 +499,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.8';
+const APP_VER='3.9';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -1296,7 +1296,7 @@ function renderLib(){
     +'<div class="field"><label>'+ph.t+'</label><input type="text" value="'+esc(d.title)+'" oninput="libDraft.title=this.value" placeholder="'+ph.tp+'"></div>'
     +'<div class="field"><label>'+ph.w+'</label><textarea oninput="libDraft.why=this.value" placeholder="'+ph.wp+'">'+esc(d.why)+'</textarea></div>'
     +'<div class="field"><label>'+ph.u+'</label><textarea oninput="libDraft.when=this.value" placeholder="'+ph.up+'">'+esc(d.when)+'</textarea></div>'
-    +'<div class="field"><label>'+ph.l+' <span class="opt">（選填）</span></label><div class="linkrow"><input type="text" id="libL" value="'+esc(d.link)+'" oninput="libDraft.link=this.value" placeholder="'+ph.lp+'"><button class="btn side mini" onclick="pasteTo(\'libL\')">貼上</button></div></div>'
+    +'<div class="field"><label>'+ph.l+' <span class="opt">（選填）</span></label><div class="linkrow"><input type="text" id="libL" value="'+esc(d.link)+'" oninput="libDraft.link=this.value;syncA(this)" placeholder="'+ph.lp+'"><button class="btn side mini" onclick="pasteTo(\'libL\')">貼上</button>'+openBtnHTML('libL',d.link)+'</div></div>'
     +'<div class="hint-err" id="errLib"></div>'
     +'<div class="btnrow"><button class="btn main" onclick="libSave()">'+(libEditId?'儲存修改':'存進素材庫')+'</button><button class="btn side" onclick="libAdding=false;libEditId=null;renderLib()">取消</button></div></div>';
   }
