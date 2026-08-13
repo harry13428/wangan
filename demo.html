@@ -219,6 +219,53 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .answer-zone{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;}
 .answer-zone .az-t{font-size:13.5px;font-weight:700;margin-bottom:8px;}
 
+/* ── 預估帳本 v2 ── */
+.lg-h{font-size:15.5px;font-weight:800;margin:24px 2px 12px;}
+.lg-h small{font-size:12px;color:var(--grey);font-weight:400;margin-left:6px;}
+.lg-due{
+  border:1.5px solid var(--yellow);background:var(--hl);border-radius:14px;
+  padding:16px 14px;display:flex;gap:14px;margin-bottom:12px;
+}
+.lg-due .thumbwrap{width:56px;height:74px;}
+.lg-t{font-weight:800;font-size:15.5px;line-height:1.4;}
+.lg-t.sm{font-size:14px;font-weight:700;}
+.lg-sub{font-size:13px;color:var(--grey);margin-top:4px;line-height:1.6;}
+.lg-sub b{color:var(--ink);}
+.lg-q{font-size:13.5px;font-weight:700;margin:12px 0 8px;}
+.lg-done{
+  border:1px solid var(--line);border-radius:14px;background:var(--card);
+  padding:16px 14px;margin-bottom:14px;
+}
+.lg-top{
+  display:flex;gap:10px;align-items:center;
+  padding-bottom:12px;border-bottom:1.5px solid #55555F;margin-bottom:12px;
+}
+.lg-top .thumbwrap{width:40px;height:40px;}
+.lg-verdict{font-size:13px;font-weight:800;padding:4px 12px;border-radius:99px;white-space:nowrap;}
+.lg-verdict.ok{background:var(--green-bg);color:var(--green);border:1.5px solid var(--green);}
+.lg-verdict.low{background:var(--red-bg);color:var(--red);border:1.5px solid var(--red);}
+.lg-row{display:flex;align-items:center;gap:10px;}
+.lg-row.real{margin-top:12px;padding-top:12px;border-top:1.5px solid #55555F;}
+.lg-row .lab{width:34px;font-size:12px;font-weight:800;color:var(--grey);flex:none;}
+.lg-row.real .lab{color:var(--ink);}
+.lg-rr{display:flex;gap:4px;flex:1;}
+.lg-box{
+  flex:1;height:28px;border:1.5px solid var(--line);border-radius:8px;background:var(--card2);
+  display:flex;align-items:center;justify-content:center;font-size:10.5px;color:var(--grey);font-weight:700;
+}
+.lg-box.pick-guess{border-color:var(--ink);color:var(--ink);border-width:2px;}
+.lg-box.pick-red{background:var(--red);border-color:var(--red);color:#fff;}
+.lg-box.pick-green{background:var(--green);border-color:var(--green);color:#16161A;}
+.lg-wait{
+  display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;
+  background:var(--card);padding:12px 14px;margin-bottom:10px;
+}
+.lg-wait .thumbwrap{width:40px;height:40px;}
+.lg-wmeta{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.lg-bar{width:110px;height:5px;border-radius:99px;background:var(--card2);border:1px solid var(--line);overflow:hidden;flex:none;}
+.lg-bar i{display:block;height:100%;background:var(--yellow);}
+.lg-wday{font-size:12px;color:var(--grey);line-height:1.5;}
+
 /* ── 素材庫 ── */
 .searchbar{display:flex;gap:8px;margin-bottom:12px;}
 .searchbar input{flex:1;}
@@ -412,7 +459,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='2.8';
+const APP_VER='2.9';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -579,7 +626,7 @@ function showErr(id,msg){
 const GUIDES={
   train:'怎麼用：照順序做完四關，每關答完按黑色「存檔」鍵。四關全綠＝今天打卡完成，約 30 分鐘。',
   radar:'怎麼用：每天早上 8 點自動更新。發燒榜看名單裡誰的片衝起來（可切 IG／YouTube），下面「管理名單」加你想盯的帳號。',
-  ledger:'怎麼用：黃框卡片＝到期要對答案的預測。去看那支影片的實際觀看數，按「對答案」選檔位，命中率自動更新。',
+  ledger:'怎麼用：黃卡＝預估到期，點「開影片看數字」再選實際檔位。預估中的不用動，結果區看「我猜 vs 實際」差幾格。',
   lib:'怎麼用：剪片卡住就來搜。收藏新招要寫得出「什麼時候用」才存得進來——寫不出來代表還沒學會。',
   review:'怎麼用：每週日打開，逐支回答「當初判斷錯在哪」並寫一句修正。錯誤寫過一次，下次才不會再犯。'
 };
@@ -986,7 +1033,13 @@ function renderRadar(){
 }
 
 /* ══════════ 畫面②：預測帳本 ══════════ */
-let answering=null;
+const TIERS_LONG=['1萬以內','1萬～10萬','10萬～50萬','50萬以上'];
+function scaleRow(lab,idx,mode){
+  const pickCls=mode==='guess'?'pick-guess':(mode==='green'?'pick-green':'pick-red');
+  return '<div class="lg-row'+(lab==='實際'?' real':'')+'"><span class="lab">'+lab+'</span><span class="lg-rr">'
+    +TIERS.map((t,i)=>'<span class="lg-box'+(i===idx?' '+pickCls:'')+'">'+t+'</span>').join('')
+    +'</span></div>';
+}
 function renderLedger(){
   const P=S.predictions;
   const resolved=P.filter(p=>p.actualSet);
@@ -995,39 +1048,64 @@ function renderLedger(){
   const monRate=monRes.length?Math.round(monRes.filter(p=>p.result==='命中').length/monRes.length*100):null;
   const over=resolved.filter(p=>p.result==='高估').length, under=resolved.filter(p=>p.result==='低估').length;
   let bias='—';
-  if(over||under) bias=over>under?'愛高估':(under>over?'愛低估':'平衡');
+  if(over||under) bias=over>under?'愛猜太高':(under>over?'愛猜太低':'平衡');
   const due=P.filter(p=>!p.actualSet&&daysSince(p.date)>=7);
+  const waiting=P.filter(p=>!p.actualSet&&daysSince(p.date)<7);
 
   let h='<div class="statrow">'
-  +'<div class="stat"><div class="num">'+(monRate===null?'—':monRate+'<em>%</em>')+'</div><div class="cap">本月命中率</div></div>'
-  +'<div class="stat"><div class="num">'+P.length+'</div><div class="cap">累計預測支數</div></div>'
-  +'<div class="stat"><div class="num" style="font-size:19px;padding-top:4px;">'+bias+'</div><div class="cap">我的失誤傾向</div></div></div>';
+  +'<div class="stat"><div class="num">'+(monRate===null?'—':monRate+'<em>%</em>')+'</div><div class="cap">本月猜中率</div></div>'
+  +'<div class="stat"><div class="num">'+P.length+'</div><div class="cap">累計預估支數</div></div>'
+  +'<div class="stat"><div class="num" style="font-size:17px;padding-top:5px;">'+bias+'</div><div class="cap">我的失誤傾向</div></div></div>';
 
-  if(due.length) h+='<div style="font-weight:700;font-size:14.5px;margin:4px 2px 10px;">今天有 '+due.length+' 支到期，該對答案了</div>';
-  if(!P.length) h+='<div class="empty">還沒有任何預測。<br>到「今日訓練」第 3 關猜第一支，7 天後回來對答案。</div>';
+  if(!P.length){
+    h+='<div class="empty">還沒有任何預估。<br>到「今日訓練」第 3 關猜第一支，7 天後回來對答案。</div>';
+    document.getElementById('tab-ledger').innerHTML=h; return;
+  }
 
-  P.forEach(p=>{
-    const dueNow=!p.actualSet&&daysSince(p.date)>=7;
-    const wait=!p.actualSet&&!dueNow;
-    let badge='';
-    if(p.actualSet) badge='<span class="badge '+(p.result==='命中'?'hit':'miss')+'">'+p.result+'</span>';
-    else if(dueNow) badge='<span class="badge miss">到期</span>';
-    else badge='<span class="badge wait">第 '+daysSince(p.date)+'/7 天</span>';
-    h+='<div class="pred'+(dueNow?' due':'')+'"><div class="p-top">'+thumbHTML(p.img,p.link,"'pred','"+p.id+"'")+'<div class="p-title">'+esc(p.title)+'</div><div class="p-date">'+shortDate(p.date)+'</div></div>'
-    +'<div class="p-line">我猜 <b>'+TIERS[p.guess]+'</b>'+(p.actualSet?'　→　實際 <b>'+TIERS[p.actual]+'</b>　':'　')+badge+'</div>'
-    +'<div class="p-line">理由：'+esc(p.reason)+'</div>'
-    +(p.link?'<div class="p-line"><a href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)" style="color:var(--green);font-weight:700;">開影片 ↗</a></div>':'');
-    if(!p.actualSet){
-      if(answering===p.id){
-        h+='<div class="answer-zone"><div class="az-t">實際 7 天觀看數落在哪一檔？</div><div class="chips">'
-        +TIERS.map((t,i)=>'<button class="chip" onclick="setActual(\''+p.id+'\','+i+')">'+t+'</button>').join('')
-        +'</div><div class="btnrow"><button class="btn side" onclick="answering=null;renderLedger()">先不填</button></div></div>';
-      }else{
-        h+='<div class="btnrow"><button class="btn '+(dueNow?'main':'side')+'" onclick="answering=\''+p.id+'\';renderLedger()">對答案</button></div>';
-      }
-    }
-    h+='</div>';
-  });
+  /* ① 預估到期 */
+  if(due.length){
+    h+='<div class="lg-h">🔔 預估到期<small>時間到了，去看實際數字</small></div>';
+    due.forEach(p=>{
+      h+='<div class="lg-due">'+thumbHTML(p.img,p.link,"'pred','"+p.id+"'")
+      +'<div style="flex:1;min-width:0;">'
+      +'<div class="lg-t">'+esc(p.title)+'</div>'
+      +'<div class="lg-sub">'+daysSince(p.date)+' 天前你預估它會有 <b>'+TIERS_LONG[p.guess]+'</b> 次觀看</div>'
+      +(p.link?'<a class="dc-btn primary" style="display:inline-block;margin-top:10px;padding:10px 18px;flex:none;" href="'+esc(linkHref(p.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)">▶ 開影片看數字</a>':'')
+      +'<div class="lg-q">實際落在哪一檔？</div>'
+      +'<div class="chips">'+TIERS.map((t,i)=>'<button class="chip" onclick="setActual(\''+p.id+'\','+i+')">'+t+'</button>').join('')+'</div>'
+      +'</div></div>';
+    });
+  }
+
+  /* ② 預估結果 */
+  if(resolved.length){
+    h+='<div class="lg-h">✅ 預估結果<small>我猜 vs 實際</small></div>';
+    resolved.forEach(p=>{
+      const hit=p.result==='命中';
+      const verdict=hit?'猜中了！':(p.result==='高估'?'猜太高了':'猜太低了');
+      h+='<div class="lg-done">'
+      +'<div class="lg-top">'+thumbHTML(p.img,p.link,"'pred','"+p.id+"'")
+      +'<span class="lg-t sm" style="flex:1;min-width:0;">'+esc(p.title)+'</span>'
+      +'<span class="lg-verdict '+(hit?'ok':'low')+'">'+verdict+'</span></div>'
+      +scaleRow('我猜',p.guess,'guess')
+      +scaleRow('實際',p.actual,hit?'green':'red')
+      +'</div>';
+    });
+  }
+
+  /* ③ 預估中 */
+  if(waiting.length){
+    h+='<div class="lg-h">⏳ 預估中<small>不用做任何事，7 天到自動變黃卡</small></div>';
+    waiting.forEach(p=>{
+      const d=daysSince(p.date), left=Math.max(1,7-d);
+      h+='<div class="lg-wait">'+thumbHTML(p.img,p.link,"'pred','"+p.id+"'")
+      +'<div style="flex:1;min-width:0;">'
+      +'<div class="lg-t sm">'+esc(p.title)+'</div>'
+      +'<div class="lg-wmeta"><span class="lg-bar"><i style="width:'+Math.round(d/7*100)+'%"></i></span><span class="lg-wday">還要 '+left+' 天・我猜 '+TIERS[p.guess]+'</span></div>'
+      +'</div></div>';
+    });
+  }
+
   document.getElementById('tab-ledger').innerHTML=h;
 }
 window.setActual=(id,tier)=>{
@@ -1035,7 +1113,7 @@ window.setActual=(id,tier)=>{
   if(!p) return;
   p.actual=tier; p.actualSet=true;
   p.result=(tier===p.guess)?'命中':(p.guess>tier?'高估':'低估');
-  answering=null; save(); renderLedger(); renderBadges();
+  save(); renderLedger(); renderBadges();
   toast(p.result==='命中'?'命中！':'記下來了，週日復盤見');
 };
 
@@ -1212,7 +1290,6 @@ if(savedTab&&savedTab!=='train'&&GUIDES[savedTab]){
   render();
 }
 </script>
-
 <script>
 /* ══ 示範模式：假資料展示，不寫入任何紀錄 ══ */
 save=function(){};
