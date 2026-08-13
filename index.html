@@ -499,7 +499,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.9';
+const APP_VER='4.0';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -510,7 +510,7 @@ const DEEP_QS=[
  '高潮或反轉出現在第幾秒？','觀眾為什麼會分享或 tag 朋友？','留言區在討論什麼？',
  '如果是我做，我會改哪一點？','這支最值得偷的一招是什麼？'];
 const BONES=['0–3秒　Hook','3–10秒　鋪陳／衝突','10–20秒　推進','20–40秒　高潮／反轉','結尾　CTA／收尾'];
-const LIB_TYPES=['Hook','轉場','字幕','B-roll','CTA','BGM'];
+const LIB_TYPES=['Hook','轉場','字幕','動畫','B-roll','CTA','BGM'];
 const WRONG_TAGS=['題材','Hook','節奏','情緒','人設','分享價值','高估剪輯的重要性'];
 
 let S=null;
@@ -847,7 +847,7 @@ function scanHTML(d){
     +'<div class="field"><label>標題 <span class="opt">（選填，幫影片取個名）</span></label><input type="text" value="'+esc(s.t||'')+'" oninput="d0scan('+k+',\'t\',this.value)" placeholder="例：貓咪開箱失敗"></div>'
     +SCAN_QS.map((q,qi)=>'<div class="field"><label>'+(qi+1)+'. '+q+'</label><textarea oninput="d0scanA('+k+','+qi+',this.value)" placeholder="一句話">'+esc(s.a[qi])+'</textarea></div>').join('')
     +'<div class="field"><label>順手收進素材庫 <span class="opt">（選填：這支哪個部分值得收藏？）</span></label><div class="chips">'
-    +['無','BGM','Hook','轉場','字幕','B-roll','CTA'].map(t=>'<button class="chip '+((s.lib||'無')===t?'pick':'')+'" onclick="d0scanLib('+k+',\''+t+'\')">'+t+'</button>').join('')+'</div></div>'
+    +['無','BGM','Hook','轉場','字幕','動畫','B-roll','CTA'].map(t=>'<button class="chip '+((s.lib||'無')===t?'pick':'')+'" onclick="d0scanLib('+k+',\''+t+'\')">'+t+'</button>').join('')+'</div></div>'
     +'<div class="hint-err" id="errScan"></div>'
     +'<div class="btnrow"><button class="btn main" onclick="saveScan('+k+')">存這支，下一支</button></div></div>';
   }
