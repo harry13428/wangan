@@ -499,7 +499,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.6';
+const APP_VER='3.7';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -1325,6 +1325,10 @@ window.musicDiag=async()=>{
   }catch(e){ out.push('Apple 直連：✗ '+((e&&e.message)||e)); }
   try{ await jsonp('https://itunes.apple.com/search?term=test&limit=1'); out.push('Apple 備援線：✓ 正常'); }
   catch(e){ out.push('Apple 備援線：✗ '+((e&&e.message)||e)); }
+  try{
+    const d=await appleGet('https://itunes.apple.com/search?term='+encodeURIComponent('sad emotional piano')+'&country=TW&media=music&limit=20');
+    out.push('真實搜尋測試：✓ 找到 '+(d.results||[]).length+' 首');
+  }catch(e){ out.push('真實搜尋測試：✗ '+((e&&e.message)||e)); }
   alert('連線測試（版本 v'+APP_VER+'）\n\n'+out.join('\n')+'\n\n把這個畫面截圖給 Claude');
 };
 /* 情緒 → 配樂搜尋詞（打中文情緒或點 chip，幫你翻成找得到配樂的關鍵字） */
