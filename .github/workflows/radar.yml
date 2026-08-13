@@ -21,6 +21,6 @@ jobs:
         run: |
           git config user.name "radar-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          git add data/radar.json data/history.json
+          git add data/radar.json data/history.json data/music.json
           git diff --cached --quiet || git commit -m "radar: $(date -u '+%Y-%m-%d') 自動更新"
           git push
