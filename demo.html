@@ -413,11 +413,11 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
   *{transition:none !important;animation:none !important;}
 }
 /* ── 找音樂面板 ── */
-#musicSheet{
+#musicSheet,#histSheet{
   position:fixed;inset:0;z-index:45;background:var(--bg);
   overflow-y:auto;padding:0 14px calc(40px + env(safe-area-inset-bottom));
 }
-#musicSheet[hidden]{display:none;}
+#musicSheet[hidden],#histSheet[hidden]{display:none;}
 .ms-top{
   position:sticky;top:0;z-index:2;background:var(--bg);
   padding:calc(14px + env(safe-area-inset-top)) 0 10px;
@@ -492,13 +492,14 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
     </div>
   </div>
   <div id="musicSheet" hidden></div>
+  <div id="histSheet" hidden></div>
   <div class="toast" id="toast"></div>
   <input type="file" id="coverPick" accept="image/*" hidden>
 </div>
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.4';
+const APP_VER='3.5';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -648,6 +649,7 @@ document.getElementById('coverPick').addEventListener('change',function(){
       if(t==='scan') day().scan[k].img=d;
       else if(t==='deep') day().deep.img=d;
       else if(t==='pred'){ const p=S.predictions.find(x=>x.id===k); if(p) p.img=d; }
+      else if(t==='lib'){ const it=S.library.find(x=>x.id===k); if(it) it.img=d; }
       coverTarget=null;
       save(); render(); toast('封面已設定');
     };
@@ -699,6 +701,55 @@ function renderBadges(){
   document.getElementById('tbReview').querySelector('.ico').classList.toggle('dot',missN>0);
 }
 
+/* ── 之前的紀錄（歷史檢視） ── */
+let histDay=null;
+window.histOpen=()=>{ histDay=null; document.getElementById('histSheet').hidden=false; renderHist(); };
+window.histClose=()=>{ document.getElementById('histSheet').hidden=true; };
+window.histPick=(d)=>{ histDay=d; renderHist(); window.scrollTo(0,0); };
+function renderHist(){
+  const el=document.getElementById('histSheet');
+  if(el.hidden) return;
+  let h='<div class="ms-top"><span class="t">📅 之前的紀錄</span><button class="ms-close" onclick="histClose()">關閉 ✕</button></div>';
+  const days=Object.keys(S.days).filter(d=>d!==todayStr()).sort().reverse();
+  if(!histDay){
+    if(!days.length) h+='<div class="empty">還沒有之前的紀錄——今天就是第一天。<br>每天寫的東西都會自動留在這裡。</div>';
+    days.forEach(d=>{
+      const rec=S.days[d]||{};
+      const cnt=rec.scan?rec.scan.filter(s=>s.ok).length:0;
+      h+='<div class="lg-wait" style="cursor:pointer;" onclick="histPick(\''+d+'\')">'
+      +'<div style="flex:1;min-width:0;"><div class="lg-t sm">'+d+'</div>'
+      +'<div class="lg-wday" style="margin-top:4px;">'+(rec.done?'✓ 打卡完成':'未完成')+(rec.scan?('・快掃 '+cnt+' 支'+(rec.deep&&rec.deep.ok?'・深拆 1 支':'')+(rec.scriptOk?'・腳本 ✓':'')):'')+'</div></div>'
+      +'<span style="color:var(--grey);font-size:13px;">看 ›</span></div>';
+    });
+  }else{
+    const rec=S.days[histDay]||{};
+    h+='<div class="btnrow" style="margin:4px 0 12px;"><button class="btn side mini" onclick="histDay=null;renderHist()">← 回列表</button></div>'
+    +'<div class="lg-h" style="margin-top:0;">'+histDay+(rec.done?'<small>✓ 打卡完成</small>':'<small>未完成</small>')+'</div>';
+    if(rec.scan) rec.scan.forEach((s,i)=>{ if(s.ok){
+      h+='<div class="lg-done"><div class="lg-top"><span class="dc-tag">快掃 '+(i+1)+'</span><span class="lg-t sm" style="flex:1;min-width:0;">'+esc((s.t||'').trim()||((s.a&&s.a[0])||'').trim()||linkLabel(s.v))+'</span>'
+      +(s.v?'<a class="ms-btn" href="'+esc(linkHref(s.v))+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>':'')+'</div>'
+      +SCAN_QS.map((q,qi)=>qaHTML((qi+1)+'. '+q,(s.a&&s.a[qi])||'—')).join('')+'</div>';
+    }});
+    if(rec.deep&&rec.deep.ok){
+      const dp=rec.deep;
+      h+='<div class="lg-done"><div class="lg-top"><span class="dc-tag">深拆</span><span class="lg-t sm" style="flex:1;min-width:0;">'+esc((dp.t||'').trim()||linkLabel(dp.v))+'</span>'
+      +(dp.v?'<a class="ms-btn" href="'+esc(linkHref(dp.v))+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>':'')+'</div>'
+      +DEEP_QS.map((q,i)=>((dp.qs&&dp.qs[i])||'').trim()?qaHTML('第 '+(i+1)+' 題　'+q,dp.qs[i]):'').join('')
+      +qaHTML('五段骨架',BONES.map((b,i)=>b.split('　')[0]+'：'+((dp.bones&&dp.bones[i])||'—')).join('　／　'))+'</div>';
+    }
+    const preds=S.predictions.filter(p=>p.date===histDay);
+    if(preds.length){
+      h+='<div class="lg-h" style="font-size:14.5px;">這天的預測</div>';
+      preds.forEach(p=>{
+        h+='<div class="lg-wait"><div style="flex:1;min-width:0;"><div class="lg-t sm">'+esc(p.title)+'</div>'
+        +'<div class="lg-wday" style="margin-top:4px;">我猜 '+TIERS[p.guess]+(p.actualSet?('　→ 實際 '+TIERS[p.actual]+'　'+(p.result==='命中'?'猜中了！':(p.result==='高估'?'猜太高了':'猜太低了'))):'　（還沒對答案）')+'</div></div></div>';
+      });
+    }
+    if(rec.scriptOk&&rec.script) h+='<div class="lg-done">'+qaHTML('仿做腳本（前 10 秒）',rec.script)+'</div>';
+  }
+  el.innerHTML=h;
+}
+
 /* ══════════ 畫面①：今日訓練 ══════════ */
 let openStage=null;
 function renderTrain(){
@@ -706,7 +757,7 @@ function renderTrain(){
   if(openStage===null){ openStage=[0,1,2,3].find(i=>!stageDone(d,i)); if(openStage===undefined) openStage=-1; }
   const names=['第1關 快掃 5 支','第2關 深拆 1 支','第3關 預測 3 支','第4關 仿做腳本'];
   const times=['每支 3 題・約10分','12 題＋骨架・約12分','先猜再看・約5分','寫前10秒・約3分'];
-  let h='';
+  let h='<div style="display:flex;justify-content:flex-end;margin-bottom:8px;"><button class="dc-btn" style="flex:none;padding:8px 14px;" onclick="histOpen()">📅 之前的紀錄</button></div>';
   if(d.done) h+='<div class="day-done"><b>今天打卡完成</b><p>連續 '+streak()+' 天。明天見。想補改答案，點下面任一關都還能編輯。</p></div>';
   h+='<div class="stages">'+names.map((n,i)=>{
     const done=stageDone(d,i);
@@ -1176,7 +1227,7 @@ window.setActual=(id,tier)=>{
 };
 
 /* ══════════ 畫面③：素材庫 ══════════ */
-let libFilter='全部', libSearch='', libAdding=false, libDraft=null, libDelId=null;
+let libFilter='全部', libSearch='', libAdding=false, libDraft=null, libDelId=null, libEditId=null;
 function renderLib(){
   const L=S.library;
   const counts={'全部':L.length};
@@ -1190,14 +1241,14 @@ function renderLib(){
     const ph=bgm
       ?{t:'歌名／哪段 BGM（一句話）',tp:'例：Mixkit – Feeling Happy，前奏兩秒就有記憶點',w:'哪裡好',wp:'例：鼓點乾淨，斷點好切，情緒是輕快不吵',u:'什麼情緒／段落的片用（必填）',up:'例：貓咪日常片開頭；高潮前一拍靜音再切入',l:'歌曲或原影片連結',lp:'https://…'}
       :{t:'這招是什麼（一句話）',tp:'例：先給結論的一半，只說結果不說原因',w:'收藏原因',wp:'為什麼有效？',u:'什麼時候用（必填）',up:'例：貓咪帳號的行為解謎題材',l:'原影片連結',lp:'https://…'};
-    h+='<div class="card"><h3>收藏新素材</h3><div class="sub">規矩：寫不出「什麼時候用」的招，代表還不是你的，存不進來。</div>'
+    h+='<div class="card"><h3>'+(libEditId?'編輯素材':'收藏新素材')+'</h3><div class="sub">規矩：寫不出「什麼時候用」的招，代表還不是你的，存不進來。</div>'
     +'<div class="field"><label>類型</label><div class="chips">'+LIB_TYPES.map(t=>'<button class="chip '+(d.type===t?'pick':'')+'" onclick="libDraft.type=\''+t+'\';renderLib()">'+t+'</button>').join('')+'</div></div>'
     +'<div class="field"><label>'+ph.t+'</label><input type="text" value="'+esc(d.title)+'" oninput="libDraft.title=this.value" placeholder="'+ph.tp+'"></div>'
     +'<div class="field"><label>'+ph.w+'</label><textarea oninput="libDraft.why=this.value" placeholder="'+ph.wp+'">'+esc(d.why)+'</textarea></div>'
     +'<div class="field"><label>'+ph.u+'</label><textarea oninput="libDraft.when=this.value" placeholder="'+ph.up+'">'+esc(d.when)+'</textarea></div>'
     +'<div class="field"><label>'+ph.l+' <span class="opt">（選填）</span></label><div class="linkrow"><input type="text" id="libL" value="'+esc(d.link)+'" oninput="libDraft.link=this.value" placeholder="'+ph.lp+'"><button class="btn side mini" onclick="pasteTo(\'libL\')">貼上</button></div></div>'
     +'<div class="hint-err" id="errLib"></div>'
-    +'<div class="btnrow"><button class="btn main" onclick="libSave()">存進素材庫</button><button class="btn side" onclick="libAdding=false;renderLib()">取消</button></div></div>';
+    +'<div class="btnrow"><button class="btn main" onclick="libSave()">'+(libEditId?'儲存修改':'存進素材庫')+'</button><button class="btn side" onclick="libAdding=false;libEditId=null;renderLib()">取消</button></div></div>';
   }
 
   const q=libSearch.trim().toLowerCase();
@@ -1207,13 +1258,16 @@ function renderLib(){
   else if(!list.length&&!libAdding) h+='<div class="empty">沒有符合的素材，換個關鍵字或分類試試。</div>';
   list.forEach(x=>{
     const bgmCard=x.type==='BGM';
-    h+='<div class="libcard"><span class="tag">'+esc(x.type)+'</span><h4>'+esc(x.title)+'</h4>'
-    +'<p><b>'+(bgmCard?'哪裡好：':'收藏原因：')+'</b>'+esc(x.why||'—')+'<br><b>'+(bgmCard?'什麼片用：':'什麼時候用：')+'</b>'+esc(x.when)+'</p>'
+    h+='<div class="libcard"><div style="display:flex;gap:12px;">'
+    +thumbHTML(x.img,x.link,"'lib','"+x.id+"'")
+    +'<div style="flex:1;min-width:0;"><span class="tag">'+esc(x.type)+'</span><h4>'+esc(x.title)+'</h4>'
+    +'<p><b>'+(bgmCard?'哪裡好：':'收藏原因：')+'</b>'+esc(x.why||'—')+'<br><b>'+(bgmCard?'什麼片用：':'什麼時候用：')+'</b>'+esc(x.when)+'</p></div></div>'
     +'<div class="l-foot">'+(x.link?'<a href="'+esc(linkHref(x.link))+'" target="_blank" rel="noopener" onclick="return chkA(this)">'+(bgmCard?'聽這首':'原影片')+' ↗</a>':'')
     +'<span style="color:var(--grey)">'+shortDate(x.date)+'</span>'
+    +'<span class="l-del" style="margin-left:auto;color:var(--grey);" onclick="libEdit(\''+x.id+'\')">編輯</span>'
     +(libDelId===x.id
       ?'<span class="l-del" onclick="libDel(\''+x.id+'\')">確定刪除？再點一次</span>'
-      :'<span class="l-del" style="margin-left:auto" onclick="libDelId=\''+x.id+'\';renderLib()">刪除</span>')
+      :'<span class="l-del" onclick="libDelId=\''+x.id+'\';renderLib()">刪除</span>')
     +'</div></div>';
   });
   document.getElementById('tab-lib').innerHTML=h;
@@ -1223,6 +1277,7 @@ let musChart=null, musResults=null, musPlaying=null, musQuery='';
 const musAudio=new Audio();
 musAudio.addEventListener('ended',()=>{ musPlaying=null; renderMusic(); });
 window.musicOpen=()=>{
+  musResults=null; musQuery=''; musErr='';
   document.getElementById('musicSheet').hidden=false;
   if(!musChart){
     fetch('data/music.json?v='+Date.now())
@@ -1311,7 +1366,8 @@ function renderMusic(){
   if(musResults==='loading'){
     h+='<div class="empty">搜尋中⋯</div>';
   }else if(Array.isArray(musResults)){
-    h+='<div class="ms-sec">搜尋結果<small>'+esc(musQuery)+(MOODS[musQuery]?'（情緒→自動幫你搜配樂）':'')+'</small>　<span class="ms-clear" onclick="musResults=null;musQuery=\'\';musErr=\'\';renderMusic()">✕ 清除，回排行榜</span></div>';
+    h+='<div class="btnrow" style="margin:10px 0 2px;"><button class="btn side mini" onclick="musResults=null;musQuery=\'\';musErr=\'\';renderMusic()">← 回排行榜</button></div>'
+    +'<div class="ms-sec">搜尋結果<small>'+esc(musQuery)+(MOODS[musQuery]?'（情緒→自動幫你搜配樂）':'')+'</small></div>';
     if(!musResults.length) h+='<div class="empty">'+(musErr?'搜尋連不上（'+esc(musErr)+'）。<br>網路不穩的話等幾秒再按一次搜尋。':'沒搜到，換個關鍵字或點上面的情緒試試。')+'</div>';
     musResults.forEach((t,i)=>{ h+=musRow(t,i,false); });
   }else{
@@ -1327,14 +1383,26 @@ window.libSearchIn=(v)=>{ libSearch=v;
     if(inp){ inp.focus(); inp.setSelectionRange(inp.value.length,inp.value.length); }
   },300);
 };
-window.libAddOpen=()=>{ libAdding=true; libDraft={type:'Hook',title:'',why:'',when:'',link:''}; renderLib(); };
+window.libAddOpen=()=>{ libAdding=true; libEditId=null; libDraft={type:'Hook',title:'',why:'',when:'',link:''}; renderLib(); };
+window.libEdit=(id)=>{
+  const x=S.library.find(i=>i.id===id); if(!x) return;
+  libEditId=id; libAdding=true;
+  libDraft={type:x.type,title:x.title,why:x.why,when:x.when,link:x.link};
+  renderLib(); window.scrollTo(0,0);
+};
 window.libSave=()=>{
   const d=libDraft, miss=[];
   if(!d.title.trim()) miss.push('這招是什麼');
   if(!d.when.trim()) miss.push('什麼時候用（規矩就是規矩）');
   if(miss.length){ showErr('errLib','還缺：'+miss.join('、')); return; }
-  S.library.unshift({id:uid(),date:todayStr(),type:d.type,title:d.title.trim(),why:d.why.trim(),when:d.when.trim(),link:d.link.trim()});
-  libAdding=false; save(); renderLib(); toast('已收藏');
+  if(libEditId){
+    const x=S.library.find(i=>i.id===libEditId);
+    if(x) Object.assign(x,{type:d.type,title:d.title.trim(),why:d.why.trim(),when:d.when.trim(),link:d.link.trim()});
+    libEditId=null; libAdding=false; save(); renderLib(); toast('修改已儲存');
+  }else{
+    S.library.unshift({id:uid(),date:todayStr(),type:d.type,title:d.title.trim(),why:d.why.trim(),when:d.when.trim(),link:d.link.trim()});
+    libAdding=false; save(); renderLib(); toast('已收藏');
+  }
 };
 window.libDel=(id)=>{ S.library=S.library.filter(x=>x.id!==id); libDelId=null; save(); renderLib(); toast('已刪除'); };
 
