@@ -498,7 +498,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.2';
+const APP_VER='3.3';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -1214,6 +1214,20 @@ window.musicOpen=()=>{
   renderMusic();
 };
 window.musicClose=()=>{ musAudio.pause(); musPlaying=null; document.getElementById('musicSheet').hidden=true; };
+/* JSONP：iTunes 的跨域許可在部分節點會缺席（手機上 Load failed 的原因），改走 script 載入保證全瀏覽器通 */
+let jsonpSeq=0;
+function jsonp(url){
+  return new Promise((res,rej)=>{
+    const cb='__musCb'+(++jsonpSeq);
+    const s=document.createElement('script');
+    const t=setTimeout(()=>{ cleanup(); rej(new Error('連線逾時')); },12000);
+    function cleanup(){ try{ delete window[cb]; }catch(e){} s.remove(); clearTimeout(t); }
+    window[cb]=(data)=>{ cleanup(); res(data); };
+    s.onerror=()=>{ cleanup(); rej(new Error('載入失敗')); };
+    s.src=url+(url.includes('?')?'&':'?')+'callback='+cb;
+    document.body.appendChild(s);
+  });
+}
 /* 情緒 → 配樂搜尋詞（打中文情緒或點 chip，幫你翻成找得到配樂的關鍵字） */
 const MOODS={'輕快':'happy upbeat instrumental','悲傷':'sad emotional piano','感人':'emotional cinematic piano','緊張':'suspense tension instrumental','熱血':'epic workout rock','療癒':'calm healing lofi','搞笑':'funny quirky comedy instrumental','浪漫':'romantic acoustic love','放鬆':'chill lofi beats','大氣':'epic cinematic orchestra'};
 let musErr='';
@@ -1226,7 +1240,7 @@ window.musicSearch=async()=>{
   const query=MOODS[q]||q;
   musResults='loading'; renderMusic();
   try{
-    const d=await fetch('https://itunes.apple.com/search?term='+encodeURIComponent(query)+'&country=TW&media=music&limit=20').then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); });
+    const d=await jsonp('https://itunes.apple.com/search?term='+encodeURIComponent(query)+'&country=TW&media=music&limit=20');
     musResults=(d.results||[]).map(r=>({id:String(r.trackId),name:r.trackName,artist:r.artistName,art:r.artworkUrl100,preview:r.previewUrl,url:r.trackViewUrl}));
   }catch(e){ musResults=[]; musErr=String((e&&e.message)||e); }
   renderMusic();
@@ -1241,7 +1255,7 @@ window.musicPlayIdx=async(i,chart)=>{
   let src=t.preview;
   if(!src){
     try{
-      const d=await fetch('https://itunes.apple.com/lookup?id='+pid+'&country=TW').then(r=>r.json());
+      const d=await jsonp('https://itunes.apple.com/lookup?id='+pid+'&country=TW');
       src=d.results&&d.results[0]&&d.results[0].previewUrl;
       if(src) t.preview=src;
     }catch(e){}
