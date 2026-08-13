@@ -499,7 +499,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='3.7';
+const APP_VER='3.8';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -701,11 +701,28 @@ function renderBadges(){
   document.getElementById('tbReview').querySelector('.ico').classList.toggle('dot',missN>0);
 }
 
-/* ── 之前的紀錄（歷史檢視） ── */
-let histDay=null;
-window.histOpen=()=>{ histDay=null; document.getElementById('histSheet').hidden=false; renderHist(); };
-window.histClose=()=>{ document.getElementById('histSheet').hidden=true; };
-window.histPick=(d)=>{ histDay=d; renderHist(); window.scrollTo(0,0); };
+/* ── 之前的紀錄（歷史檢視＋編輯＋收進素材庫） ── */
+let histDay=null, histEdit=null;
+window.histOpen=()=>{ histDay=null; histEdit=null; document.getElementById('histSheet').hidden=false; renderHist(); };
+window.histClose=()=>{ histEdit=null; document.getElementById('histSheet').hidden=true; };
+window.histPick=(d)=>{ histDay=d; histEdit=null; renderHist(); window.scrollTo(0,0); };
+window.hToggleEdit=(key)=>{ histEdit=histEdit===key?null:key; renderHist(); };
+window.hScanT=(i,v)=>{ S.days[histDay].scan[i].t=v; save(); };
+window.hScanA=(i,qi,v)=>{ S.days[histDay].scan[i].a[qi]=v; save(); };
+window.hDeepT=(v)=>{ S.days[histDay].deep.t=v; save(); };
+window.hDeepQ=(i,v)=>{ S.days[histDay].deep.qs[i]=v; save(); };
+window.hDeepB=(i,v)=>{ S.days[histDay].deep.bones[i]=v; save(); };
+window.hScript=(v)=>{ S.days[histDay].script=v; save(); };
+/* 從任何地方把內容帶進素材庫表單（選類型＋補什麼時候用後儲存） */
+window.libAddFrom=(title,link,why)=>{
+  histClose();
+  libFilter='全部'; libAdding=true; libEditId=null;
+  libDraft={type:'Hook',title:title||'',why:why||'',when:'',link:link||''};
+  switchTab('lib'); window.scrollTo(0,0);
+  toast('內容帶好了：選類型、補「什麼時候用」再儲存');
+};
+window.hLibScan=(i)=>{ const s=S.days[histDay].scan[i]; libAddFrom(((s.t||'').trim()||linkLabel(s.v)),s.v,(s.a&&s.a[2])||''); };
+window.hLibDeep=()=>{ const dp=S.days[histDay].deep; libAddFrom(((dp.t||'').trim()||linkLabel(dp.v)),dp.v,(dp.qs&&dp.qs[11])||''); };
 function renderHist(){
   const el=document.getElementById('histSheet');
   if(el.hidden) return;
@@ -726,16 +743,32 @@ function renderHist(){
     h+='<div class="btnrow" style="margin:4px 0 12px;"><button class="btn side mini" onclick="histDay=null;renderHist()">← 回列表</button></div>'
     +'<div class="lg-h" style="margin-top:0;">'+histDay+(rec.done?'<small>✓ 打卡完成</small>':'<small>未完成</small>')+'</div>';
     if(rec.scan) rec.scan.forEach((s,i)=>{ if(s.ok){
+      const ek='scan'+i, editing=histEdit===ek;
       h+='<div class="lg-done"><div class="lg-top"><span class="dc-tag">快掃 '+(i+1)+'</span><span class="lg-t sm" style="flex:1;min-width:0;">'+esc((s.t||'').trim()||((s.a&&s.a[0])||'').trim()||linkLabel(s.v))+'</span>'
-      +(s.v?'<a class="ms-btn" href="'+esc(linkHref(s.v))+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>':'')+'</div>'
-      +SCAN_QS.map((q,qi)=>qaHTML((qi+1)+'. '+q,(s.a&&s.a[qi])||'—')).join('')+'</div>';
+      +(s.v?'<a class="ms-btn" href="'+esc(linkHref(s.v))+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>':'')
+      +'<button class="ms-btn'+(editing?' playing':'')+'" onclick="hToggleEdit(\''+ek+'\')">'+(editing?'完成':'編輯')+'</button></div>';
+      if(editing){
+        h+='<div class="field"><label>標題</label><input type="text" value="'+esc(s.t||'')+'" oninput="hScanT('+i+',this.value)"></div>'
+        +SCAN_QS.map((q,qi)=>'<div class="field"><label>'+(qi+1)+'. '+q+'</label><textarea oninput="hScanA('+i+','+qi+',this.value)">'+esc((s.a&&s.a[qi])||'')+'</textarea></div>').join('');
+      }else{
+        h+=SCAN_QS.map((q,qi)=>qaHTML((qi+1)+'. '+q,(s.a&&s.a[qi])||'—')).join('');
+      }
+      h+='<div class="dc-btns" style="margin-top:12px;"><span class="dc-btn" onclick="hLibScan('+i+')">收進素材庫</span></div></div>';
     }});
     if(rec.deep&&rec.deep.ok){
-      const dp=rec.deep;
+      const dp=rec.deep, editing=histEdit==='deep';
       h+='<div class="lg-done"><div class="lg-top"><span class="dc-tag">深拆</span><span class="lg-t sm" style="flex:1;min-width:0;">'+esc((dp.t||'').trim()||linkLabel(dp.v))+'</span>'
-      +(dp.v?'<a class="ms-btn" href="'+esc(linkHref(dp.v))+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>':'')+'</div>'
-      +DEEP_QS.map((q,i)=>((dp.qs&&dp.qs[i])||'').trim()?qaHTML('第 '+(i+1)+' 題　'+q,dp.qs[i]):'').join('')
-      +qaHTML('五段骨架',BONES.map((b,i)=>b.split('　')[0]+'：'+((dp.bones&&dp.bones[i])||'—')).join('　／　'))+'</div>';
+      +(dp.v?'<a class="ms-btn" href="'+esc(linkHref(dp.v))+'" target="_blank" rel="noopener" onclick="return chkA(this)">開影片</a>':'')
+      +'<button class="ms-btn'+(editing?' playing':'')+'" onclick="hToggleEdit(\'deep\')">'+(editing?'完成':'編輯')+'</button></div>';
+      if(editing){
+        h+='<div class="field"><label>標題</label><input type="text" value="'+esc(dp.t||'')+'" oninput="hDeepT(this.value)"></div>'
+        +DEEP_QS.map((q,i)=>'<div class="field"><label>第 '+(i+1)+' 題　'+q+'</label><textarea oninput="hDeepQ('+i+',this.value)">'+esc((dp.qs&&dp.qs[i])||'')+'</textarea></div>').join('')
+        +'<div class="field"><label>五段骨架</label>'+BONES.map((b,i)=>'<div style="display:flex;gap:8px;margin-bottom:8px;align-items:center;"><span style="flex:none;background:var(--ink);color:var(--yellow);font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;white-space:nowrap;">'+b.split('　')[0]+'</span><input type="text" value="'+esc((dp.bones&&dp.bones[i])||'')+'" oninput="hDeepB('+i+',this.value)"></div>').join('')+'</div>';
+      }else{
+        h+=DEEP_QS.map((q,i)=>((dp.qs&&dp.qs[i])||'').trim()?qaHTML('第 '+(i+1)+' 題　'+q,dp.qs[i]):'').join('')
+        +qaHTML('五段骨架',BONES.map((b,i)=>b.split('　')[0]+'：'+((dp.bones&&dp.bones[i])||'—')).join('　／　'));
+      }
+      h+='<div class="dc-btns" style="margin-top:12px;"><span class="dc-btn" onclick="hLibDeep()">收進素材庫</span></div></div>';
     }
     const preds=S.predictions.filter(p=>p.date===histDay);
     if(preds.length){
@@ -745,7 +778,15 @@ function renderHist(){
         +'<div class="lg-wday" style="margin-top:4px;">我猜 '+TIERS[p.guess]+(p.actualSet?('　→ 實際 '+TIERS[p.actual]+'　'+(p.result==='命中'?'猜中了！':(p.result==='高估'?'猜太高了':'猜太低了'))):'　（還沒對答案）')+'</div></div></div>';
       });
     }
-    if(rec.scriptOk&&rec.script) h+='<div class="lg-done">'+qaHTML('仿做腳本（前 10 秒）',rec.script)+'</div>';
+    if(rec.scriptOk&&rec.script){
+      const editing=histEdit==='script';
+      h+='<div class="lg-done"><div class="lg-top"><span class="dc-tag">仿做腳本</span><span style="flex:1"></span>'
+      +'<button class="ms-btn'+(editing?' playing':'')+'" onclick="hToggleEdit(\'script\')">'+(editing?'完成':'編輯')+'</button></div>'
+      +(editing
+        ?'<div class="field"><label>前 10 秒腳本</label><textarea style="min-height:120px" oninput="hScript(this.value)">'+esc(rec.script)+'</textarea></div>'
+        :qaHTML('前 10 秒腳本',rec.script))
+      +'</div>';
+    }
   }
   el.innerHTML=h;
 }
@@ -805,6 +846,8 @@ function scanHTML(d){
     +'<div class="field"><label>IG 連結</label><div class="linkrow"><input type="text" id="scanL'+k+'" value="'+esc(s.v)+'" oninput="d0scan('+k+',\'v\',this.value);syncA(this)" placeholder="按「貼上」就好"><button class="btn side mini" onclick="pasteTo(\'scanL'+k+'\')">貼上</button>'+openBtnHTML('scanL'+k,s.v)+'</div></div>'
     +'<div class="field"><label>標題 <span class="opt">（選填，幫影片取個名）</span></label><input type="text" value="'+esc(s.t||'')+'" oninput="d0scan('+k+',\'t\',this.value)" placeholder="例：貓咪開箱失敗"></div>'
     +SCAN_QS.map((q,qi)=>'<div class="field"><label>'+(qi+1)+'. '+q+'</label><textarea oninput="d0scanA('+k+','+qi+',this.value)" placeholder="一句話">'+esc(s.a[qi])+'</textarea></div>').join('')
+    +'<div class="field"><label>順手收進素材庫 <span class="opt">（選填：這支哪個部分值得收藏？）</span></label><div class="chips">'
+    +['無','BGM','Hook','轉場','字幕','B-roll','CTA'].map(t=>'<button class="chip '+((s.lib||'無')===t?'pick':'')+'" onclick="d0scanLib('+k+',\''+t+'\')">'+t+'</button>').join('')+'</div></div>'
     +'<div class="hint-err" id="errScan"></div>'
     +'<div class="btnrow"><button class="btn main" onclick="saveScan('+k+')">存這支，下一支</button></div></div>';
   }
@@ -812,6 +855,7 @@ function scanHTML(d){
 }
 window.d0scan=(k,f,v)=>{ day().scan[k][f]=v; save(); };
 window.d0scanA=(k,qi,v)=>{ day().scan[k].a[qi]=v; save(); };
+window.d0scanLib=(k,t)=>{ day().scan[k].lib=(t==='無'?'':t); save(); renderTrain(); };
 window.reopenScan=(k)=>{ const d=day(); d.scan[k].ok=false; d.done=false; openStage=0; save(); renderTrain(); };
 window.saveScan=(k)=>{
   const s=day().scan[k];
@@ -819,8 +863,14 @@ window.saveScan=(k)=>{
   if(!s.v.trim()) miss.push('IG 連結（按「貼上」）');
   s.a.forEach((a,i)=>{ if(!a.trim()) miss.push('第'+(i+1)+'題'); });
   if(miss.length){ showErr('errScan','還缺：'+miss.join('、')); return; }
-  s.ok=true; checkDayDone(); save(); openStage=day().scan.every(x=>x.ok)?null:0; renderTrain();
-  toast('已存，第 '+day().scan.filter(x=>x.ok).length+'/5 支');
+  s.ok=true;
+  let libNote='';
+  if(s.lib){
+    S.library.unshift({id:uid(),date:todayStr(),type:s.lib,title:((s.t||'').trim()||linkLabel(s.v)),why:(s.a[2]||'').trim(),when:'（點「編輯」補：什麼時候用）',link:s.v.trim(),img:s.img});
+    libNote='，'+s.lib+' 已收進素材庫';
+  }
+  checkDayDone(); save(); openStage=day().scan.every(x=>x.ok)?null:0; renderTrain();
+  toast('已存，第 '+day().scan.filter(x=>x.ok).length+'/5 支'+libNote);
 };
 
 /* — 第2關 深拆 — */
