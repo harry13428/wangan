@@ -477,6 +477,17 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .mk-fix{background:var(--green-bg);color:var(--green);font-weight:800;border-radius:5px;padding:1px 4px;border-bottom:2px dashed var(--green);cursor:pointer;}
 .mk-fix:active{transform:scale(.96);}
 .mk-adv{background:var(--card2);color:var(--grey);font-weight:800;border-radius:5px;padding:1px 4px;border-bottom:2px solid var(--grey);text-decoration:line-through;}
+.mg-opt{
+  display:flex;gap:10px;align-items:flex-start;
+  border:1.5px solid var(--line);border-radius:12px;padding:12px;
+  background:var(--card2);margin-bottom:8px;cursor:pointer;
+  font-size:15px;line-height:1.9;word-break:break-all;
+}
+.mg-opt:active{transform:scale(.98);}
+.mg-opt .n{
+  flex:none;background:var(--yellow);color:#16161A;font-size:12px;font-weight:800;
+  border-radius:99px;padding:2px 9px;margin-top:4px;white-space:nowrap;
+}
 .mg-wcard{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow);}
 .mg-wcard.risk2{border-color:var(--red);}
 .mg-wcard.risk1{border-color:var(--amber);}
@@ -562,7 +573,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='4.2';
+const APP_VER='4.3';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -1877,7 +1888,53 @@ function mgRenderFixed(){
   });
   html+=esc(mgLastText.slice(pos));
   el.innerHTML=html;
+  mgRenderOptions();
 }
+/* 句子選項：第 k 版＝每個中的詞都用它的第 k 組替代詞，湊成好幾句完整改法 */
+let mgOptTexts=[];
+function mgVersion(k){
+  let txt='',html='',pos=0;
+  mgLastHits.forEach(h=>{
+    const seg=mgLastText.slice(pos,h.s);
+    txt+=seg;html+=esc(seg);
+    const alts=mgAltsFor(h.e,h.txt);
+    if(!alts.length){
+      txt+=h.txt;
+      html+='<span class="mk-adv">'+esc(h.txt)+'</span>';
+    }else{
+      const a=alts[k%alts.length];
+      txt+=a;
+      html+='<span class="mk-fix" style="cursor:inherit;">'+esc(a)+'</span>';
+    }
+    pos=h.t;
+  });
+  const tail=mgLastText.slice(pos);
+  txt+=tail;html+=esc(tail);
+  return {txt,html};
+}
+function mgRenderOptions(){
+  const wrap=document.getElementById('mgOptWrap');
+  if(!wrap)return;
+  const maxAlt=Math.max(0,...mgLastHits.map(h=>mgAltsFor(h.e,h.txt).length));
+  const seen=new Set();const opts=[];
+  for(let k=0;k<Math.min(3,maxAlt);k++){
+    const v=mgVersion(k);
+    if(seen.has(v.txt))continue;
+    seen.add(v.txt);opts.push(v);
+  }
+  if(opts.length<2){wrap.hidden=true;mgOptTexts=[];return;}
+  wrap.hidden=false;
+  mgOptTexts=opts.map(o=>o.txt);
+  document.getElementById('mgOptions').innerHTML=opts.map((o,i)=>
+    '<div class="mg-opt" onclick="mgCopyOption('+i+')"><span class="n">選項 '+(i+1)+'</span><span>'+o.html+'</span></div>').join('');
+}
+window.mgCopyOption=(i)=>{
+  const t=mgOptTexts[i];
+  if(!t)return;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(()=>toast('選項 '+(i+1)+' 已複製')).catch(()=>toast('複製失敗，長按文字手動複製'));
+  }else{toast('長按文字手動複製');}
+};
 window.mgCycle=(i)=>{
   const h=mgLastHits[i];
   const alts=mgAltsFor(h.e,h.txt);
@@ -1972,7 +2029,10 @@ function renderMgc(){
      +'<h3 style="margin-top:16px;">改好版</h3>'
      +'<div class="sub">綠字＝已自動換掉，點綠字可換其他說法；灰字＝換字沒用，要整段改寫。</div>'
      +'<div class="mg-marked" id="mgFixed"></div>'
-     +'<div class="btnrow"><button class="btn side" style="width:100%;" onclick="mgCopyFixed()">複製改好的整句</button></div></div>'
+     +'<div class="btnrow"><button class="btn side" style="width:100%;" onclick="mgCopyFixed()">複製改好的整句</button></div>'
+     +'<div id="mgOptWrap" hidden><h3 style="margin-top:16px;">句子選項</h3>'
+     +'<div class="sub">同一句的其他改法，點一下複製那句。</div>'
+     +'<div id="mgOptions"></div></div></div>'
     +'<div id="mgCards"></div>'
    +'</section>'
    +'<div class="card">'
