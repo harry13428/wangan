@@ -15,6 +15,8 @@
   --red:#D95050;
   --red-bg:#FBEFEF;
   --hl:#FFF8D6;
+  --amber:#C8860A;
+  --amber-bg:#FBF3E0;
   --shadow:0 4px 18px rgba(22,22,26,.08);
 }
 @media (prefers-color-scheme: dark){
@@ -30,6 +32,8 @@
     --red:#E37070;
     --red-bg:#2E1E1E;
     --hl:#2E2A18;
+    --amber:#E0A93C;
+    --amber-bg:#2E2812;
     --shadow:0 4px 18px rgba(0,0,0,.35);
   }
 }
@@ -45,6 +49,8 @@
   --red:#E37070;
   --red-bg:#2E1E1E;
   --hl:#2E2A18;
+  --amber:#E0A93C;
+  --amber-bg:#2E2812;
   --shadow:0 4px 18px rgba(0,0,0,.35);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
@@ -453,6 +459,58 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 .backup{margin-top:22px;}
 .backup summary{font-size:13.5px;color:var(--grey);cursor:pointer;padding:6px 2px;}
 .backup textarea{font-size:12px;min-height:90px;margin:10px 0;}
+
+/* ── 敏感詞檢測 ── */
+.mg-sumbar{display:flex;gap:8px;margin-bottom:14px;}
+.mg-sum{flex:1;border-radius:14px;padding:12px 10px;text-align:center;border:1px solid var(--line);background:var(--card);}
+.mg-sum b{display:block;font-size:22px;font-variant-numeric:tabular-nums;}
+.mg-sum span{font-size:12px;color:var(--grey);}
+.mg-sum.r{background:var(--red-bg);border-color:var(--red);}
+.mg-sum.r b{color:var(--red);}
+.mg-sum.y{background:var(--amber-bg);border-color:var(--amber);}
+.mg-sum.y b{color:var(--amber);}
+.mg-sum.g{background:var(--green-bg);border-color:var(--green);}
+.mg-sum.g b{color:var(--green);}
+.mg-marked{font-size:15px;line-height:2;white-space:pre-wrap;word-break:break-all;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:14px;}
+.mk-r{background:var(--red-bg);color:var(--red);font-weight:800;border-radius:5px;padding:1px 4px;border-bottom:2px solid var(--red);}
+.mk-y{background:var(--amber-bg);color:var(--amber);font-weight:800;border-radius:5px;padding:1px 4px;border-bottom:2px solid var(--amber);}
+.mg-wcard{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow);}
+.mg-wcard.risk2{border-color:var(--red);}
+.mg-wcard.risk1{border-color:var(--amber);}
+.mg-wtop{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+.mg-word{font-size:20px;font-weight:800;}
+.mg-cat{background:var(--card2);border:1px solid var(--line);color:var(--grey);font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:99px;}
+.mg-hits{font-size:12px;color:var(--grey);margin-left:auto;}
+.mg-plats{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.mg-pl{font-size:12.5px;font-weight:800;border-radius:8px;padding:5px 10px;display:inline-flex;align-items:center;gap:5px;}
+.mg-pl.p2{background:var(--red-bg);color:var(--red);}
+.mg-pl.p1{background:var(--amber-bg);color:var(--amber);}
+.mg-pl.p0{background:var(--green-bg);color:var(--green);}
+.mg-why{font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:10px;}
+.mg-altt{font-size:12.5px;font-weight:700;margin-bottom:6px;}
+.mg-altchips{display:flex;gap:8px;flex-wrap:wrap;}
+.mg-altw{background:var(--hl);border:1px solid var(--yellow);color:var(--ink);font-size:14px;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;user-select:none;}
+.mg-altw:active{transform:scale(.95);}
+.mg-altnote{font-size:11.5px;color:var(--grey);margin-top:8px;}
+.mg-okcard{background:var(--green-bg);border:1.5px solid var(--green);border-radius:16px;padding:20px 16px;margin-bottom:14px;text-align:center;}
+.mg-okcard b{color:var(--green);font-size:17px;}
+.mg-okcard p{font-size:13px;color:var(--grey);margin-top:6px;line-height:1.7;}
+.mg-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--grey);margin-bottom:14px;padding:0 4px;line-height:1.6;}
+.mg-legend i{font-style:normal;font-weight:800;}
+.mg-legend .lr{color:var(--red);}
+.mg-legend .ly{color:var(--amber);}
+.mg-legend .lg{color:var(--green);}
+.mg-cwrow{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.mg-cwrow input{flex:1;min-width:120px;}
+.mg-riskpick{display:flex;gap:8px;margin-bottom:10px;}
+.mg-rp{flex:1;border:1.5px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-size:14px;font-weight:700;cursor:pointer;color:var(--grey);background:var(--card);}
+.mg-rp.pick2{background:var(--red-bg);border-color:var(--red);color:var(--red);}
+.mg-rp.pick1{background:var(--amber-bg);border-color:var(--amber);color:var(--amber);}
+.mg-cwlist{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+.mg-cwitem{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:var(--card2);font-size:14px;}
+.mg-cwitem b{font-size:15px;}
+.mg-cwitem .del{margin-left:auto;border:1.5px solid var(--line);background:var(--card);color:var(--red);border-radius:8px;padding:5px 12px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;}
+.mg-foot{font-size:12px;color:var(--grey);line-height:1.8;padding:4px 8px 20px;}
 </style>
 
 <div id="app">
@@ -467,6 +525,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
   <main>
     <section id="tab-train"></section>
     <section id="tab-radar" hidden></section>
+    <section id="tab-mgc" hidden></section>
     <section id="tab-ledger" hidden></section>
     <section id="tab-lib" hidden></section>
     <section id="tab-review" hidden></section>
@@ -477,6 +536,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
     <button class="tb" data-tab="lib"><span class="ico"><svg viewBox="0 0 24 24"><path d="M7 3.5h10a1.5 1.5 0 0 1 1.5 1.5v15.5L12 16.5 5.5 20.5V5A1.5 1.5 0 0 1 7 3.5z"/></svg></span>素材庫</button>
     <button class="tb" data-tab="review" id="tbReview"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4.5V9h4.5"/></svg></span>復盤</button>
     <button class="tb" data-tab="radar"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 12 L19 5"/><path d="M12 21a9 9 0 1 1 9-9"/><path d="M12 16.5a4.5 4.5 0 1 1 4.5-4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>風向雷達</button>
+    <button class="tb" data-tab="mgc"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 L20 6v5c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10V6z"/><path d="M8.5 12l2.3 2.3L15.5 9.6"/></svg></span>敏感詞</button>
   </div></nav>
   <div id="onboard" hidden>
     <div class="ob">
@@ -499,7 +559,7 @@ input:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0
 
 <script>
 /* ══════════ 資料 ══════════ */
-const APP_VER='4.0';
+const APP_VER='4.1';
 const KEY='wangan_v1';
 const TIERS=['1萬內','1–10萬','10–50萬','50萬+'];
 const SCAN_QS=['我為什麼停下來看（或為什麼滑走）？','前 3 秒的 Hook 是什麼？或是畫面是什麼？','這支最值得偷的一招？'];
@@ -669,14 +729,15 @@ const GUIDES={
   radar:'怎麼用：每天早上 8 點自動更新。發燒榜看名單裡誰的片衝起來（可切 IG／YouTube），下面「管理名單」加你想盯的帳號。',
   ledger:'怎麼用：黃卡＝預估到期，點「開影片看數字」再選實際檔位。預估中的不用動，結果區看「我猜 vs 實際」差幾格。',
   lib:'怎麼用：剪片卡住就來搜。收藏新招要寫得出「什麼時候用」才存得進來——寫不出來代表還沒學會。',
-  review:'怎麼用：每週日打開，逐支回答「當初判斷錯在哪」並寫一句修正。錯誤寫過一次，下次才不會再犯。'
+  review:'怎麼用：每週日打開，逐支回答「當初判斷錯在哪」並寫一句修正。錯誤寫過一次，下次才不會再犯。',
+  mgc:'怎麼用：把腳本或單詞貼進來按「開始檢測」。紅字照建議換掉，黃字看情境；踩過的新雷詞記得加進自訂詞庫。'
 };
 let curTab='train';
 function switchTab(t){
   curTab=t;
   try{ sessionStorage.setItem('wangan_tab',t); }catch(e){}
   document.querySelectorAll('.tb').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
-  ['train','radar','ledger','lib','review'].forEach(k=>{
+  ['train','radar','ledger','lib','review','mgc'].forEach(k=>{
     document.getElementById('tab-'+k).hidden=(k!==t);
   });
   document.getElementById('guide').textContent=GUIDES[t];
@@ -692,6 +753,7 @@ function render(){
   if(curTab==='ledger') renderLedger();
   if(curTab==='lib') renderLib();
   if(curTab==='review') renderReview();
+  if(curTab==='mgc') renderMgc();
   renderBadges();
 }
 function renderBadges(){
@@ -1562,6 +1624,294 @@ window.bakIn=()=>{
     toast('匯入成功'); render();
   }catch(e){ toast('這段不是有效的備份資料'); }
 };
+
+/* ══════════ 畫面⑤：敏感詞檢測 ══════════
+   r:[抖音, IG, YT]  2=高風險 1=看情境 0=沒事
+   w=主詞 a=同義/變形 c=分類 why=原因 alt=替代方案 */
+const MG_DICT=[
+/* ── 死亡・自殺 ── */
+{w:"自殺",a:["輕生","自我了斷","尋短"],c:"死亡自殺",r:[2,2,2],why:"三平台最高等級敏感詞，會觸發自傷內容審查，字幕出現幾乎必限。",alt:["想不開","走不出來","做傻事"]},
+{w:"自殘",a:["割腕"],c:"死亡自殺",r:[2,2,2],why:"自傷類直述詞，與自殺同級。",alt:["傷害自己"]},
+{w:"想死",a:["不想活","活不下去"],c:"死亡自殺",r:[2,2,2],why:"會被判定為自傷傾向內容，就算是誇飾也常中。",alt:["好累","撐不住了","心好累"]},
+{w:"死",a:["死掉","死了","死亡","病死","餓死"],c:"死亡自殺",r:[2,1,1],why:"抖音對「死」字幕掃得最兇，誇飾也會中；IG/YT 單獨出現多半沒事，搭配負面畫面才升級。",alt:["走了","沒了","離開了","去世","S"]},
+{w:"去死",a:["找死"],c:"死亡自殺",r:[2,1,1],why:"罵人語境會被判霸凌／攻擊性內容。",alt:["消音處理","嗶掉"]},
+{w:"笑死",a:["笑爛"],c:"死亡自殺",r:[1,0,0],why:"抖音連誇飾的「死」都可能掃到；歐美系平台沒事。",alt:["笑瘋","笑到不行"]},
+{w:"殺",a:["殺人","殺死","殺了"],c:"死亡自殺",r:[2,1,1],why:"暴力直述詞；遊戲實況語境稍寬，但字幕建議還是改。",alt:["解決掉","處理掉","讓他消失"]},
+{w:"屍體",a:["死屍"],c:"死亡自殺",r:[2,1,1],why:"屍體相關字詞搭配畫面會直接進人工審核。",alt:["大體"]},
+{w:"猝死",a:[],c:"死亡自殺",r:[2,1,1],why:"死亡＋醫療雙重敏感，健康類影片常見誤踩。",alt:["突然倒下","心臟出狀況"]},
+{w:"喪命",a:["身亡","喪生"],c:"死亡自殺",r:[2,1,1],why:"新聞式死亡用詞，抖音一樣掃。",alt:["不幸離開"]},
+{w:"上吊",a:["跳樓"],c:"死亡自殺",r:[2,2,2],why:"具體自殺方式描述，三平台都是最高級，可能整支下架。",alt:["整段改寫，不描述方式"]},
+/* ── 醫療健康 ── */
+{w:"治療",a:["治好","醫治"],c:"醫療健康",r:[2,1,1],why:"一般帳號做療效宣稱＝違規醫療廣告；抖音需要醫療資質才能講。",alt:["改善","調理","保養"]},
+{w:"根治",a:["治百病","藥到病除"],c:"醫療健康",r:[2,2,2],why:"絕對化療效宣稱，三平台廣告規範都禁。",alt:["明顯改善","有感變化"]},
+{w:"療效",a:["特效","藥效"],c:"醫療健康",r:[2,1,1],why:"療效宣稱＝醫療廣告詞，搭配任何產品必中。",alt:["使用感受","實測心得"]},
+{w:"特效藥",a:["神藥","仙丹"],c:"醫療健康",r:[2,2,2],why:"誇大藥品宣稱，詐騙廣告重災區用詞。",alt:["有幫助的東西"]},
+{w:"偏方",a:["秘方","祖傳"],c:"醫療健康",r:[2,1,1],why:"未經證實的醫療資訊，平台主動壓觸及。",alt:["老一輩的做法","民間說法"]},
+{w:"抗癌",a:["防癌","治癌"],c:"醫療健康",r:[2,2,2],why:"癌症療效宣稱是醫療廣告最高壓線。",alt:["健康保養"]},
+{w:"癌症",a:["罹癌","腫瘤"],c:"醫療健康",r:[1,1,1],why:"疾病話題本身可談（衛教、抗病經歷OK），搭配產品或偏方就變高風險。",alt:["那個病","C"]},
+{w:"減肥",a:["減重","甩肉"],c:"醫療健康",r:[1,1,1],why:"可以談，但搭配數字承諾（瘦幾公斤）或產品就升級成違規廣告。",alt:["體重管理","變瘦","身材管理"]},
+{w:"瘦身",a:["燃脂","消脂"],c:"醫療健康",r:[1,1,1],why:"同減肥：經驗分享OK，效果承諾＋帶貨必中。",alt:["雕塑身材","體態調整"]},
+{w:"壯陽",a:["補腎","持久"],c:"醫療健康",r:[2,2,2],why:"性功能宣稱，違規廣告＋擦邊雙重雷。",alt:["整段改寫"]},
+{w:"豐胸",a:["隆乳","豐乳"],c:"醫療健康",r:[2,2,2],why:"身體部位＋療效宣稱雙重敏感。",alt:["升級","變自信"]},
+{w:"疫苗",a:["打針副作用"],c:"醫療健康",r:[1,1,1],why:"衛教內容OK；質疑疫苗的論述三平台都會壓，YT 抓最嚴。",alt:["照官方資訊講，不下結論"]},
+{w:"疫情",a:["肺炎","封城"],c:"醫療健康",r:[1,1,1],why:"疫情類仍有降權殘留，圈內普遍改用代稱。",alt:["口罩期間","那三年"]},
+{w:"憂鬱症",a:["躁鬱"],c:"醫療健康",r:[1,1,1],why:"認真衛教、經驗分享OK；玩笑化或當形容詞用容易被壓。",alt:["情緒低潮","心理感冒"]},
+{w:"精神病",a:["神經病","有病"],c:"醫療健康",r:[2,1,1],why:"當罵人用語＝歧視性內容，抖音直接列違規詞。",alt:["太誇張了吧","傻眼"]},
+{w:"處方",a:["用藥建議"],c:"醫療健康",r:[2,1,1],why:"具體用藥指導需要醫療資質，一般帳號講就違規。",alt:["請教醫生","專業的來"]},
+/* ── 醫美整形 ── */
+{w:"醫美",a:["微整","微調"],c:"醫美整形",r:[2,1,1],why:"抖音對醫美廣告全面嚴打（要白名單資質）；IG/YT 個人分享可以，帶推薦導購就升級。",alt:["變美療程","小改造","進廠保養"]},
+{w:"整形",a:["整容","動刀"],c:"醫美整形",r:[2,1,1],why:"同醫美：分享自身經驗OK，推薦診所/項目就變醫療廣告。",alt:["調整一下","變美工程"]},
+{w:"玻尿酸",a:[],c:"醫美整形",r:[2,1,1],why:"具體醫美項目名，抖音字幕出現就可能壓。",alt:["補水的","H酸"]},
+{w:"肉毒",a:["肉毒桿菌"],c:"醫美整形",r:[2,1,1],why:"同玻尿酸，具體項目名。",alt:["保養針","咻咻針"]},
+{w:"隆鼻",a:["墊下巴","削骨"],c:"醫美整形",r:[2,1,1],why:"具體手術項目，醫療廣告審查對象。",alt:["五官小工程"]},
+{w:"抽脂",a:["溶脂"],c:"醫美整形",r:[2,1,1],why:"具體手術項目＋身材焦慮雙重敏感。",alt:["雕塑療程"]},
+{w:"雷射",a:["皮秒"],c:"醫美整形",r:[1,0,0],why:"保養語境通常沒事，抖音搭配診所導購會中。",alt:["光電保養"]},
+/* ── 金錢投資 ── */
+{w:"賺錢",a:["賺大錢","躺賺","暴富"],c:"金錢投資",r:[2,1,1],why:"「教你賺錢」是詐騙審查重點句型，演算法主動壓這類內容觸及。",alt:["搞米","增加收入","變現"]},
+{w:"被動收入",a:["睡後收入","躺著賺"],c:"金錢投資",r:[2,1,1],why:"財富自由類話術被大量詐騙盜用，整個詞被連坐降權。",alt:["第二收入","現金流"]},
+{w:"保證獲利",a:["穩賺不賠","穩賺","必賺"],c:"金錢投資",r:[2,2,2],why:"金融詐騙關鍵句，三平台最高級，可能直接判違規。",alt:["拿掉承諾，改講「我的實測結果」"]},
+{w:"一夜暴富",a:["快速致富","翻倍"],c:"金錢投資",r:[2,2,2],why:"暴富話術＝詐騙模板句。",alt:["慢慢累積","長期來看"]},
+{w:"投資",a:["理財"],c:"金錢投資",r:[1,1,1],why:"知識分享OK；喊單、報明牌、保證報酬就是高風險，金融內容三平台都要求聲明。",alt:["資產配置","研究標的"]},
+{w:"股票",a:["飆股","漲停"],c:"金錢投資",r:[1,0,0],why:"一般討論沒事；「帶你買」「報明牌」句型會中。",alt:["某檔標的"]},
+{w:"加密貨幣",a:["虛擬貨幣","比特幣","挖礦"],c:"金錢投資",r:[2,1,1],why:"幣圈詐騙重災區，抖音境內全面禁，IG/YT 帶投資建議就壓。",alt:["V幣","大餅（圈內稱比特幣）"]},
+{w:"貸款",a:["借錢","週轉"],c:"金錢投資",r:[2,1,1],why:"借貸廣告需要資質，非法放貸審查詞。",alt:["資金規劃"]},
+{w:"兼職",a:["打字兼職","在家兼職"],c:"金錢投資",r:[2,1,1],why:"「兼職」是打工詐騙最常用的餌，整個詞被重點掃。",alt:["副業","斜槓"]},
+{w:"免費送",a:["免費領取","白送"],c:"金錢投資",r:[2,1,1],why:"「免費領」是詐騙誘導句型；真的要送東西也建議換說法。",alt:["有小禮物","留言抽"]},
+{w:"匯款",a:["轉帳給"],c:"金錢投資",r:[2,1,1],why:"要求匯款＝詐騙審查直接命中。",alt:["整段改寫"]},
+{w:"發財",a:["暴利"],c:"金錢投資",r:[1,1,1],why:"單獨出現看情境，搭配「教你」「跟我做」就升級。",alt:["過更好","收入變多"]},
+{w:"割韭菜",a:["韭菜"],c:"金錢投資",r:[1,0,0],why:"抖音對金融黑話會掃；台灣平台當一般用語。",alt:["被收割","當盤子"]},
+/* ── 導流聯絡 ── */
+{w:"加LINE",a:["加賴","來賴","賴我"],c:"導流聯絡",r:[2,2,2],why:"站外導流＋詐騙模式雙重雷，三平台都重點壓「叫人加通訊軟體」。",alt:["簡介有路","主頁有驚喜（仍有風險）"]},
+{w:"微信",a:["加微信","VX","威信"],c:"導流聯絡",r:[2,1,1],why:"抖音境內連「微信」兩個字都擋（競品導流）；台灣平台看導流語境。",alt:["綠色軟體（圈內代稱）"]},
+{w:"Telegram",a:["電報群","TG群"],c:"導流聯絡",r:[2,2,2],why:"TG 群是詐騙集散地，「加群」句型直接高風險。",alt:["整段改寫"]},
+{w:"私訊我",a:["私我","DM我","密我"],c:"導流聯絡",r:[1,2,1],why:"IG 對「叫觀眾私訊」的觸及懲罰最明顯（防詐騙）；改用留言互動反而加分。",alt:["留言＋1","留言告訴我"]},
+{w:"連結在簡介",a:["點連結","簡介連結","主頁連結"],c:"導流聯絡",r:[2,2,1],why:"導流句型，平台不想讓人離開，會壓這支的推薦量。",alt:["主頁自己逛","有緣人找得到"]},
+{w:"加群",a:["進群","群組"],c:"導流聯絡",r:[2,1,1],why:"拉群＝詐騙常用動線，抖音重點掃。",alt:["社群見"]},
+{w:"關注我",a:["快關注","記得追蹤"],c:"導流聯絡",r:[1,1,1],why:"乞討式呼籲會被輕度降權，三平台都建議自然帶過。",alt:["下集想看留言說","追蹤起來慢慢看"]},
+{w:"買讚",a:["買粉","互粉","互讚","刷量"],c:"導流聯絡",r:[2,2,2],why:"平台操縱行為，講出來就觸發審查，帳號可能被標記。",alt:["不要碰這件事"]},
+{w:"抽獎",a:["抽粉絲"],c:"導流聯絡",r:[1,2,1],why:"IG 對抽獎文有明確規範且壓觸及；要辦照官方規則並避開「抽獎」當開頭。",alt:["小活動","回饋粉絲"]},
+/* ── 廣告絕對化（廣告法禁詞） ── */
+{w:"最有效",a:["最強","最好用","第一名","全網第一"],c:"廣告絕對化",r:[2,1,1],why:"絕對化用語違反廣告法，抖音字幕直接掃；台灣有商業合作時特別危險。",alt:["我用過最有感","目前的第一名（個人排名）"]},
+{w:"100%",a:["百分之百","絕對有效"],c:"廣告絕對化",r:[2,1,1],why:"絕對化承諾，帶貨語境必中。",alt:["幾乎都","我自己是全中"]},
+{w:"保證",a:["包你","肯定行"],c:"廣告絕對化",r:[2,1,1],why:"承諾式用語，搭配效果或收益就違規。",alt:["我很有把握","大機率"]},
+{w:"無效退費",a:["不滿意包退"],c:"廣告絕對化",r:[2,1,1],why:"療效／效果承諾的變形，一樣算絕對化。",alt:["有七天鑑賞期"]},
+{w:"全網最低價",a:["最便宜","史上最低"],c:"廣告絕對化",r:[2,1,1],why:"價格絕對化宣稱，廣告法禁詞。",alt:["很划算","佛心價"]},
+{w:"純天然",a:["零添加","無副作用"],c:"廣告絕對化",r:[1,0,0],why:"抖音把無認證的「純天然／零添加」列違規廣告詞；台灣平台帶貨時小心。",alt:["成分單純"]},
+{w:"秒殺",a:["限時搶購","手慢無"],c:"廣告絕對化",r:[1,0,0],why:"「殺」字＋飢餓行銷句型，抖音會掃。",alt:["手刀","要搶要快"]},
+/* ── 色情擦邊 ── */
+{w:"裸",a:["全裸","裸體","脫光"],c:"色情擦邊",r:[2,2,2],why:"裸露直述詞，字幕出現就進審查。",alt:["沒穿","天體"]},
+{w:"做愛",a:["性愛","上床","打炮"],c:"色情擦邊",r:[2,2,2],why:"性行為直述詞，三平台最高級。",alt:["親密關係","那件事","嘿嘿嘿"]},
+{w:"約炮",a:["一夜情","援交"],c:"色情擦邊",r:[2,2,2],why:"性交易／約會擦邊，詐騙審查同時命中。",alt:["整段改寫"]},
+{w:"色情",a:["A片","謎片"],c:"色情擦邊",r:[2,2,2],why:"成人內容直述詞。",alt:["大人的影片"]},
+{w:"胸部",a:["奶子","歐派"],c:"色情擦邊",r:[2,1,1],why:"身體部位＋物化語境，抖音最嚴；科普/醫療語境稍寬。",alt:["上圍","車頭燈（玩笑）"]},
+{w:"屁股",a:["翹臀"],c:"色情擦邊",r:[1,1,1],why:"健身語境通常OK，鏡頭聚焦＋字幕強調就會被判擦邊。",alt:["蜜桃","下盤"]},
+{w:"性感",a:["火辣"],c:"色情擦邊",r:[1,0,0],why:"形容詞本身沒事，抖音搭配特寫畫面會連坐。",alt:["有魅力","狀態很好"]},
+{w:"處女",a:["童貞"],c:"色情擦邊",r:[2,1,1],why:"性經驗話題，抖音直接列敏感詞。",alt:["整段改寫"]},
+/* ── 暴力犯罪 ── */
+{w:"槍",a:["開槍","手槍","步槍"],c:"暴力犯罪",r:[2,1,1],why:"武器詞，遊戲實況相對安全但字幕仍建議改；抖音最嚴。",alt:["武器","傢伙","河粉（圈內諧音）"]},
+{w:"炸彈",a:["爆炸物","炸藥"],c:"暴力犯罪",r:[2,1,1],why:"爆裂物相關，新聞/科普語境稍寬。",alt:["會炸的東西"]},
+{w:"綁架",a:["擄人"],c:"暴力犯罪",r:[2,1,1],why:"犯罪行為直述，故事類內容建議改寫。",alt:["被帶走"]},
+{w:"性侵",a:["強姦","強暴"],c:"暴力犯罪",r:[2,2,2],why:"性暴力直述詞，就算是新聞討論也建議改寫。",alt:["遭遇不當對待","那樣的事"]},
+{w:"家暴",a:["虐待"],c:"暴力犯罪",r:[1,1,1],why:"教育性、求助資訊OK；具體暴力描述會升級。",alt:["家庭暴力議題（衛教框架）"]},
+{w:"詐騙",a:["騙錢","詐欺"],c:"暴力犯罪",r:[1,1,1],why:"反詐內容OK；但這個詞密集出現會觸發人工審，開頭避免連發。",alt:["話術","釣魚","黑產"]},
+{w:"毒品",a:["吸毒","嗑藥"],c:"暴力犯罪",r:[2,2,2],why:"違禁品直述詞，三平台最高級。",alt:["違禁品","不能碰的東西"]},
+{w:"大麻",a:["麻仔"],c:"暴力犯罪",r:[2,2,2],why:"台灣屬毒品，就算討論合法化議題也高風險。",alt:["某種植物（衛教框架）"]},
+{w:"恐怖攻擊",a:["恐攻"],c:"暴力犯罪",r:[2,2,2],why:"恐怖主義相關，三平台最高級。",alt:["那起事件"]},
+{w:"打死",a:["揍死","打爆"],c:"暴力犯罪",r:[2,1,1],why:"暴力＋死亡雙重詞，抖音連誇飾都掃。",alt:["修理一頓","電爆"]},
+/* ── 菸酒賭 ── */
+{w:"香菸",a:["抽菸","吸菸","菸"],c:"菸酒賭",r:[2,1,1],why:"抖音全面禁菸草內容；IG/YT 出現吸菸畫面會限年齡、壓觸及。",alt:["那根","乖乖牌不碰的"]},
+{w:"電子煙",a:["加熱菸"],c:"菸酒賭",r:[2,2,2],why:"電子煙廣告三平台全禁，比傳統菸抓更嚴。",alt:["整段改寫"]},
+{w:"喝酒",a:["酒","乾杯","喝掛"],c:"菸酒賭",r:[1,0,1],why:"YT 對酒類內容有年齡限制風險，醉態畫面更嚴；抖音看畫面；IG 相對寬。",alt:["小酌","快樂水","大人的飲料"]},
+{w:"檳榔",a:[],c:"菸酒賭",r:[2,0,0],why:"抖音列管；台灣平台目前當一般內容。",alt:["台灣口香糖（玩笑）"]},
+{w:"賭博",a:["賭錢","豪賭"],c:"菸酒賭",r:[2,2,2],why:"賭博內容三平台全禁，台灣線上博弈廣告是嚴打對象。",alt:["整段改寫"]},
+{w:"博弈",a:["娛樂城","百家樂","老虎機"],c:"菸酒賭",r:[2,2,2],why:"博弈業關鍵詞，出現就進審查，帳號會被標記。",alt:["不要碰這個題材"]},
+{w:"下注",a:["押注","簽賭"],c:"菸酒賭",r:[2,1,1],why:"投注行為描述，運彩討論也建議改寫。",alt:["猜結果","預測"]},
+{w:"樂透",a:["刮刮樂","彩券"],c:"菸酒賭",r:[1,1,1],why:"官方彩券內容通常OK，教人「怎麼中獎」就升級。",alt:["試手氣"]},
+/* ── 政治時事 ── */
+{w:"戰爭",a:["開戰","打仗"],c:"政治時事",r:[1,1,1],why:"時事討論OK，但演算法對戰爭內容普遍降推薦（廣告主迴避）。",alt:["衝突","局勢"]},
+{w:"選舉",a:["投票給","候選人"],c:"政治時事",r:[1,1,1],why:"選舉期間三平台都限政治內容觸及；表態式內容最容易被壓。",alt:["用中性資訊框架講"]},
+{w:"抗議",a:["遊行","示威"],c:"政治時事",r:[2,1,1],why:"抖音境內政治集會類全紅；台灣平台新聞框架OK。",alt:["街頭活動"]},
+{w:"政府",a:["官方單位"],c:"政治時事",r:[1,0,0],why:"抖音對批評性語境敏感；台灣平台一般沒事。",alt:["有關單位"]},
+/* ── 歧視辱罵 ── */
+{w:"智障",a:["低能","弱智"],c:"歧視辱罵",r:[2,1,1],why:"歧視性用語，抖音直接列違規；當罵人用語三平台都可能被檢舉成立。",alt:["太傻眼","太扯"]},
+{w:"白痴",a:["白癡","蠢貨"],c:"歧視辱罵",r:[1,1,1],why:"輕度辱罵詞，密集出現或指名道姓會升級。",alt:["天兵","太瞎"]},
+{w:"幹",a:["幹你娘","靠杯","他媽的"],c:"歧視辱罵",r:[1,1,1],why:"髒話會被判「不適合推薦」，出現在開頭三秒最傷；消音比改字有效。",alt:["消音／嗶掉","靠","可惡"]},
+{w:"婊",a:["賤人","母豬"],c:"歧視辱罵",r:[2,1,1],why:"性別歧視辱罵，檢舉成立率高。",alt:["整段改寫"]},
+{w:"死胖子",a:["肥豬"],c:"歧視辱罵",r:[2,1,1],why:"身材羞辱（body shaming），IG/YT 社群守則明列。",alt:["棉花糖身材（自嘲限定）"]},
+/* ── 平台紅線 ── */
+{w:"翻牆",a:["VPN翻牆"],c:"平台紅線",r:[2,0,0],why:"抖音境內違規詞；台灣平台一般沒事。",alt:["科學上網（一樣會掃）","梯子"]},
+{w:"盜版",a:["破解版","免費看片"],c:"平台紅線",r:[2,1,2],why:"侵權內容，YT 版權審查最嚴，教學類直接下架。",alt:["正版支持"]},
+{w:"外掛",a:["開掛","作弊程式"],c:"平台紅線",r:[1,0,1],why:"遊戲討論OK，教學或販售就違規。",alt:["科技（圈內反串）"]},
+{w:"未成年",a:["小學生","蘿莉"],c:"平台紅線",r:[1,1,1],why:"兒少相關搭配不當語境是三平台最重的紅線，寧可繞開。",alt:["小朋友（單純語境）"]},
+];
+const MG_LSKEY="minganci_custom_v1";
+let mgCustom=[];try{mgCustom=JSON.parse(localStorage.getItem(MG_LSKEY)||"[]");}catch(e){mgCustom=[];}
+let mgRisk=2;
+const MG_PLATS=["抖","IG","YT"];
+const MG_RISKTXT={2:"🔴 高風險",1:"🟡 看情境",0:"🟢 沒事"};
+const MG_EXAMPLES=["死","醫美","賺錢","加LINE","保證有效","這支教你靠被動收入月入十萬，私訊我帶你賺錢"];
+
+function mgEntries(){
+  const cs=mgCustom.map(c=>({w:c.w,a:[],c:"自訂",r:[c.risk,c.risk,c.risk],why:"你自己加的雷詞。",alt:c.alt?[c.alt]:[]}));
+  return MG_DICT.concat(cs);
+}
+function mgMaxRisk(e){return Math.max(...e.r);}
+window.mgScan=()=>{
+  const text=document.getElementById('mgInp').value.trim();
+  if(!text){toast('先貼點文字進來');return;}
+  /* 長詞優先，蓋掉重疊的短詞（例：命中「笑死」就不再算「死」） */
+  const pats=[];
+  mgEntries().forEach(e=>{[e.w,...e.a].forEach(p=>{if(p)pats.push({p,e});});});
+  pats.sort((x,y)=>y.p.length-x.p.length);
+  const taken=[];const hits=[];
+  pats.forEach(({p,e})=>{
+    let i=text.indexOf(p);
+    while(i!==-1){
+      const s=i,t=i+p.length;
+      if(!taken.some(([a,b])=>s<b&&t>a)){taken.push([s,t]);hits.push({s,t,e,txt:p});}
+      i=text.indexOf(p,i+1);
+    }
+  });
+  hits.sort((a,b)=>a.s-b.s);
+  mgRender(text,hits);
+};
+function mgRender(text,hits){
+  const res=document.getElementById('mgResult');res.hidden=false;
+  const groups=new Map();
+  hits.forEach(h=>{
+    const k=h.e.w;
+    if(!groups.has(k))groups.set(k,{e:h.e,n:0,forms:new Set()});
+    const g=groups.get(k);g.n++;g.forms.add(h.txt);
+  });
+  const gs=[...groups.values()].sort((a,b)=>mgMaxRisk(b.e)-mgMaxRisk(a.e));
+  const nR=gs.filter(g=>mgMaxRisk(g.e)===2).length;
+  const nY=gs.filter(g=>mgMaxRisk(g.e)===1).length;
+  document.getElementById('mgSumbar').innerHTML=
+    '<div class="mg-sum r"><b>'+nR+'</b><span>高風險詞</span></div>'
+   +'<div class="mg-sum y"><b>'+nY+'</b><span>看情境詞</span></div>'
+   +'<div class="mg-sum '+(gs.length?'':'g')+'"><b>'+text.length+'</b><span>掃描字數</span></div>';
+  const markedCard=document.getElementById('mgMarkedCard');
+  if(gs.length){
+    markedCard.hidden=false;
+    let html='',pos=0;
+    hits.forEach(h=>{
+      html+=esc(text.slice(pos,h.s));
+      html+='<span class="'+(mgMaxRisk(h.e)===2?'mk-r':'mk-y')+'">'+esc(text.slice(h.s,h.t))+'</span>';
+      pos=h.t;
+    });
+    html+=esc(text.slice(pos));
+    document.getElementById('mgMarked').innerHTML=html;
+  }else{markedCard.hidden=true;}
+  const cards=document.getElementById('mgCards');
+  if(!gs.length){
+    cards.innerHTML='<div class="mg-okcard"><b>🟢 沒掃到已知雷詞</b><p>目前的詞庫裡沒有踩雷。提醒一下：平台不公開官方清單，這代表「沒踩已知的雷」，不是保證安全。</p></div>';
+  }else{
+    cards.innerHTML=gs.map(g=>{
+      const e=g.e;const mr=mgMaxRisk(e);
+      const forms=[...g.forms].filter(f=>f!==e.w);
+      return '<div class="mg-wcard risk'+mr+'">'
+        +'<div class="mg-wtop"><span class="mg-word">'+esc(e.w)+'</span>'
+        +'<span class="mg-cat">'+esc(e.c)+'</span>'
+        +'<span class="mg-hits">出現 '+g.n+' 次'+(forms.length?'（含 '+esc(forms.join('、'))+'）':'')+'</span></div>'
+        +'<div class="mg-plats">'+e.r.map((r,i)=>'<span class="mg-pl p'+r+'">'+MG_PLATS[i]+' '+MG_RISKTXT[r]+'</span>').join('')+'</div>'
+        +'<div class="mg-why">'+esc(e.why)+'</div>'
+        +(e.alt.length?'<div class="mg-altt">建議改成（點一下複製）：</div><div class="mg-altchips">'
+          +e.alt.map(a=>'<span class="mg-altw" onclick="mgCopy(this)">'+esc(a)+'</span>').join('')+'</div>'
+          +'<div class="mg-altnote">替代詞能降風險但不是免死金牌，演算法會持續學新諧音。</div>':'')
+        +'</div>';
+    }).join('');
+  }
+  res.scrollIntoView({behavior:'smooth',block:'start'});
+}
+window.mgClear=()=>{
+  document.getElementById('mgInp').value='';
+  document.getElementById('mgResult').hidden=true;
+  document.getElementById('mgInp').focus();
+};
+window.mgCopy=(el)=>{
+  const t=el.textContent;
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(()=>toast('已複製「'+t+'」')).catch(()=>toast('「'+t+'」（手動選取複製）'));
+  }else{toast('「'+t+'」（手動選取複製）');}
+};
+window.mgFillEx=(i)=>{
+  document.getElementById('mgInp').value=MG_EXAMPLES[i];
+  mgScan();
+};
+window.mgPickRisk=(r)=>{
+  mgRisk=r;
+  document.getElementById('mgRp2').className='mg-rp'+(r===2?' pick2':'');
+  document.getElementById('mgRp1').className='mg-rp'+(r===1?' pick1':'');
+};
+window.mgAddCustom=()=>{
+  const w=document.getElementById('mgCwWord').value.trim();
+  const alt=document.getElementById('mgCwAlt').value.trim();
+  if(!w){toast('先打要加的雷詞');return;}
+  if(mgEntries().some(e=>e.w===w)){toast('「'+w+'」已經在詞庫裡了');return;}
+  mgCustom.push({w,alt,risk:mgRisk});
+  localStorage.setItem(MG_LSKEY,JSON.stringify(mgCustom));
+  document.getElementById('mgCwWord').value='';document.getElementById('mgCwAlt').value='';
+  mgRenderCustom();toast('已加入「'+w+'」');
+};
+window.mgDelCustom=(i)=>{
+  const w=mgCustom[i].w;
+  mgCustom.splice(i,1);
+  localStorage.setItem(MG_LSKEY,JSON.stringify(mgCustom));
+  mgRenderCustom();toast('已刪除「'+w+'」');
+};
+function mgRenderCustom(){
+  const el=document.getElementById('mgCwList');
+  if(!el)return;
+  el.innerHTML=mgCustom.map((c,i)=>
+    '<div class="mg-cwitem"><b>'+esc(c.w)+'</b>'
+    +'<span>'+(c.risk===2?'🔴':'🟡')+'</span>'
+    +(c.alt?'<span style="color:var(--grey);">→ '+esc(c.alt)+'</span>':'')
+    +'<button class="del" onclick="mgDelCustom('+i+')">刪除</button></div>').join('');
+}
+function renderMgc(){
+  const el=document.getElementById('tab-mgc');
+  if(el.dataset.built){mgRenderCustom();return;}
+  el.dataset.built='1';
+  const nVar=MG_DICT.reduce((n,e)=>n+1+e.a.length,0);
+  el.innerHTML=
+   '<div class="card">'
+    +'<h3>要檢測的文字</h3>'
+    +'<div class="sub">一個詞、一句話、或整份腳本都可以貼。字幕、口播、文案都會被平台掃，全部都能拿來測。</div>'
+    +'<textarea id="mgInp" placeholder="例：這支影片教你靠被動收入賺錢…"></textarea>'
+    +'<div class="chips" style="margin-top:10px;"><span style="font-size:12px;color:var(--grey);align-self:center;">試試看：</span>'
+    +MG_EXAMPLES.map((x,i)=>'<span class="chip" onclick="mgFillEx('+i+')">'+esc(x.length>12?x.slice(0,12)+'…':x)+'</span>').join('')+'</div>'
+    +'<div class="btnrow"><button class="btn main" style="flex:1;" onclick="mgScan()">開始檢測</button>'
+    +'<button class="btn side" onclick="mgClear()">清空</button></div>'
+   +'</div>'
+   +'<section id="mgResult" hidden>'
+    +'<div class="mg-legend">'
+     +'<span><i class="lr">🔴 紅</i>＝已知高風險，換掉</span>'
+     +'<span><i class="ly">🟡 黃</i>＝看情境，搭產品/承諾就會中</span>'
+     +'<span><i class="lg">🟢 綠</i>＝目前沒事</span>'
+    +'</div>'
+    +'<div class="mg-sumbar" id="mgSumbar"></div>'
+    +'<div class="card" id="mgMarkedCard"><h3>標記結果</h3>'
+     +'<div class="sub">紅底＝高風險詞，黃底＝看情境詞。</div>'
+     +'<div class="mg-marked" id="mgMarked"></div></div>'
+    +'<div id="mgCards"></div>'
+   +'</section>'
+   +'<div class="card">'
+    +'<h3>自訂雷詞 <span style="font-size:12px;color:var(--grey);font-weight:400;">（你自己踩過的坑，加進來以後都會掃）</span></h3>'
+    +'<div class="sub">遇到詞庫沒收的新雷詞，在這裡補。存在這支手機裡，下次檢測自動生效。</div>'
+    +'<div class="mg-cwrow">'
+     +'<input type="text" id="mgCwWord" placeholder="雷詞（例：某某牌名）">'
+     +'<input type="text" id="mgCwAlt" placeholder="建議改成（可空白）">'
+    +'</div>'
+    +'<div class="mg-riskpick">'
+     +'<div class="mg-rp pick2" id="mgRp2" onclick="mgPickRisk(2)">🔴 高風險</div>'
+     +'<div class="mg-rp" id="mgRp1" onclick="mgPickRisk(1)">🟡 看情境</div>'
+    +'</div>'
+    +'<button class="btn side" style="width:100%;" onclick="mgAddCustom()">＋ 加進我的詞庫</button>'
+    +'<div class="mg-cwlist" id="mgCwList"></div>'
+   +'</div>'
+   +'<div class="mg-foot">⚠️ 詞庫整理自創作者圈已知的雷詞（內建 '+MG_DICT.length+' 詞條、約 '+nVar+' 個變形），平台從不公開官方清單，所以「沒掃到」不等於保證安全，只代表沒踩到已知的雷。也提醒：影片沒流量九成是完播率問題，敏感詞只是其中一關。<br>平台縮寫：抖＝抖音｜IG＝Instagram Reels｜YT＝YouTube Shorts</div>';
+  mgRenderCustom();
+}
 
 /* ══════════ 啟動 ══════════ */
 /* 版本徽章＋App 內重新整理（帶時間戳繞過快取，一定拿到最新版） */
