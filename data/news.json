@@ -1,0 +1,59 @@
+{
+  "updated": "2026-08-21 早上",
+  "days": [
+    {
+      "date": "2026-08-21",
+      "items": [
+        {
+          "cat": "edit",
+          "hot": true,
+          "title": "壹加壹字幕工具「What'Sub」爆紅，創作者圈還在燒",
+          "body": "花 20 萬台幣、半年開發的繁中 AI 字幕網站：智慧斷句自動抓閱讀節奏、內建 1900 套字型、影片留在本機只上傳音訊。Threads 上創作者一片狂推「斷句正確率全對」。",
+          "why": "直接關係到你的字幕流程。可以試用比較它的斷句品質，看有沒有能偷學的東西。",
+          "links": [
+            {"t": "4Gamers", "u": "https://www.4gamers.com.tw/news/detail/81470/ai-subtitle-generator-whatsub"},
+            {"t": "JUKSY", "u": "https://kol.juksy.com/article/150089"},
+            {"t": "鏈新聞", "u": "https://abmedia.io/intro-what-sub-traditional-chinese-subtitles-tool"}
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Pika 推出四款 AI 音訊模型「Pika Audio」",
+          "body": "配樂自動對畫面節奏、寫詞生歌、用白話描述生音效、語音克隆，號稱比同行便宜最多 20 倍。",
+          "why": "找 BGM 和音效多一個新來源，之後剪片可以測。",
+          "links": [
+            {"t": "AI 影片趨勢 8月", "u": "https://blog.mean.ceo/ai-video-generation-trends-august-2026/"}
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "平台開始「反 AI 洗版」：Snapchat 只推真人影片",
+          "body": "Snapchat 宣布 Spotlight 推薦位只給「真人拍的影片」，AI 生成內容被排除；同時 Google Veo 3.1 又升級了。",
+          "why": "風向訊號：AI 產量爆炸後，平台把「真人感」當稀缺品——真人口播和貓咪實拍反而加值。",
+          "links": [
+            {"t": "StackInfluence", "u": "https://stackinfluence.com/blog/august-2026-social-media-news-and-updates-for-creators"}
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "沙德爾颱風來了，全台洗版中",
+          "body": "8/19 生成、預估 8/24 轉強颱，今明到週日中南部豪雨最猛。路徑還沒定：可能撲台、也可能北轉日本。",
+          "why": "這幾天最大的全民共同話題，蹭時事哏最穩的切入點。",
+          "links": [
+            {"t": "ETtoday", "u": "https://www.ettoday.net/news/20260819/3221684.htm"},
+            {"t": "今周刊", "u": "https://www.businesstoday.com.tw/article/category/183030/post/202608180024/"}
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "昨日熱搜快掃：金價新高、泰山食安風波",
+          "body": "8/20 台灣熱搜：金價創新高、泰山食安風波信任危機、退撫基金 2.9 兆負債、韓國瑜砲轟政院。",
+          "why": "民生話題（金價、食安）留言區最容易起共鳴，適合當貼文哏。",
+          "links": [
+            {"t": "社群輿情雷達", "u": "https://ecom.atmarketing.tw/trend/daily/2026-08-20"}
+          ]
+        }
+      ]
+    }
+  ]
+}
