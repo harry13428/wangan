@@ -56,11 +56,25 @@ body{
 header{
   padding:calc(env(safe-area-inset-top) + 18px) 0 10px;
 }
-.h-top{display:flex;align-items:baseline;gap:8px}
 h1{font-size:24px;font-weight:800;letter-spacing:1px}
 h1 .dot{display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--yellow);margin-right:6px}
-.updated{font-size:12px;color:var(--grey);margin-left:auto;text-align:right;line-height:1.4}
 .sub{font-size:13px;color:var(--grey);margin-top:4px}
+.meta-row{
+  display:flex;align-items:center;gap:10px;margin-top:12px;
+}
+.updated{font-size:13px;color:var(--grey);line-height:1.5;flex:1;min-width:0}
+.updated b{color:var(--ink);font-weight:700}
+#refreshBtn{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;
+  padding:9px 16px;border-radius:20px;font-size:14px;font-weight:700;
+  background:var(--yellow);color:#16161A;border:none;
+  cursor:pointer;user-select:none;font-family:inherit;box-shadow:var(--shadow);
+}
+#refreshBtn:active{transform:scale(.96)}
+#refreshBtn:disabled{opacity:.6}
+#refreshBtn .ico{display:inline-block;font-size:15px;line-height:1}
+#refreshBtn.loading .ico{animation:spin 0.9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* date chips */
 .dates{display:flex;gap:8px;overflow-x:auto;padding:12px 0 4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
@@ -73,7 +87,6 @@ h1 .dot{display:inline-block;width:12px;height:12px;border-radius:3px;background
 .dchip.on{background:var(--yellow);color:#16161A;border-color:var(--yellow)}
 
 /* cards */
-.day-title{font-size:13px;color:var(--grey);margin:14px 2px 10px}
 .card{
   background:var(--card);border:1px solid var(--line);border-radius:16px;
   padding:16px;margin-bottom:12px;box-shadow:var(--shadow);
@@ -104,6 +117,13 @@ h1 .dot{display:inline-block;width:12px;height:12px;border-radius:3px;background
 
 /* states */
 .state{padding:60px 0;text-align:center;color:var(--grey);font-size:14px;line-height:1.8}
+.toast{
+  position:fixed;left:50%;bottom:34px;transform:translateX(-50%);
+  background:var(--ink);color:var(--bg);font-size:13px;font-weight:600;
+  padding:9px 18px;border-radius:20px;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .25s;z-index:9;white-space:nowrap;
+}
+.toast.show{opacity:1}
 footer{margin-top:24px;text-align:center;font-size:12px;color:var(--grey);line-height:1.7;padding:0 20px}
 footer a{color:var(--grey)}
 </style>
@@ -111,22 +131,26 @@ footer a{color:var(--grey)}
 <body>
 <div class="wrap">
   <header>
-    <div class="h-top">
-      <h1><span class="dot"></span>今日時事</h1>
-      <div class="updated" id="updated"></div>
+    <h1><span class="dot"></span>今日時事</h1>
+    <div class="sub">剪輯圈・AI圈・台灣正在討論的事，每天早上 8 點自動更新</div>
+    <div class="meta-row">
+      <div class="updated" id="updated">載入中⋯</div>
+      <button id="refreshBtn" type="button">
+        <span class="ico">↻</span><span>重新整理</span>
+      </button>
     </div>
-    <div class="sub">剪輯圈・AI圈・台灣正在討論的事，每天自動更新</div>
   </header>
 
   <div class="dates" id="dates"></div>
   <div id="feed"><div class="state">載入中⋯</div></div>
 
   <footer>
-    由 Claude 每天早上自動蒐集整理。<br>
+    由 Claude 每天早上 8 點自動蒐集整理，一天更新一次。<br>
     來源是新聞站與搜尋引擎，社群最熱的帖有時會慢半天到一天。<br>
-    <a href="index.html">← 回網感訓練</a>
+    <a href="index.html">← 回網感訓練</a>　v2
   </footer>
 </div>
+<div class="toast" id="toast"></div>
 
 <script>
 const CATS = {edit:['✂️ 剪輯圈','cat-edit'], ai:['🤖 AI圈','cat-ai'], tw:['🇹🇼 台灣時事','cat-tw'], etc:['📌 其他','cat-etc']};
@@ -136,6 +160,14 @@ function fmtDate(s){
   const [y,m,d] = s.split('-').map(Number);
   const wd = '日一二三四五六'[new Date(y, m-1, d).getDay()];
   return m + '/' + d + '（' + wd + '）';
+}
+
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._h);
+  t._h = setTimeout(() => t.classList.remove('show'), 2200);
 }
 
 function render(){
@@ -169,19 +201,36 @@ function renderDates(){
   el.querySelectorAll('.dchip').forEach(b => b.onclick = () => { cur = b.dataset.d; renderDates(); render(); });
 }
 
-fetch('data/news.json?t=' + Date.now())
-  .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => {
-    DATA = d;
-    DATA.days.sort((a,b) => b.date.localeCompare(a.date));
-    cur = DATA.days[0] && DATA.days[0].date;
-    document.getElementById('updated').textContent = '更新於 ' + d.updated;
-    renderDates(); render();
-  })
-  .catch(e => {
-    document.getElementById('feed').innerHTML =
-      '<div class="state">資料載入失敗（' + e.message + '）<br>下拉重新整理試試</div>';
-  });
+function load(isManual){
+  const btn = document.getElementById('refreshBtn');
+  btn.disabled = true;
+  btn.classList.add('loading');
+  return fetch('data/news.json?t=' + Date.now(), {cache:'no-store'})
+    .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d => {
+      const prevUpdated = DATA && DATA.updated;
+      DATA = d;
+      DATA.days.sort((a,b) => b.date.localeCompare(a.date));
+      const hasCur = cur && DATA.days.some(x => x.date === cur);
+      if(!hasCur) cur = DATA.days[0] && DATA.days[0].date;
+      document.getElementById('updated').innerHTML = '更新於 <b>' + d.updated + '</b>';
+      renderDates(); render();
+      if(isManual) toast(prevUpdated === d.updated ? '✓ 已是最新（' + d.updated + '）' : '✓ 抓到新資料！');
+    })
+    .catch(e => {
+      if(DATA){
+        if(isManual) toast('連不上，先看原本的資料');
+      }else{
+        document.getElementById('feed').innerHTML =
+          '<div class="state">資料載入失敗（' + e.message + '）<br>點上面的「重新整理」再試一次</div>';
+        document.getElementById('updated').textContent = '載入失敗';
+      }
+    })
+    .finally(() => { btn.disabled = false; btn.classList.remove('loading'); });
+}
+
+document.getElementById('refreshBtn').onclick = () => load(true);
+load(false);
 </script>
 </body>
 </html>
