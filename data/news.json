@@ -1,197 +1,299 @@
 {
- "updated": "2026-08-24 08:10",
- "days": [
-  {
-   "date": "2026-08-24",
-   "items": [
+  "updated": "2026-08-26 11:33",
+  "days": [
     {
-     "cat": "tw",
-     "hot": true,
-     "title": "沙德爾颱風轉中颱，8/28 最接近台灣",
-     "body": "颱風沙德爾 8/19 生成後一路增強，氣象專家說最強可能上看強颱等級。8/23 最新路徑顯示它 8/26 前後掠過琉球，之後有「往西撲華東」和「北轉去日韓」兩種走法，8/28 是離台灣最近的一天，海上警報機率被評為偏高。是否放颱風假還太早講，未證實。",
-     "why": "外景、拍攝和交件時程先預留變數；颱風週大家滑手機的時間變多，是短影音流量的小高峰，貓咪帳號可以先備幾支存稿。",
-     "links": [
-      {
-       "t": "蘋果仁 8/23",
-       "u": "https://applealmond.com/posts/323030"
-      },
-      {
-       "t": "城市學",
-       "u": "https://city.gvm.com.tw/article/132480"
-      },
-      {
-       "t": "自由時報",
-       "u": "https://news.ltn.com.tw/news/life/breakingnews/5547808"
-      }
-     ]
+      "date": "2026-08-26",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "沙德爾颱風減弱，高雄屏東今天先放假",
+          "body": "颱風沙德爾強度轉弱、暴風半徑縮小，但外圍水氣還是把雨往台灣灌。8/25 深夜高雄市和屏東縣部分地區宣布 8/26 停班停課，其他縣市多半照常上班上課。氣象署說 8/26 傍晚到晚間可能發海上颱風警報，8/27 晚到 8/28 才是最接近台灣的時候。",
+          "why": "交件時程和外景先抓緩衝，最亂的是 8/27–28 那兩天。颱風天大家窩在家滑手機，是短影音流量小高峰，cattt.q 可以先排幾支存稿頂著。",
+          "links": [
+            {
+              "t": "商周 颱風動態",
+              "u": "https://www.businessweekly.com.tw/focus/blog/3022311"
+            },
+            {
+              "t": "風傳媒 8/26 停班課",
+              "u": "https://www.storm.mg/lifestyle/11159245"
+            },
+            {
+              "t": "城市學 侵襲率",
+              "u": "https://city.gvm.com.tw/article/132480"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Firefly 音樂配音音效全面可商用",
+          "body": "Adobe 把 Firefly 裡的三個聲音功能從測試轉成正式版：打字就生出配合影片長度和情緒的背景音樂、把腳本唸成旁白（可選 Adobe 自家或 ElevenLabs 的聲音）、還能對著畫面動作生對應音效。重點是全部標榜可商用、授權乾淨。",
+          "why": "找 BGM 和音效的時間可能直接砍掉一半，而且不用再擔心版權踩雷。旁白功能對貓咪帳號的配音也堪用，值得拿一支片試跑看看品質夠不夠交件。",
+          "links": [
+            {
+              "t": "Adobe 官方公告",
+              "u": "https://blog.adobe.com/jp/publish/2026/08/21/cc-adobe-firefly-expands-its-all-in-one-creative-ai-studio-with-studio-quality-sound"
+            },
+            {
+              "t": "Impress Watch",
+              "u": "https://www.watch.impress.co.jp/docs/news/2134515.html"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Runway 新模型把影片轉 HDR",
+          "body": "Runway 推出叫 Ruby 的新模型，可以把一般 SDR 影片轉成 16 位元 HDR，輸出 ProRes 或 EXR 序列，單段最長 30 秒。不管是你上傳的素材還是 Runway 自己生成的畫面都能吃。官方說這是使用者長期敲碗最多的功能之一。",
+          "why": "手邊畫質普通的舊素材有機會救回層次感，調色前先過一次可能省掉硬拉曲線。30 秒上限比較適合短片段和開場，長片還是要分段處理。",
+          "links": [
+            {
+              "t": "Runway 官方推文",
+              "u": "https://x.com/runwayml/status/2090807248402682101"
+            },
+            {
+              "t": "Digg 報導",
+              "u": "https://digg.com/tech/9k1nrdzm"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "Joeman 爆料風波延燒，網紅圈全被掃到",
+          "body": "前女友蕭伊從 8 月中開始一連串公開爆料，扣點制度、半夜叫煮牛肉麵、要求分擔房貸等細節輪流洗版。Joeman 發聲明先認錯不反駁，另一位前女友妮婭也出來說話。這幾天熱搜還掛著他現任女友許芊芊，話題完全沒退燒。",
+          "why": "網紅圈危機處理的現成教材：他「先認錯、不進對方戰場」的打法被網友評為高明，值得記下來。這種全民都在看的事件也是短影音跟哏的好時機，但碰之前先想清楚立場。",
+          "links": [
+            {
+              "t": "ETtoday 星光雲",
+              "u": "https://star.ettoday.net/news/3221194"
+            },
+            {
+              "t": "NOWnews 整理",
+              "u": "https://www.nownews.com/news/6866570"
+            },
+            {
+              "t": "Yahoo 新聞",
+              "u": "https://tw.news.yahoo.com/joeman%E9%81%AD-%E6%AF%80%E6%BB%85%E5%BC%8F%E7%88%86%E6%96%99-%E8%81%B2%E6%98%8E%E4%B8%8D%E5%8F%8D%E9%A7%81%E5%85%88%E8%AA%8D%E9%8C%AF-%E7%B6%B2%E8%AE%9A%E9%AB%98%E6%98%8E-%E6%8B%92%E7%B5%95%E9%80%B2%E5%85%A5%E5%A5%B3%E6%96%B9%E6%88%B0%E5%A0%B4-013400631.html"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Apple Music 傳要標示 AI 歌曲",
+          "body": "有 AI 新聞彙整指出，Apple Music 打算在今年底前替 AI 生成的曲子加上「Made With AI」標示，理由是平台上超過三分之一的新上傳內容已經是純 AI 生成。目前只看到英文彙整的說法，Apple 官方公告還沒查到，未證實。",
+          "why": "如果成真，代表「這首配樂是不是 AI 做的」開始被公開攤在檯面上。之後選 BGM 要多想一層：客戶在不在意、影片下方會不會被貼標。自己做的音樂記得留生成紀錄。",
+          "links": [
+            {
+              "t": "Future Tools 每日 AI 新聞",
+              "u": "https://www.futuretools.io/news"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Altman 開砲：AI 圈的末日行銷是話術",
+          "body": "OpenAI 執行長 Altman 在一集 Podcast 裡狠批業界風氣：一邊散播「AI 會毀滅世界」的恐懼、一邊承諾要治好癌症，他形容這是在操弄大眾的話術。同一天還有消息說 GPT-5.6 上架 AWS Kiro，推論成本降了八成多。",
+          "why": "「AI 到底該怕還是該用」這個題目現在很好聊，適合當口播影片的開場鉤子。成本一直往下掉也是好事，代表接下來 AI 剪輯工具的月費有機會變便宜。",
+          "links": [
+            {
+              "t": "AI 資訊日報 8/25",
+              "u": "https://vibex.iflow.cn/t/topic/6638"
+            }
+          ]
+        }
+      ]
     },
     {
-     "cat": "tw",
-     "title": "大巨蛋 SOGO 商場 8/22 試營運",
-     "body": "遠東在台北大巨蛋旁開的新商場 8/22 開始試營運，光商場棟就約 3 萬坪、加上原有區域共約 3.8 萬坪，塞進 560 多個品牌、近 200 個是全台首店。SOGO 直接放話「不會輸給 101」。不過是試營運，話題度最高的島語自助餐和日系超市 LOPIA 都要等第四季才開。",
-     "why": "開幕頭幾週是打卡影片的紅利期，人潮 B-roll、首店開箱都好剪；也是很好的「大家都在講」時事哏，可以拿來練網感預測。",
-     "links": [
-      {
-       "t": "城市學",
-       "u": "https://city.gvm.com.tw/article/132323"
-      },
-      {
-       "t": "科技新報",
-       "u": "https://finance.technews.tw/2026/08/22/garden-city-vs-tp101/"
-      },
-      {
-       "t": "Bella儂儂",
-       "u": "https://www.bella.tw/articles/travel&foodies/59550/garden-city-sogo-taipei-dome"
-      }
-     ]
+      "date": "2026-08-24",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "沙德爾颱風轉中颱，8/28 最接近台灣",
+          "body": "颱風沙德爾 8/19 生成後一路增強，氣象專家說最強可能上看強颱等級。8/23 最新路徑顯示它 8/26 前後掠過琉球，之後有「往西撲華東」和「北轉去日韓」兩種走法，8/28 是離台灣最近的一天，海上警報機率被評為偏高。是否放颱風假還太早講，未證實。",
+          "why": "外景、拍攝和交件時程先預留變數；颱風週大家滑手機的時間變多，是短影音流量的小高峰，貓咪帳號可以先備幾支存稿。",
+          "links": [
+            {
+              "t": "蘋果仁 8/23",
+              "u": "https://applealmond.com/posts/323030"
+            },
+            {
+              "t": "城市學",
+              "u": "https://city.gvm.com.tw/article/132480"
+            },
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/life/breakingnews/5547808"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "大巨蛋 SOGO 商場 8/22 試營運",
+          "body": "遠東在台北大巨蛋旁開的新商場 8/22 開始試營運，光商場棟就約 3 萬坪、加上原有區域共約 3.8 萬坪，塞進 560 多個品牌、近 200 個是全台首店。SOGO 直接放話「不會輸給 101」。不過是試營運，話題度最高的島語自助餐和日系超市 LOPIA 都要等第四季才開。",
+          "why": "開幕頭幾週是打卡影片的紅利期，人潮 B-roll、首店開箱都好剪；也是很好的「大家都在講」時事哏，可以拿來練網感預測。",
+          "links": [
+            {
+              "t": "城市學",
+              "u": "https://city.gvm.com.tw/article/132323"
+            },
+            {
+              "t": "科技新報",
+              "u": "https://finance.technews.tw/2026/08/22/garden-city-vs-tp101/"
+            },
+            {
+              "t": "Bella儂儂",
+              "u": "https://www.bella.tw/articles/travel&foodies/59550/garden-city-sogo-taipei-dome"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "李四川說「307 公車會上國道」被酸爆",
+          "body": "新北市長參選人李四川 8/21 在立法院回答公車問題時，說 307 會開上高速公路，結果 307 是雙北最有名的公車、路線根本沒上國道，網路一片譁然。他當天下午親自去搭 307 補課、說「記錯了就承認」，但補救影片又講錯跨市公車分管的來由，被批一天翻車兩次。",
+          "why": "典型的「一句話翻車」時事哏，Threads 和 IG 迷因帳號整週都在玩，適合觀察一個口誤怎麼被二創擴散——這正是網感訓練的教材。",
+          "links": [
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5548488"
+            },
+            {
+              "t": "Newtalk",
+              "u": "https://newtalk.tw/news/view/2026-08-21/1054948"
+            },
+            {
+              "t": "三立新聞",
+              "u": "https://www.setn.com/news/1893449"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Runway 新模型把影片轉 HDR",
+          "body": "Runway 8/21 發表新模型 Ruby，能把一般 SDR 影片自動轉成 16-bit HDR，而且直接吐 ProRes 和 EXR 這種後製用的格式，目前一次最多處理 30 秒的片段。等於用 AI 幫舊素材「補回」畫面的亮部暗部層次。",
+          "why": "手上那些畫質偏軟、動態範圍不夠的舊素材或手機素材，理論上可以先過一輪再進時間軸。30 秒上限代表現階段只適合零星鏡頭，不能整片丟。",
+          "links": [
+            {
+              "t": "Future Tools",
+              "u": "https://www.futuretools.io/news"
+            },
+            {
+              "t": "Runway 官網",
+              "u": "https://runwayml.com/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "神秘模型 Ox Alpha 偷偷上架",
+          "body": "8/23 一個沒掛公司名字的模型 Ox Alpha 悄悄上架 OpenRouter，自稱是「為寫程式、長時間自動作業和正式環境設計的推理模型」。這種匿名上架通常是大廠在偷偷做公測，圈內正在猜是誰家的。是誰放的目前未證實。",
+          "why": "跟你日常剪片沒直接關係，但這種「匿名模型偷跑」是 AI 圈很好用的話題哏；如果之後揭曉是知名大廠，會是一波討論度。",
+          "links": [
+            {
+              "t": "Future Tools",
+              "u": "https://www.futuretools.io/news"
+            },
+            {
+              "t": "OpenRouter",
+              "u": "https://openrouter.ai/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "YouTube 音樂庫收掉付費授權",
+          "body": "YouTube 的「創作者音樂」從 2026 年 8 月起分階段淘汰買斷式付費授權，8/10 之後不能再新購，之後只留免費曲庫和「分潤曲」（用了就跟原曲版權方拆廣告收益）。同期 YouTube 也在調整合作夥伴計畫的營利門檻，官方說法是要把資源移去購物、品牌合作那類新獎勵。",
+          "why": "直接影響配樂流程：以前買斷的曲子要確認還能不能用在新片，接案交件前最好先跟客戶講清楚音樂授權方式，免得上片後被黃標。",
+          "links": [
+            {
+              "t": "YouTube 說明",
+              "u": "https://support.google.com/youtube/answer/11610212?hl=zh-Hant"
+            },
+            {
+              "t": "壹蘋新聞",
+              "u": "https://news.nextapple.com/aitech/20260811/F4E1E2C60D1CF4FC39E61362C29F14D2"
+            }
+          ]
+        }
+      ]
     },
     {
-     "cat": "tw",
-     "title": "李四川說「307 公車會上國道」被酸爆",
-     "body": "新北市長參選人李四川 8/21 在立法院回答公車問題時，說 307 會開上高速公路，結果 307 是雙北最有名的公車、路線根本沒上國道，網路一片譁然。他當天下午親自去搭 307 補課、說「記錯了就承認」，但補救影片又講錯跨市公車分管的來由，被批一天翻車兩次。",
-     "why": "典型的「一句話翻車」時事哏，Threads 和 IG 迷因帳號整週都在玩，適合觀察一個口誤怎麼被二創擴散——這正是網感訓練的教材。",
-     "links": [
-      {
-       "t": "自由時報",
-       "u": "https://news.ltn.com.tw/news/politics/breakingnews/5548488"
-      },
-      {
-       "t": "Newtalk",
-       "u": "https://newtalk.tw/news/view/2026-08-21/1054948"
-      },
-      {
-       "t": "三立新聞",
-       "u": "https://www.setn.com/news/1893449"
-      }
-     ]
-    },
-    {
-     "cat": "ai",
-     "title": "Runway 新模型把影片轉 HDR",
-     "body": "Runway 8/21 發表新模型 Ruby，能把一般 SDR 影片自動轉成 16-bit HDR，而且直接吐 ProRes 和 EXR 這種後製用的格式，目前一次最多處理 30 秒的片段。等於用 AI 幫舊素材「補回」畫面的亮部暗部層次。",
-     "why": "手上那些畫質偏軟、動態範圍不夠的舊素材或手機素材，理論上可以先過一輪再進時間軸。30 秒上限代表現階段只適合零星鏡頭，不能整片丟。",
-     "links": [
-      {
-       "t": "Future Tools",
-       "u": "https://www.futuretools.io/news"
-      },
-      {
-       "t": "Runway 官網",
-       "u": "https://runwayml.com/"
-      }
-     ]
-    },
-    {
-     "cat": "ai",
-     "title": "神秘模型 Ox Alpha 偷偷上架",
-     "body": "8/23 一個沒掛公司名字的模型 Ox Alpha 悄悄上架 OpenRouter，自稱是「為寫程式、長時間自動作業和正式環境設計的推理模型」。這種匿名上架通常是大廠在偷偷做公測，圈內正在猜是誰家的。是誰放的目前未證實。",
-     "why": "跟你日常剪片沒直接關係，但這種「匿名模型偷跑」是 AI 圈很好用的話題哏；如果之後揭曉是知名大廠，會是一波討論度。",
-     "links": [
-      {
-       "t": "Future Tools",
-       "u": "https://www.futuretools.io/news"
-      },
-      {
-       "t": "OpenRouter",
-       "u": "https://openrouter.ai/"
-      }
-     ]
-    },
-    {
-     "cat": "edit",
-     "title": "YouTube 音樂庫收掉付費授權",
-     "body": "YouTube 的「創作者音樂」從 2026 年 8 月起分階段淘汰買斷式付費授權，8/10 之後不能再新購，之後只留免費曲庫和「分潤曲」（用了就跟原曲版權方拆廣告收益）。同期 YouTube 也在調整合作夥伴計畫的營利門檻，官方說法是要把資源移去購物、品牌合作那類新獎勵。",
-     "why": "直接影響配樂流程：以前買斷的曲子要確認還能不能用在新片，接案交件前最好先跟客戶講清楚音樂授權方式，免得上片後被黃標。",
-     "links": [
-      {
-       "t": "YouTube 說明",
-       "u": "https://support.google.com/youtube/answer/11610212?hl=zh-Hant"
-      },
-      {
-       "t": "壹蘋新聞",
-       "u": "https://news.nextapple.com/aitech/20260811/F4E1E2C60D1CF4FC39E61362C29F14D2"
-      }
-     ]
+      "date": "2026-08-21",
+      "items": [
+        {
+          "cat": "edit",
+          "hot": true,
+          "title": "壹加壹字幕工具「What'Sub」爆紅，創作者圈還在燒",
+          "body": "花 20 萬台幣、半年開發的繁中 AI 字幕網站：智慧斷句自動抓閱讀節奏、內建 1900 套字型、影片留在本機只上傳音訊。Threads 上創作者一片狂推「斷句正確率全對」。",
+          "why": "直接關係到你的字幕流程。可以試用比較它的斷句品質，看有沒有能偷學的東西。",
+          "links": [
+            {
+              "t": "4Gamers",
+              "u": "https://www.4gamers.com.tw/news/detail/81470/ai-subtitle-generator-whatsub"
+            },
+            {
+              "t": "JUKSY",
+              "u": "https://kol.juksy.com/article/150089"
+            },
+            {
+              "t": "鏈新聞",
+              "u": "https://abmedia.io/intro-what-sub-traditional-chinese-subtitles-tool"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Pika 推出四款 AI 音訊模型「Pika Audio」",
+          "body": "配樂自動對畫面節奏、寫詞生歌、用白話描述生音效、語音克隆，號稱比同行便宜最多 20 倍。",
+          "why": "找 BGM 和音效多一個新來源，之後剪片可以測。",
+          "links": [
+            {
+              "t": "AI 影片趨勢 8月",
+              "u": "https://blog.mean.ceo/ai-video-generation-trends-august-2026/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "平台開始「反 AI 洗版」：Snapchat 只推真人影片",
+          "body": "Snapchat 宣布 Spotlight 推薦位只給「真人拍的影片」，AI 生成內容被排除；同時 Google Veo 3.1 又升級了。",
+          "why": "風向訊號：AI 產量爆炸後，平台把「真人感」當稀缺品——真人口播和貓咪實拍反而加值。",
+          "links": [
+            {
+              "t": "StackInfluence",
+              "u": "https://stackinfluence.com/blog/august-2026-social-media-news-and-updates-for-creators"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "沙德爾颱風來了，全台洗版中",
+          "body": "8/19 生成、預估 8/24 轉強颱，今明到週日中南部豪雨最猛。路徑還沒定：可能撲台、也可能北轉日本。",
+          "why": "這幾天最大的全民共同話題，蹭時事哏最穩的切入點。",
+          "links": [
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20260819/3221684.htm"
+            },
+            {
+              "t": "今周刊",
+              "u": "https://www.businesstoday.com.tw/article/category/183030/post/202608180024/"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "昨日熱搜快掃：金價新高、泰山食安風波",
+          "body": "8/20 台灣熱搜：金價創新高、泰山食安風波信任危機、退撫基金 2.9 兆負債、韓國瑜砲轟政院。",
+          "why": "民生話題（金價、食安）留言區最容易起共鳴，適合當貼文哏。",
+          "links": [
+            {
+              "t": "社群輿情雷達",
+              "u": "https://ecom.atmarketing.tw/trend/daily/2026-08-20"
+            }
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "date": "2026-08-21",
-   "items": [
-    {
-     "cat": "edit",
-     "hot": true,
-     "title": "壹加壹字幕工具「What'Sub」爆紅，創作者圈還在燒",
-     "body": "花 20 萬台幣、半年開發的繁中 AI 字幕網站：智慧斷句自動抓閱讀節奏、內建 1900 套字型、影片留在本機只上傳音訊。Threads 上創作者一片狂推「斷句正確率全對」。",
-     "why": "直接關係到你的字幕流程。可以試用比較它的斷句品質，看有沒有能偷學的東西。",
-     "links": [
-      {
-       "t": "4Gamers",
-       "u": "https://www.4gamers.com.tw/news/detail/81470/ai-subtitle-generator-whatsub"
-      },
-      {
-       "t": "JUKSY",
-       "u": "https://kol.juksy.com/article/150089"
-      },
-      {
-       "t": "鏈新聞",
-       "u": "https://abmedia.io/intro-what-sub-traditional-chinese-subtitles-tool"
-      }
-     ]
-    },
-    {
-     "cat": "ai",
-     "title": "Pika 推出四款 AI 音訊模型「Pika Audio」",
-     "body": "配樂自動對畫面節奏、寫詞生歌、用白話描述生音效、語音克隆，號稱比同行便宜最多 20 倍。",
-     "why": "找 BGM 和音效多一個新來源，之後剪片可以測。",
-     "links": [
-      {
-       "t": "AI 影片趨勢 8月",
-       "u": "https://blog.mean.ceo/ai-video-generation-trends-august-2026/"
-      }
-     ]
-    },
-    {
-     "cat": "ai",
-     "title": "平台開始「反 AI 洗版」：Snapchat 只推真人影片",
-     "body": "Snapchat 宣布 Spotlight 推薦位只給「真人拍的影片」，AI 生成內容被排除；同時 Google Veo 3.1 又升級了。",
-     "why": "風向訊號：AI 產量爆炸後，平台把「真人感」當稀缺品——真人口播和貓咪實拍反而加值。",
-     "links": [
-      {
-       "t": "StackInfluence",
-       "u": "https://stackinfluence.com/blog/august-2026-social-media-news-and-updates-for-creators"
-      }
-     ]
-    },
-    {
-     "cat": "tw",
-     "title": "沙德爾颱風來了，全台洗版中",
-     "body": "8/19 生成、預估 8/24 轉強颱，今明到週日中南部豪雨最猛。路徑還沒定：可能撲台、也可能北轉日本。",
-     "why": "這幾天最大的全民共同話題，蹭時事哏最穩的切入點。",
-     "links": [
-      {
-       "t": "ETtoday",
-       "u": "https://www.ettoday.net/news/20260819/3221684.htm"
-      },
-      {
-       "t": "今周刊",
-       "u": "https://www.businesstoday.com.tw/article/category/183030/post/202608180024/"
-      }
-     ]
-    },
-    {
-     "cat": "tw",
-     "title": "昨日熱搜快掃：金價新高、泰山食安風波",
-     "body": "8/20 台灣熱搜：金價創新高、泰山食安風波信任危機、退撫基金 2.9 兆負債、韓國瑜砲轟政院。",
-     "why": "民生話題（金價、食安）留言區最容易起共鳴，適合當貼文哏。",
-     "links": [
-      {
-       "t": "社群輿情雷達",
-       "u": "https://ecom.atmarketing.tw/trend/daily/2026-08-20"
-      }
-     ]
-    }
-   ]
-  }
- ]
+  ]
 }
