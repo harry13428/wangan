@@ -1,6 +1,100 @@
 {
-  "updated": "2026-08-27 10:34",
+  "updated": "2026-08-28 09:25",
   "days": [
+    {
+      "date": "2026-08-28",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "北市「普發2萬」一讀過，蔣萬安自己踩煞車",
+          "body": "中央宣布明年普發現金1萬，蔣萬安先前喊「1萬不夠、該發2萬」。綠營議員就順勢提案要北市自己普發2萬，8/26 在議會一讀通過。結果蔣萬安改口說中央是用超徵的稅，北市要發得動老本、「沒有條件」，藍營議員則酸這提案是空包彈。今天「普發一萬 2026」還掛在台灣熱搜第二。",
+          "why": "全民都在等錢、留言區最容易吵起來的題材。做貓咪帳號可以蹭：阿寶炭炭「聽到要普發2萬」的反應哏，或「2萬能買幾包罐罐」的換算圖卡，門檻低又貼近生活。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/124984/9701399"
+            },
+            {
+              "t": "Newtalk",
+              "u": "https://newtalk.tw/news/view/2026-08-26/1055874"
+            },
+            {
+              "t": "三立新聞",
+              "u": "https://www.setn.com/news/1892107"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Runway 新模型一鍵把影片轉 HDR",
+          "body": "Runway 8/26 發表新模型 Ruby，把一般 SDR 影片轉成 16-bit HDR，可以輸出 ProRes 或 EXR 序列，30 秒以內的片段都能丟進去，包含你自己上傳的素材。官方說這是累積最久、被敲碗最多次的功能。",
+          "why": "以前要調出 HDR 質感得靠調色硬拉，現在丟上去就有。手機拍的貓片、舊素材想救質感可以試，輸出 ProRes 也接得回剪輯流程。",
+          "links": [
+            {
+              "t": "Runway 官方 X",
+              "u": "https://x.com/runwayml/status/2090807248402682101"
+            },
+            {
+              "t": "pIXELsHAM 教學",
+              "u": "https://www.pixelsham.com/2026/08/26/getting-started-with-runway-ruby-a-new-way-to-generate-or-convert-videos-into-16-bit-exr-sequences-or-10-bit-and-12-bit-prores-and-hevc-files-from-any-video-model/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Google AI 影片可拉到 40 秒了",
+          "body": "8/27 Google 更新影片生成模型 Gemini Omni 1.1 Flash，加了 4K 升頻和場景延伸，單段可以拉到 40 秒。配套的 Flow 也更新，能指定首尾幀、輸出 1080p/4K，並新增「草稿模式」——快 60%、只花三分之一的錢先試概念。",
+          "why": "AI 影片最痛的兩點是「只有 8 秒」跟「試錯很貴」，這次都往下砍。要做 B-roll 或轉場素材，先用草稿模式狂試、選中再出高畫質，成本會差很多。",
+          "links": [
+            {
+              "t": "Future Tools 每日 AI 新聞",
+              "u": "https://www.futuretools.io/news"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Photoshop 新 AI：塗鴉就能改圖",
+          "body": "Adobe 8/27 開放 Photoshop「AI 輔助編輯器」Beta，把散落各處的 AI 功能收進同一條工具列，還加了標註工具——你直接在圖片上畫圈、塗鴉標出要改哪裡，它就照著改，不用再打一長串咒語。",
+          "why": "封面圖、縮圖改起來會快很多。指「這裡」比描述「這裡」容易太多了，做貓咪帳號的封面或字卡底圖可以省一大段來回。",
+          "links": [
+            {
+              "t": "Future Tools 每日 AI 新聞",
+              "u": "https://www.futuretools.io/news"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Stability AI 推正版授權音樂模型",
+          "body": "8/25 Stability AI 完成 B 輪募資 7600 萬美元，投資方包含 EA、Sony、環球音樂這些娛樂巨頭，同時推出 Stable Audio 3.0，是開放權重的音樂生成模型，強調訓練資料都是有授權的。",
+          "why": "BGM 版權一直是接案的地雷。大廠自己下場背書的授權模型，等於未來可能有「不怕被 Content ID 打」的配樂來源，值得先追蹤。",
+          "links": [
+            {
+              "t": "Future Tools 每日 AI 新聞",
+              "u": "https://www.futuretools.io/news"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "沙德爾颱風擦邊過，海警明晚解除",
+          "body": "第18號颱風沙德爾 8/27 早上發布海上警報，27 深夜到 28 清晨離台灣最近，暴風圈只掃到北台灣邊緣，本島沒發陸警、沒放颱風假，預計往福建方向走，海警最快明晚解除。氣象專家已在分析為什麼這顆沒侵台。",
+          "why": "颱風假落空的失望感是全台共鳴哏。貓咪帳號可以做「以為要放假結果沒有」的表情反差短片，時效只有這一兩天，要拍趁早。",
+          "links": [
+            {
+              "t": "數位時代",
+              "u": "https://www.bnext.com.tw/article/91976/saudel-typhoon-latest-updates"
+            },
+            {
+              "t": "商周",
+              "u": "https://www.businessweekly.com.tw/focus/blog/3022311"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-27",
       "items": [
