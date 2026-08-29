@@ -1,6 +1,108 @@
 {
-  "updated": "2026-08-28 09:25",
+  "updated": "2026-08-29 10:30",
   "days": [
+    {
+      "date": "2026-08-29",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "台灣生育率變全球最低，跌破 0.7",
+          "body": "國發會最新人口推估出爐：台灣 2025 年總生育率 0.695，一年內從 0.885 直接摔下來，正式超車南韓變成全世界最低。國發會還估 2034 年會探底到 0.55。這幾天 Threads、新聞留言區都在吵「不是不生是養不起」，房價、薪水、托育又被翻出來打一輪。",
+          "why": "這是留言區保證會炸的題材，而且大家都有話說。做貓咪帳號可以走反差路線：「不生小孩改養貓」的自嘲哏，或算「養阿寶炭炭一個月多少錢 vs 養小孩」的對比圖卡，情緒點很準又不用得罪人。",
+          "links": [
+            {
+              "t": "自由財經",
+              "u": "https://ec.ltn.com.tw/article/breakingnews/5555606"
+            },
+            {
+              "t": "公視新聞網",
+              "u": "https://news.pts.org.tw/article/802317"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "中尼邊境冰川崩塌，死亡數字一路往上飆",
+          "body": "8/26 清晨尼泊爾與西藏交界的高山冰川整塊崩下來，引發好幾層樓高的洪水加土石流，把西藏吉隆口岸沖毀。到 8/28 為止尼泊爾已知 500 多人罹難，兩國合計還有將近 1500 人失聯。地質學家初判是冰川崩斷加山體崩塌，跟暖化脫不了關係；中方公布的數字被外媒質疑偏低（未證實）。",
+          "why": "台灣媒體這兩天的頭號國際焦點，你在社群上一定會滑到。這種畫面級的天災在做影片時要特別小心：不要拿災難畫面配輕快 BGM 或搞笑字卡，很容易被出征，這是網感的基本盤。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/124995/9719637"
+            },
+            {
+              "t": "轉角國際",
+              "u": "https://global.udn.com/global_vision/story/8662/9717151"
+            },
+            {
+              "t": "Newtalk",
+              "u": "https://newtalk.tw/news/view/2026-08-28/1056216"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Midjourney 推出專門的修圖模型",
+          "body": "8/27 Midjourney 放出獨立的 Edit 編輯模型，不再只是「重生一張」，而是直接改你手上那張圖：用文字講哪裡要改就局部重畫（inpainting），還能同時餵最多 4 張參考圖，把角色和物件的樣子固定住。等於把角色一致性這個老問題往前推了一大步。",
+          "why": "對你最有感的是「同一個角色多張圖」終於比較好搞了——縮圖、封面、字卡插圖要同一隻貓同一個人，不用再抽卡抽到死。貓咪帳號做系列封面或哏圖，這個省下來的時間是真的。",
+          "links": [
+            {
+              "t": "Midjourney 官方版本說明",
+              "u": "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version"
+            },
+            {
+              "t": "Releasebot 更新彙整",
+              "u": "https://releasebot.io/updates/midjourney"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "X 抓到 20 萬個中國假帳號帶風向",
+          "body": "8/28 X 的安全團隊公布，揪出一個約 20 萬個帳號的中國機器人農場，其中約 200 個帳號專門在美國帶「AI 資料中心害電費變貴」的風向，鎖定 AI 與能源政策的討論。這批帳號有的還養出上千追蹤者，看起來就是一般網友。",
+          "why": "提醒一件事：你在社群上看到的「大家都在罵某某」，有時候不是真的大家。做網感訓練時，判斷一個話題到底有多熱，要看真人留言的品質而不是數量——這件事本身也是個很好拍的短影音題目。",
+          "links": [
+            {
+              "t": "TechRadar",
+              "u": "https://www.techradar.com/pro/security/x-says-it-found-and-took-down-a-chinese-bot-farm-posting-anti-ai-data-center-content-to-thousands-of-followers"
+            },
+            {
+              "t": "Fox Business",
+              "u": "https://www.foxbusiness.com/fox-news-tech/x-reveals-foreign-adversary-behind-fake-accounts-disseminating-anti-data-center-messaging"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Gemini Notebook 額度限制放寬",
+          "body": "Google 8/28 把 Gemini Notebook 的用量限制從「一天給一包」改成「每 5 小時刷新一次」。以前一個下午操太兇就得等到隔天，現在頂多等幾小時就能繼續用。",
+          "why": "你要一次丟一堆長影片逐字稿、參考資料進去整理的時候，最痛的就是額度用完卡整天。改成 5 小時一輪之後，同一天可以分兩三輪做完，工作流不用硬拆到明天。",
+          "links": [
+            {
+              "t": "Future Tools 每日 AI 新聞",
+              "u": "https://www.futuretools.io/news"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "沙德爾颱風擦邊走人，但南部週末還有雨",
+          "body": "沙德爾最後沒登陸台灣，路徑北修往浙江去，海警也已經解除。不過 8/29 到 31 中南部還在低壓帶影響範圍內，南部有局部大雨，西半部午後對流旺盛，雷擊跟瞬間大雨都有機會。全台沒有颱風假。",
+          "why": "純實用：這幾天有外拍、空拍或戶外素材要收的話，行程要留備案。午後雷陣雨那種光線變化快，同一顆鏡頭前後拍色溫會跑掉，後製調色會很痛苦。",
+          "links": [
+            {
+              "t": "TVBS 新聞",
+              "u": "https://news.tvbs.com.tw/life/4011700"
+            },
+            {
+              "t": "數位時代",
+              "u": "https://www.bnext.com.tw/article/91976/saudel-typhoon-latest-updates"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-28",
       "items": [
