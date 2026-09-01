@@ -1,6 +1,112 @@
 {
-  "updated": "2026-08-31 10:33",
+  "updated": "2026-09-01 16:41",
   "days": [
+    {
+      "date": "2026-09-01",
+      "items": [
+        {
+          "cat": "ai",
+          "hot": true,
+          "title": "AI 不寫程式，直接畫出能點的介面",
+          "body": "做 Gen-4 影片模型的 Runway 昨天（8/31）發表新東西 Solaris，他們叫它「介面世界模型」。簡單講：以前 AI 是幫你寫程式、再由瀏覽器把畫面跑出來；Solaris 是跳過程式碼，像生影片一樣一格一格「畫」出整個 App 畫面，你點下去、拖曳，它就即時畫出下一格反應。底層就是它家的影片模型 Gen-4.5。目前還沒開放公測，要填表排早期名額。",
+          "why": "這代表「AI 生影片」的技術已經強到可以即時反應了——同一套引擎遲早會用回剪輯上（想像預覽即時生成的轉場）。短期你用不到，但拿來當影片哏超好用：「AI 現在連 App 都用畫的了」，一句話就有畫面。",
+          "links": [
+            {
+              "t": "Runway 官方",
+              "u": "https://runway.com/news/research/introducing-solaris"
+            },
+            {
+              "t": "AlphaSignal",
+              "u": "https://alphasignal.ai/news/runway-s-solaris-renders-interactive-apps-as-live-video-no-code-needed"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "索尼華納告 Anthropic 偷歌詞訓練 AI",
+          "body": "索尼音樂版權和華納 Chappell 領頭的 35 家音樂出版商，8/28 在美國加州聯邦法院告 Anthropic（Claude 的公司），連執行長本人都被列為被告。指控內容是：用 BT 下載盜版方式抓了披頭四、泰勒絲、麥可傑克森等上萬首歌的歌詞和樂譜去訓練 AI，而且 Claude 被問到時會一字不差地把歌詞背出來。每首求償最高 15 萬美元。Anthropic 回應會「強力應戰」，主張訓練屬於合理使用。",
+          "why": "音樂版權的紅線正在被重新畫。你剪片配 BGM 本來就要看授權，接下來「AI 生成的音樂到底能不能商用」會吵更兇——手上的 Mixkit／CC-BY 音樂庫先顧好，別急著把 AI 生成配樂丟進客戶的商案片。",
+          "links": [
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/"
+            },
+            {
+              "t": "Al Jazeera",
+              "u": "https://www.aljazeera.com/economy/2026/8/31/sony-warner-music-sue-anthropic-saying-it-pirated-songs-to-train-its-ai"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Google 影片工具升級，草稿模式省三分之二",
+          "body": "Google 8/28 把影片生成模型換成 Gemini Omni 1.1 Flash，Flow 和 Gemini App 都吃得到。三個重點：一是「草稿模式」用 360p 出片，快 60%、只花三分之一的錢，先試想法再燒錢渲染；二是接續生成，新片段會參考前面 10 秒的畫面（以前只看最後 1 秒），一次接 10 秒、最長可疊到 40 秒；三是可以指定首尾影格，角色比較不會走鐘。4K 是「上採樣」放大的，不是原生 4K。",
+          "why": "這條是今天最能直接用在工作上的。用草稿模式試 AI 空鏡、轉場素材成本降到三分之一，可以放心多試幾版；首尾影格鎖定＋40 秒接續，代表 AI 素材終於能撐一小段完整鏡頭，不再只是 5 秒堪用片。",
+          "links": [
+            {
+              "t": "Android Authority",
+              "u": "https://www.androidauthority.com/google-flow-gemini-omni-1-1-flash-video-update-3704288/"
+            },
+            {
+              "t": "MarkTechPost",
+              "u": "https://www.marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "YouTube 觀看數新制：一播放就算一次",
+          "body": "YouTube 從 8/24 起改了觀看次數的算法：影片一開始播放就算一次觀看，沒有最低觀看秒數，長片、Shorts、直播通通一樣。Google 強調這不影響 YPP 收益和資格判定——分潤還是看「互動觀看次數」和互動時長，創作者在數據分析進階模式裡照樣看得到真實留存。另外 8 月中 Google 也宣布調高分潤門檻、增設停更條款。",
+          "why": "你和客戶看的「觀看數」從這週開始整體會變好看，但那是帳面數字。跟客戶對成效時要主動說清楚：現在要看的是平均觀看時長和留存曲線，別讓人拿膨脹的觀看數來評斷你剪得好不好。",
+          "links": [
+            {
+              "t": "科技新報",
+              "u": "https://technews.tw/2026/08/18/an-update-to-how-public-views-are-counted-across-youtube/"
+            },
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20260811/3217009.htm"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "北捷信義線東延通車，首月免費搭",
+          "body": "捷運淡水信義線往東多了 1.4 公里，新站「廣慈／奉天宮站」8/30 下午兩點正式通車，成為紅線新的東端終點，預估每天多兩萬人次。象山到廣慈這一段從 8/30 到 9/28 免費搭，還有霜淇淋、機票抽獎等開通活動。這條線從動工到通車，地方等了十年。",
+          "why": "免費一個月＋等十年，這種題材在 Threads 和 IG 很吃香。要拍街訪或生活感素材，這個月去廣慈站是現成的場景，人潮和話題都自帶。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7323/9722427"
+            },
+            {
+              "t": "TVBS",
+              "u": "https://news.tvbs.com.tw/life/4010084"
+            },
+            {
+              "t": "北市捷運局",
+              "u": "https://www.dorts.gov.taipei/cp.aspx?n=027CDB8C2A690039"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "台股尾盤爆量 1.2 兆，8 月狂飆 3 千點",
+          "body": "8/31 是 MSCI 季度調整生效日，收盤前爆出超過 3000 億的量，指數盤中一度重挫 800 多點，最後收斂只跌 202 點、收在 46128 點，全天成交 1.2 兆。台股在 MSCI 新興市場指數的權重從 26.60% 升到 26.85%。整個 8 月台股漲了將近三千點，是史上最強的八月，大立光衝上 7650 元新天價，欣興則跌停摔下千金股。",
+          "why": "「史上最強八月」「一天內坐雲霄飛車」這種戲劇性數字，是短影音很好用的開場鉤子。你不炒股也沒關係——身邊朋友這幾天一定在聊，當成閒聊素材或街訪題目都行。",
+          "links": [
+            {
+              "t": "Yahoo 財經",
+              "u": "https://tw.stock.yahoo.com/news/msci%E8%AA%BF%E6%95%B4%E5%B0%BE%E7%9B%A4%E7%88%86%E9%87%8F%EF%BC%81%E5%8F%B0%E8%82%A18%E6%9C%88%E7%8B%82%E9%A3%863%E5%8D%83%E9%BB%9E%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%BC%B7-%E6%AC%A3%E8%88%88%E8%B7%8C%E5%81%9C%E6%91%94%E4%B8%8B%E5%8D%83%E9%87%91%E3%80%81%E5%A4%A7%E7%AB%8B%E5%85%89%E8%A1%9D%E9%AB%98%E9%A3%867650%E5%85%83%E6%96%B0%E5%A4%A9%E5%83%B9%EF%BD%9Cyahoo%E8%B2%A1%E7%B6%93%E6%8E%83%E6%8F%8F-091648351.html"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7238/9688478"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-08-31",
       "items": [
