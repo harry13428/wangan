@@ -1,6 +1,108 @@
 {
-  "updated": "2026-09-01 16:41",
+  "updated": "2026-09-02 08:05",
   "days": [
+    {
+      "date": "2026-09-02",
+      "items": [
+        {
+          "cat": "ai",
+          "hot": true,
+          "title": "IG 出手抓 AI 假人帳號，不標就少人看",
+          "body": "Instagram 8/31 宣布把原本的「AI creator」標籤改名成「AI-generated profile（AI 生成帳號）」，講白一點就是：這個帳號上的人是 AI 做出來的。更狠的是，該標沒標的帳號會被降觸及——貼文不再推薦給非粉絲，等於進不了 Reels 和探索頁。可以在 Account Status 查自己有沒有被限制，也能申訴。官方特別澄清：只是用 AI 修圖、潤標題、做圖卡的人不用標。",
+          "why": "這條規則直接畫了一條線：AI 修圖 OK、AI 造人要標。你的貓咪帳號 cattt.q 是真貓實拍，完全不受影響；但之後想玩 AI 虛擬角色就得先標，不然白做。也是很順的影片哏——「IG 開始抓 AI 假人了」。",
+          "links": [
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/08/31/instagram-puts-new-limits-on-undisclosed-ai-profiles/"
+            },
+            {
+              "t": "Social Media Today",
+              "u": "https://www.socialmediatoday.com/news/instagram-adds-ai-creator-labels/819267/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Meta 推即時逐字稿，中英夾雜也聽得懂",
+          "body": "Meta 9/1 發表 Muse Voice Transcribe，一支即時語音轉文字模型。三個重點：邊講邊出字不用等整段跑完、能自動分辨 20 人以上誰在講話、支援 25 種語言而且一句話裡中英夾雜也不會斷掉。第三方測試站 Artificial Analysis 上錯字率 3.1% 排第一，贏過 ElevenLabs Scribe v2、GPT 和 Gemini 的即時轉錄。目前先進 Mac 版 Meta AI 跟開發者 API。",
+          "why": "上字幕最痛的兩件事就是「中英夾雜辨識爛」跟「多人對談分不出誰在講」，這支剛好兩個都打中。等它能接進工作流，訪談、Podcast 型的片子光逐字稿階段就能省掉一大半手工。",
+          "links": [
+            {
+              "t": "9to5Mac",
+              "u": "https://9to5mac.com/2026/09/01/meta-launches-muse-voice-transcribe-for-real-time-voice-dictation-on-mac/"
+            },
+            {
+              "t": "The New Stack",
+              "u": "https://thenewstack.io/meta-muse-voice-transcribe/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "一張照片，AI 讓你在裡面自由運鏡",
+          "body": "李飛飛的 World Labs 9/1 發表新模型 Atlas。丟一張或幾張照片進去，它能生出「同一個場景、但相機換到任何角度」的畫面，1440p、最長一分鐘，還會自己腦補照片沒拍到的部分，並重建成 3D。他們的定位不是「生一段影片」，而是「生一個你可以在裡面移動的空間」。還沒開放公測，要申請早期名額。",
+          "why": "對剪輯的想像空間很大：一張劇照就能生一段推軌或環繞鏡頭當 B-roll，以前這得靠 3D 建模或實拍。現在還碰不到，先把名字記著。",
+          "links": [
+            {
+              "t": "World Labs 官方",
+              "u": "https://www.worldlabs.ai/blog/atlas"
+            },
+            {
+              "t": "CoinDesk",
+              "u": "https://coindesk.cc/world-labs-unveils-atlas-an-omni-world-model-for-spatial-intelligence-with-pixel-perfect-generation-108727.html"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "9/1 一天內三家大廠同時發新模型",
+          "body": "9 月 1 號各家新模型全撞在同一天：Google 出 Gemini 3.8 Flash（主打寫程式變強）、Anthropic 上架 Claude Fable 與 Mythos 5.1、中國智譜的 GLM-5.3 也同日發表（官方說在自家測試上比前一代好 50%，這是廠商自評數字，還沒有第三方驗證）。",
+          "why": "重點不是哪一支比較強，而是這個節奏——工具幾乎每週都在換。對接案的人來說追不完也不用追，挑一兩個穩定的用熟才是划算的；真正該注意的是「哪天某個功能便宜到可以塞進你的流程」。",
+          "links": [
+            {
+              "t": "LLM Stats",
+              "u": "https://llm-stats.com/ai-news"
+            },
+            {
+              "t": "Future Tools",
+              "u": "https://www.futuretools.io/news"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "公主遊輪「退出台灣」其實是關辦公室，船照靠港",
+          "body": "8/31 公主遊輪的台灣代理（英商康年華旅行社台灣分公司）宣布停止銷售、官網關閉，即日起不收新預訂，已訂的照常服務。新聞標題一片「退出台灣市場」「震撼彈」，但港務公司隨後澄清：這是縮減亞太據點、保留新加坡與日本分公司，航線並沒有停，明年掛靠台灣的航次還會增加到 24 航次。",
+          "why": "很典型的「標題比事實兇」案例，一天之內從震撼彈變成澄清稿。拿來練網感剛好：同一件事寫成「退出台灣」跟寫成「只是關銷售辦公室」，流量差很多，可信度也差很多——你要哪一種。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7266/9725816"
+            },
+            {
+              "t": "自由時報（港務公司澄清）",
+              "u": "https://news.ltn.com.tw/news/life/breakingnews/5559177"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "「低氣壓」衝上熱搜第一，沙德爾颱風又復活",
+          "body": "9/1 台灣 Google 熱搜第一名是「低氣壓」，熱度衝到兩萬，遠遠甩開第二名。原因是低氣壓加西南風把水氣灌進台灣，中南部、台東連日豪雨警戒，多個縣市停班停課；同一時間沙德爾颱風在南海重組復活，暴風圈 9/1 白天掠過馬祖北方海面後往中國登陸。",
+          "why": "「低氣壓」這個詞天然雙關——天氣的低氣壓、心情的低氣壓，Threads 上一票人拿來玩。天氣在台灣永遠是穩定的流量入口，貓咪帳號拍一支下雨天窩在家的日常正好蹭得上，不用硬追時事。",
+          "links": [
+            {
+              "t": "社群輿情雷達",
+              "u": "https://ecom.atmarketing.tw/trend/daily/2026-09-01"
+            },
+            {
+              "t": "風傳媒（9/2 停班課）",
+              "u": "https://www.storm.mg/lifestyle/11160923"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-01",
       "items": [
