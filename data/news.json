@@ -1,6 +1,108 @@
 {
-  "updated": "2026-09-05 08:05",
+  "updated": "2026-09-06 11:14",
   "days": [
+    {
+      "date": "2026-09-06",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "蔣得立「國中同學」護航被抓包 IP 在印尼",
+          "body": "台北市長蔣萬安兒子蔣得立錄取公費交換生被質疑特權，這兩天 Threads 上冒出一批自稱「他國中同學」的帳號集體發文力挺，說他是憑實力考上建中、市長獎也是照程序拿的。結果網友一查，這些帳號貼的內容幾乎一模一樣、IP 位置全都顯示在印尼，反而變成新一波炎上。官方沒有出面說明這些帳號是誰在操作，帶風向的指控目前未證實。",
+          "why": "這就是活教材：網路上「一群人同時講同一句話」永遠比內容本身更可疑，網友現在的辦案能力（比對 IP、比對句型）比你想的強。做內容要記得，留言區的風向可以買，但被抓包的代價更大；這種「群眾自己破案」的節奏也很適合當短影音的敘事骨架。",
+          "links": [
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5564442"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/6656/9736807"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Google 音樂 AI 進 Gemini，一句話生歌",
+          "body": "9/4 Google 把最新音樂模型 Lyria 3.5 放進 Gemini App 跟 API，全球都能用。它能生 44.1kHz 立體聲、最長三分鐘、而且是有主歌副歌橋段的完整歌，歌詞主題、人聲風格自己指定，還能丟一張圖叫它照著感覺寫。",
+          "why": "對剪輯師最直接的意義是 BGM：以前配樂要翻音樂庫翻半天還怕撞曲，現在可以照影片氣氛長一首專屬的。商用授權條款記得自己確認過再放進客戶的片，別預設「AI 生的就能用」。",
+          "links": [
+            {
+              "t": "Google 官方",
+              "u": "https://blog.google/innovation-and-ai/products/gemini-app/better-tracks-lyria-gemini/"
+            },
+            {
+              "t": "Unite.AI",
+              "u": "https://www.unite.ai/google-brings-lyria-3-5-music-generation-to-the-gemini-app/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Sora API 9/24 收攤，工作流要搬家",
+          "body": "OpenAI 的影片模型 Sora，網頁版跟 App 已經在 4/26 關掉，最後的 Sora API 也確定 9/24 停止服務，之後帳上的影片、圖片資料會被永久刪除。等於整條 Sora 產線走入歷史，市場主力轉到 Veo、Kling、Seedance 這幾家。",
+          "why": "兩件事要做：一是如果你或客戶還有東西放在 Sora 上，趁 9/24 前全部下載備份；二是別把工作流綁死在單一 AI 服務上，這一年已經看過太多工具說收就收，素材永遠留一份在自己硬碟。",
+          "links": [
+            {
+              "t": "OpenAI 說明中心",
+              "u": "https://help.openai.com/ja-jp/articles/20001152"
+            },
+            {
+              "t": "Creaa.ai 移轉指南",
+              "u": "https://creaa.ai/ja/sora2-daitai"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "OpenAI 新模型上線塞車，Altman 道歉",
+          "body": "前天喊出「AGI 來了」的 GPT-6 Astra，實際上線卻是分批放行：企業客戶先拿到，付最貴的 Pro 訂閱戶反而排後面，API 開發者也被卡在門外。Altman 9/4 在 X 上為這場「混亂的上線」道歉，說會從 Pro 開始逐步開放；團隊則補償每等一天送一次用量重置。",
+          "why": "提醒你別急著跟風換工具：新模型剛發表的頭幾週常常是「新聞很猛、實際排不到」。手上正在接的案子，還是用穩定跑得動的那套做完再說，等它真的全面開放再測。",
+          "links": [
+            {
+              "t": "The Verge",
+              "u": "https://www.theverge.com/ai-artificial-intelligence/990060/altman-apologizes-messy-astra-rollout"
+            },
+            {
+              "t": "The New Stack",
+              "u": "https://thenewstack.io/gpt6-astra-developer-access-delayed/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "微軟新圖像模型衝上競技場第二名",
+          "body": "微軟 9/4 發表 MAI-Image-2.6，在圖像生成的公開評比 Arena 上直接衝到第二，只輸 OpenAI 的 GPT-Image-2。這代主打把字寫對（文字渲染分數大漲）、人像跟 3D 質感更好，特別適合做產品圖跟品牌視覺；另有一個 Flash 版本，速度快將近三倍、成本低很多。",
+          "why": "AI 生圖最痛的點一直是「字會亂寫」，這代改善的正是這塊。做縮圖、封面、字卡底圖可以試試看，省下的美術時間就是你的時薪。",
+          "links": [
+            {
+              "t": "Microsoft AI",
+              "u": "https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai/"
+            },
+            {
+              "t": "Neowin",
+              "u": "https://www.neowin.net/news/microsoft-unveils-mai-image-26-flash-for-faster-and-cheaper-image-generation/"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "颱風外圍甩雨，週三首波東北季風報到",
+          "body": "科羅旺颱風的外圍環流明天（7 日）會給北台灣帶來大雨，台南以北都要留意局部大雨；另一個熱帶擾動有機會增強成今年第 24 號颱風「杜鵑」，路徑還在看。再往後，週三會迎來今年第一波東北季風，氣溫開始往下掉。",
+          "why": "外景、街拍、跟貓的戶外素材這幾天要挑時間拍，遇雨改室內備案。天氣轉涼是季節內容的切換點，秋天感的畫面（外套、暖光、熱飲）現在拍最新鮮，之後大家都在拍就不稀奇了。",
+          "links": [
+            {
+              "t": "中央氣象署 颱風消息",
+              "u": "https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_NEWS.html"
+            },
+            {
+              "t": "Yahoo 新聞",
+              "u": "https://tw.news.yahoo.com/9-6%E5%A4%A9%E6%B0%A3%E5%A4%A7%E8%BD%89%E6%8A%98-%E7%A7%91%E7%BE%85%E6%97%BA%E5%A4%96%E5%9C%8D%E7%92%B0%E6%B5%81%E7%94%A9%E9%9B%A8-%E6%9D%9C%E9%B5%91%E9%A2%B1%E9%A2%A8%E6%9C%80%E5%BF%AB%E6%98%8E%E7%94%9F%E6%88%90-074048627.html"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-05",
       "items": [
