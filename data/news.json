@@ -1,6 +1,120 @@
 {
-  "updated": "2026-09-07 10:39",
+  "updated": "2026-09-08 15:25",
   "days": [
+    {
+      "date": "2026-09-08",
+      "items": [
+        {
+          "cat": "edit",
+          "hot": true,
+          "title": "字節跳動要發即時互動影片模型",
+          "body": "抖音、剪映的母公司字節跳動被爆由創辦人張一鳴親自督軍，下個月要發表一套「即時空間影片」AI 模型，蓋在它既有的 Seedance 影片模型之上。號稱一秒 20 格、延遲只有 0.05 秒，觀眾可以用聲音或動作直接改變畫面裡的虛擬環境，主打直播、短劇和遊戲，運算全放雲端所以不用好電腦。確切發表時程官方還沒公布，仍可能變動。",
+          "why": "今天跟剪輯關係最直接的一則：同一家公司的東西通常沒多久就會下放到剪映。它點名的戰場是短劇＋直播，代表接下來接案市場的「AI 短劇」需求只會更多；貓咪帳號也能先想一個「觀眾喊什麼、畫面就變什麼」的互動玩法卡位。",
+          "links": [
+            {
+              "t": "TechNews 科技新報",
+              "u": "https://technews.tw/2026/09/08/bytedance-launch-real-time-spatial-video-ai-model"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Anthropic 喊卡 60 億美元收購案",
+          "body": "傳了快一個月的大案子破局：Anthropic（Claude 的公司）本來要用約 60 億美元買下 AI 新創 Decart，做完盡職調查後決定不買了，雙方說之後還可能用別的方式合作。Decart 的專長剛好是「即時影片世界模型」——讓 AI 即時改寫直播畫面那種技術。",
+          "why": "跟上面那則是同一個戰場：大家都在搶「即時改畫面」的技術。對你來說值得先記住這個名詞，一兩年內它就是換背景、換人物、即時特效的底層；工具真的出來時你不會慢半拍。",
+          "links": [
+            {
+              "t": "Yahoo 財經",
+              "u": "https://hk.finance.yahoo.com/news/%E5%82%B3anthropic%E6%94%BE%E6%A3%8460%E5%84%84%E7%BE%8E%E5%85%83%E6%94%B6%E8%B3%BCai%E5%88%9D%E5%89%B5decart-ai-015626734.html"
+            },
+            {
+              "t": "新浪財經",
+              "u": "https://finance.sina.com.cn/stock/usstock/c/2026-09-08/doc-inirapza5991328.shtml"
+            },
+            {
+              "t": "聯合新聞網（前情）",
+              "u": "https://udn.com/news/story/6811/9688560"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "ChatGPT 開始學你本人的口氣寫字",
+          "body": "OpenAI 上線 ChatGPT Work 的新功能：授權它連上 Gmail、Slack、Google Drive、SharePoint 之後，它會去讀你以前寫過的信和訊息，抓出你的用字、句子長短、標點習慣、結尾怎麼收，之後幫你寫東西就自動用你的口氣。目前只開給付費的工作版網頁用戶，位置在 設定 → 個人化 → 寫作風格。",
+          "why": "這正是你每次都要手動做的事——跟 AI 解釋「請用我的語氣」。以後回客戶的訊息、貓咪帳號的貼文都能一鍵對味。反過來要注意：它是真的去讀你信箱，有客戶機密的帳號別隨手授權。",
+          "links": [
+            {
+              "t": "Bloomingbit",
+              "u": "https://en.bloomingbit.io/feed/news/119893"
+            },
+            {
+              "t": "Business Today",
+              "u": "https://www.businesstoday.in/technology/artificial-intelligence/story/openai-says-chatgpt-can-now-mimic-your-writing-style-from-emails-and-messages-heres-how-553866-2026-09-08"
+            },
+            {
+              "t": "AI Post Hub（中文）",
+              "u": "https://www.aiposthub.com/chatgpt-work-learning-writing-style-gmail-slack/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "歐洲 AI 之光募到 30 億歐元",
+          "body": "法國 AI 公司 Mistral 今天宣布完成 D 輪募資，拿到 30 億歐元（約新台幣 1,100 億），三星電子領投，投後估值衝到 210 億歐元，一年翻一倍，創下歐洲科技公司紀錄。錢主要花在擴研究團隊、買算力、往國際擴張。Mistral 的招牌是「開放權重」，模型可以自己下載回來跑。",
+          "why": "跟你的關係是「免費好用的替代品會變多」：能下載到自己電腦跑的模型愈強，之後做字幕、寫腳本這些工具就愈可能不用月費、也不用把客戶素材上傳雲端——接案遇到要求資料不外流的客戶，這是解法。",
+          "links": [
+            {
+              "t": "IT 之家",
+              "u": "https://www.ithome.com/0/999/657.htm"
+            },
+            {
+              "t": "經濟一週",
+              "u": "https://edigest.hk/%E6%9C%80%E6%96%B0%E8%B2%A1%E7%B6%93%E6%B6%88%E6%81%AF/mistral%E5%AE%8C%E6%88%9030%E5%84%84%E6%AD%90%E5%85%83%E8%9E%8D%E8%B3%87-%E4%BC%B0%E5%80%BC%E9%A3%86%E8%87%B3210%E5%84%84%E6%AD%90%E5%85%83-2038518"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "瑞幸咖啡疑偷跑，經濟部發函了",
+          "body": "網友在台北南京復興一帶拍到大量印著 luckin coffee 的紙箱，加上另一處疑似第二家店的裝修，社群整個吵翻。經濟部回應：瑞幸是中國企業，要來台開店必須循陸資投資的管道申請，目前它在台的分公司設立已經卡關超過兩個月。這家在中國有兩萬多家店、被叫「星巴克殺手」的品牌，來台傳了快一年還沒真的開成。",
+          "why": "「還沒開就一直被拍到」這種題材在 Threads 特別好蹭，留言區已經在戰要不要喝中國品牌。想拍時事哏影片，這是本週討論度夠高又不至於太敏感的題目。",
+          "links": [
+            {
+              "t": "壹蘋新聞網",
+              "u": "https://news.nextapple.com/finance/20260907/D9D7885C00ADF21735EA3DCC9C99D226"
+            },
+            {
+              "t": "數位時代",
+              "u": "https://www.bnext.com.tw/article/85255/luckin-coffee-in-taiwan"
+            },
+            {
+              "t": "Yahoo 新聞",
+              "u": "https://tw.news.yahoo.com/%E5%BF%AB%E8%A8%8A-%E4%B8%8D%E5%BF%8D%E4%BA%86-%E7%91%9E%E5%B9%B8%E5%92%96%E5%95%A1%E7%96%91%E4%BC%BC%E5%9C%A8%E5%8F%B0%E7%81%A3%E9%96%8B%E7%AC%AC2%E5%AE%B6%E5%BA%97-%E7%B6%93%E6%BF%9F%E9%83%A8%E5%BC%B7%E7%A1%AC%E5%9B%9E%E6%87%89%E6%9B%9D%E5%85%89-092251389.html"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "威力彩 4.1 億開出，蜻蜓變主角",
+          "body": "9/7 晚上開獎，威力彩頭獎 4.1 億元一注獨得，終結連槓 22 期，獎落台中南屯黎明路的彩券行。老闆說開獎前幾天有好幾隻蜻蜓一直在店裡盤旋、開門也趕不走，被當成好兆頭，這個細節在社群被瘋傳。下一期 9/10 開獎，頭獎保證 2 億。",
+          "why": "純娛樂但流量很大，「蜻蜓報明牌」本身就是天生的哏，一張圖配一句話就能發。貓帳號也能玩：讓阿寶或炭炭當招財貓對著號碼發呆，蹭 9/10 開獎前的搜尋熱度。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://www.cna.com.tw/news/ahel/202609070302.aspx"
+            },
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/society/breakingnews/5566289"
+            },
+            {
+              "t": "Newtalk 新聞",
+              "u": "https://newtalk.tw/news/view/2026-09-07/1058348"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-07",
       "items": [
@@ -1335,84 +1449,6 @@
             {
               "t": "壹蘋新聞",
               "u": "https://news.nextapple.com/aitech/20260811/F4E1E2C60D1CF4FC39E61362C29F14D2"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-08-21",
-      "items": [
-        {
-          "cat": "edit",
-          "hot": true,
-          "title": "壹加壹字幕工具「What'Sub」爆紅，創作者圈還在燒",
-          "body": "花 20 萬台幣、半年開發的繁中 AI 字幕網站：智慧斷句自動抓閱讀節奏、內建 1900 套字型、影片留在本機只上傳音訊。Threads 上創作者一片狂推「斷句正確率全對」。",
-          "why": "直接關係到你的字幕流程。可以試用比較它的斷句品質，看有沒有能偷學的東西。",
-          "links": [
-            {
-              "t": "4Gamers",
-              "u": "https://www.4gamers.com.tw/news/detail/81470/ai-subtitle-generator-whatsub"
-            },
-            {
-              "t": "JUKSY",
-              "u": "https://kol.juksy.com/article/150089"
-            },
-            {
-              "t": "鏈新聞",
-              "u": "https://abmedia.io/intro-what-sub-traditional-chinese-subtitles-tool"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Pika 推出四款 AI 音訊模型「Pika Audio」",
-          "body": "配樂自動對畫面節奏、寫詞生歌、用白話描述生音效、語音克隆，號稱比同行便宜最多 20 倍。",
-          "why": "找 BGM 和音效多一個新來源，之後剪片可以測。",
-          "links": [
-            {
-              "t": "AI 影片趨勢 8月",
-              "u": "https://blog.mean.ceo/ai-video-generation-trends-august-2026/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "平台開始「反 AI 洗版」：Snapchat 只推真人影片",
-          "body": "Snapchat 宣布 Spotlight 推薦位只給「真人拍的影片」，AI 生成內容被排除；同時 Google Veo 3.1 又升級了。",
-          "why": "風向訊號：AI 產量爆炸後，平台把「真人感」當稀缺品——真人口播和貓咪實拍反而加值。",
-          "links": [
-            {
-              "t": "StackInfluence",
-              "u": "https://stackinfluence.com/blog/august-2026-social-media-news-and-updates-for-creators"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "沙德爾颱風來了，全台洗版中",
-          "body": "8/19 生成、預估 8/24 轉強颱，今明到週日中南部豪雨最猛。路徑還沒定：可能撲台、也可能北轉日本。",
-          "why": "這幾天最大的全民共同話題，蹭時事哏最穩的切入點。",
-          "links": [
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260819/3221684.htm"
-            },
-            {
-              "t": "今周刊",
-              "u": "https://www.businesstoday.com.tw/article/category/183030/post/202608180024/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "昨日熱搜快掃：金價新高、泰山食安風波",
-          "body": "8/20 台灣熱搜：金價創新高、泰山食安風波信任危機、退撫基金 2.9 兆負債、韓國瑜砲轟政院。",
-          "why": "民生話題（金價、食安）留言區最容易起共鳴，適合當貼文哏。",
-          "links": [
-            {
-              "t": "社群輿情雷達",
-              "u": "https://ecom.atmarketing.tw/trend/daily/2026-08-20"
             }
           ]
         }
