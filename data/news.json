@@ -1,6 +1,108 @@
 {
-  "updated": "2026-09-08 15:25",
+  "updated": "2026-09-09 11:00",
   "days": [
+    {
+      "date": "2026-09-09",
+      "items": [
+        {
+          "cat": "edit",
+          "hot": true,
+          "title": "達文西 21.1 讓 AI 直接進剪輯軟體",
+          "body": "Blackmagic 9/7 釋出 DaVinci Resolve 21.1 免費更新，可以在軟體裡接上 Claude、Claude Code 或 ChatGPT Codex（File > Setup AI Assistants），直接叫 AI 幫你整理素材、批次輸出、清掉不要的片段。它內建了 MCP 伺服器，等於 AI 不只是跟你聊天，而是真的能動手操作專案。另外還加了 100 多項剪輯與調色的新工具。",
+          "why": "你手邊就有 Claude Code，這是第一次「叫 AI 在剪輯軟體裡動手」變成官方功能，值得裝一版來試，順便看能不能接上你自己的 KK 引擎。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/07/blackmagic-design-davinci-resolve-21-1/"
+            },
+            {
+              "t": "No Film School",
+              "u": "https://nofilmschool.com/davinci-resolve-update-21-1"
+            },
+            {
+              "t": "Blackmagic 官方",
+              "u": "https://www.blackmagicdesign.com/products/davinciresolve/whatsnew"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "Joeman 被控傳性病，曬全陰性報告反擊",
+          "body": "前女友蕭伊 9/8 發文說交往期間以為是單一伴侶關係，分手後檢查出 HPV 53 型和披衣菌。Joeman 隔天透過律師公開自己 8/22 的檢驗報告，結果全部陰性，律師李怡貞還回嗆對方是「心機重的爛前任」。雙方說法完全對不上，誰對誰錯目前沒有第三方認定，屬未證實的各說各話。",
+          "why": "台灣網紅圈這兩天最大的瓜，Threads、IG 正在洗版。題材本身不用碰，但大家在聊什麼你要知道。",
+          "links": [
+            {
+              "t": "自由娛樂",
+              "u": "https://ent.ltn.com.tw/news/breakingnews/5566991"
+            },
+            {
+              "t": "三立新聞",
+              "u": "https://www.setn.com/news/1903832"
+            },
+            {
+              "t": "ETtoday",
+              "u": "https://star.ettoday.net/news/3233616"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "ChatGPT 新版出圖，快一半還能照草圖畫",
+          "body": "OpenAI 9/8 上線 ChatGPT Images 2.5，官方說生成速度比上一代最多快 50%，細節更銳利、局部修改更聽話，還多了讓你用手繪草圖指定構圖的功能。",
+          "why": "做縮圖、字卡底圖、貓咪帳號的梗圖時，能先畫個爛草圖鎖版面，就不用一直重抽圖碰運氣。",
+          "links": [
+            {
+              "t": "OpenAI 官方",
+              "u": "https://openai.com/index/introducing-chatgpt-images-2-5/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Meta 推 Muse，一個會辦事的 AI",
+          "body": "Meta 9/8 發表個人 AI 助理 Muse，WhatsApp 裡和獨立 App 都能用，官方示範它能訂機票、寄信、甚至幫你跟人談條件，主打賣點是「私密安全」。台灣多數人不用 WhatsApp，實際影響要看它什麼時候長進 IG、FB。",
+          "why": "Meta 的東西最後都會進 IG。先知道它在做什麼，之後貓咪帳號的私訊互動很可能就是這隻在跑。",
+          "links": [
+            {
+              "t": "Meta 官方",
+              "u": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Claude 被告：Max 方案用量講不清楚",
+          "body": "9/8 美國有人對 Anthropic 提集體訴訟，主張 Claude Max 方案宣傳的「用量倍數」講得不夠清楚——倍數其實只在 5 小時的區間內成立，上面還壓了一層每週總量上限。目前只是原告主張，法院尚未認定。",
+          "why": "你自己在付 Claude 的錢。知道「倍數上面還有週上限」這件事，排剪片跑量的時候心裡有底、不會半路被卡住。",
+          "links": [
+            {
+              "t": "The Verge",
+              "u": "https://www.theverge.com/ai-artificial-intelligence/990313/anthropic-class-action-lawsuit-pricing-subscription-plans"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "成淵 87 名國三生腹瀉，午餐廠商被停業",
+          "body": "台北市成淵高中國中部 9/8 有 87 名九年級生腹瀉嘔吐，疑似營養午餐肉品不潔。衛生局稽查抓到冰箱髒汙、地面積水等五項缺失，因通報人數超過 50 人直接勒令團膳業者停業，學校改成外部送餐。蔣萬安當晚發四點處置。",
+          "why": "校園食安是每年都會再燒一輪的常青題材，隨口聊時事、或家庭向內容都用得上。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://www.cna.com.tw/news/aloc/202609080154.aspx"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7323/9742687"
+            },
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/Taipei/breakingnews/5567455"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-08",
       "items": [
@@ -1335,120 +1437,6 @@
             {
               "t": "AI 資訊日報 8/25",
               "u": "https://vibex.iflow.cn/t/topic/6638"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-08-24",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "沙德爾颱風轉中颱，8/28 最接近台灣",
-          "body": "颱風沙德爾 8/19 生成後一路增強，氣象專家說最強可能上看強颱等級。8/23 最新路徑顯示它 8/26 前後掠過琉球，之後有「往西撲華東」和「北轉去日韓」兩種走法，8/28 是離台灣最近的一天，海上警報機率被評為偏高。是否放颱風假還太早講，未證實。",
-          "why": "外景、拍攝和交件時程先預留變數；颱風週大家滑手機的時間變多，是短影音流量的小高峰，貓咪帳號可以先備幾支存稿。",
-          "links": [
-            {
-              "t": "蘋果仁 8/23",
-              "u": "https://applealmond.com/posts/323030"
-            },
-            {
-              "t": "城市學",
-              "u": "https://city.gvm.com.tw/article/132480"
-            },
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/life/breakingnews/5547808"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "大巨蛋 SOGO 商場 8/22 試營運",
-          "body": "遠東在台北大巨蛋旁開的新商場 8/22 開始試營運，光商場棟就約 3 萬坪、加上原有區域共約 3.8 萬坪，塞進 560 多個品牌、近 200 個是全台首店。SOGO 直接放話「不會輸給 101」。不過是試營運，話題度最高的島語自助餐和日系超市 LOPIA 都要等第四季才開。",
-          "why": "開幕頭幾週是打卡影片的紅利期，人潮 B-roll、首店開箱都好剪；也是很好的「大家都在講」時事哏，可以拿來練網感預測。",
-          "links": [
-            {
-              "t": "城市學",
-              "u": "https://city.gvm.com.tw/article/132323"
-            },
-            {
-              "t": "科技新報",
-              "u": "https://finance.technews.tw/2026/08/22/garden-city-vs-tp101/"
-            },
-            {
-              "t": "Bella儂儂",
-              "u": "https://www.bella.tw/articles/travel&foodies/59550/garden-city-sogo-taipei-dome"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "李四川說「307 公車會上國道」被酸爆",
-          "body": "新北市長參選人李四川 8/21 在立法院回答公車問題時，說 307 會開上高速公路，結果 307 是雙北最有名的公車、路線根本沒上國道，網路一片譁然。他當天下午親自去搭 307 補課、說「記錯了就承認」，但補救影片又講錯跨市公車分管的來由，被批一天翻車兩次。",
-          "why": "典型的「一句話翻車」時事哏，Threads 和 IG 迷因帳號整週都在玩，適合觀察一個口誤怎麼被二創擴散——這正是網感訓練的教材。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5548488"
-            },
-            {
-              "t": "Newtalk",
-              "u": "https://newtalk.tw/news/view/2026-08-21/1054948"
-            },
-            {
-              "t": "三立新聞",
-              "u": "https://www.setn.com/news/1893449"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Runway 新模型把影片轉 HDR",
-          "body": "Runway 8/21 發表新模型 Ruby，能把一般 SDR 影片自動轉成 16-bit HDR，而且直接吐 ProRes 和 EXR 這種後製用的格式，目前一次最多處理 30 秒的片段。等於用 AI 幫舊素材「補回」畫面的亮部暗部層次。",
-          "why": "手上那些畫質偏軟、動態範圍不夠的舊素材或手機素材，理論上可以先過一輪再進時間軸。30 秒上限代表現階段只適合零星鏡頭，不能整片丟。",
-          "links": [
-            {
-              "t": "Future Tools",
-              "u": "https://www.futuretools.io/news"
-            },
-            {
-              "t": "Runway 官網",
-              "u": "https://runwayml.com/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "神秘模型 Ox Alpha 偷偷上架",
-          "body": "8/23 一個沒掛公司名字的模型 Ox Alpha 悄悄上架 OpenRouter，自稱是「為寫程式、長時間自動作業和正式環境設計的推理模型」。這種匿名上架通常是大廠在偷偷做公測，圈內正在猜是誰家的。是誰放的目前未證實。",
-          "why": "跟你日常剪片沒直接關係，但這種「匿名模型偷跑」是 AI 圈很好用的話題哏；如果之後揭曉是知名大廠，會是一波討論度。",
-          "links": [
-            {
-              "t": "Future Tools",
-              "u": "https://www.futuretools.io/news"
-            },
-            {
-              "t": "OpenRouter",
-              "u": "https://openrouter.ai/"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "YouTube 音樂庫收掉付費授權",
-          "body": "YouTube 的「創作者音樂」從 2026 年 8 月起分階段淘汰買斷式付費授權，8/10 之後不能再新購，之後只留免費曲庫和「分潤曲」（用了就跟原曲版權方拆廣告收益）。同期 YouTube 也在調整合作夥伴計畫的營利門檻，官方說法是要把資源移去購物、品牌合作那類新獎勵。",
-          "why": "直接影響配樂流程：以前買斷的曲子要確認還能不能用在新片，接案交件前最好先跟客戶講清楚音樂授權方式，免得上片後被黃標。",
-          "links": [
-            {
-              "t": "YouTube 說明",
-              "u": "https://support.google.com/youtube/answer/11610212?hl=zh-Hant"
-            },
-            {
-              "t": "壹蘋新聞",
-              "u": "https://news.nextapple.com/aitech/20260811/F4E1E2C60D1CF4FC39E61362C29F14D2"
             }
           ]
         }
