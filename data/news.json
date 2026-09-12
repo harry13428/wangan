@@ -1,6 +1,108 @@
 {
-  "updated": "2026-09-11 10:10",
+  "updated": "2026-09-12 09:47",
   "days": [
+    {
+      "date": "2026-09-12",
+      "items": [
+        {
+          "cat": "edit",
+          "hot": true,
+          "title": "Premiere 能在時間軸直接生成畫面",
+          "body": "Adobe 9/8 在荷蘭 IBC 影視展發表、本週釋出的 Premiere 新版，可以在時間軸上圈一段空白，打字描述你要什麼，它就生出影片、音效或配樂，不用切出去別的軟體。另外把混音拆成人聲／音樂／環境音、講話自動壓低音樂這些，目前還在 beta。",
+          "why": "你剪片最常卡的「就差一個轉場畫面、差一個音效」可以直接在軟體裡補，貓咪帳號缺的空景也能現生。",
+          "links": [
+            {
+              "t": "ProVideo Coalition",
+              "u": "https://www.provideocoalition.com/adobes-ibc-release-for-premiere-and-after-effects/"
+            },
+            {
+              "t": "CGinterest",
+              "u": "https://cginterest.com/2026/09/11/adobe-premiere-26-5%E3%81%8C%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%EF%BC%81%E7%94%9F%E6%88%90%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E3%83%84%E3%83%BC%E3%83%AB%E3%82%84paper-edit%E3%81%AA%E3%81%A9%E6%96%B0/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "ElevenLabs 新作曲模型，免費可用",
+          "body": "9/11 更新的 Music v2.5，旋律和樂器聽起來更像真人演奏，免費方案也能用這個新模型。但「能不能拿去商用」要看你訂哪一階方案，而且明顯模仿別人歌的成品會被擋下載。",
+          "why": "找 BGM 又多一條路，不過真要配進客戶的片之前，先把方案的商用條款看清楚。",
+          "links": [
+            {
+              "t": "ElevenMusic 官方",
+              "u": "https://elevenmusic.io/blog/introducing-music-v2-5"
+            },
+            {
+              "t": "ElevenLabs X",
+              "u": "https://x.com/ElevenLabs/status/2098457076410482971"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "IBC 影視展開跑，手機拍片配件一波上新",
+          "body": "阿姆斯特丹的 IBC 2026 從 9/11 開展。SmallRig 秀出給 iPhone 18 Pro 的拍片兔籠（雙手把組、創作者組），Atomos 和 Portkeys 也各推了新的監看螢幕。",
+          "why": "貓咪帳號多半用手機拍，兔籠這類配件能讓手持畫面穩一截、也好掛燈跟麥克風。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/11/smallrig-iphone-18-pro-cage-series-first-look-at-ibc-2026/"
+            },
+            {
+              "t": "RedShark News",
+              "u": "https://www.redsharknews.com/ibc2026-top-10-things-to-see"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "輝達傳砸百億押 Anthropic 上市案",
+          "body": "路透 9/12 報導，做 Claude 的 Anthropic 正在談上市，想募到 1,000 億美元、估值上看 2 兆美元，輝達考慮當基石投資人投 100 億。雙方都還在洽談，沒有定案。",
+          "why": "你天天在用的 Claude 背後公司要上市，之後方案定價和功能推出的節奏都可能跟著變。",
+          "links": [
+            {
+              "t": "鉅亨網",
+              "u": "https://news.cnyes.com/news/id/6604975"
+            },
+            {
+              "t": "FMT（路透）",
+              "u": "https://www.freemalaysiatoday.com/category/business/2026/09/12/nvidia-said-to-be-in-talks-to-invest-in-anthropic-s-mega-ipo"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "共諜案被告張俊傑棄保潛逃，全台追捕",
+          "body": "立委高金素梅的前辦公室主任張俊傑，9/6 晚上弄壞電子腳環丟在大安森林公園後落跑。檢調說他疑似收了香港匯來的上億元在台發展組織，一路變裝換車往南部躲，另外兩名助理被收押禁見。",
+          "why": "這幾天新聞台和社群都在追他的逃亡動線，是現在最好接的時事哏。",
+          "links": [
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20260910/3235246.htm"
+            },
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5569459"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "杜鵑颱風最快下週生成，路徑偏日本",
+          "body": "氣象專家說關島附近的熱帶系統下週可能增強成今年第 17 號颱風「杜鵑」，但離台灣遠、往日本的機率比較大。另外下週一到週三有新一波東北季風，北台灣高溫掉到 28 度左右、雨會變多。",
+          "why": "下週北部轉涼又有雨，要拍外景的行程建議往前挪到這個週末。",
+          "links": [
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20260912/3236000.htm"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6874346"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-11",
       "items": [
@@ -1323,100 +1425,6 @@
             {
               "t": "數位時代",
               "u": "https://www.bnext.com.tw/article/91976/saudel-typhoon-latest-updates"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-08-28",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "北市「普發2萬」一讀過，蔣萬安自己踩煞車",
-          "body": "中央宣布明年普發現金1萬，蔣萬安先前喊「1萬不夠、該發2萬」。綠營議員就順勢提案要北市自己普發2萬，8/26 在議會一讀通過。結果蔣萬安改口說中央是用超徵的稅，北市要發得動老本、「沒有條件」，藍營議員則酸這提案是空包彈。今天「普發一萬 2026」還掛在台灣熱搜第二。",
-          "why": "全民都在等錢、留言區最容易吵起來的題材。做貓咪帳號可以蹭：阿寶炭炭「聽到要普發2萬」的反應哏，或「2萬能買幾包罐罐」的換算圖卡，門檻低又貼近生活。",
-          "links": [
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/124984/9701399"
-            },
-            {
-              "t": "Newtalk",
-              "u": "https://newtalk.tw/news/view/2026-08-26/1055874"
-            },
-            {
-              "t": "三立新聞",
-              "u": "https://www.setn.com/news/1892107"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "Runway 新模型一鍵把影片轉 HDR",
-          "body": "Runway 8/26 發表新模型 Ruby，把一般 SDR 影片轉成 16-bit HDR，可以輸出 ProRes 或 EXR 序列，30 秒以內的片段都能丟進去，包含你自己上傳的素材。官方說這是累積最久、被敲碗最多次的功能。",
-          "why": "以前要調出 HDR 質感得靠調色硬拉，現在丟上去就有。手機拍的貓片、舊素材想救質感可以試，輸出 ProRes 也接得回剪輯流程。",
-          "links": [
-            {
-              "t": "Runway 官方 X",
-              "u": "https://x.com/runwayml/status/2090807248402682101"
-            },
-            {
-              "t": "pIXELsHAM 教學",
-              "u": "https://www.pixelsham.com/2026/08/26/getting-started-with-runway-ruby-a-new-way-to-generate-or-convert-videos-into-16-bit-exr-sequences-or-10-bit-and-12-bit-prores-and-hevc-files-from-any-video-model/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Google AI 影片可拉到 40 秒了",
-          "body": "8/27 Google 更新影片生成模型 Gemini Omni 1.1 Flash，加了 4K 升頻和場景延伸，單段可以拉到 40 秒。配套的 Flow 也更新，能指定首尾幀、輸出 1080p/4K，並新增「草稿模式」——快 60%、只花三分之一的錢先試概念。",
-          "why": "AI 影片最痛的兩點是「只有 8 秒」跟「試錯很貴」，這次都往下砍。要做 B-roll 或轉場素材，先用草稿模式狂試、選中再出高畫質，成本會差很多。",
-          "links": [
-            {
-              "t": "Future Tools 每日 AI 新聞",
-              "u": "https://www.futuretools.io/news"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Photoshop 新 AI：塗鴉就能改圖",
-          "body": "Adobe 8/27 開放 Photoshop「AI 輔助編輯器」Beta，把散落各處的 AI 功能收進同一條工具列，還加了標註工具——你直接在圖片上畫圈、塗鴉標出要改哪裡，它就照著改，不用再打一長串咒語。",
-          "why": "封面圖、縮圖改起來會快很多。指「這裡」比描述「這裡」容易太多了，做貓咪帳號的封面或字卡底圖可以省一大段來回。",
-          "links": [
-            {
-              "t": "Future Tools 每日 AI 新聞",
-              "u": "https://www.futuretools.io/news"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Stability AI 推正版授權音樂模型",
-          "body": "8/25 Stability AI 完成 B 輪募資 7600 萬美元，投資方包含 EA、Sony、環球音樂這些娛樂巨頭，同時推出 Stable Audio 3.0，是開放權重的音樂生成模型，強調訓練資料都是有授權的。",
-          "why": "BGM 版權一直是接案的地雷。大廠自己下場背書的授權模型，等於未來可能有「不怕被 Content ID 打」的配樂來源，值得先追蹤。",
-          "links": [
-            {
-              "t": "Future Tools 每日 AI 新聞",
-              "u": "https://www.futuretools.io/news"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "沙德爾颱風擦邊過，海警明晚解除",
-          "body": "第18號颱風沙德爾 8/27 早上發布海上警報，27 深夜到 28 清晨離台灣最近，暴風圈只掃到北台灣邊緣，本島沒發陸警、沒放颱風假，預計往福建方向走，海警最快明晚解除。氣象專家已在分析為什麼這顆沒侵台。",
-          "why": "颱風假落空的失望感是全台共鳴哏。貓咪帳號可以做「以為要放假結果沒有」的表情反差短片，時效只有這一兩天，要拍趁早。",
-          "links": [
-            {
-              "t": "數位時代",
-              "u": "https://www.bnext.com.tw/article/91976/saudel-typhoon-latest-updates"
-            },
-            {
-              "t": "商周",
-              "u": "https://www.businessweekly.com.tw/focus/blog/3022311"
             }
           ]
         }
