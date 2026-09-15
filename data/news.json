@@ -1,6 +1,108 @@
 {
-  "updated": "2026-09-14 11:01",
+  "updated": "2026-09-15 10:16",
   "days": [
+    {
+      "date": "2026-09-15",
+      "items": [
+        {
+          "cat": "ai",
+          "hot": true,
+          "title": "iOS 27 開放更新，新 Siri 登場",
+          "body": "蘋果 iOS 27 台灣時間 9/15 凌晨開放下載，iPhone 11 以上都能升級，主打大改版的 Siri AI：能打字問、記得對話、看得懂螢幕上的內容。不過進階 Siri AI 首發只支援英文，繁中版預估要再等 2–3 個月。不想升的人可以先裝 iOS 26.7（只修安全漏洞）。",
+          "why": "手機是你拍素材和剪短片的主力，工作機建議先等一兩週看災情再升；「Siri 終於變聰明但只會英文」很適合當哏。",
+          "links": [
+            {
+              "t": "TVBS",
+              "u": "https://news.tvbs.com.tw/tech/4020305"
+            },
+            {
+              "t": "遠見雜誌",
+              "u": "https://www.gvm.com.tw/article/132973"
+            },
+            {
+              "t": "MacRumors",
+              "u": "https://www.macrumors.com/2026/09/14/apple-releases-ios-26-7/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Claude 裡能直接 AI 配音配樂",
+          "body": "ElevenLabs 9/14 宣布更新官方 MCP 連接器：裝進 Claude、ChatGPT 之後，直接在對話裡就能生成旁白、逐字稿、配樂、音效，還能叫出 50 多個圖片和影片模型。登入一次帳號就能用，不用貼 API 金鑰；費用照你的 ElevenLabs 方案算。",
+          "why": "寫腳本→配旁白→配樂可以在同一個對話框做完，省掉切換網站的時間；你已經在用 Claude，裝起來就能試。",
+          "links": [
+            {
+              "t": "TestingCatalog",
+              "u": "https://www.testingcatalog.com/elevenlabs-mcp-can-now-generate-voice-music-images-video/"
+            },
+            {
+              "t": "ElevenLabs",
+              "u": "https://elevenlabs.io/mcp"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "思銳變形鏡頭一轉就從橫拍變直拍",
+          "body": "IBC 影視展上（Newsshooter 9/14 報導），思銳 SIRUI 秀出 Saturn V2 變形鏡頭：解鎖、轉 90 度、鎖回去，不用拆鏡頭就能從橫式電影感切到直式，專門為短影音設計。有 35/50/75mm 三顆，E、L、RF 卡口，三顆套組約 1,699 美元，預計展後 2–3 週上市。",
+          "why": "想幫直式短片拍出「電影寬螢幕光斑」質感的話，這是少數針對直拍設計的鏡頭，接案拍攝可以列入觀察。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/14/sirui-saturn-v2-hands-on-at-ibc-2026-switching-horizontal-to-vertical-on-the-fly/"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "中國出入境新規今上路，可查手機",
+          "body": "中國新的出入境規定 9/15 開始實施：海關可以問出境原因、要求檢查手機裡的資料，被認定危害國安的人最高禁止出境 3 年。陸委會點名台商、半導體人才、公務員等族群風險最高，媒體整理出「8 大高風險族群」在網路瘋傳；國台辦則說台灣人「完全不用擔心」。",
+          "why": "如果有去中國出差、拍片或接陸案的計畫，出發前手機裡的內容要先想清楚；這是最近長輩群組和 Threads 都在轉的話題。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://www.cna.com.tw/news/acn/202609140096.aspx"
+            },
+            {
+              "t": "經理人",
+              "u": "https://www.managertoday.com.tw/articles/view/72758"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "沈伯洋東京穿防彈衣慢跑被熱議",
+          "body": "民進黨台北市長參選人沈伯洋訪日時，被拍到在皇居附近穿防彈背心跑步。他說自己被中國通緝，只要出國就會穿；蔣萬安回「台北很安全、日本也很安全」，雙方支持者從 9/13 吵到現在，還延伸成政治快評題材。",
+          "why": "選戰期間的政治話題流量大但容易被貼標籤，貓帳號想玩哏建議只取「跑步穿防彈衣」的畫面感，不站邊。",
+          "links": [
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5571543"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/124652/9751404"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "Steam Frame 台灣開賣 3.9萬起",
+          "body": "Valve 的無線 VR 頭盔 Steam Frame 9/15 突然在台灣、日本、香港開賣（台灣由 KOMODO 代理），256GB 版 38,888 元、1TB 版 47,888 元，9/18 起陸續出貨。不接電腦也能玩，還能把一般 Steam 遊戲投在眼前的大螢幕上玩，是今天 Google 熱搜前十。",
+          "why": "遊戲玩家圈今天在洗版，開箱、「值不值得買」類影片接下來會很多；接到 3C／遊戲業配時可以先知道這個話題。",
+          "links": [
+            {
+              "t": "4Gamers",
+              "u": "https://www.4gamers.com.tw/news/detail/82051/steam-frame-taiwan-price-38888-komodo-launch"
+            },
+            {
+              "t": "巴哈姆特",
+              "u": "https://gnn.gamer.com.tw/detail.php?sn=311661"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-14",
       "items": [
@@ -1331,100 +1433,6 @@
             {
               "t": "今周刊",
               "u": "https://www.businesstoday.com.tw/article/category/183030/post/202608280021/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-08-30",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "公投三案只過一案，年底跟大選一起投",
-          "body": "立法院 8 月中表決通過三個公投案：鞭刑入法、重啟核電、交通罰鍰專款專用。但中選會 8/28 審議後只放行「廢除非核家園」（也就是重啟核電）那一案，另外兩案被認定不算「重大政策的創制或複決」直接擋掉，過關的這案 11/28 會跟九合一大選一起投。藍白痛批中選會是「太上皇機關」、「朕同意的才能投」。",
-          "why": "核電、鞭刑這種題材留言區保證吵翻，而且會一路吵到 11 月底，是很耐用的長線哏；想拍街訪或「一句話問路人」類型的短影音，現在開始準備剛剛好。",
-          "links": [
-            {
-              "t": "公視新聞",
-              "u": "https://news.pts.org.tw/article/824640"
-            },
-            {
-              "t": "壹蘋新聞網",
-              "u": "https://news.nextapple.com/politics/20260828/1E94D0031D6C661ED393B95D2F1B7D54"
-            },
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260828/3227609.htm"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "Sora 9/24 徹底關站，剪映裡的要趁早用",
-          "body": "OpenAI 的 Sora 今年 4 月就把網頁版跟 App 收掉了，最後撐著的 API 也確定 9 月 24 日全面下線。現在剪映／CapCut 裡面還接得到 Sora 2 模型，等於這條路只剩不到一個月。之後 AI 生影片的主流會變成 Veo、Runway Gen-4.5、可靈這幾家。",
-          "why": "你如果有在用剪映的 AI 生成影片，9/24 前先把想做的素材跑完；順便可以拍一支「AI 生影片工具大洗牌」的科普短片吃這波話題。",
-          "links": [
-            {
-              "t": "ETtoday AI 科技",
-              "u": "https://ai.ettoday.net/news/3140838"
-            },
-            {
-              "t": "數位時代",
-              "u": "https://www.bnext.com.tw/article/90414/openai-sora-stop-2026"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "AI 模型大混戰，價格砍到剩零頭",
-          "body": "光是 8 月就冒出 Gemini 3.7 Flash、Grok 4.6、DeepSeek V4 Pro，全都主打「效能追上前段班、價格只要零頭」。月底還跑出一個匿名神祕模型 OX Alpha，寫程式的測試分數壓過 GPT-5.6，來歷未證實，有人猜是中國的智譜做的。",
-          "why": "對你的意義很單純：同樣的 AI 剪輯、AI 腳本工具，接下來幾個月成本會一路往下掉，先別急著綁年繳方案。",
-          "links": [
-            {
-              "t": "鏈新聞 8月AI月報",
-              "u": "https://abmedia.io/ai-industry-monthly-report-august-2026"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "10 歲女童遭猥褻，拖 240 天沒安置",
-          "body": "台北市一名 10 歲女童長期被母親的男性客人性騷擾，去年 12 月底就通報了，卻整整拖了 240 天都沒被安置，期間還出現自傷行為。議員許淑華 8/28 質詢時當場落淚，罵市府拿「訪視 714 次」當政績、眼裡根本沒有孩子；蔣萬安回應心痛不捨。這家庭其實從 2010 年就被社福列管。",
-          "why": "「制度接不住人」這種題材在 Threads 留言區會炸開，但屬於高敏感題材，要碰就得先查清楚事實，不要為了流量加油添醋。",
-          "links": [
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7314/9719858"
-            },
-            {
-              "t": "台視新聞",
-              "u": "https://news.ttv.com.tw/news/11508280001000W"
-            },
-            {
-              "t": "Newtalk",
-              "u": "https://newtalk.tw/news/view/2026-08-28/1056296"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "台灣人扛起 Threads 全球四分之一流量",
-          "body": "Threads 全球用戶衝破 5 億，官方直接點名台灣是靠「選舉」爆紅的市場，台灣用戶貢獻的流量佔全球約四分之一、排世界第一。台灣的互動高峰是晚上 8 到 10 點，跟國際建議的早上 9 點剛好相反。最近圈內在用的講法有日式笑聲符號、「留友看」（留著給朋友看）、還有「嚴肅OO」。",
-          "why": "這是你網感訓練的直接彈藥：貓咪帳號 cattt.q 的發文時間往晚上 8–10 點壓，文案開頭塞一句「有台灣人在嗎」這種內圈感開場最吃香。",
-          "links": [
-            {
-              "t": "風傳媒",
-              "u": "https://www.storm.mg/lifestyle/11142241"
-            },
-            {
-              "t": "QSearch",
-              "u": "https://www.qsearch.cc/blog/2026/03/threads-stats-2026-taiwan/"
-            },
-            {
-              "t": "PopDaily",
-              "u": "https://www.popdaily.com.tw/forum/entertainment/1643674"
             }
           ]
         }
