@@ -1,6 +1,108 @@
 {
-  "updated": "2026-09-19 09:01",
+  "updated": "2026-09-20 08:03",
   "days": [
+    {
+      "date": "2026-09-20",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "名古屋亞運開幕，中華隊482人出征",
+          "body": "第20屆亞洲運動會9月19日在日本愛知名古屋開幕，賽期到10月4日共16天。中華隊派出482名選手拚34個運動項目，開幕式由拳擊黃筱雯、散打張薷云掌旗進場。中華電信雙平台有轉播。",
+          "why": "接下來兩週台灣社群會被賽事洗版，是最好蹭的話題；貓咪帳號可以做「跟貓一起看比賽」，賽事剪輯的接案需求這期間也會變多。",
+          "links": [
+            {
+              "t": "遠見雜誌",
+              "u": "https://www.gvm.com.tw/article/132893"
+            },
+            {
+              "t": "Yahoo運動",
+              "u": "https://tw.sports.yahoo.com/news/%E4%BA%9E%E9%81%8B-%E5%90%8D%E5%8F%A4%E5%B1%8B%E4%BA%9E%E9%81%8B%E7%9B%9B%E5%A4%A7%E9%96%8B%E5%B9%95-%E4%B8%AD%E8%8F%AF%E9%9A%8A%E6%98%8E%E6%9C%89%E6%9C%9B%E6%8B%9A%E9%A6%96%E9%87%91-141051597.html"
+            },
+            {
+              "t": "經理人懶人包",
+              "u": "https://www.managertoday.com.tw/articles/view/72533"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "怪男撒「水晶寶寶」，整池錦鯉全死",
+          "body": "台中一名男子把含水晶寶寶的芳香劑倒進沙鹿福德宮魚池當飼料，錦鯉吞下後一週內20條全部暴斃，廟方損失4萬5千元。法院依動保法判拘役40天併科罰金20萬，9月19日才被報導出來。水晶寶寶吸水後會膨脹20到30倍。",
+          "why": "養寵物的觀眾對這種新聞最有反應。貓咪帳號 cattt.q 可以剪一支「路上千萬別亂餵」的提醒短片，情緒夠強、留言會很多。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7315/9765346"
+            },
+            {
+              "t": "聯合影音",
+              "u": "https://video.udn.com/news/1329316"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "中國Step 5小模型打平兆級大模型",
+          "body": "階躍星辰9月19日突襲發表 Step 5 Preview，直接跳過整個 Step 4 世代。第三方評測 Artificial Analysis 給它44分，跟參數量大它四倍多的 Kimi K3 同分，只比 GLM-5.3、Opus 5 少1分，價格大約只要同級的一半。",
+          "why": "模型越做越小、越做越便宜，代表你在用的 AI 剪輯、AI 配音工具月費之後還會再掉，現在不用急著簽長約或買終身方案。",
+          "links": [
+            {
+              "t": "新浪科技",
+              "u": "https://finance.sina.com.cn/tech/roll/2026-09-19/doc-iniskccv2410534.shtml"
+            },
+            {
+              "t": "DataLearner",
+              "u": "https://www.datalearner.com/ai-models/pretrained-models/step-5-preview"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "傳 Anthropic 上市前要再放大招",
+          "body": "路透9月18日獨家報導，Anthropic 正考慮在 IPO 之前推出新模型，回應 OpenAI 推出 GPT-6 Astra 之後的攻勢。微妙的是他們執行長9月12日才寫了3800字長文呼籲全業界「放慢開發速度」。上市可能延到11月美國期中選舉後。官方沒回應，目前未證實。",
+          "why": "你每天拿 Claude 在跑剪輯工具跟腳本，新模型通常代表上下文更長、處理長片更穩；真的要出，工作流可以順勢升級一輪。",
+          "links": [
+            {
+              "t": "Rappler（轉路透）",
+              "u": "https://www.rappler.com/technology/anthropic-considers-releasing-new-ai-model-ahead-ipo/"
+            },
+            {
+              "t": "Seeking Alpha",
+              "u": "https://seekingalpha.com/news/4644560-anthropic-weighs-new-ai-model-ahead-of-ipo"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "相機籠裝滑板輪，貼地運鏡變簡單",
+          "body": "Cartoni 9月18日推出 HyperRoll：三顆聚胺酯輪加 NATO 導軌，夾在你現有的相機籠上，相機就能在地板或桌面上滑著走，還附一根伸縮轉向桿。輪子角度可以鎖死，同一個運鏡能重複跑好幾次。歐洲售價699歐元，已經開始出貨。",
+          "why": "拍貓最缺的就是穩定的貼地視角，這個比架軌道便宜又好收；美食、產品的桌面橫移也能直接用同一套。",
+          "links": [
+            {
+              "t": "CineD",
+              "u": "https://www.cined.com/cartoni-hyperroll-explained-skate-wheels-for-any-camera-cage-nato-rail-mounting-lockable-wheel-angles/"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "杜鵑轉去日本，中秋連假放晴",
+          "body": "杜鵑9月19日下午升格中度颱風，今天開始北轉，21日最接近日本關東外海，對台灣沒有直接影響。氣象署說中秋連假（9/23–26）各地多雲到晴，只有南部山區午後可能有局部陣雨，南部高溫32到34度，日夜溫差大。",
+          "why": "連假天氣穩，外景、帶貓出門的片可以安心排進去；早晚溫差大，清晨拍日出記得多帶一件。",
+          "links": [
+            {
+              "t": "TVBS",
+              "u": "https://news.tvbs.com.tw/life/4024619"
+            },
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20260919/3240392.htm"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-19",
       "items": [
@@ -1279,104 +1381,6 @@
             {
               "t": "Yahoo 新聞",
               "u": "https://tw.news.yahoo.com/9-6%E5%A4%A9%E6%B0%A3%E5%A4%A7%E8%BD%89%E6%8A%98-%E7%A7%91%E7%BE%85%E6%97%BA%E5%A4%96%E5%9C%8D%E7%92%B0%E6%B5%81%E7%94%A9%E9%9B%A8-%E6%9D%9C%E9%B5%91%E9%A2%B1%E9%A2%A8%E6%9C%80%E5%BF%AB%E6%98%8E%E7%94%9F%E6%88%90-074048627.html"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "items": [
-        {
-          "cat": "ai",
-          "hot": true,
-          "title": "OpenAI 新模型喊「AGI 時代來了」",
-          "body": "9/3 OpenAI 發表新模型 GPT-6 Astra，總裁 Brockman 說這是「世代級的跳躍」，他個人認為已經到 AGI（通用人工智慧）。它最猛的是自己會操作電腦——自己開網頁、填表格、從零做出一個網站。但 OpenAI 同時承認這代模型「可監控性下降」，等於連他們自己都比較難看懂它在想什麼，因此啟動了更高等級的安全管制。",
-          "why": "白話說就是：AI 從「幫你寫字」進化到「幫你動手做」。對剪輯師的意義是，未來派工可能不是丟提示詞，而是丟一句「把這支片剪成 60 秒」讓它自己開軟體做。現在先熟悉工作流怎麼交給 AI，比研究哪個模型強更划算。",
-          "links": [
-            {
-              "t": "OpenAI 官方",
-              "u": "https://openai.com/index/gpt-6-astra/"
-            },
-            {
-              "t": "Axios",
-              "u": "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman"
-            },
-            {
-              "t": "NBC News",
-              "u": "https://www.nbcnews.com/tech/tech-news/openai-debuts-gpt-6-astra-security-measures-rcna595940"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "三大 AI 同一天集體掛掉三小時",
-          "body": "9/3 早上美西時間，三大 AI 聊天機器人幾乎同時打不開，Claude 官方狀態頁顯示中斷 3 小時 6 分。目前指向共同的雲端供應商微軟 Azure 出事（路由錯誤），三家都受牽連。國外一堆人在社群哀嚎「工作停擺」，也有人開玩笑說「終於能看見太陽了」。",
-          "why": "提醒一件很實際的事：吃飯的工具全押在同一朵雲上很危險。重要案子交件前，本機要有能離線跑的備案（字幕稿、素材、剪映草稿都留本地），別讓客戶的 deadline 卡在別人的機房。",
-          "links": [
-            {
-              "t": "Axios",
-              "u": "https://www.axios.com/2026/09/03/chatgpt-claude-grok-outages"
-            },
-            {
-              "t": "The Register",
-              "u": "https://www.theregister.com/ai-and-ml/2026/09/03/chatgpt-claude-and-grok-all-had-outages-at-the-same-time/5294322"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "輝達買下 Hugging Face 平台",
-          "body": "NVIDIA 確認以約 129.3 億美元收購「AI 界的 GitHub」Hugging Face，這個平台上有 1800 萬名開發者、超過 300 萬個模型。黃仁勳承諾不會強迫大家綁自家晶片，開源路線照舊，但交易要過歐美反壟斷審查，預計 2027 上半年才完成。社群最擔心的是：被晶片龍頭買走之後，它還能中立多久。",
-          "why": "現在網路上一堆免費的去背模型、語音轉字幕模型、換臉工具，幾乎都是從 Hugging Face 抓的。這個平台換老闆，等於創作者的免費工具倉庫換了地主，值得盯著後續會不會開始收費或限制。",
-          "links": [
-            {
-              "t": "INSIDE",
-              "u": "https://www.inside.com.tw/article/42292-nvidia-acquires-hugging-face"
-            },
-            {
-              "t": "風傳媒",
-              "u": "https://www.storm.mg/article/11161789"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "IG 新功能：一鍵自動剪出 Reels",
-          "body": "Instagram 推出「First Draft」功能，選好幾段影片後按一下，App 直接幫你剪出一支 Reels 初稿，會自動砍掉停頓、修掉廢話段落。8 月底先開放 iPhone，正在陸續放給更多人。這是 IG 今年一路把「省事」做進 App 的其中一步（前面還有自動字幕、互動貼紙）。",
-          "why": "門檻又降一階：素人自己就能出堪看的初剪。剪輯師的價值會更集中在「選段、節奏、字卡設計」這些機器剪不出來的地方。貓咪帳號倒是可以直接用它出草稿，省下第一刀的時間。",
-          "links": [
-            {
-              "t": "流動日報",
-              "u": "https://www.newmobilelife.com/2026/08/26/instagram-auto-reels-first-draft/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "週日全台變天，颱風杜鵑要生成",
-          "body": "氣象單位說低壓帶影響下，這個週日全台會明顯轉雨、雨勢不小；同時菲律賓東方海面兩個熱帶系統可能接力成颱，「科羅旺」跟「杜鵑」都在名單上。目前預測路徑偏北，對台灣沒有直接影響，主要還是低壓帶帶來的雨。",
-          "why": "週末有外拍或約拍要先看天氣改期。反過來說，雨天是拍室內貓片的好日子——窗邊雨聲＋貓打呼的 ASMR 類內容在這種天氣特別容易被看完。",
-          "links": [
-            {
-              "t": "公視新聞",
-              "u": "https://news.pts.org.tw/article/825513"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "赴中行前登錄上路，最高罰 5 萬",
-          "body": "觀光署從 9/1 起要求旅行社辦赴中考察團、代辦自組團時，要逐團協助旅客完成行前登錄，沒做可罰 1 萬到 5 萬。重點澄清：罰的是旅行社，不是自己買機票去玩的民眾，旅客本人要不要登錄仍可自己決定。背後原因是中國 9/15 要上路新的出入境管理規定，陸委會認為定義模糊、有風險。",
-          "why": "這題在 Threads 上很容易吵起來（自由 vs 安全），如果要碰時事哏要先把「罰的是旅行社」講清楚，不然很容易被出征。純吃流量的話風險偏高，建議看戲就好。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5562379"
-            },
-            {
-              "t": "經濟日報",
-              "u": "https://money.udn.com/money/story/5648/9730835"
             }
           ]
         }
