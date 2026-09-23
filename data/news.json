@@ -1,6 +1,92 @@
 {
-  "updated": "2026-09-22 12:18",
+  "updated": "2026-09-23 09:33",
   "days": [
+    {
+      "date": "2026-09-23",
+      "items": [
+        {
+          "cat": "ai",
+          "hot": true,
+          "title": "ChatGPT、Claude同天出新版還砍價",
+          "body": "9/22 OpenAI 推出 GPT-6 Sol（日常主力）和 Luna（便宜快速版），API 價格直接砍半，官方說 Sol 犯錯次數大約只剩上一代一半；同一天 Anthropic 也發表 Claude Opus 5.5，號稱便宜 40%、快 30%。兩大家同日對打，大家在比誰比較划算。",
+          "why": "你平常叫 AI 寫腳本、下字幕、跑剪輯管線，接下來用得更快更省；Luna 連免費版桌面 App 都能用。",
+          "links": [
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+            },
+            {
+              "t": "9to5Google",
+              "u": "https://9to5google.com/2026/09/22/claude-opus-5-5-and-openai-gpt-6-sol-luna-both-launch-today-with-lower-costs/"
+            },
+            {
+              "t": "流動日報",
+              "u": "https://www.newmobilelife.com/2026/09/23/openai-gpt-6-sol-luna/"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "川習國宴，黃仁勳馬斯克擠同一桌",
+          "body": "川普 9/24 在華府辦國宴招待習近平，黃仁勳、馬斯克、奧特曼、庫克等科技大老都受邀，外媒爆料好幾位要擠同一桌。網友笑這是「最尷尬飯局」：大家明明在搶 AI 生意，對 AI 要不要放慢也吵翻了，現在要坐在一起吃飯。",
+          "why": "明後天國宴照片一出來一定洗版，「誰坐誰旁邊」的座位圖很適合做成迷因或配音哏。",
+          "links": [
+            {
+              "t": "TVBS",
+              "u": "https://news.tvbs.com.tw/world/4025685"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/124870/9506552"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "北市社工吞5位長者千萬老本",
+          "body": "北市社會局一名前社工督導，被控從 2025/5 到 2026/6 盜領 5 位受監護長者的存款，累計超過 1200 萬；她離職交接時才被發現，檢方搜出愛馬仕、香奈兒等名牌包。9/22 被拘提移送，社會局又被罵翻。",
+          "why": "話題性很高但屬負面社會新聞，拿來當題材要小心措辭，別消費當事長者。",
+          "links": [
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/society/breakingnews/5582620"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7321/9771068"
+            },
+            {
+              "t": "壹蘋新聞網",
+              "u": "https://news.nextapple.com/local/20260923/52BDE4EA7293135A9B7EE3495BB08F9C"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "羅賓威廉斯女兒：做AI影片要有羞恥心",
+          "body": "網路上一直有人用 AI 做已故演員羅賓威廉斯的影片，他女兒柔達 9/22 在 X 上開罵：聲音又假又機械，叫大家「有點羞恥心」、別再轉傳。她上個月還和兄弟重開父親的 IG，專門對抗 AI 冒用。",
+          "why": "用 AI 生真人（尤其過世名人）的臉和聲音越來越容易踩雷，接案做 AI 影片時真人肖像能避就避。",
+          "links": [
+            {
+              "t": "TechNews",
+              "u": "https://technews.tw/2026/09/22/robin-williams-daughter-calls-for-fans-creating-ai-videos-of-the-actor-to-have-some-shame"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "手機遙控Nikon，還能預設運鏡變焦",
+          "body": "9/22 相機遙控 App ZineControl 出 1.8 版：用手機就能遙控 Nikon 相機，新增「預先設定好的電動變焦運鏡」和螢幕上直接微調對焦，還支援 Z f、Z fc 跟舊款單眼。一次買斷 14.99 美元，目前只有 iOS，Android 版預計下週推出。",
+          "why": "一個人拍片沒人幫忙推焦、拉鏡時，手機就能遙控出平順的變焦；用 Nikon 拍貓的話也能遠端拍，不用靠太近嚇到貓。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/22/zinecontrol-1-8-0-new-supported-cameras-cinematic-zoom-focus-jog/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-22",
       "items": [
@@ -1259,120 +1345,6 @@
             {
               "t": "自由時報",
               "u": "https://news.ltn.com.tw/news/Taipei/breakingnews/5567455"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-08",
-      "items": [
-        {
-          "cat": "edit",
-          "hot": true,
-          "title": "字節跳動要發即時互動影片模型",
-          "body": "抖音、剪映的母公司字節跳動被爆由創辦人張一鳴親自督軍，下個月要發表一套「即時空間影片」AI 模型，蓋在它既有的 Seedance 影片模型之上。號稱一秒 20 格、延遲只有 0.05 秒，觀眾可以用聲音或動作直接改變畫面裡的虛擬環境，主打直播、短劇和遊戲，運算全放雲端所以不用好電腦。確切發表時程官方還沒公布，仍可能變動。",
-          "why": "今天跟剪輯關係最直接的一則：同一家公司的東西通常沒多久就會下放到剪映。它點名的戰場是短劇＋直播，代表接下來接案市場的「AI 短劇」需求只會更多；貓咪帳號也能先想一個「觀眾喊什麼、畫面就變什麼」的互動玩法卡位。",
-          "links": [
-            {
-              "t": "TechNews 科技新報",
-              "u": "https://technews.tw/2026/09/08/bytedance-launch-real-time-spatial-video-ai-model"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Anthropic 喊卡 60 億美元收購案",
-          "body": "傳了快一個月的大案子破局：Anthropic（Claude 的公司）本來要用約 60 億美元買下 AI 新創 Decart，做完盡職調查後決定不買了，雙方說之後還可能用別的方式合作。Decart 的專長剛好是「即時影片世界模型」——讓 AI 即時改寫直播畫面那種技術。",
-          "why": "跟上面那則是同一個戰場：大家都在搶「即時改畫面」的技術。對你來說值得先記住這個名詞，一兩年內它就是換背景、換人物、即時特效的底層；工具真的出來時你不會慢半拍。",
-          "links": [
-            {
-              "t": "Yahoo 財經",
-              "u": "https://hk.finance.yahoo.com/news/%E5%82%B3anthropic%E6%94%BE%E6%A3%8460%E5%84%84%E7%BE%8E%E5%85%83%E6%94%B6%E8%B3%BCai%E5%88%9D%E5%89%B5decart-ai-015626734.html"
-            },
-            {
-              "t": "新浪財經",
-              "u": "https://finance.sina.com.cn/stock/usstock/c/2026-09-08/doc-inirapza5991328.shtml"
-            },
-            {
-              "t": "聯合新聞網（前情）",
-              "u": "https://udn.com/news/story/6811/9688560"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "ChatGPT 開始學你本人的口氣寫字",
-          "body": "OpenAI 上線 ChatGPT Work 的新功能：授權它連上 Gmail、Slack、Google Drive、SharePoint 之後，它會去讀你以前寫過的信和訊息，抓出你的用字、句子長短、標點習慣、結尾怎麼收，之後幫你寫東西就自動用你的口氣。目前只開給付費的工作版網頁用戶，位置在 設定 → 個人化 → 寫作風格。",
-          "why": "這正是你每次都要手動做的事——跟 AI 解釋「請用我的語氣」。以後回客戶的訊息、貓咪帳號的貼文都能一鍵對味。反過來要注意：它是真的去讀你信箱，有客戶機密的帳號別隨手授權。",
-          "links": [
-            {
-              "t": "Bloomingbit",
-              "u": "https://en.bloomingbit.io/feed/news/119893"
-            },
-            {
-              "t": "Business Today",
-              "u": "https://www.businesstoday.in/technology/artificial-intelligence/story/openai-says-chatgpt-can-now-mimic-your-writing-style-from-emails-and-messages-heres-how-553866-2026-09-08"
-            },
-            {
-              "t": "AI Post Hub（中文）",
-              "u": "https://www.aiposthub.com/chatgpt-work-learning-writing-style-gmail-slack/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "歐洲 AI 之光募到 30 億歐元",
-          "body": "法國 AI 公司 Mistral 今天宣布完成 D 輪募資，拿到 30 億歐元（約新台幣 1,100 億），三星電子領投，投後估值衝到 210 億歐元，一年翻一倍，創下歐洲科技公司紀錄。錢主要花在擴研究團隊、買算力、往國際擴張。Mistral 的招牌是「開放權重」，模型可以自己下載回來跑。",
-          "why": "跟你的關係是「免費好用的替代品會變多」：能下載到自己電腦跑的模型愈強，之後做字幕、寫腳本這些工具就愈可能不用月費、也不用把客戶素材上傳雲端——接案遇到要求資料不外流的客戶，這是解法。",
-          "links": [
-            {
-              "t": "IT 之家",
-              "u": "https://www.ithome.com/0/999/657.htm"
-            },
-            {
-              "t": "經濟一週",
-              "u": "https://edigest.hk/%E6%9C%80%E6%96%B0%E8%B2%A1%E7%B6%93%E6%B6%88%E6%81%AF/mistral%E5%AE%8C%E6%88%9030%E5%84%84%E6%AD%90%E5%85%83%E8%9E%8D%E8%B3%87-%E4%BC%B0%E5%80%BC%E9%A3%86%E8%87%B3210%E5%84%84%E6%AD%90%E5%85%83-2038518"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "瑞幸咖啡疑偷跑，經濟部發函了",
-          "body": "網友在台北南京復興一帶拍到大量印著 luckin coffee 的紙箱，加上另一處疑似第二家店的裝修，社群整個吵翻。經濟部回應：瑞幸是中國企業，要來台開店必須循陸資投資的管道申請，目前它在台的分公司設立已經卡關超過兩個月。這家在中國有兩萬多家店、被叫「星巴克殺手」的品牌，來台傳了快一年還沒真的開成。",
-          "why": "「還沒開就一直被拍到」這種題材在 Threads 特別好蹭，留言區已經在戰要不要喝中國品牌。想拍時事哏影片，這是本週討論度夠高又不至於太敏感的題目。",
-          "links": [
-            {
-              "t": "壹蘋新聞網",
-              "u": "https://news.nextapple.com/finance/20260907/D9D7885C00ADF21735EA3DCC9C99D226"
-            },
-            {
-              "t": "數位時代",
-              "u": "https://www.bnext.com.tw/article/85255/luckin-coffee-in-taiwan"
-            },
-            {
-              "t": "Yahoo 新聞",
-              "u": "https://tw.news.yahoo.com/%E5%BF%AB%E8%A8%8A-%E4%B8%8D%E5%BF%8D%E4%BA%86-%E7%91%9E%E5%B9%B8%E5%92%96%E5%95%A1%E7%96%91%E4%BC%BC%E5%9C%A8%E5%8F%B0%E7%81%A3%E9%96%8B%E7%AC%AC2%E5%AE%B6%E5%BA%97-%E7%B6%93%E6%BF%9F%E9%83%A8%E5%BC%B7%E7%A1%AC%E5%9B%9E%E6%87%89%E6%9B%9D%E5%85%89-092251389.html"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "威力彩 4.1 億開出，蜻蜓變主角",
-          "body": "9/7 晚上開獎，威力彩頭獎 4.1 億元一注獨得，終結連槓 22 期，獎落台中南屯黎明路的彩券行。老闆說開獎前幾天有好幾隻蜻蜓一直在店裡盤旋、開門也趕不走，被當成好兆頭，這個細節在社群被瘋傳。下一期 9/10 開獎，頭獎保證 2 億。",
-          "why": "純娛樂但流量很大，「蜻蜓報明牌」本身就是天生的哏，一張圖配一句話就能發。貓帳號也能玩：讓阿寶或炭炭當招財貓對著號碼發呆，蹭 9/10 開獎前的搜尋熱度。",
-          "links": [
-            {
-              "t": "中央社",
-              "u": "https://www.cna.com.tw/news/ahel/202609070302.aspx"
-            },
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/society/breakingnews/5566289"
-            },
-            {
-              "t": "Newtalk 新聞",
-              "u": "https://newtalk.tw/news/view/2026-09-07/1058348"
             }
           ]
         }
