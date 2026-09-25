@@ -1,6 +1,96 @@
 {
-  "updated": "2026-09-23 09:33",
+  "updated": "2026-09-25 22:49",
   "days": [
+    {
+      "date": "2026-09-25",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "中秋返鄉擠爆，高鐵單日運量破紀錄",
+          "body": "中秋連假前一天（9/24）高鐵單日載了 34.8 萬人次，創歷史新高；北部站自由座一班車只擠得上約 10 人，客運排隊排到馬路上。交通部緊急請高鐵加開全車自由座、台鐵和國道客運也加班車。",
+          "why": "連假人潮畫面是現成的共鳴素材，「以為在跨年」這種路人神回覆很適合剪成短影音哏。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7266/9776310"
+            },
+            {
+              "t": "TVBS",
+              "u": "https://news.tvbs.com.tw/life/4027168"
+            },
+            {
+              "t": "壹蘋新聞網",
+              "u": "https://news.nextapple.com/life/20260925/2C07E5A774B8B829FA628D3F2D5CCA68"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Adobe正式買下Topaz畫質救星",
+          "body": "Adobe 9/23 宣布完成收購 Topaz Labs（6 月談定，約 3.4 億美元）。Topaz 就是那個能把模糊、低解析影片救回來的 Topaz Video，品牌和獨立軟體會保留，之後技術會陸續接進 Premiere、Photoshop、Firefly。",
+          "why": "你常用的放大／去雜訊工具未來可能直接內建在 Premiere，少一道匯出匯入；已經買 Topaz 的授權目前不受影響。",
+          "links": [
+            {
+              "t": "Adobe Blog",
+              "u": "https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs"
+            },
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/23/adobe-completes-its-acquisition-of-topaz-labs/"
+            },
+            {
+              "t": "PetaPixel",
+              "u": "https://petapixel.com/2026/09/23/adobe-completes-acquisition-of-topaz-labs-and-says-topaz-will-remain-its-own-brand/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "在Gemini、Claude裡直接叫Adobe修圖",
+          "body": "Adobe 9/24 擴充 AI 聊天機器人裡的連接功能：Gemini 可以直接呼叫 Photoshop、Lightroom、Express、Firefly 修照片做設計，各方案都免費用；Claude 版加了 80 多項工具，還能剪 PDF、遮蔽個資。",
+          "why": "做貓咪帳號封面或縮圖，可以直接用一句話叫 AI 調色去背，不用開完整 Photoshop。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/24/adobe-expands-what-you-can-do-in-gemini-claude/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Google讓AI虛擬人即時開口講97種語言",
+          "body": "Google 9/24 推出 Gemini 3.8 Live 的「Live Avatar」：丟一張參考圖就能做出會即時對話、嘴型同步的虛擬人，支援 97 種語言、中途可以換語言，畫面都會打 SynthID 浮水印。目前只開放企業版。",
+          "why": "AI 主播／數位分身又往前一步，接案時可能會遇到客戶想做「虛擬代言人」影片，先知道有這條路。",
+          "links": [
+            {
+              "t": "Google Blog",
+              "u": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "明年最低月薪3萬900，首度破3萬",
+          "body": "勞動部 9/24 開會吵了快 8 小時拍板：2027 年 1 月 1 日起最低月薪從 29,500 調到 30,900 元、時薪從 196 調到 205 元，漲幅 4.745%，連續 11 年調漲，約 261 萬人受惠。",
+          "why": "接案報價或請助理剪輯時薪可以拿來當參考基準；「月薪破 3 萬」也是這幾天網路熱議的話題。",
+          "links": [
+            {
+              "t": "公視新聞網",
+              "u": "https://news.pts.org.tw/article/828540"
+            },
+            {
+              "t": "自由財經",
+              "u": "https://ec.ltn.com.tw/article/breakingnews/5585235"
+            },
+            {
+              "t": "今周刊",
+              "u": "https://www.businesstoday.com.tw/article/category/183027/post/202609240044/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-23",
       "items": [
@@ -1243,108 +1333,6 @@
             {
               "t": "中時",
               "u": "https://www.chinatimes.com/realtimenews/20260910004059-260405"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "items": [
-        {
-          "cat": "edit",
-          "hot": true,
-          "title": "達文西 21.1 讓 AI 直接進剪輯軟體",
-          "body": "Blackmagic 9/7 釋出 DaVinci Resolve 21.1 免費更新，可以在軟體裡接上 Claude、Claude Code 或 ChatGPT Codex（File > Setup AI Assistants），直接叫 AI 幫你整理素材、批次輸出、清掉不要的片段。它內建了 MCP 伺服器，等於 AI 不只是跟你聊天，而是真的能動手操作專案。另外還加了 100 多項剪輯與調色的新工具。",
-          "why": "你手邊就有 Claude Code，這是第一次「叫 AI 在剪輯軟體裡動手」變成官方功能，值得裝一版來試，順便看能不能接上你自己的 KK 引擎。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/07/blackmagic-design-davinci-resolve-21-1/"
-            },
-            {
-              "t": "No Film School",
-              "u": "https://nofilmschool.com/davinci-resolve-update-21-1"
-            },
-            {
-              "t": "Blackmagic 官方",
-              "u": "https://www.blackmagicdesign.com/products/davinciresolve/whatsnew"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "Joeman 被控傳性病，曬全陰性報告反擊",
-          "body": "前女友蕭伊 9/8 發文說交往期間以為是單一伴侶關係，分手後檢查出 HPV 53 型和披衣菌。Joeman 隔天透過律師公開自己 8/22 的檢驗報告，結果全部陰性，律師李怡貞還回嗆對方是「心機重的爛前任」。雙方說法完全對不上，誰對誰錯目前沒有第三方認定，屬未證實的各說各話。",
-          "why": "台灣網紅圈這兩天最大的瓜，Threads、IG 正在洗版。題材本身不用碰，但大家在聊什麼你要知道。",
-          "links": [
-            {
-              "t": "自由娛樂",
-              "u": "https://ent.ltn.com.tw/news/breakingnews/5566991"
-            },
-            {
-              "t": "三立新聞",
-              "u": "https://www.setn.com/news/1903832"
-            },
-            {
-              "t": "ETtoday",
-              "u": "https://star.ettoday.net/news/3233616"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "ChatGPT 新版出圖，快一半還能照草圖畫",
-          "body": "OpenAI 9/8 上線 ChatGPT Images 2.5，官方說生成速度比上一代最多快 50%，細節更銳利、局部修改更聽話，還多了讓你用手繪草圖指定構圖的功能。",
-          "why": "做縮圖、字卡底圖、貓咪帳號的梗圖時，能先畫個爛草圖鎖版面，就不用一直重抽圖碰運氣。",
-          "links": [
-            {
-              "t": "OpenAI 官方",
-              "u": "https://openai.com/index/introducing-chatgpt-images-2-5/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Meta 推 Muse，一個會辦事的 AI",
-          "body": "Meta 9/8 發表個人 AI 助理 Muse，WhatsApp 裡和獨立 App 都能用，官方示範它能訂機票、寄信、甚至幫你跟人談條件，主打賣點是「私密安全」。台灣多數人不用 WhatsApp，實際影響要看它什麼時候長進 IG、FB。",
-          "why": "Meta 的東西最後都會進 IG。先知道它在做什麼，之後貓咪帳號的私訊互動很可能就是這隻在跑。",
-          "links": [
-            {
-              "t": "Meta 官方",
-              "u": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Claude 被告：Max 方案用量講不清楚",
-          "body": "9/8 美國有人對 Anthropic 提集體訴訟，主張 Claude Max 方案宣傳的「用量倍數」講得不夠清楚——倍數其實只在 5 小時的區間內成立，上面還壓了一層每週總量上限。目前只是原告主張，法院尚未認定。",
-          "why": "你自己在付 Claude 的錢。知道「倍數上面還有週上限」這件事，排剪片跑量的時候心裡有底、不會半路被卡住。",
-          "links": [
-            {
-              "t": "The Verge",
-              "u": "https://www.theverge.com/ai-artificial-intelligence/990313/anthropic-class-action-lawsuit-pricing-subscription-plans"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "成淵 87 名國三生腹瀉，午餐廠商被停業",
-          "body": "台北市成淵高中國中部 9/8 有 87 名九年級生腹瀉嘔吐，疑似營養午餐肉品不潔。衛生局稽查抓到冰箱髒汙、地面積水等五項缺失，因通報人數超過 50 人直接勒令團膳業者停業，學校改成外部送餐。蔣萬安當晚發四點處置。",
-          "why": "校園食安是每年都會再燒一輪的常青題材，隨口聊時事、或家庭向內容都用得上。",
-          "links": [
-            {
-              "t": "中央社",
-              "u": "https://www.cna.com.tw/news/aloc/202609080154.aspx"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7323/9742687"
-            },
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/Taipei/breakingnews/5567455"
             }
           ]
         }
