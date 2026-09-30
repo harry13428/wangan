@@ -1,6 +1,84 @@
 {
-  "updated": "2026-09-29 10:30",
+  "updated": "2026-09-30 13:40",
   "days": [
+    {
+      "date": "2026-09-30",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "交長稱台中到台北才2小時，網傻眼",
+          "body": "中秋連假車站、高鐵擠爆，自由座一班只上得了 10 人。交通部長陳世凱 9/29 說自己 9/28 晚上 7 點從台中開車北上、9 點就到，很順暢。網友吐槽：大家罵的是前幾天，收假最後一晚本來就不塞，「你幾點開車？」變成新梗。",
+          "why": "「你幾點開車？」是現成的反差哏，可以拿來做「長官體感 vs 現實」的對比剪輯或貓咪版（阿寶：我兩步就到碗了）。",
+          "links": [
+            {
+              "t": "TVBS",
+              "u": "https://news.tvbs.com.tw/politics/4029373"
+            },
+            {
+              "t": "Newtalk",
+              "u": "https://newtalk.tw/news/view/2026-09-29/1062393"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "女童被逼掛「小偷」紙板遊街",
+          "body": "新北三重有網友在 Threads 貼文，看到一名女童身上掛著寫「小偷、畜生」的紙板被爸爸押著走，哥哥還在旁邊錄影。貼文爆開後警方追查，爸爸原本就有家暴保護令，9/29 被逮捕並羈押禁見，女童已由社會局安置。",
+          "why": "這是 Threads 網友爆料推動警方辦案的案例，提醒拍攝／轉發路人影片時要注意當事人（尤其未成年）的隱私，別讓影片二次傷害。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7320/9784274"
+            },
+            {
+              "t": "三立新聞",
+              "u": "https://www.setn.com/news/1914930"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Claude Sonnet 5.5 上線，快三成",
+          "body": "Anthropic 9/28 推出 Claude Sonnet 5.5，官方說出字速度快 30% 以上、做同樣的事最多便宜 30%，價格跟 Sonnet 5 一樣。主打日常工作、寫程式、做文件簡報試算表，Claude.ai 就能直接用。",
+          "why": "你平常叫 AI 整理字幕稿、寫腳本、跑剪輯小工具，換到新版會更快更省；更便宜的 Haiku 5.5 官方說幾週內也會出。",
+          "links": [
+            {
+              "t": "Anthropic",
+              "u": "https://www.anthropic.com/claude-sonnet-5-5"
+            },
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Gemini 的 Gems 要被 Skills 取代",
+          "body": "Google 9/28 宣布，Gemini 裡自己做的客製小助手「Gems」會在 2026/11/17 起轉成新格式「Skills」，舊的會自動搬過去、不用手動。以後要在對話框打「/」來叫出技能，有人覺得變得比較像工程師介面。",
+          "why": "如果你有在 Gemini 做字幕校對、腳本風格之類的 Gem，11/17 前先把設定（指令文字）備份一份，免得搬家後跑掉。",
+          "links": [
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/09/28/google-is-killing-off-geminis-gems-in-favor-of-skills/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Final Cut Camera 2.4 免費更新",
+          "body": "蘋果的拍攝 App Final Cut Camera 9/29 出 2.4 版：設定更好找、畫面疊加資訊可自訂、對焦峰值和錄影指示改良，支援 iPhone 18 Pro 可變光圈，還能把一般影片做出電影模式的景深效果，拍完直接丟進 Final Cut Pro。",
+          "why": "用 iPhone 拍貓咪素材或客戶補拍時，可以用它手動鎖光圈對焦，畫面更像相機拍的；免費，值得裝來試。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/29/final-cut-camera-version-2-4/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-29",
       "items": [
@@ -1207,108 +1285,6 @@
             {
               "t": "巴哈姆特",
               "u": "https://gnn.gamer.com.tw/detail.php?sn=311661"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-14",
-      "items": [
-        {
-          "cat": "ai",
-          "hot": true,
-          "title": "AI 三巨頭罕見同聲：研發該放慢",
-          "body": "Claude 的老闆 Amodei 發文說 AI 進步太快、人類快跟不上，提議各大廠放慢最前線的研發，還要讓外部檢查員進駐實驗室。平常互相競爭的 OpenAI 奧特曼和馬斯克 9/12–13 都在 X 上說同意，三巨頭罕見站同一邊。另外 FT 9/13 報導 Anthropic 連兩季獲利、正在準備上市。",
-          "why": "AI 工具更新速度可能從「每週一個新模型」變慢，選工具、學工具不用一直追；這波「AI 大老喊煞車」也很適合拿來做時事哏。",
-          "links": [
-            {
-              "t": "SiliconANGLE",
-              "u": "https://siliconangle.com/2026/09/13/sam-altman-and-elon-musk-back-dario-amodeis-call-to-slow-down-the-frontier-of-ai-development/"
-            },
-            {
-              "t": "CoinDesk",
-              "u": "https://www.coindesk.com/tech/2026/09/12/anthropic-ceo-calls-for-ai-race-to-slow-down-musk-and-openai-s-altman-agrees"
-            },
-            {
-              "t": "Bloomberg",
-              "u": "https://www.bloomberg.com/news/articles/2026-09-13/anthropic-sees-adjusted-operating-profit-this-quarter-ft-says"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "AI 短劇爆發，真人演員被逼交出分身",
-          "body": "TechNews 9/13 整理：字節 Seedance 這類工具讓 AI 短劇成本超低，有短劇演員原本一週接三部、工具出來後工作幾乎歸零；有些演員被要求先把臉、聲音、表演風格交給 AI「提煉」，不給就換人。熱門 AI 角色甚至開始有自己的粉專在經營流量。",
-          "why": "剪輯師的活會從「剪真人素材」往「剪 AI 生成素材」移，現在就練 AI 素材的剪法和對嘴修補，比較不會被洗牌。",
-          "links": [
-            {
-              "t": "TechNews 科技新報",
-              "u": "https://technews.tw/2026/09/13/ai-short-dramas-human-performers-survival-crisis"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "IBC 出手機也能用的機器手臂運鏡",
-          "body": "IBC 影視展 9/13 發表 Motorized Precision EVA，一台小型六軸機器手臂，手機或微單都能架，用 iPhone／Android 就能遙控，運鏡路線可以存起來一模一樣重跑。起價 7,499 美元（約新台幣 24 萬），預計今年第四季出貨。",
-          "why": "商品開箱、貓咪 cattt.q 那種同一鏡位要重拍好幾次的畫面最需要「可重複運鏡」；個人買太貴，但可以留意之後有沒有租借或平價仿款。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/13/motorized-precision-eva-a-compact-robotic-camera-system-for-smartphones-mirrorless-cameras/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "莊人祥首談胃癌四期，皈依法號寬和",
-          "body": "衛福部次長莊人祥 9/13 首次公開聊抗癌：2024 年健檢發現胃癌四期、還轉移到肝，住院 7 次，化療排在週四五、週一照上班；過程中皈依法鼓山、法號「寬和」，現在已經找不到癌細胞。醫師也趁機提醒胃癌風險，網路上很多人被他「接受不能改變的事」這段話打到。",
-          "why": "正能量人物故事＋一句金句，很適合做成字幕金句卡或短影音開頭；也提醒自己健檢別拖。",
-          "links": [
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260913/3236770.htm"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7266/9751988"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "張俊傑逃亡像電影，變裝換車又抓一人",
-          "body": "高金素梅前助理張俊傑 9/6 剪斷電子腳鐐落跑，警方還原他一路換衣服、換好幾台計程車、借別人手機來「製造斷點」，南下到嘉義後失聯。9/13 在雲林又抓到一名接力載他的男子，協助逃亡的人已經好幾個被羈押，本人仍在逃，1000 萬保證金將被沒收。",
-          "why": "「逃亡動線圖＋變裝換車」根本是剪輯素材教科書，懶人包型影片（地圖路線動畫）大家很愛看。",
-          "links": [
-            {
-              "t": "知新聞",
-              "u": "https://www.knews.com.tw/news/3C576A57A4693AAECB39D0A2034F09FB"
-            },
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5571261"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "清晨花蓮綠島連兩震，杜鵑颱風還沒生成",
-          "body": "9/14 凌晨 3:21 花蓮萬榮規模 4.7、早上 6:44 台灣東南部海域規模 4.9，最大震度都是 4 級，「地震」衝上今天熱搜第一。颱風方面，關島附近的低壓還很鬆散，杜鵑颱風最快本週後段才可能生成，初步路徑偏沖繩方向。",
-          "why": "外拍行程這週還算安全，但週末前再看一次颱風路徑；被地震搖醒也是很好的貓咪反應素材。",
-          "links": [
-            {
-              "t": "聯合新聞網（花蓮地震）",
-              "u": "https://udn.com/news/story/7266/9752506"
-            },
-            {
-              "t": "聯合新聞網（東南部海域）",
-              "u": "https://udn.com/news/story/7266/9752585"
-            },
-            {
-              "t": "蘋果仁（颱風）",
-              "u": "https://applealmond.com/posts/325826"
             }
           ]
         }
