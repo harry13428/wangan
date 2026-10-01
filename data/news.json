@@ -1,6 +1,84 @@
 {
-  "updated": "2026-09-30 13:40",
+  "updated": "2026-10-01 10:21",
   "days": [
+    {
+      "date": "2026-10-01",
+      "items": [
+        {
+          "cat": "etc",
+          "hot": true,
+          "title": "杜拜航空副機師持刀刺傷機長",
+          "body": "9/30 一班杜拜飛以色列的客機，副機師在駕駛艙刺傷機長、疑似想讓飛機墜毀，飛機兩分鐘內狂降約 4–5 千公尺。受傷機長撐著開門，乘客和機組員衝進去把人制伏，最後轉降沙烏地，174 人全部平安。以色列官員說是恐攻，航空公司說動機還在查（未證實）。",
+          "why": "「乘客衝進駕駛艙救飛機」根本是電影情節，今天各台都在講，做時事口播或反應影片的現成題材。",
+          "links": [
+            {
+              "t": "聯合報",
+              "u": "https://udn.com/news/story/6809/9787255"
+            },
+            {
+              "t": "壹蘋新聞網",
+              "u": "https://news.nextapple.com/international/20260930/DB23575660EFA06CCACF113A5E3AFB47"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Google 發表 Gemini 4 Argon",
+          "body": "Google 9/30 推出最新最強模型 Gemini 4 Argon，跑分追平甚至超過 OpenAI、Anthropic，而且比較少亂講話。不過現在只先開給資安專家用，一般人還摸不到；也有 Google 員工私下說實際寫程式沒有跑分那麼神。",
+          "why": "先知道就好，等開放後再看 Gemini 能不能幫你更準地整理逐字稿、寫腳本。",
+          "links": [
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/"
+            },
+            {
+              "t": "聯合報",
+              "u": "https://udn.com/news/story/6811/9787345"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "GPT-6.1 Sol 上線，只要五分之一價",
+          "body": "OpenAI 在開發者大會推出 GPT-6.1 Sol，才隔一週就升級：寫程式、操作電腦、處理文件的能力快追上最貴的 Astra，價格卻只有它的五分之一。ChatGPT 的 Work 模式已經可以用。",
+          "why": "AI 越來越便宜好用，拿來批次寫標題、整理素材清單的成本會更低。",
+          "links": [
+            {
+              "t": "電腦王阿達",
+              "u": "https://www.kocpc.com.tw/archives/670571"
+            },
+            {
+              "t": "TestingCatalog",
+              "u": "https://www.testingcatalog.com/openai-launches-gpt-6-1-sol-at-one-fifth-of-astra-pricing/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Mavis Camera 支援 iPhone 18 Pro 光圈",
+          "body": "專業拍攝 App Mavis Camera 9/29 更新 8.2 版，可以在錄影時直接調 iPhone 18 Pro 的可變光圈，還能錄 ProRes RAW、低延遲 HDMI 輸出接螢幕監看。App 免費下載，全功能年訂閱 29.99 美元。",
+          "why": "如果你或客戶用 iPhone 18 Pro 拍片，這是目前把手機當電影機用最順的 App 之一，景深可以自己控。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/09/29/mavis-camera-8-2-adds-iphone-18-pro-support-with-variable-aperture-control/"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "十月天空三連發：土星、火星、流星雨",
+          "body": "10/4 土星衝，整晚都看得到、是一年最亮的時候；10/12 清晨火星經過蜂巢星團，用雙筒望遠鏡看最美；10/22 凌晨獵戶座流星雨極大期，凌晨 2 點月亮下山後每小時約 10 顆。",
+          "why": "可以先排進拍攝行事曆，夜景縮時或「帶貓看流星」這種療癒短片都是好題材。",
+          "links": [
+            {
+              "t": "華視新聞",
+              "u": "https://news.cts.com.tw/cts/life/202609/202609303084425.html"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-09-30",
       "items": [
@@ -1183,108 +1261,6 @@
             {
               "t": "NOWnews",
               "u": "https://www.nownews.com/news/6875266"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-15",
-      "items": [
-        {
-          "cat": "ai",
-          "hot": true,
-          "title": "iOS 27 開放更新，新 Siri 登場",
-          "body": "蘋果 iOS 27 台灣時間 9/15 凌晨開放下載，iPhone 11 以上都能升級，主打大改版的 Siri AI：能打字問、記得對話、看得懂螢幕上的內容。不過進階 Siri AI 首發只支援英文，繁中版預估要再等 2–3 個月。不想升的人可以先裝 iOS 26.7（只修安全漏洞）。",
-          "why": "手機是你拍素材和剪短片的主力，工作機建議先等一兩週看災情再升；「Siri 終於變聰明但只會英文」很適合當哏。",
-          "links": [
-            {
-              "t": "TVBS",
-              "u": "https://news.tvbs.com.tw/tech/4020305"
-            },
-            {
-              "t": "遠見雜誌",
-              "u": "https://www.gvm.com.tw/article/132973"
-            },
-            {
-              "t": "MacRumors",
-              "u": "https://www.macrumors.com/2026/09/14/apple-releases-ios-26-7/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Claude 裡能直接 AI 配音配樂",
-          "body": "ElevenLabs 9/14 宣布更新官方 MCP 連接器：裝進 Claude、ChatGPT 之後，直接在對話裡就能生成旁白、逐字稿、配樂、音效，還能叫出 50 多個圖片和影片模型。登入一次帳號就能用，不用貼 API 金鑰；費用照你的 ElevenLabs 方案算。",
-          "why": "寫腳本→配旁白→配樂可以在同一個對話框做完，省掉切換網站的時間；你已經在用 Claude，裝起來就能試。",
-          "links": [
-            {
-              "t": "TestingCatalog",
-              "u": "https://www.testingcatalog.com/elevenlabs-mcp-can-now-generate-voice-music-images-video/"
-            },
-            {
-              "t": "ElevenLabs",
-              "u": "https://elevenlabs.io/mcp"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "思銳變形鏡頭一轉就從橫拍變直拍",
-          "body": "IBC 影視展上（Newsshooter 9/14 報導），思銳 SIRUI 秀出 Saturn V2 變形鏡頭：解鎖、轉 90 度、鎖回去，不用拆鏡頭就能從橫式電影感切到直式，專門為短影音設計。有 35/50/75mm 三顆，E、L、RF 卡口，三顆套組約 1,699 美元，預計展後 2–3 週上市。",
-          "why": "想幫直式短片拍出「電影寬螢幕光斑」質感的話，這是少數針對直拍設計的鏡頭，接案拍攝可以列入觀察。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/14/sirui-saturn-v2-hands-on-at-ibc-2026-switching-horizontal-to-vertical-on-the-fly/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "中國出入境新規今上路，可查手機",
-          "body": "中國新的出入境規定 9/15 開始實施：海關可以問出境原因、要求檢查手機裡的資料，被認定危害國安的人最高禁止出境 3 年。陸委會點名台商、半導體人才、公務員等族群風險最高，媒體整理出「8 大高風險族群」在網路瘋傳；國台辦則說台灣人「完全不用擔心」。",
-          "why": "如果有去中國出差、拍片或接陸案的計畫，出發前手機裡的內容要先想清楚；這是最近長輩群組和 Threads 都在轉的話題。",
-          "links": [
-            {
-              "t": "中央社",
-              "u": "https://www.cna.com.tw/news/acn/202609140096.aspx"
-            },
-            {
-              "t": "經理人",
-              "u": "https://www.managertoday.com.tw/articles/view/72758"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "沈伯洋東京穿防彈衣慢跑被熱議",
-          "body": "民進黨台北市長參選人沈伯洋訪日時，被拍到在皇居附近穿防彈背心跑步。他說自己被中國通緝，只要出國就會穿；蔣萬安回「台北很安全、日本也很安全」，雙方支持者從 9/13 吵到現在，還延伸成政治快評題材。",
-          "why": "選戰期間的政治話題流量大但容易被貼標籤，貓帳號想玩哏建議只取「跑步穿防彈衣」的畫面感，不站邊。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5571543"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/124652/9751404"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "Steam Frame 台灣開賣 3.9萬起",
-          "body": "Valve 的無線 VR 頭盔 Steam Frame 9/15 突然在台灣、日本、香港開賣（台灣由 KOMODO 代理），256GB 版 38,888 元、1TB 版 47,888 元，9/18 起陸續出貨。不接電腦也能玩，還能把一般 Steam 遊戲投在眼前的大螢幕上玩，是今天 Google 熱搜前十。",
-          "why": "遊戲玩家圈今天在洗版，開箱、「值不值得買」類影片接下來會很多；接到 3C／遊戲業配時可以先知道這個話題。",
-          "links": [
-            {
-              "t": "4Gamers",
-              "u": "https://www.4gamers.com.tw/news/detail/82051/steam-frame-taiwan-price-38888-komodo-launch"
-            },
-            {
-              "t": "巴哈姆特",
-              "u": "https://gnn.gamer.com.tw/detail.php?sn=311661"
             }
           ]
         }
