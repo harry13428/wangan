@@ -1,6 +1,80 @@
 {
-  "updated": "2026-10-01 10:21",
+  "updated": "2026-10-02 13:11",
   "days": [
+    {
+      "date": "2026-10-02",
+      "items": [
+        {
+          "cat": "ai",
+          "hot": true,
+          "title": "ChatGPT 上線虛擬試衣，自拍就能試穿",
+          "body": "OpenAI 10/1 全球推出新購物功能：在 ChatGPT 購物結果按「Try On」，上傳自拍或全身照就能看到衣服、配件穿在自己身上的樣子，也能丟網頁截圖叫它幫你試。背後用的是新的 ChatGPT Images 2.5 圖像模型，另外加了「收藏」功能可以存商品。",
+          "why": "做電商、穿搭業配片時可以先用它出「穿上去」的示意圖當 B-roll 或對比哏；也能拿來測新圖像模型的光影質感。",
+          "links": [
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "DaVinci Resolve 21.1.1 免費小更新",
+          "body": "Blackmagic 10/1 釋出 21.1.1：修好「直式時間軸自動字幕被裁切」的問題，修剪編輯點時可以同時影響所有選取的剪接點並帶聲音預覽，也開始支援 Canon EOS R8 Mark II 的 RAW 檔，Fusion 魔法遮罩變快。",
+          "why": "KK 剪直式短影音用達芬奇上自動字幕的話，這版剛好修掉字幕被切的坑，值得更新。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/01/davinci-resolve-21-1-1/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "富士相機鏡頭漲價最高 15%",
+          "body": "富士 10/1 起在日本調漲多款相機、鏡頭、拍立得與手機相印機價格，GFX 系列漲約 14–15%，X100VI 漲 12%，X-T50、X-E5 漲 7%，原因是零件、製造、物流成本暴漲。外媒預期其他地區會陸續跟進，台灣售價目前未公布。",
+          "why": "有在考慮買富士機身或鏡頭的話，台灣跟漲前可能是最後的入手時機。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/01/fujifilm-increases-its-prices/"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "兩波東北季風報到，北部下週剩 20 度",
+          "body": "第一波東北季風 10/2 起讓桃園以北、東半部轉雨，基隆北海岸、宜蘭要防局部大雨；10/5（週一）第二波更強，可能是入秋最明顯的一波，北部、東部低溫掉到 20 度出頭，國慶連假北台灣偏濕涼，中南部仍熱。網路標題寫「剩 18 度」偏誇張，以氣象署預報為準。",
+          "why": "國慶連假要外拍的話北部要備雨具；天氣轉涼也是貓咪帳號拍「貓窩被窩」季節哏的好時機。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://www.cna.com.tw/news/ahel/202609300270.aspx"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6879613"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "「健康幣」上線：健檢打疫苗能換獎",
+          "body": "國健署健康幣 10/1 正式上路，18 歲以上做健檢、癌篩、打流感或新冠疫苗都能累積點數（每項約 450–1350 點），12/1 起可兌換健康好禮。10/1–11/30 每週抽 3600 人送 200 元數位券，12/7 再抽 200 支 Apple Watch。",
+          "why": "本來就要打流感疫苗的話順便領點數；「打疫苗抽 Apple Watch」也是現成的生活資訊短片題材。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://cna.com.tw/news/ahel/202608270289.aspx"
+            },
+            {
+              "t": "優分析",
+              "u": "https://uanalyze.com.tw/articles/2780755554"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-01",
       "items": [
@@ -1171,96 +1245,6 @@
             {
               "t": "Newsshooter",
               "u": "https://www.newsshooter.com/2026/09/16/voxsplit-pro-offline-dialogue-separation-tool/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-16",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "黑人陳建州心肌梗塞送醫，裝支架搶回一命",
-          "body": "49 歲的陳建州 9/15 下午看 PLG 友誼賽時身體不適，送台大急診確診急性心肌梗塞，當場開刀裝心臟支架後轉加護病房。范瑋琪全程陪同，說再晚五分鐘後果不堪設想。他術後已在 IG 發文報平安。",
-          "why": "剪輯師整天坐著、熬夜趕件，這則是全網都在轉的健康警訊；貓咪帳號要蹭也別硬蹭病情，改講「久坐族該起來動一動」比較安全。",
-          "links": [
-            {
-              "t": "中時新聞網",
-              "u": "https://www.chinatimes.com/realtimenews/20260915004592-260404"
-            },
-            {
-              "t": "三立星聞",
-              "u": "https://star.setn.com/news/1907652"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "Canon 新機 R8 Mark II 終於補上機身防手震",
-          "body": "Canon 9/15 發表 EOS R8 Mark II，2420 萬畫素全片幅，最大升級是這個等級第一次塞進機身防手震（IBIS），外型走復古路線。為了塞防手震只留單 SD 卡槽，價格估計比前代 1699 美元再貴一點，年底購物季前出貨。",
-          "why": "手持拍 vlog、拍貓最怕晃，入門全幅有 IBIS 等於少買一支穩定器；如果你有在考慮換機，這台是這季最值得等的平價選項。",
-          "links": [
-            {
-              "t": "RedShark News",
-              "u": "https://www.redsharknews.com/canon-eos-r8-mark-ii-specs-price-release-date"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Google 推 Gemini 3.8 Live，講話像真人對話",
-          "body": "Google 9/15 發表即時語音模型 Gemini 3.8 Live，支援 97 種語言自動切換、邊講邊看你的鏡頭畫面，還能在對話中途偷偷去查資料不中斷。另有一個「延伸思考」版本，會用「我查一下喔」這種口語幫你墊時間。開發者可在 AI Studio 免費試，一般人先從 Search Live 用得到。",
-          "why": "語音 AI 從「一問一答」進化到「可以插嘴的對話」，做口播腳本、練訪談問答、甚至當旁白配音的備案都更好用了。",
-          "links": [
-            {
-              "t": "Google Blog",
-              "u": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Meta 開賣訂閱制，2.99 美元買更多 AI 用量",
-          "body": "Meta 9/15 全球上線訂閱服務「Meta One」，基本功能維持免費，付錢是買更多 AI 生成額度：多生圖、改圖、用 Muse 模型生影片，IG 的 Restyle 等工具也能用更兇。單一產品月費 2.99～3.99 美元，創作者與商用方案 14.99 美元起跳，最貴到 499 美元。",
-          "why": "IG 的 AI 生成功能之後要花錢才夠用，經營貓咪帳號 cattt.q 可以先算一下：每月多幾十塊台幣換生圖生片額度，划不划算。",
-          "links": [
-            {
-              "t": "Meta Newsroom",
-              "u": "https://about.fb.com/news/2026/09/introducing-meta-one-subscription-service-more-features-ai/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "沈伯洋拜會陳水扁，抱娃傻眼照笑翻全網",
-          "body": "台北市長參選人沈伯洋 9/15 南下台南向陳水扁請益，兩人燦笑合照、當場加 LINE。阿扁自爆「加了他的 LINE 還懷疑是詐騙要打去確認」，陳致中再放一張沈伯洋抱著娃娃、一臉呆滯聽阿扁滔滔不絕的照片，直接在社群被做成梗圖洗版。",
-          "why": "這種「表情包等級」的政治照片是短影音免費素材，抓那張傻眼臉當反應畫面或縮圖，比自己演還有記憶點。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5574886"
-            },
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260915/3238083.htm"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "杜鵑颱風今晨生成，這次不來台灣",
-          "body": "今年第 24 號颱風杜鵑 9/16 清晨在關島附近生成，路徑沿高壓邊緣往西北走，到琉球東方後會北轉直奔日本東南方，氣象署研判對台灣沒有直接影響。北台灣週四仍會因為外圍水氣再變天一次。",
-          "why": "這幾天排外景、拍貓咪出門的行程可以放心，不用像上週一樣先備停拍方案；但週四北部有雨，戶外鏡頭還是留個室內備案。",
-          "links": [
-            {
-              "t": "數位時代",
-              "u": "https://www.bnext.com.tw/article/92246/typhoon-dujuan-path-japan-taiwan-impact"
-            },
-            {
-              "t": "NOWnews",
-              "u": "https://www.nownews.com/news/6875266"
             }
           ]
         }
