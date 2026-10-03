@@ -1,6 +1,68 @@
 {
-  "updated": "2026-10-02 13:11",
+  "updated": "2026-10-03 14:22",
   "days": [
+    {
+      "date": "2026-10-03",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "乖乖中壢廠 57 年來第一次罷工",
+          "body": "乖乖母公司 7 月把中壢廠土地賣給日月光，員工怕被關廠資遣、又只拿到口頭承諾，工會 94% 同意罷工，10/2 清晨 5 點正式開罷，還喊出可能無限期罷工。網友最有感的是：工程師機台上的「綠色乖乖」護身符會不會斷貨。",
+          "why": "「科技業護身符要斷貨了」這個反差哏很好剪，貓帳號也能拍主子守著綠色乖乖的梗片。",
+          "links": [
+            {
+              "t": "新頭殼",
+              "u": "https://newtalk.tw/news/view/2026-10-02/1063267"
+            },
+            {
+              "t": "工商時報",
+              "u": "https://www.ctee.com.tw/news/20261002700597-430503"
+            },
+            {
+              "t": "東森新聞",
+              "u": "https://news.ebc.net.tw/news/living/573915"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Suno 新功能：一鍵生出旁白＋配樂",
+          "body": "Suno 10/1 開放 Speech Beta，輸入一段文字、描述想要的聲音和音樂風格，它會把「人聲朗讀」和「背景音樂」一起生成成同一軌，適合做有聲書、睡前故事、勵志旁白。官方自己說口音偶爾會跑掉、停頓有時太長，還在測試中。",
+          "why": "做短片旁白不用再分開找配音和 BGM，可以先拿來試做貓咪內心獨白版本。",
+          "links": [
+            {
+              "t": "Suno 官方",
+              "u": "https://suno.com/blog/introducing-speech-beta"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "AI 視訊人，近半受試者以為是真人",
+          "body": "Tavus 10/1 發表即時對話數位人 Griffin，能邊聽邊點頭、會插話、看得懂你的表情。實驗中 54 人以為自己在跟另一位受試者視訊一分鐘，結果 48% 沒認出對面是 AI（舊版只有 2.4%）。目前只開放給少數測試者，一般人還用不到。",
+          "why": "假網紅、AI 詐騙視訊越來越難分，可以當「你分得出來嗎」類型影片的題材。",
+          "links": [
+            {
+              "t": "Tavus 官方",
+              "u": "https://www.tavus.io/griffin"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Runway 推 AI 廣告機，自動剪自動投",
+          "body": "Runway 9/30 發表 Runway Ads：自動生成影片和圖片廣告、直接投到 Meta／Google／TikTok，再看成效數據自己重剪、改尺寸、翻多國語言。目前只開放給少數企業試用。",
+          "why": "廣告素材的「量產剪輯」正在被 AI 吃掉，KK 接案要往創意和剪輯手感拉開差距。",
+          "links": [
+            {
+              "t": "Runway 官方",
+              "u": "https://runway.com/news/company-news/introducing-runway-ads"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-02",
       "items": [
@@ -1147,104 +1209,6 @@
             {
               "t": "聯合新聞網",
               "u": "https://udn.com/news/story/124652/9761636"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-17",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "婚假 8 天變 14 天，10/1 上路",
-          "body": "勞動部 9/17 正式宣布：勞工婚假從 8 天加到 14 天，10 月 1 日起實施。多出來的 6 天照樣有薪水，老闆先付、再跟政府請補助。已經登記結婚、但原本 8 天還沒請完的人，也能直接適用新的 14 天。",
-          "why": "KK 28 歲正是被點名的族群，這題留言區一定吵翻；做短影音可以拍「14 天婚假怎麼排最划算」，貓帳號也能玩「阿寶炭炭要結婚請 14 天假」的哏。",
-          "links": [
-            {
-              "t": "客新聞",
-              "u": "https://hakkanews.tw/2026/09/17/303937/"
-            },
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260917/3238880.htm"
-            },
-            {
-              "t": "Newtalk",
-              "u": "https://newtalk.tw/news/view/2026-09-17/1060279"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "美國 3 年來首次升息，美股大跌",
-          "body": "美國聯準會 9/16（台灣時間 9/17 凌晨）宣布升息一碼，是 2023 年 7 月以來第一次；主席華許說通膨太高太久，年底可能還要再升。道瓊當天跌 631 點，台灣股市和台幣今天也跟著走弱。",
-          "why": "升息代表借錢、房貸變貴，客戶可能先砍行銷預算；接案的話這陣子報價跟收款要抓緊一點。",
-          "links": [
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/6811/9759714"
-            },
-            {
-              "t": "壹蘋新聞網",
-              "u": "https://news.nextapple.com/finance/20260917/7BE5ED73CF8B191B80B9B5E852870B6A"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Claude 合併 Cowork，還能做簡報",
-          "body": "Anthropic 9/16 宣布把 Claude 聊天跟 Cowork 合成同一個畫面，不用再選模式，你講要什麼它自己決定怎麼做。同時推出 Claude Docs 和 Claude Slides 測試版，能做文件、做簡報、下載成 PowerPoint，也能用連結分享、手機上改。先開給 Pro／Max 付費用戶，接下來幾週陸續上線。",
-          "why": "KK 平常就在用 Claude，之後企劃書、提案簡報可以直接叫它做成檔案分享給客戶，不用再自己貼到 PPT。",
-          "links": [
-            {
-              "t": "TechCrunch",
-              "u": "https://techcrunch.com/2026/09/16/anthropic-merges-claude-chat-and-cowork-in-one-interface/"
-            },
-            {
-              "t": "SiliconANGLE",
-              "u": "https://siliconangle.com/2026/09/16/anthropic-brings-cowork-directly-inside-claudes-chat-interface/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "ChatGPT 廣告會跟你聊天了",
-          "body": "OpenAI 9/16 開始測試「贊助代理人」：ChatGPT 裡出現廣告時，你可以點進去直接跟那家店的 AI 客服聊，問完再決定要不要去官網買。同時 HubSpot、Shopify 商家可以直接投 ChatGPT 廣告，目前先在美國測試，其他市場 9/23 起陸續開放。",
-          "why": "以後業配不只是影片，品牌也會把錢砸在 AI 聊天廣告；幫電商客戶剪片時可以多留意這個新戰場。",
-          "links": [
-            {
-              "t": "The Next Web",
-              "u": "https://thenextweb.com/news/openai-chatgpt-sponsored-agents-ads-manager-hubspot-shopify"
-            },
-            {
-              "t": "Search Engine Land",
-              "u": "https://searchengineland.com/openai-is-turning-chatgpt-ads-into-conversations-488949"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "美顏外掛新版能美白牙齒眼白",
-          "body": "老牌磨皮外掛 Beauty Box 在 IBC 影視展（9/16 報導）推出 6.0 版，除了自動抓皮膚磨皮，新增牙齒美白、眼白提亮。Premiere、After Effects、達文西、Final Cut 都能用，單套 199 美元。",
-          "why": "剪美妝、口播 IP 常被要求「臉修乾淨一點」，這個外掛能少掉一格一格手動修的時間，可以評估值不值得買。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/16/digital-anarchy-beauty-box-updates-at-ibc-2026/"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "新工具能把疊在一起的說話聲拆開",
-          "body": "音訊工具 VoxSplit Pro 在 IBC 期間（9/16 報導）亮相，專門把訪談、紀錄片裡兩個人同時講話的聲音拆成各自一軌，後製可以分開調音量。全部在電腦本機離線處理，錄音不會上傳，售價 230 美元，是音訊軟體外掛（VST3／AAX）也有獨立版。",
-          "why": "KK 剪對談、街訪時最怕兩人搶話疊音，這類工具能救回字幕聽不清楚的段落。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/16/voxsplit-pro-offline-dialogue-separation-tool/"
             }
           ]
         }
