@@ -1,6 +1,68 @@
 {
-  "updated": "2026-10-03 14:22",
+  "updated": "2026-10-04 08:11",
   "days": [
+    {
+      "date": "2026-10-04",
+      "items": [
+        {
+          "cat": "edit",
+          "hot": true,
+          "title": "YouTube 開始壓搬運 Shorts 的流量",
+          "body": "YouTube 10/2 宣布調整 Shorts 推薦：直接搬別人影片、沒加自己東西的內容，觸及會被降低，原創作者會被優先推。官方沒畫明確界線，也沒說哪天生效，外媒推測可能已經上路。",
+          "why": "剪輯接案做二創、精華剪輯的要注意「有沒有加自己的東西」；反過來 cattt.q 自己拍的貓片是原創，等於多一點推薦優勢。",
+          "links": [
+            {
+              "t": "9to5Google",
+              "u": "https://9to5google.com/2026/10/02/youtube-wont-recommend-unoriginal-shorts/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "蘋果要收緊 Mac 給 AI 的「全碟權限」",
+          "body": "蘋果 10/2 通知開發者：AI 代理越來越能自己動手，給它「完整磁碟取用權」風險變大，之後要用更明確的操作才能開這個權限。ChatGPT、Claude 這類會操作電腦的 AI 首當其衝。",
+          "why": "你 Mac 上跑的 Claude、自動化排程如果需要讀整台電腦的檔案，之後 macOS 更新可能要重新授權，遇到突然失效先檢查系統設定的隱私權限。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/02/apple-has-notified-developers-that-as-ai-agents-become-more-advanced-autonomous-full-disk-access-to-all-data-on-a-mac-poses-an-increasing-risk/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "AI 不用生圖，改寫程式「畫油畫」",
+          "body": "藝術實驗網站 Stillwet 讓 Claude、GPT、Gemini 等模型寫程式控制一台油畫模擬器，看得到筆觸一層層疊、顏料慢慢乾。多數作品模仿浪漫派畫家弗里德里希，但 AI 只讀過文字描述、沒看過原畫，目前已累積 75 幅。（AI Weekly 10/3 報導）",
+          "why": "「看 AI 一筆一筆畫出來」的過程本身就是很好的縮時素材，可以當影片哏或片頭轉場靈感。",
+          "links": [
+            {
+              "t": "Stillwet",
+              "u": "https://stillwet.art"
+            },
+            {
+              "t": "AI Weekly",
+              "u": "https://aiweekly.co/ai-news-today"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "明天起第二波東北季風，北部轉涼下雨",
+          "body": "氣象專家吳德榮預報：10/5、10/6 東北季風增強，北台灣氣溫明顯下降，北部、東部迎風面 5 日會有較大雨勢，6 日起雨慢慢變少。網路上流傳「降到 16 度」的說法，查到的權威預報是低溫約 20 度上下。",
+          "why": "外拍行程排在 5、6 號的記得改室內或備雨具；天氣轉涼正好是拍貓咪窩被窩、縮成一團的季節素材。",
+          "links": [
+            {
+              "t": "華視（中央社）",
+              "u": "https://news.cts.com.tw/cna/life/202610/202610023085262.html"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7266/9788886"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-03",
       "items": [
@@ -1106,109 +1168,6 @@
             {
               "t": "Newsshooter",
               "u": "https://www.newsshooter.com/2026/09/17/sony-japans-statement-regarding-the-postponement-of-the-release-of-the-fx5/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-18",
-      "items": [
-        {
-          "cat": "edit",
-          "hot": true,
-          "title": "Runway 能把舊影片補幀到 120fps",
-          "body": "Runway 9/17 在開發者 API 上線「Enhance Frame Rate」：丟一段現成影片進去，它會用 AI 生出中間缺的畫格，重算成 24、30、60 到 120fps（23.98、29.97 這種小數點的也支援）。一次最多吃 300 秒，2 秒算 1 點，收費只看你丟進去多長，補到 120fps 不用多付錢。",
-          "why": "手上素材只有 30fps 卻想做慢動作，以前只能認了；現在可以先補幀再放慢。貓咪撲過來那種一秒鐘的畫面最吃這個。",
-          "links": [
-            {
-              "t": "AlphaSignal",
-              "u": "https://alphasignal.ai/news/runway-brings-broadcast-frame-rates-up-to-120fps-to-its-video-api"
-            },
-            {
-              "t": "功能說明",
-              "u": "https://www.orcarouter.ai/blog/runway-enhance-frame-rate-explained"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "hot": false,
-          "title": "DJI 新圖傳無線傳 4K60 HDR",
-          "body": "DJI 9/17 發表 SDR Transmission 2，就是拍片現場把攝影機畫面無線丟到導演監看螢幕的那個盒子。這代升到 DCI 4K/60p 10-bit HDR、延遲 35 毫秒、最遠 4 公里，發射端和接收端可以互換角色。美國因禁令買不到。",
-          "why": "接案現場有客戶要盯畫面時好用，但這是拍攝端的東西，對剪輯台沒直接影響，知道有這回事就好。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/17/dji-sdr-transmission-2-a-powerful-accessible-wireless-video-transmission-tool/"
-            },
-            {
-              "t": "Engadget",
-              "u": "https://www.engadget.com/2259908/dji-new-sdr-transmission-ii-beams-4k-60-fps-hdr-video-2-5-miles/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "hot": false,
-          "title": "Grok 開放語音對話，聽寫準度翻倍",
-          "body": "xAI 9/17 幫 Grok Bot 加上語音模式，桌機和手機都能直接講話不用打字。官方說反應速度快 1.4 倍，聽寫準確度比 Deepgram Nova 3、ElevenLabs Scribe v2 高 1.5 到 2 倍——這個倍數是 xAI 自己講的，還沒有第三方實測。",
-          "why": "聽寫準確度值得留意。逐字稿是剪片前置最花時間的一關，哪家準就省哪家的時間。",
-          "links": [
-            {
-              "t": "xAI 更新紀錄",
-              "u": "https://x.ai/build/changelog"
-            },
-            {
-              "t": "功能整理",
-              "u": "https://aitoolsrecap.com/Blog/grok-voice-mode-xai-2026-features-how-to-use"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "hot": false,
-          "title": "Claude 專案改版，從資料夾變對話",
-          "body": "Anthropic 9/17 發文「Projects redesigned: from folder to conversation」，把原本像檔案資料夾的專案，改成以對話為中心來收納。這是接在前一天 Chat 與 Cowork 合併之後的第二波調整。",
-          "why": "你的剪輯管線都掛在 Claude 上，專案怎麼收納會直接影響每天開工的動線，改版後開工路徑可能要重找一次。",
-          "links": [
-            {
-              "t": "Anthropic 官方部落格",
-              "u": "https://www.claude.com/blog"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "hot": false,
-          "title": "彰化議長父子同日被押，辦桌案延燒",
-          "body": "彰化縣議長謝典霖涉嫌今年 6 月在縣議會辦桌，替表姑（溪湖鎮長參選人）賄選。9/17 深夜父親謝新隆先被裁定羈押禁見，接著謝典霖本人也被押；母親、前立委鄭汝芬 9/18 凌晨以 100 萬元交保。檢方另查出涉嫌詐取公款與特支費。",
-          "why": "「在議會辦桌」這種超有畫面的地方政治哏，短影音圈這幾天會一直被拿來玩，值得看一下大家怎麼下標。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5576806"
-            },
-            {
-              "t": "NOWnews",
-              "u": "https://www.nownews.com/news/6875964"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "hot": false,
-          "title": "沈伯洋提 9.5 億單車橋，蔣萬安打槍",
-          "body": "沈伯洋 9/16 提出花 9.5 億蓋跨基隆河自行車專用橋來解內湖塞車，蔣萬安 9/17 回應市府兩年前就評估過不可行：施工要封兩個車道、工期超過兩年，反而讓內湖更塞。當晚兩人同場出席頒獎晚宴，沈上台致詞時，台下支持者對著敬酒的蔣萬安、李四川喊凍蒜，場面很尷尬。",
-          "why": "台北市長選戰開始有火花了，同框尷尬的畫面是剪短影音的好材料，也是觀察網路風向怎麼轉的好教材。",
-          "links": [
-            {
-              "t": "中央社",
-              "u": "https://www.cna.com.tw/news/aloc/202609170106.aspx"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/124652/9761636"
             }
           ]
         }
