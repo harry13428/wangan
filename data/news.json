@@ -1,6 +1,88 @@
 {
-  "updated": "2026-10-05 10:24",
+  "updated": "2026-10-06 10:14",
   "days": [
+    {
+      "date": "2026-10-06",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "沈伯洋 FF14 公會房變線上競總",
+          "body": "沈伯洋 10/4 實體競總成立當天，大批玩家湧進他在《FF14》繁中服「風神」的公會房屋朝聖、拍照掛機，一度擠到系統人數上限。玩家還把角色衣服染成競選橘色，拍賣場的橘色染劑一度被掃光，Threads 上截圖洗版。",
+          "why": "「選舉搬進遊戲裡」是很好的影片哏：遊戲畫面＋實體造勢對剪，政治話題用梗圖角度切就不會太硬。",
+          "links": [
+            {
+              "t": "新頭殼",
+              "u": "https://newtalk.tw/news/view/2026-10-06/1063844"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6880745"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "ChatGPT 生圖等待時要插廣告了",
+          "body": "OpenAI 10/5 宣布本月下旬開始在美國測試新的圖片廣告：你在 ChatGPT 生圖時，旁邊會出現有標示的品牌圖片廣告，跟你生的圖分開。OpenAI 強調廣告不會影響回答內容，敏感對話也不會出現。",
+          "why": "免費版生圖以後可能要邊等邊看廣告；也代表 AI 工具開始走「廣告換免費」路線，挑工具時要算進去。",
+          "links": [
+            {
+              "t": "BleepingComputer",
+              "u": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-will-show-visual-ads-in-chatgpt-while-you-generate-images/"
+            },
+            {
+              "t": "AI Weekly",
+              "u": "https://aiweekly.co/ai-news-today"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "IG 私訊可以叫 AI 幫你寫歌",
+          "body": "Instagram 10/4 在私訊加了新選項：自己打歌詞、選曲風，AI 就生出一首歌直接傳給朋友。功能跟 Snapchat 的付費版類似，但 IG 給的自由度更高；目前沒說開放哪些地區，台灣還不一定看得到。",
+          "why": "可以拿來幫 cattt.q 的貓做一首「主題曲」，當限動或 Reels 素材；不過商用版權還沒說清楚，正式案子先別用。",
+          "links": [
+            {
+              "t": "Social Media Today",
+              "u": "https://www.socialmediatoday.com/news/instagram-adds-ai-songs-to-dms/832086/"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "用光控制大腦，拿下諾貝爾醫學獎",
+          "body": "2026 諾貝爾醫學獎 10/5 揭曉，頒給德國的黑格曼、納格爾和美國的戴瑟羅斯三人，表彰「光遺傳學」：用光當開關，精準打開或關掉腦中特定神經細胞。這技術讓科學家能研究記憶、情緒怎麼形成，未來可能幫助治療巴金森氏症、憂鬱症。",
+          "why": "「用光遙控大腦」很適合做 30 秒科普短片的開場哏；諾貝爾週還有物理、化學獎接著公布，這週科普素材多。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://www.cna.com.tw/news/aopl/202610050240.aspx"
+            },
+            {
+              "t": "聯合報",
+              "u": "https://udn.com/news/story/6809/9796268"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "乖乖罷工第 4 天，工會去勞動部抗議",
+          "body": "乖乖中壢廠工會 10/3 發動 57 年來首次罷工，原本只打算罷一天，後來因不滿公司想找移工進廠，改成無限期罷工；今天進入第 4 天，工會到勞動部陳情。勞動部表示要求公司跟工會透明協商。",
+          "why": "機房、剪輯機旁放乖乖保平安是台灣工程圈經典習俗，「乖乖罷工」本身就自帶反差哏；勞資後續怎麼談可以持續追。",
+          "links": [
+            {
+              "t": "自由財經",
+              "u": "https://ec.ltn.com.tw/article/breakingnews/5593464"
+            },
+            {
+              "t": "社群輿情雷達",
+              "u": "https://ecom.atmarketing.tw/trend/daily/2026-10-06"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-05",
       "items": [
@@ -1054,108 +1136,6 @@
             {
               "t": "聯合新聞網",
               "u": "https://udn.com/news/story/7266/9767187"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-20",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "名古屋亞運開幕，中華隊482人出征",
-          "body": "第20屆亞洲運動會9月19日在日本愛知名古屋開幕，賽期到10月4日共16天。中華隊派出482名選手拚34個運動項目，開幕式由拳擊黃筱雯、散打張薷云掌旗進場。中華電信雙平台有轉播。",
-          "why": "接下來兩週台灣社群會被賽事洗版，是最好蹭的話題；貓咪帳號可以做「跟貓一起看比賽」，賽事剪輯的接案需求這期間也會變多。",
-          "links": [
-            {
-              "t": "遠見雜誌",
-              "u": "https://www.gvm.com.tw/article/132893"
-            },
-            {
-              "t": "Yahoo運動",
-              "u": "https://tw.sports.yahoo.com/news/%E4%BA%9E%E9%81%8B-%E5%90%8D%E5%8F%A4%E5%B1%8B%E4%BA%9E%E9%81%8B%E7%9B%9B%E5%A4%A7%E9%96%8B%E5%B9%95-%E4%B8%AD%E8%8F%AF%E9%9A%8A%E6%98%8E%E6%9C%89%E6%9C%9B%E6%8B%9A%E9%A6%96%E9%87%91-141051597.html"
-            },
-            {
-              "t": "經理人懶人包",
-              "u": "https://www.managertoday.com.tw/articles/view/72533"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "怪男撒「水晶寶寶」，整池錦鯉全死",
-          "body": "台中一名男子把含水晶寶寶的芳香劑倒進沙鹿福德宮魚池當飼料，錦鯉吞下後一週內20條全部暴斃，廟方損失4萬5千元。法院依動保法判拘役40天併科罰金20萬，9月19日才被報導出來。水晶寶寶吸水後會膨脹20到30倍。",
-          "why": "養寵物的觀眾對這種新聞最有反應。貓咪帳號 cattt.q 可以剪一支「路上千萬別亂餵」的提醒短片，情緒夠強、留言會很多。",
-          "links": [
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7315/9765346"
-            },
-            {
-              "t": "聯合影音",
-              "u": "https://video.udn.com/news/1329316"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "中國Step 5小模型打平兆級大模型",
-          "body": "階躍星辰9月19日突襲發表 Step 5 Preview，直接跳過整個 Step 4 世代。第三方評測 Artificial Analysis 給它44分，跟參數量大它四倍多的 Kimi K3 同分，只比 GLM-5.3、Opus 5 少1分，價格大約只要同級的一半。",
-          "why": "模型越做越小、越做越便宜，代表你在用的 AI 剪輯、AI 配音工具月費之後還會再掉，現在不用急著簽長約或買終身方案。",
-          "links": [
-            {
-              "t": "新浪科技",
-              "u": "https://finance.sina.com.cn/tech/roll/2026-09-19/doc-iniskccv2410534.shtml"
-            },
-            {
-              "t": "DataLearner",
-              "u": "https://www.datalearner.com/ai-models/pretrained-models/step-5-preview"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "傳 Anthropic 上市前要再放大招",
-          "body": "路透9月18日獨家報導，Anthropic 正考慮在 IPO 之前推出新模型，回應 OpenAI 推出 GPT-6 Astra 之後的攻勢。微妙的是他們執行長9月12日才寫了3800字長文呼籲全業界「放慢開發速度」。上市可能延到11月美國期中選舉後。官方沒回應，目前未證實。",
-          "why": "你每天拿 Claude 在跑剪輯工具跟腳本，新模型通常代表上下文更長、處理長片更穩；真的要出，工作流可以順勢升級一輪。",
-          "links": [
-            {
-              "t": "Rappler（轉路透）",
-              "u": "https://www.rappler.com/technology/anthropic-considers-releasing-new-ai-model-ahead-ipo/"
-            },
-            {
-              "t": "Seeking Alpha",
-              "u": "https://seekingalpha.com/news/4644560-anthropic-weighs-new-ai-model-ahead-of-ipo"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "相機籠裝滑板輪，貼地運鏡變簡單",
-          "body": "Cartoni 9月18日推出 HyperRoll：三顆聚胺酯輪加 NATO 導軌，夾在你現有的相機籠上，相機就能在地板或桌面上滑著走，還附一根伸縮轉向桿。輪子角度可以鎖死，同一個運鏡能重複跑好幾次。歐洲售價699歐元，已經開始出貨。",
-          "why": "拍貓最缺的就是穩定的貼地視角，這個比架軌道便宜又好收；美食、產品的桌面橫移也能直接用同一套。",
-          "links": [
-            {
-              "t": "CineD",
-              "u": "https://www.cined.com/cartoni-hyperroll-explained-skate-wheels-for-any-camera-cage-nato-rail-mounting-lockable-wheel-angles/"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "杜鵑轉去日本，中秋連假放晴",
-          "body": "杜鵑9月19日下午升格中度颱風，今天開始北轉，21日最接近日本關東外海，對台灣沒有直接影響。氣象署說中秋連假（9/23–26）各地多雲到晴，只有南部山區午後可能有局部陣雨，南部高溫32到34度，日夜溫差大。",
-          "why": "連假天氣穩，外景、帶貓出門的片可以安心排進去；早晚溫差大，清晨拍日出記得多帶一件。",
-          "links": [
-            {
-              "t": "TVBS",
-              "u": "https://news.tvbs.com.tw/life/4024619"
-            },
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260919/3240392.htm"
             }
           ]
         }
