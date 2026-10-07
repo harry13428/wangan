@@ -1,6 +1,88 @@
 {
-  "updated": "2026-10-06 10:14",
+  "updated": "2026-10-07 08:11",
   "days": [
+    {
+      "date": "2026-10-07",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "蔡康永挺沈伯洋，陸品牌火速切割",
+          "body": "蔡康永 10/4 出現在沈伯洋競總成立大會，中國官媒罵他「齷齪」，零跑汽車、時尚芭莎、比斯特購物村跟陸綜《明星大偵探》相繼切割下架，媒體估他損失近 4 千萬。他回應只是想「聽聽各方意見」，也答應去蔣萬安的競總活動。",
+          "why": "這兩天 Threads 全在吵「藝人表態的代價」，做時事口播或評論型短片的客戶很可能會接這題，先懂來龍去脈。",
+          "links": [
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20261006/3249709.htm"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/124652/9797100"
+            },
+            {
+              "t": "風傳媒",
+              "u": "https://www.storm.mg/article/11170082"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "國慶連假前段有雨，週日起轉好",
+          "body": "氣象報導說東北季風影響下，北部和東北部週五、國慶日（10/10）會下雨，週日起雨區縮小；這幾天清晨局部可能下探 19 度，吳德榮預估平地輻射冷卻甚至到 16 度左右。中南部大致晴朗穩定。",
+          "why": "連假想拍外景或帶阿寶、炭炭出門拍素材，排中南部或週日以後比較穩；早晚溫差大，貓咪保暖也可以拍成一支。",
+          "links": [
+            {
+              "t": "ETtoday",
+              "u": "https://ettoday.net/news/20261006/3250138.htm"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6881212"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "「AI 自動粗剪」工具一口氣冒一堆",
+          "body": "ProVideo Coalition 10/5 的剪輯新軟體整理裡，Doza Assist、PowerCut 都主打「丟素材給 AI 自動出粗剪」，還有聲控提詞機 PowerCue、免費開源修圖軟體 Compositor。作者也直說自動剪輯「多數時候不適合我」，創意剪接還是得靠人。",
+          "why": "跟你的粗剪接力流程同一條路，可以看看別人怎麼做粗剪自動化；Compositor 免費可替代 PS 做字卡素材。",
+          "links": [
+            {
+              "t": "ProVideo Coalition",
+              "u": "https://www.provideocoalition.com/roundup-new-software-for-video-editors/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Mistral 推一兆參數開源大模型",
+          "body": "法國 AI 公司 Mistral 10/6 發表 Large 4，總共一兆參數、每次只動用約 490 億，API 價格比美國大廠便宜不少，權重說是 10 月底開放下載。這是歐洲目前最大的開放模型。",
+          "why": "短期對剪片沒直接影響，但開源大模型越強，之後字幕、腳本這類 AI 工具會越便宜，聽到客戶問可以接得上話。",
+          "links": [
+            {
+              "t": "AI Weekly",
+              "u": "https://aiweekly.co/ai-news-today"
+            },
+            {
+              "t": "Mistral",
+              "u": "https://mistral.ai/news"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "你講話是不是有「AI 腔」了？",
+          "body": "TechNews 10/7 整理華爾街日報等報導：越來越多人日常講話不自覺模仿聊天機器人，例如「不是 A，而是 B」這種對比句型。MIT 心理學家提醒，太依賴 AI 的「假同理心」，可能讓人在真實相處變生疏。",
+          "why": "「AI 腔」很適合當短影音哏（模仿 AI 講話的反差搞笑），也提醒你寫字幕腳本時別整篇都是 AI 句型，觀眾會出戲。",
+          "links": [
+            {
+              "t": "TechNews",
+              "u": "https://technews.tw/2026/10/07/ai-reshapes-human-conversation-social-interaction/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-06",
       "items": [
@@ -1042,100 +1124,6 @@
             {
               "t": "中時新聞網",
               "u": "https://www.chinatimes.com/realtimenews/20260921004214-260405"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-21",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "921防災日，今早全台手機一起狂響",
-          "body": "今天是國家防災日，上午9點21分全台手機同時收到地震速報測試（情境是台東規模7.3），9點30分沿海鄉鎮再收海嘯演練警報，10點發解除。測試訊息開頭都有寫「115年國家防災日演習」，真的災害來時不會有「演習」兩個字。",
-          "why": "全台同一分鐘一起被嚇到＝天然的共同話題，貓咪被警報嚇到的反應、或「我家貓完全不理」都是現成的短影音哏，而且時效只有今天。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/life/breakingnews/5580712"
-            },
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260921/3240987.htm"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "阿里新模型直接生出去背PNG",
-          "body": "阿里9月20日開源 Qwen-Image-2.1，只有7B卻能原生輸出2048x2048，而且直接吐四通道RGBA——也就是產出來就是透明背景，不用再跑一次去背。還能一次吃10張參考圖做編輯。但授權從Apache改成「研究用」，商用要另外談。",
-          "why": "你做圖卡、貼紙、疊加素材最痛的就是去背，這個等於一步到位。不過商用授權卡住，先當測試玩具、正式案子還是走現有管線比較保險。",
-          "links": [
-            {
-              "t": "the-decoder",
-              "u": "https://the-decoder.com/alibabas-open-weight-qwen-image-2-1-claims-to-beat-closed-models-in-image-generation-with-just-7-billion-parameters/"
-            },
-            {
-              "t": "ComfyUI Blog",
-              "u": "https://blog.comfy.org/p/qwen-image-21-in-comfyui-open-weight"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "iPhone終於能手動調光圈了",
-          "body": "Blackmagic Camera for iOS 更新到3.5（9月18日），可以手動控制iPhone 18 Pro主鏡頭的機械光圈，有f/1.48、f/1.8、f/2.8、f/4.0四段，大約三級的調整空間。也支援把ProRes直接錄進iPhone 18 Pro的專業影片儲存。免費更新。",
-          "why": "手機拍片第一次真的能控景深，戶外不用一直換ND鏡。你拍貓或口播用手機當B機時，散景可以自己決定而不是靠後製假。",
-          "links": [
-            {
-              "t": "CineD",
-              "u": "https://www.cined.com/blackmagic-camera-for-ios-3-5-released-iphone-18-pro-support-variable-aperture-control-prores-to-pro-video-storage/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "鬍鬚張少東挺蔣萬安，公司連夜切割",
-          "body": "鬍鬚張董事長的兒子9月19日到蔣萬安大同區後援會送鳳梨力挺，被網友發現後喊抵制拒吃，公司9月20日連夜發聲明說那是員工個人身分的私人行程、不代表品牌立場。沈伯洋出來喊別去洗一星評價，藍營則批側翼打壓。",
-          "why": "老品牌被政治立場炎上、24小時內發切割聲明，整套危機處理流程可以直接當成網感教材：留言區怎麼吵、品牌哪句話有效哪句沒用。",
-          "links": [
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260920/3240907.htm"
-            },
-            {
-              "t": "TVBS",
-              "u": "https://news.tvbs.com.tw/politics/4025156"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "前TikTok員工做了個AI擺姿教練",
-          "body": "兩位TikTok前員工做的app「Superpose」9月19日被報導，拍一張照後AI會生出四種擺姿建議，還有「對位」功能讓你照著提示把自己塞進理想構圖。免費每天5次，已募到220萬美元，美圖也有投。",
-          "why": "不會擺姿是素人拍片最大障礙。你接案時遇到不上鏡的客戶可以拿這個當溝通工具，或直接拍「AI教我擺姿勢」的實測影片。",
-          "links": [
-            {
-              "t": "科技新報",
-              "u": "https://technews.tw/2026/09/19/ai-posing-app-superpose"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "準颱風舒力基可能攪局中秋後半",
-          "body": "菲律賓東方的熱帶擾動91W，氣象署估9月22到24日可能增強成今年第25號颱風「舒力基」。中秋連假前兩天（25、26日）天氣還不錯、賞月機會高，但27日起水氣增加，颱風路徑還有北轉擦邊或減速再西進兩種可能，都還沒定。",
-          "why": "連假外拍的排程要往前挪，25、26號是相對安全的拍攝窗口。昨天說的放晴只涵蓋前半段，後半段別排戶外。",
-          "links": [
-            {
-              "t": "Newtalk",
-              "u": "https://newtalk.tw/news/view/2026-09-21/1060956"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7266/9767187"
             }
           ]
         }
