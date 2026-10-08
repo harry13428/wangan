@@ -1,6 +1,72 @@
 {
-  "updated": "2026-10-07 08:11",
+  "updated": "2026-10-08 08:10",
   "days": [
+    {
+      "date": "2026-10-08",
+      "items": [
+        {
+          "cat": "ai",
+          "hot": true,
+          "title": "ChatGPT 升級 GPT-6，回答會自己畫圖",
+          "body": "OpenAI 10/7 推出 GPT-6 和新介面「Intelligent UI」：問問題時 ChatGPT 會直接在對話裡生出可以點的按鈕、互動圖表、計算機和示意圖（例如飛機機翼怎麼產生升力）。付費版 10/7 先上，免費版今天（10/8）開放。",
+          "why": "做知識型短片前先丟給它，讓它畫出示意圖幫你理解、順便當分鏡參考，不用自己查半天。",
+          "links": [
+            {
+              "t": "TechCrunch",
+              "u": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Google 新生圖模型 Nano Banana 2.1",
+          "body": "Google 10/6 發表 Nano Banana 2.1：生圖更快、圖裡的文字更準、連續修改同一張圖更不會跑掉，官方說表現還贏過 Pro 版；API 價格砍半。已陸續上到 Gemini App、Google 搜尋 AI 模式和 Flow。",
+          "why": "做縮圖、貓咪帳號 cattt.q 的貼文圖可以試它，修字修細節比較不會整張重畫。",
+          "links": [
+            {
+              "t": "TechNews 科技新報",
+              "u": "https://technews.tw/2026/10/07/google-nano-banana-2-1/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "免費開源版 Adobe 全家桶開工了",
+          "body": "做 AI 影像工具 ArtCraft 的團隊在 GitHub 公開「Crafting Apps」，規劃 7 套免費開源軟體，包含修圖（能開 PSD）、影片剪輯 FilmCraft、影片特效 EffectCraft，Mac／Windows／Linux 都能用。不過目前只有修圖和 PDF 兩款是早期測試版，剪輯和特效還在開發中。",
+          "why": "還不能取代 Premiere／AE，但值得追蹤；如果剪輯版真的做出來，就是不用月付訂閱的備案。",
+          "links": [
+            {
+              "t": "TechNews 科技新報",
+              "u": "https://technews.tw/2026/10/07/crafting-apps/"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "圖庫霸主 Getty 被 AI 打到下市",
+          "body": "全球最大圖庫之一 Getty Images 被紐約證交所除牌，股價只剩 0.04 美元、負債約 20 億美元，正在跟債權人談救命錢。大家在討論：AI 幾秒就能生圖，誰還要花錢買圖庫？",
+          "why": "素材來源正在大洗牌，以後找 B-roll、照片會更依賴 AI 生成，版權和授權規則也要多留意。",
+          "links": [
+            {
+              "t": "TechNews 科技新報",
+              "u": "https://technews.tw/2026/10/08/getty-images-faces-delisting-amid-ai-image-impact/"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "九合一倒數，AI 假聲音成選戰武器",
+          "body": "11/28 九合一選舉逼近，今天有評論整理：7 月底蔣萬安陣營用 AI 模仿賴清德聲音做「油不得你」宣傳片，黃偉哲再用 AI 合成蔣萬安聲音反擊，雙方互告。專家警告投票前可能有深偽影音突襲，台灣目前也沒有專門的深偽罪。",
+          "why": "剪輯師最常被找去做這種片——接政治案前先確認有標示「AI 生成」，也可以當「怎麼看穿 AI 假聲音」的影片題材。",
+          "links": [
+            {
+              "t": "TechNews 資安",
+              "u": "https://infosecu.technews.tw/2026/10/08/year-end-election-politicians-ai-borrow-voice/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-07",
       "items": [
@@ -1026,104 +1092,6 @@
             {
               "t": "Newsshooter",
               "u": "https://www.newsshooter.com/2026/09/22/zinecontrol-1-8-0-new-supported-cameras-cinematic-zoom-focus-jog/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-22",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "微博進駐Threads被灌爆，隔天自爆",
-          "body": "Threads 冒出一個掛微博官方標誌的帳號 @weibo_2778，第一篇用簡體字寫「微博正式入駐 Threads」。台灣網友瞬間衝進去刷了幾千則留言，全是小熊維尼、六四坦克人這些中國禁圖。結果這帳號隔天自己發了「8964」，證實是香港網友的惡搞反串。上個月小紅書也才在 Threads 上演過一次類似的戲。",
-          "why": "這是 Threads 流量密碼的活教材——一個帳號名＋一句挑釁文案就引爆幾千留言。貓咪帳號當然不碰政治，但「故意設一個大家忍不住要留言的鉤子」這個結構可以直接學。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5581366"
-            },
-            {
-              "t": "三立新聞",
-              "u": "https://www.setn.com/news/1910872"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "長片丟進去，自動切十幾支短影音",
-          "body": "國外剪輯媒體 newsshooter 在 9/21 試了一款叫 shortshort 的網頁工具：上傳最長 3 小時的長片，它會自己抓完整句子的段落，切成一支支 9:16 直式短片，還附逐字跳出的字幕。免費版有浮水印、只能做 3 支，付費從每月 12 歐到 79 歐。評測結論是「能用但偏貴」，不能配音、不會自動發文、也不會幫你加 B-roll。",
-          "why": "你把長片重新包裝成短影音的量很大，這種工具可以當「先幫我切出候選片段」的粗剪助手，字幕樣式跟刀口還是自己修。反過來也要注意：客戶開始有便宜選項了，報價時要講清楚你多做了哪些事。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/21/shortshort-takes-one-long-uploaded-video-creates-vertical-916-cutdowns-with-word-by-word-captions/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "AI寫程式工具偷傳走整個專案夾",
-          "body": "中國 AI 公司 Z.ai（做 GLM 模型那家）的桌面工具 ZCode 被開發者逆向拆開，發現只要登入就會把你整個工作資料夾打包加密、偷傳到阿里雲。一個案例是 345MB、42,411 個檔案被壓成 313MB 上傳，log 裡有 564 次嘗試紀錄。這功能預設開啟、沒有關閉選項，解密鑰匙只有 Z.ai 有。事情 9/18 爆出，公司已道歉並把 ZCode 開源。",
-          "why": "很直接的教訓：接客戶素材的那台機器，別隨便裝來路不明的 AI 工具，免費的更要小心。客戶還沒公開的影片檔如果外流，是你要負責。",
-          "links": [
-            {
-              "t": "Tom's Hardware",
-              "u": "https://www.tomshardware.com/tech-industry/artificial-intelligence/devs-say-chinese-ai-company-silently-uploaded-hundreds-of-megabytes-of-local-workspace-data-z-ai-the-firm-behind-the-glm-models-didnt-ask-for-user-consent-and-made-564-attempts-to-exfiltrate-313mb-archive"
-            },
-            {
-              "t": "The Next Web",
-              "u": "https://thenextweb.com/news/zai-zcode-encrypted-upload-only-zai-can-verify"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "馬斯克新Grok很便宜，但還是輸",
-          "body": "xAI 在 9/21 推出 Grok 4.7，底層模型從 1.5 兆參數長到 2.1 兆，價錢卻沒漲（輸入每百萬 token 2 美元、輸出 6 美元）。不過第三方評測 Artificial Analysis 只給 46 分、中段班，Claude Fable 5.1 和 GPT-6 都是 53 分。它已經直接上線 Cursor、GitHub Copilot 這些工具，不用排隊等。",
-          "why": "重點是價格戰又往下打一層——你拿 AI 寫腳本、想標題、整理逐字稿的成本只會越來越低。要便宜堪用可以選 Grok，要品質還是 Claude 或 GPT。",
-          "links": [
-            {
-              "t": "The Decoder",
-              "u": "https://the-decoder.com/xai-launches-grok-4-7-at-bargain-prices-but-benchmarks-reveal-a-wide-gap-to-claude-and-gpt-6/"
-            },
-            {
-              "t": "Artificial Analysis",
-              "u": "https://artificialanalysis.ai/models/grok-4-7"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "富邦人壽辦公室砍人，2人重傷",
-          "body": "台北中山區建國北路的富邦人壽通訊處 9/22 上午出事：41 歲黃姓男子帶 3 把水果刀，提前幾小時躲在 9 樓茶水間，等 38 歲洪姓業務員進男廁才尾隨進去動手，兩人都身中 10 多刀重傷，洪男已經氣切。富邦人壽表示嫌犯不是保戶、跟受害業務員也不認識，警方朝殺人未遂偵辦，動機還在查。",
-          "why": "今天台灣最洗版的社會事件，同事朋友大概都在聊。跟剪輯工作沒關係，知道一下就好，這種事別拿來當影片哏。",
-          "links": [
-            {
-              "t": "自由財經",
-              "u": "https://ec.ltn.com.tw/article/breakingnews/5581540"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7315/9768430"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "中秋連假前半晴、後半下雨",
-          "body": "氣象署預報：9/25、26 連假前半段各地多雲到晴，最適合烤肉賞月；9/27、28 後半段水氣變多，東半部和恆春半島降雨機率明顯升高。菲律賓東方的熱帶擾動 9/23 到 9/25 前後可能增強成今年第 25 號颱風「舒力基」，生成後至少中颱、不排除挑戰強颱，周日晚間起外圍雲系會逐漸逼近台灣。",
-          "why": "要拍外景或貓咪戶外畫面就卡周五、周六。連假後半如果真的發警報，那波「颱風天在家幹嘛」的內容需求你可以提前把題目想好。",
-          "links": [
-            {
-              "t": "NOWnews",
-              "u": "https://www.nownews.com/news/6876804"
-            },
-            {
-              "t": "中時新聞網",
-              "u": "https://www.chinatimes.com/realtimenews/20260921004214-260405"
             }
           ]
         }
