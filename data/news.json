@@ -1,6 +1,84 @@
 {
-  "updated": "2026-10-08 08:10",
+  "updated": "2026-10-10 23:27",
   "days": [
+    {
+      "date": "2026-10-10",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "蔣萬安競選 MV 偷用經典賽畫面",
+          "body": "蔣萬安競選歌《台北安可》MV 被抓到用了經典賽中華隊、張育成的比賽畫面，網友狂標 MLB 官方帳號問「有授權嗎？」。競辦先改畫面、蔣萬安隨後道歉，接著又被指出用了市府政策廣告片段，競辦說會全面調整（10/8–10/9 報導）。",
+          "why": "剪輯師的活教材：體育轉播、別人的廣告畫面不能隨便剪進商業或政治片，接案前先問清楚素材授權，出事是剪的人跟業主一起被罵。",
+          "links": [
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/Taipei/breakingnews/5601507"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6882076"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "國慶晚會賴清德當面催韓國瑜過預算",
+          "body": "10/9 晚上國慶晚會在板橋舉行，賴清德致詞時當面拜託立法院長韓國瑜和跨黨派立委快審中央總預算，韓國瑜微鞠躬、卓榮泰主動握手。白營則批委員會都還沒運作，是在誤導。今天（10/10）還有國慶演說。",
+          "why": "「當面喊話＋握手」這種現場反應鏡頭是政治短影音最愛剪的點，可以觀察各家媒體怎麼剪同一段畫面。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/6656/9805378"
+            },
+            {
+              "t": "ETtoday",
+              "u": "https://ettoday.net/news/20261009/3252004.htm"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "用 ChatGPT 10 分鐘，人就變得容易放棄",
+          "body": "UC Berkeley 等學校找了 1,222 人做實驗：先讓一組用 ChatGPT 解題，中途把 AI 拿走，結果這組正確率掉很快、跳題放棄的人也變多，沒用 AI 的人反而撐到最後表現更好（10/9 發布）。",
+          "why": "剪輯也一樣，AI 自動剪很快，但自己卡關硬磨出來的才是手感；這題也很適合拿來做「你是不是被 AI 寵壞了」的哏片。",
+          "links": [
+            {
+              "t": "UC Berkeley News",
+              "u": "http://news.berkeley.edu/2026/10/09/using-ai-for-just-10-minutes-erodes-your-ability-to-persist-at-hard-things/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Sony 出手機用的空間音訊麥克風",
+          "body": "Sony 10/8 發表 ECM-AX10，插手機 USB-C 就能錄立體聲、雙耳音訊和 YouTube 沉浸式聲音，有降噪、自拍模式、耳機即時監聽。售價 249.99 美元，10/19 起出貨，台灣價格還沒公布。",
+          "why": "拍貓帳號 cattt.q 用手機收音的話，這種隨插即用麥克風能讓呼嚕聲、腳步聲更有臨場感；但價格不便宜，先觀望評測。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/08/sony-ecm-ax10-spatial-audio-microphone-for-smartphones/"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "GTA 6 公開六個廣播電台可試聽",
+          "body": "Rockstar 10/8 公開《GTA 6》首批六個電台，壞痞兔、拉娜德芮、Slayer 團員當主持，官網可以直接試聽；這代第一次能邊走路邊戴耳機聽電台和 Podcast。遊戲 11/19 上市。",
+          "why": "GTA 6 是今年底最大的流量話題，上市前後的哏片、對比片會洗版，可以先存著電台名稱當素材梗。",
+          "links": [
+            {
+              "t": "玩具人",
+              "u": "https://www.toy-people.com/?p=115279"
+            },
+            {
+              "t": "VGC",
+              "u": "https://www.videogameschronicle.com/news/rockstar-reveals-some-of-gta-6s-radio-stations-says-players-can-now-listen-to-the-radio-and-podcasts-on-foot/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-08",
       "items": [
@@ -1006,92 +1084,6 @@
             {
               "t": "今周刊",
               "u": "https://www.businesstoday.com.tw/article/category/183027/post/202609240044/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-23",
-      "items": [
-        {
-          "cat": "ai",
-          "hot": true,
-          "title": "ChatGPT、Claude同天出新版還砍價",
-          "body": "9/22 OpenAI 推出 GPT-6 Sol（日常主力）和 Luna（便宜快速版），API 價格直接砍半，官方說 Sol 犯錯次數大約只剩上一代一半；同一天 Anthropic 也發表 Claude Opus 5.5，號稱便宜 40%、快 30%。兩大家同日對打，大家在比誰比較划算。",
-          "why": "你平常叫 AI 寫腳本、下字幕、跑剪輯管線，接下來用得更快更省；Luna 連免費版桌面 App 都能用。",
-          "links": [
-            {
-              "t": "TechCrunch",
-              "u": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
-            },
-            {
-              "t": "9to5Google",
-              "u": "https://9to5google.com/2026/09/22/claude-opus-5-5-and-openai-gpt-6-sol-luna-both-launch-today-with-lower-costs/"
-            },
-            {
-              "t": "流動日報",
-              "u": "https://www.newmobilelife.com/2026/09/23/openai-gpt-6-sol-luna/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "川習國宴，黃仁勳馬斯克擠同一桌",
-          "body": "川普 9/24 在華府辦國宴招待習近平，黃仁勳、馬斯克、奧特曼、庫克等科技大老都受邀，外媒爆料好幾位要擠同一桌。網友笑這是「最尷尬飯局」：大家明明在搶 AI 生意，對 AI 要不要放慢也吵翻了，現在要坐在一起吃飯。",
-          "why": "明後天國宴照片一出來一定洗版，「誰坐誰旁邊」的座位圖很適合做成迷因或配音哏。",
-          "links": [
-            {
-              "t": "TVBS",
-              "u": "https://news.tvbs.com.tw/world/4025685"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/124870/9506552"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "北市社工吞5位長者千萬老本",
-          "body": "北市社會局一名前社工督導，被控從 2025/5 到 2026/6 盜領 5 位受監護長者的存款，累計超過 1200 萬；她離職交接時才被發現，檢方搜出愛馬仕、香奈兒等名牌包。9/22 被拘提移送，社會局又被罵翻。",
-          "why": "話題性很高但屬負面社會新聞，拿來當題材要小心措辭，別消費當事長者。",
-          "links": [
-            {
-              "t": "自由時報",
-              "u": "https://news.ltn.com.tw/news/society/breakingnews/5582620"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7321/9771068"
-            },
-            {
-              "t": "壹蘋新聞網",
-              "u": "https://news.nextapple.com/local/20260923/52BDE4EA7293135A9B7EE3495BB08F9C"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "羅賓威廉斯女兒：做AI影片要有羞恥心",
-          "body": "網路上一直有人用 AI 做已故演員羅賓威廉斯的影片，他女兒柔達 9/22 在 X 上開罵：聲音又假又機械，叫大家「有點羞恥心」、別再轉傳。她上個月還和兄弟重開父親的 IG，專門對抗 AI 冒用。",
-          "why": "用 AI 生真人（尤其過世名人）的臉和聲音越來越容易踩雷，接案做 AI 影片時真人肖像能避就避。",
-          "links": [
-            {
-              "t": "TechNews",
-              "u": "https://technews.tw/2026/09/22/robin-williams-daughter-calls-for-fans-creating-ai-videos-of-the-actor-to-have-some-shame"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "手機遙控Nikon，還能預設運鏡變焦",
-          "body": "9/22 相機遙控 App ZineControl 出 1.8 版：用手機就能遙控 Nikon 相機，新增「預先設定好的電動變焦運鏡」和螢幕上直接微調對焦，還支援 Z f、Z fc 跟舊款單眼。一次買斷 14.99 美元，目前只有 iOS，Android 版預計下週推出。",
-          "why": "一個人拍片沒人幫忙推焦、拉鏡時，手機就能遙控出平順的變焦；用 Nikon 拍貓的話也能遠端拍，不用靠太近嚇到貓。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/22/zinecontrol-1-8-0-new-supported-cameras-cinematic-zoom-focus-jog/"
             }
           ]
         }
