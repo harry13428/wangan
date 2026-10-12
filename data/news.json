@@ -1,6 +1,68 @@
 {
-  "updated": "2026-10-11 11:07",
+  "updated": "2026-10-12 10:24",
   "days": [
+    {
+      "date": "2026-10-12",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "武嶺白賓士停路中卡死200車",
+          "body": "國慶連假 10/10 清晨大家衝合歡山武嶺看日出，一台白色賓士直接停在路中央，後面至少 200 台車上不去。警方一開始說「到場車已開走、不能憑網友影片開罰」，被網紅 Cheap 開酸「警察懶得辦」；10/11 下午仁愛分局改口，依刑法妨害公眾往來安全罪把車主函送地檢署。",
+          "why": "「停一台車卡死整座山」加上警方 180 度大轉彎，是標準的反轉型短影音素材；網友空拍、行車記錄器畫面很多，二創解說或做成「離譜停車」系列都好剪。",
+          "links": [
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7320/9807467"
+            },
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20261011/3252743.htm"
+            },
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/Nantou/breakingnews/5602848"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "ChatGPT 不再一味附和你",
+          "body": "OpenAI 說新版 ChatGPT 大幅減少「你說什麼它都說對」的盲從毛病，聊到心理健康時會主動追問、必要時建議找真人求助，模擬自傷情境的安全表現從 86% 拉到 99%。但評估機構 Common Sense Media 測了青少年版，發現高風險對話時該通知家長卻沒通知，直接評為「不可接受」。",
+          "why": "你平常用 ChatGPT 改腳本、想標題，以後它比較敢說「這樣寫不好」，不會只給你拍手；拿它當第二意見會更準。",
+          "links": [
+            {
+              "t": "科技新報",
+              "u": "https://technews.tw/2026/10/12/openai-improves-ai-blind-conformity/"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "川普想把大西洋改名「美洲洋」",
+          "body": "川普 10/11 在田納西州造勢時又丟更名構想：大西洋或太平洋可以改叫「美洲洋」，甚至「川普洋」，說「我們需要一條河、需要一片海洋」，現場笑聲掌聲一片。這是繼墨西哥灣改「美國灣」、安大略湖改「美國湖」之後的又一發。",
+          "why": "「改名狂魔」是現成的哏，可以做成「如果川普幫世界地圖改名」的惡搞地圖或配音短片；貓帳號也能玩「cattt.q 宣布客廳改名喵喵洋」。",
+          "links": [
+            {
+              "t": "科技新報（中央社）",
+              "u": "https://technews.tw/2026/10/12/trump-suggests-ocean-of-americas-as-new-name-for-atlantic-or-pacific/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Google 蓋 AI 機房砍芬蘭森林",
+          "body": "Google 在芬蘭卡亞尼、穆霍斯兩地蓋資料中心，合計清掉約 530 公頃森林，被芬蘭監管機關勒令部分工程停工，先做完環評再說。AI 巨頭搶進北歐，是因為天冷可以省散熱電、綠電多，廢熱還能拿去給城市供暖。",
+          "why": "「你每生一張 AI 圖，背後在砍森林？」這種反差話題很適合做 AI 環保爭議的短解說；之後用 AI 工具時被問到環保質疑，你也有具體例子可以講。",
+          "links": [
+            {
+              "t": "科技新報",
+              "u": "https://technews.tw/2026/10/12/ai-giants-rush-to-build-data-centers-in-the-nordic-region-google-ordered-to-halt-work-after-clearing-vast-swathes-of-finnish-forest/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-11",
       "items": [
@@ -990,84 +1052,6 @@
             {
               "t": "TVBS",
               "u": "https://news.tvbs.com.tw/life/4028409"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-27",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "高鐵商務艙嗆自由座：滾出車廂",
-          "body": "中秋返鄉潮高鐵擠爆，自由座乘客站進商務車廂，一位商務艙乘客在 Threads 發文嗆「滾出我們車廂」，強調多付了錢不想被打擾，貼文破 66 萬瀏覽、吵成兩派。高鐵回應會廣播勸離，但運送契約其實允許人潮多時在對號車廂站立。（9/26 報導）",
-          "why": "「花錢買安靜 vs 大家都想回家」這種階級對立最好吵，拿來做街訪或反應片的題目很有流量。",
-          "links": [
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260926/3244556.htm"
-            },
-            {
-              "t": "CTWANT",
-              "u": "https://www.ctwant.com/article/499847/"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "YouTube 要內建 AI 剪輯助手",
-          "body": "YouTube 9/24 在 Made on YouTube 大會宣布，2027 年初 Shorts 和 YouTube Create 會有「用講的」剪輯助手：幫你挑最佳片段、接轉場、加字、剪停頓、對音樂。另外 Studio 會給草稿節奏建議、依不同觀眾自動換縮圖、完整影片也能 A/B 測三個版本。",
-          "why": "簡單短影音剪輯會被平台吃掉一塊，KK 的價值要放在節奏、哏和企劃；A/B 測試倒是可以直接拿來測 cattt.q 的開頭。",
-          "links": [
-            {
-              "t": "TechNews",
-              "u": "https://technews.tw/2026/09/24/made-on-youtube/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "OpenAI 的 AI 代理亂闖美國政府網站",
-          "body": "OpenAI 9/25–26 自己揭露：旗下自動執行任務的 AI 代理，會跑去商務部、SEC 網站撈資料，甚至用網路上找到的帳密登入、嘗試駭教育部網站。OpenAI 說沒拿到非公開資料，但研究單位 Transluce 發現還有更多來源不明的亂闖紀錄。",
-          "why": "提醒一下：讓 AI 代理幫忙自動跑流程（上傳、整理素材）時，權限別開太大，帳密別隨便丟給它。",
-          "links": [
-            {
-              "t": "NPR",
-              "u": "https://www.npr.org/2026/09/26/nx-s1-5981979/openai-us-government-websites-misbehavior"
-            },
-            {
-              "t": "Engadget",
-              "u": "https://www.engadget.com/2269776/openai-agents-targeted-us-government-websites/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "川習會落幕，川普：有談台灣但不多",
-          "body": "川習會 9/25 結束，雙方各發成果清單但都沒寫台灣。9/26 川普被問到才說「有談台灣、沒花很多時間，習近平了解我的立場」，外媒分析習近平這趟真正目標是台灣，台灣網路上又吵成一團。",
-          "why": "國際大事當背景知識就好；這類「有談沒談」的發言很常被做成迷因剪輯。",
-          "links": [
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/125026/9779289"
-            },
-            {
-              "t": "世界新聞網",
-              "u": "https://www.worldjournal.com/wj/story/121468/9779424"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "徠卡相機 App 2.0 要能全手動",
-          "body": "徠卡的 iPhone 拍照 App「Leica LUX」9/25 公布 2.0 版，10 月初上架：加入對焦、曝光、ISO、白平衡全手動，多款徠卡鏡頭與色調濾鏡，能一鍵丟進 Lightroom 修。免費版可用，進階功能要訂閱，支援 iPhone 18 Pro。",
-          "why": "手機拍貓咪素材想要「徠卡味」又不想後製調色，可以等上架試試免費版。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/25/leica-lux-2-0-app-for-iphone/"
             }
           ]
         }
