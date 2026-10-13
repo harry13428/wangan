@@ -1,6 +1,92 @@
 {
-  "updated": "2026-10-12 10:24",
+  "updated": "2026-10-13 16:23",
   "days": [
+    {
+      "date": "2026-10-13",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "平價女裝 LOVFEE 突然宣布倒閉",
+          "body": "女裝品牌 LOVFEE 10/12 晚上在官網和臉書貼出「結束營業公告」，起因是員工先在 Threads 爆料公司發不出薪水（欠薪目前只有員工說法，公司未證實）。大家最關心手上的儲值金：官方說可寄信到客服申請退款，紅利點數不退。",
+          "why": "「儲值完品牌就倒」是很有共鳴的哏，適合做時事短片或提醒觀眾別亂儲值；也是品牌經營失敗的好案例。",
+          "links": [
+            {
+              "t": "TVBS",
+              "u": "https://news.tvbs.com.tw/life/4035142"
+            },
+            {
+              "t": "數位時代",
+              "u": "https://www.bnext.com.tw/article/92594/lovfee-closure-stored-value-refund"
+            },
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20261012/3253289.htm"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "北市長辯論喬日期，雙方互嗆",
+          "body": "TVBS 和三立提議 10/31 辦第一場台北市長辯論，蔣萬安陣營當場同意，罵沈伯洋「叫陣卻臨陣脫逃」；沈陣營說那天早就排了同志大遊行，10/24 就可以辯。目前場次和日期都還沒定案。",
+          "why": "選戰進入互嗆期，辯論一旦開打會有大量金句可剪，政治時事帳號接下來幾週素材不缺。",
+          "links": [
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6882766"
+            },
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5604121"
+            },
+            {
+              "t": "鏡週刊",
+              "u": "https://www.mirrormedia.mg/story/20261012edi067"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "AI 聊天角色平台 Character.AI 破產",
+          "body": "很多人拿來跟虛擬角色聊天的 Character.AI，10/12 在美國申請破產保護，迪士尼出價 2000 萬美元買它部分技術授權（不是買整個 App）。平台出售期間照常營運，但如果沒人接手，之後可能關站。",
+          "why": "提醒：AI 服務說關就關，用 AI 工具做的素材、角色設定要自己留備份，別全押在單一平台。",
+          "links": [
+            {
+              "t": "Unite.AI",
+              "u": "https://www.unite.ai/character-ai-files-for-chapter-11-with-disney-stalking-horse-deal/"
+            },
+            {
+              "t": "PPC Land",
+              "u": "https://ppc.land/character-ai-faces-wind-down-as-disneys-20m-bid-licenses-ip-not-the-app/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "ARRI 底片質感外掛大更新",
+          "body": "ARRI 的 Film Lab 外掛（把數位畫面調成底片感）10/12 推出 1.5 版：新增 8mm、16mm、65mm 底片風格、顆粒大小可調、高光光暈更細，速度號稱快 4 倍，DaVinci Resolve 能用。買斷約 495 美元，舊用戶免費升級。",
+          "why": "想做復古底片感的貓咪片或客戶片，這是業界級選項；就算不買，也能當調色參考看它怎麼處理顆粒和光暈。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/12/arri-film-lab-1-5-update/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "勇者鬥惡龍之父用 AI 做遊戲",
+          "body": "《勇者鬥惡龍》創作者堀井雄二 10/11 免費公開一款用 AI 做的推理小遊戲《取調室的小宮》，玩家當偵探審問嫌犯、找出供詞矛盾。他說不用會畫圖寫程式，下指令給 AI 就能一個人做出來，據報導只花約 30 分鐘。",
+          "why": "連大師都在用 AI 自己做作品，可當「一人用 AI 做內容」的影片哏；也提醒創作者門檻正在變低。",
+          "links": [
+            {
+              "t": "電ファミニコゲーマー",
+              "u": "https://news.denfaminicogamer.jp/news/261011n"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-12",
       "items": [
@@ -962,96 +1048,6 @@
             {
               "t": "風傳媒",
               "u": "https://www.storm.mg/article/11168064"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-28",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "乘客陳屍公車3天，沒人發現",
-          "body": "新店客運 644 路一位 60 歲、患失智症的男子 9/24 晚上搭末班車沒下車，司機收班只從車頭瞄一眼、沒走到車尾清車，接著又休假兩天，公車就這樣停在場站快 3 天。9/27 早上公車重新上路，乘客才在後門座位附近發現遺體。北市公運處 9/28 開罰業者 3 萬、司機停職，網友吵「罰 3 萬太輕」。",
-          "why": "「末班車清車 SOP」這種沒人注意的小流程出大事，最適合做懶人包或『你不知道的公車規定』知識短片。",
-          "links": [
-            {
-              "t": "三立新聞",
-              "u": "https://www.setn.com/news/1913831"
-            },
-            {
-              "t": "TVBS",
-              "u": "https://news.tvbs.com.tw/local/4028459"
-            },
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7320/9780585"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "AE 內建 AI 助理，開放免費公測",
-          "body": "Adobe 把 After Effects 的 AI 助理轉成正式公測：用白話講需求，它就能幫你寫表達式（expression）、整理幾千層亂掉的專案、修壞掉的綁定，還能一鍵出不同比例版本、翻譯字卡。只在 After Effects (Beta) 版裡，從 Creative Cloud 的 Beta 分頁安裝，目前免費但每天有用量上限。（9 月中 IBC 影視展宣布，本週剪輯媒體陸續實測）",
-          "why": "KK 最常卡的 AE 表達式和「一支片要出 16:9＋9:16」都能丟給它，值得今天就裝 Beta 版試一輪。",
-          "links": [
-            {
-              "t": "CineD",
-              "u": "https://www.cined.com/adobe-after-effects-ai-assistant-enters-public-beta-whole-project-scope-expression-rigs-and-project-cleanup/"
-            },
-            {
-              "t": "CG Channel",
-              "u": "https://www.cgchannel.com/2026/09/adobe-releases-after-effects-26-5-and-new-ai-assistant-in-beta/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "SNL 惡搞 Claude 老闆講 AI 末日",
-          "body": "美國《週六夜現場》9/26 播出的 Weekend Update，演員 Jane Wickline 戴大假髮扮成 Anthropic 執行長 Amodei，結結巴巴地說「AI 是惡魔，而我是它的創造者」「AI 不是武器，是工具——製造武器的工具」，還跟自己的黑暗面像咕嚕一樣對話。起因是 Amodei 最近上一堆節目談 AI 可能危害人類。",
-          "why": "AI 大老被綜藝節目拿來開玩笑＝這話題已經大眾化，「AI 老闆說 AI 很危險」的矛盾很適合當迷因或短片開場哏。",
-          "links": [
-            {
-              "t": "TechCrunch",
-              "u": "https://techcrunch.com/2026/09/27/anthropics-dario-amodei-gets-the-snl-treatment/"
-            },
-            {
-              "t": "YouTube（SNL）",
-              "u": "https://www.youtube.com/watch?v=-Nvne3LzBls"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "蔣萬安學歷「SJD」風波是烏龍",
-          "body": "網路上指控台北市長蔣萬安當立委時英文簡歷寫最高學歷 SJD（法學博士），最近才偷改成 JD，被說謊報學歷。9/27 旅美教授林環牆用網路時光機翻出更早的舊檔，當時寫的就是 JD，推測是立法院英文翻譯外包出錯，大多媒體改口稱「一場烏龍」。",
-          "why": "「用 Wayback Machine 查證」這招很適合做『網路謠言怎麼自己查』的教學短片，順便示範看截圖不要急著信。",
-          "links": [
-            {
-              "t": "風傳媒",
-              "u": "https://www.storm.mg/article/11167897"
-            },
-            {
-              "t": "ETtoday",
-              "u": "https://www.ettoday.net/news/20260927/3244720.htm"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "好天氣剩到9/30，10/1變天",
-          "body": "氣象署說 9/28–9/30 大致晴朗，白天還是 31–35 度、台北盆地可能飆到 36 度；10/1 起東北季風增強，北部和東半部轉涼、有短暫陣雨，10/2–10/4 晚上最低降到 23 度左右。",
-          "why": "要出外景或拍貓咪曬太陽的戶外素材，這三天是最後的好光線，10 月開始北部陰雨要改室內拍。",
-          "links": [
-            {
-              "t": "Newtalk",
-              "u": "https://newtalk.tw/news/view/2026-09-27/1062207"
-            },
-            {
-              "t": "TVBS",
-              "u": "https://news.tvbs.com.tw/life/4028409"
             }
           ]
         }
