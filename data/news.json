@@ -1,6 +1,88 @@
 {
-  "updated": "2026-10-14 15:13",
+  "updated": "2026-10-16 08:10",
   "days": [
+    {
+      "date": "2026-10-16",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "台股崩1655點，外資狂賣3025億破紀錄",
+          "body": "10/15（週三）台股收 46,969 點，單日跌 1,655 點，是史上第 6 大跌點。外資一天賣超 3,025 億元，直接刷新史上最大賣超紀錄，已經連 7 天在賣。主因是美國 9 月通膨（CPI）比預期高、美股晶片股前一天先崩。",
+          "why": "週二才跌 960 點、週三又來一次更大的，「連兩根大綠棒」的崩潰反應、存股族哭臉是現在最有共鳴的哏。",
+          "links": [
+            {
+              "t": "民視新聞",
+              "u": "https://www.ftvnews.com.tw/news/detail/2026A15W0680"
+            },
+            {
+              "t": "經濟日報",
+              "u": "https://money.udn.com/money/story/5607/9817343"
+            },
+            {
+              "t": "新頭殼",
+              "u": "https://newtalk.tw/news/view/2026-10-15/1065794"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "立委嫌賈永婕不純樸，自己繫愛馬仕",
+          "body": "台北101董事長賈永婕 10/14 到立法院備詢，立委賴惠員說她穿得不夠「純樸」。結果網友馬上抓到賴惠員自己腰上是一條約 3.6 萬的愛馬仕皮帶，而且以前就戴過好幾次。賈永婕後來在臉書公開整套穿搭明細，賴惠員發聲明說尊重多元風格，但網友不買單。",
+          "why": "「說別人樸素、自己戴精品」的反差超適合做打臉剪輯或穿搭對比哏，留言區戰況也很熱。",
+          "links": [
+            {
+              "t": "三立新聞",
+              "u": "https://www.setn.com/news/1922711"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6883711"
+            },
+            {
+              "t": "ETtoday星光",
+              "u": "https://star.ettoday.net/news/3255037"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Meta 釋出超大開源模型，Mac 能跑",
+          "body": "Meta 10/15 公開 Muse Spark Open，權重可以免費下載（商用有條件）。官方示範用兩台 M5 Ultra 的 Mac Studio 就能在自己電腦上跑，不用連雲端。示範影片裡還讓它在 DaVinci Resolve 裡自動挑片段、裁切。",
+          "why": "「AI 自己在達文西裡剪片」已經被大公司拿來當示範了，AutoCut 這條路是對的；不過兩台頂規 Mac Studio 一般人還用不到，先當趨勢看。",
+          "links": [
+            {
+              "t": "Meta AI 官方",
+              "u": "https://research.meta.ai/blog/muse-spark-open"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "埃森哲限員工每月 Claude 只補29美元",
+          "body": "顧問大廠 Accenture 通知員工，公司每人每月只補助 29 美元的 Claude 用量，超過要由專案自己出錢。有些員工原本一個月用到 500～1,000 美元，有人甚至被直接停權。媒體酸它一邊叫客戶狂砸錢買 AI、一邊幫自己員工省錢。",
+          "why": "代表企業開始認真算 AI 的帳：之後跟老闆提案 AI 剪輯，要講得出「省多少時間、花多少錢」才有說服力。",
+          "links": [
+            {
+              "t": "404 Media",
+              "u": "https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Sony 新無線麥，收音直接進相機檔",
+          "body": "Sony 10/14 發表 ECM-W5 無線麥克風，一組兩發一收，接支援的 Sony 相機時，聲音（32-bit float，不怕爆音）會跟影像錄進同一個檔案。發射器內建 64GB 自己備份，最多可擴到四人分軌。預購 399.99 美元，預計 11/19 出貨。",
+          "why": "影音同檔＝剪輯時不用再對音軌，訪談、雙人對談的案子會省很多時間，可以留意台灣上市價。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/14/sony-ecm-w5-wireless-microphone-system-with-audio-recording/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-14",
       "items": [
@@ -954,84 +1036,6 @@
             {
               "t": "華視新聞",
               "u": "https://news.cts.com.tw/cts/life/202609/202609303084425.html"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-09-30",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "交長稱台中到台北才2小時，網傻眼",
-          "body": "中秋連假車站、高鐵擠爆，自由座一班只上得了 10 人。交通部長陳世凱 9/29 說自己 9/28 晚上 7 點從台中開車北上、9 點就到，很順暢。網友吐槽：大家罵的是前幾天，收假最後一晚本來就不塞，「你幾點開車？」變成新梗。",
-          "why": "「你幾點開車？」是現成的反差哏，可以拿來做「長官體感 vs 現實」的對比剪輯或貓咪版（阿寶：我兩步就到碗了）。",
-          "links": [
-            {
-              "t": "TVBS",
-              "u": "https://news.tvbs.com.tw/politics/4029373"
-            },
-            {
-              "t": "Newtalk",
-              "u": "https://newtalk.tw/news/view/2026-09-29/1062393"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "女童被逼掛「小偷」紙板遊街",
-          "body": "新北三重有網友在 Threads 貼文，看到一名女童身上掛著寫「小偷、畜生」的紙板被爸爸押著走，哥哥還在旁邊錄影。貼文爆開後警方追查，爸爸原本就有家暴保護令，9/29 被逮捕並羈押禁見，女童已由社會局安置。",
-          "why": "這是 Threads 網友爆料推動警方辦案的案例，提醒拍攝／轉發路人影片時要注意當事人（尤其未成年）的隱私，別讓影片二次傷害。",
-          "links": [
-            {
-              "t": "聯合新聞網",
-              "u": "https://udn.com/news/story/7320/9784274"
-            },
-            {
-              "t": "三立新聞",
-              "u": "https://www.setn.com/news/1914930"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Claude Sonnet 5.5 上線，快三成",
-          "body": "Anthropic 9/28 推出 Claude Sonnet 5.5，官方說出字速度快 30% 以上、做同樣的事最多便宜 30%，價格跟 Sonnet 5 一樣。主打日常工作、寫程式、做文件簡報試算表，Claude.ai 就能直接用。",
-          "why": "你平常叫 AI 整理字幕稿、寫腳本、跑剪輯小工具，換到新版會更快更省；更便宜的 Haiku 5.5 官方說幾週內也會出。",
-          "links": [
-            {
-              "t": "Anthropic",
-              "u": "https://www.anthropic.com/claude-sonnet-5-5"
-            },
-            {
-              "t": "TechCrunch",
-              "u": "https://techcrunch.com/2026/09/28/anthropic-releases-sonnet-5-5-which-it-calls-a-significantly-cheaper-faster-work-partner/"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Gemini 的 Gems 要被 Skills 取代",
-          "body": "Google 9/28 宣布，Gemini 裡自己做的客製小助手「Gems」會在 2026/11/17 起轉成新格式「Skills」，舊的會自動搬過去、不用手動。以後要在對話框打「/」來叫出技能，有人覺得變得比較像工程師介面。",
-          "why": "如果你有在 Gemini 做字幕校對、腳本風格之類的 Gem，11/17 前先把設定（指令文字）備份一份，免得搬家後跑掉。",
-          "links": [
-            {
-              "t": "TechCrunch",
-              "u": "https://techcrunch.com/2026/09/28/google-is-killing-off-geminis-gems-in-favor-of-skills/"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "Final Cut Camera 2.4 免費更新",
-          "body": "蘋果的拍攝 App Final Cut Camera 9/29 出 2.4 版：設定更好找、畫面疊加資訊可自訂、對焦峰值和錄影指示改良，支援 iPhone 18 Pro 可變光圈，還能把一般影片做出電影模式的景深效果，拍完直接丟進 Final Cut Pro。",
-          "why": "用 iPhone 拍貓咪素材或客戶補拍時，可以用它手動鎖光圈對焦，畫面更像相機拍的；免費，值得裝來試。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/29/final-cut-camera-version-2-4/"
             }
           ]
         }
