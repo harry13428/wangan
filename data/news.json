@@ -1,6 +1,100 @@
 {
-  "updated": "2026-10-16 08:10",
+  "updated": "2026-10-18 01:22",
   "days": [
+    {
+      "date": "2026-10-18",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "台南鐵路地下化通車，萬人送別舊鐵道",
+          "body": "10/16 深夜，大批鐵道迷擠爆台南車站送最後一班地面列車；10/17 清晨 6:30 首班自強號從新的地下車站發車，總統、交長都到場。首日中午就破 2 萬人次，但也爆出電扶梯停擺、粉塵、指標不清楚等小狀況。",
+          "why": "「百年車站最後一夜」是現成的懷舊題材，告別 vs 新站出包的對比很適合剪成反差短片。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://www.cna.com.tw/news/aloc/202610160361.aspx"
+            },
+            {
+              "t": "中時新聞網",
+              "u": "https://www.chinatimes.com/realtimenews/20261017001136-260405"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6884277"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "颱風薔琵增強中，下週會不會北轉看這幾天",
+          "body": "今年第 29 號颱風薔琵 10/15 生成，強度上看強颱。預報 10/21–22 左右開始北轉，但各模式看法分歧：直接侵台機率目前偏低，若北轉點偏西，北部、宜蘭就要提防長時間降雨。路徑未定，以氣象署最新預報為準。",
+          "why": "下週若有外景拍攝或寄件行程，先留意 10/21 前後的天氣；貓咪也可以拍颱風天宅家日常。",
+          "links": [
+            {
+              "t": "TVBS",
+              "u": "https://health.tvbs.com.tw/nutrition/366723"
+            },
+            {
+              "t": "公視新聞",
+              "u": "https://news.pts.org.tw/article/810784"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "蔡康永要穿黑西裝去蔣萬安競總",
+          "body": "蔡康永 10/15 在 Threads 說，會以來賓身分出席蔣萬安 10/26 的競總成立大會、不上台唱歌，並因為最近政壇很在意服裝儀容，所以「穿黑西裝以表重視」。網友解讀是在酸 101 董座賈永婕被立委糾正穿著的事，稱讚他「什麼都沒說，但什麼都說了」。",
+          "why": "「一句話不提名字的高級酸」是很好的文案示範，可以拿來練字幕重點標示的節奏。",
+          "links": [
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5606928"
+            },
+            {
+              "t": "NOWnews",
+              "u": "https://www.nownews.com/news/6880882"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Premiere 搭 N 卡，AI 功能變快",
+          "body": "10/15 Adobe 和 NVIDIA 宣布擴大合作：Premiere 的播放、算圖、調色和 AI 功能（像人聲增強、物件遮罩）會用 RTX 顯卡加速，官方說 AI 處理最快 2 倍；Frame.io 雲端審片的代理檔也縮小約 80%。數字是廠商自己說的，實際要等實測。",
+          "why": "如果你用 Premiere＋N 卡電腦，人聲增強、遮罩這些常用功能之後可能直接省時間；Mac 用戶影響不大。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/15/adobe-nvidia-announce-an-expansion-of-their-partnership/"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "兩人同時講話也能拆開的工具更新了",
+          "body": "VoxSplit Pro 是一款離線的「對白分離」工具，能把兩個人搶話、重疊的聲音拆成各自的軌道分開調。10/16 更新到 1.9.0，改善了ㄙ、ㄘ這類齒音和高頻的清晰度。售價 230 美元、有 7 天試用，目前只支援 Mac。",
+          "why": "剪訪談、Podcast 最痛的就是兩人同時講話；收音打架的素材可以先試用看看救不救得回來。",
+          "links": [
+            {
+              "t": "Newsshooter",
+              "u": "https://www.newsshooter.com/2026/10/16/voxsplit-pro-offline-dialogue-separation-tool-update/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "FLUX 3 小模型開放，8GB 卡能跑",
+          "body": "做 FLUX 的 Black Forest Labs 10/15 開放 FLUX 3 Image Klein，免費下載、裝在自己電腦跑。能文字生圖、改圖，最多丟 10 張參考圖，還能原生出 4K。年營收 500 萬美元以下的個人和公司可以免費商用。",
+          "why": "做字卡背景、貓咪帳號封面圖可以不用一直付費生圖；不過主要支援 N 卡，Mac 上要等社群移植。",
+          "links": [
+            {
+              "t": "Black Forest Labs",
+              "u": "https://bfl.ai/blog/flux-3-image-klein"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-16",
       "items": [
@@ -958,84 +1052,6 @@
             {
               "t": "優分析",
               "u": "https://uanalyze.com.tw/articles/2780755554"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-01",
-      "items": [
-        {
-          "cat": "etc",
-          "hot": true,
-          "title": "杜拜航空副機師持刀刺傷機長",
-          "body": "9/30 一班杜拜飛以色列的客機，副機師在駕駛艙刺傷機長、疑似想讓飛機墜毀，飛機兩分鐘內狂降約 4–5 千公尺。受傷機長撐著開門，乘客和機組員衝進去把人制伏，最後轉降沙烏地，174 人全部平安。以色列官員說是恐攻，航空公司說動機還在查（未證實）。",
-          "why": "「乘客衝進駕駛艙救飛機」根本是電影情節，今天各台都在講，做時事口播或反應影片的現成題材。",
-          "links": [
-            {
-              "t": "聯合報",
-              "u": "https://udn.com/news/story/6809/9787255"
-            },
-            {
-              "t": "壹蘋新聞網",
-              "u": "https://news.nextapple.com/international/20260930/DB23575660EFA06CCACF113A5E3AFB47"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Google 發表 Gemini 4 Argon",
-          "body": "Google 9/30 推出最新最強模型 Gemini 4 Argon，跑分追平甚至超過 OpenAI、Anthropic，而且比較少亂講話。不過現在只先開給資安專家用，一般人還摸不到；也有 Google 員工私下說實際寫程式沒有跑分那麼神。",
-          "why": "先知道就好，等開放後再看 Gemini 能不能幫你更準地整理逐字稿、寫腳本。",
-          "links": [
-            {
-              "t": "TechCrunch",
-              "u": "https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/"
-            },
-            {
-              "t": "聯合報",
-              "u": "https://udn.com/news/story/6811/9787345"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "GPT-6.1 Sol 上線，只要五分之一價",
-          "body": "OpenAI 在開發者大會推出 GPT-6.1 Sol，才隔一週就升級：寫程式、操作電腦、處理文件的能力快追上最貴的 Astra，價格卻只有它的五分之一。ChatGPT 的 Work 模式已經可以用。",
-          "why": "AI 越來越便宜好用，拿來批次寫標題、整理素材清單的成本會更低。",
-          "links": [
-            {
-              "t": "電腦王阿達",
-              "u": "https://www.kocpc.com.tw/archives/670571"
-            },
-            {
-              "t": "TestingCatalog",
-              "u": "https://www.testingcatalog.com/openai-launches-gpt-6-1-sol-at-one-fifth-of-astra-pricing/"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "Mavis Camera 支援 iPhone 18 Pro 光圈",
-          "body": "專業拍攝 App Mavis Camera 9/29 更新 8.2 版，可以在錄影時直接調 iPhone 18 Pro 的可變光圈，還能錄 ProRes RAW、低延遲 HDMI 輸出接螢幕監看。App 免費下載，全功能年訂閱 29.99 美元。",
-          "why": "如果你或客戶用 iPhone 18 Pro 拍片，這是目前把手機當電影機用最順的 App 之一，景深可以自己控。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/09/29/mavis-camera-8-2-adds-iphone-18-pro-support-with-variable-aperture-control/"
-            }
-          ]
-        },
-        {
-          "cat": "etc",
-          "title": "十月天空三連發：土星、火星、流星雨",
-          "body": "10/4 土星衝，整晚都看得到、是一年最亮的時候；10/12 清晨火星經過蜂巢星團，用雙筒望遠鏡看最美；10/22 凌晨獵戶座流星雨極大期，凌晨 2 點月亮下山後每小時約 10 顆。",
-          "why": "可以先排進拍攝行事曆，夜景縮時或「帶貓看流星」這種療癒短片都是好題材。",
-          "links": [
-            {
-              "t": "華視新聞",
-              "u": "https://news.cts.com.tw/cts/life/202609/202609303084425.html"
             }
           ]
         }
