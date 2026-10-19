@@ -1,6 +1,96 @@
 {
-  "updated": "2026-10-18 01:22",
+  "updated": "2026-10-19 08:11",
   "days": [
+    {
+      "date": "2026-10-19",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "強颱薔琵逼近，最快週三晚發海警",
+          "body": "氣象署 10/18 公布的暴風侵襲率，全台 12 縣市破 40%，北北基桃都入列，後續更新花蓮、宜蘭衝到 56%。最快 10/21（三）晚上發海警、隔天可能發陸警，10/23–24 最靠近台灣，也有模式顯示可能從花東登陸。路徑還在變，放不放颱風假是大家最在意的。",
+          "why": "下週後半可能要停工或在家剪，外拍行程先排開；颱風天貓咪窩家裡的畫面也是現成素材。",
+          "links": [
+            {
+              "t": "ETtoday",
+              "u": "https://www.ettoday.net/news/20261018/3256809.htm"
+            },
+            {
+              "t": "聯合新聞網",
+              "u": "https://udn.com/news/story/7266/9822361"
+            },
+            {
+              "t": "Yahoo新聞",
+              "u": "https://tw.news.yahoo.com/%E5%BC%B7%E9%A2%B1%E8%96%94%E7%90%B5%E6%9C%80%E5%BF%AB%E4%B8%8B%E5%91%A8%E4%B8%89%E7%99%BC%E6%B5%B7%E8%AD%A6-%E5%8C%97%E5%8C%97%E5%9F%BA%E6%A1%83%E4%BE%B5%E8%A5%B2%E7%8E%87%E7%A0%B45%E6%88%90-%E9%80%992%E7%B8%A3-%E6%9C%80%E9%AB%9856-145200024.html"
+            }
+          ]
+        },
+        {
+          "cat": "tw",
+          "title": "沈伯洋第二場車掃改規則：不准跟車",
+          "body": "沈伯洋上週首場「台北大洋流」車掃有 2000 多台機車跟車，結果塞車、放鞭炮被居民抱怨。10/18 松山信義場改成只能沿路迎接、不准跟車、不放鞭炮，開講地點也換到民權公園。選戰進入衝刺，網路上兩邊陣營吵得很兇。",
+          "why": "政治素材容易踩雷，接案時先避開；但「被罵完馬上改」的危機處理可以當公關話題觀察。",
+          "links": [
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/politics/breakingnews/5605128"
+            },
+            {
+              "t": "中央社",
+              "u": "https://cna.com.tw/news/aipl/202610110170.aspx"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Tamron 出 APS-C 輕量 f/2.8 變焦鏡",
+          "body": "Tamron 發表 16-50mm f/2.8，給 APS-C 相機用的大光圈恆定變焦，只有 305 克，對焦馬達是安靜的 VXD。一顆鏡頭從廣角到半身都能拍，適合 Vlog 和一人拍攝。",
+          "why": "如果之後自己拍貓或接外拍，一顆輕鏡打天下最省事，可以先記著等價格出來。",
+          "links": [
+            {
+              "t": "CineD",
+              "u": "https://www.cined.com/tamron-16-50mm-f-2-8-a-announced-constant-f-2-8-aps-c-zoom-305g-vxd-autofocus/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "獨立版 Claude Design 12/14 關掉",
+          "body": "Anthropic 在 10/16 的 Claude Code 更新說明裡加註：獨立網頁版 Claude Design（claude.ai/design）會在 2026/12/14 前關閉。官方沒說會搬去哪裡，有在用的人要先把作品備份。",
+          "why": "你若有用 Claude Design 做圖卡或版型，12 月前記得把檔案匯出，免得一起不見。",
+          "links": [
+            {
+              "t": "GitHub 更新說明",
+              "u": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "韓國出版界聯署：AI 要說清楚拿哪些書訓練",
+          "body": "10/17 韓國 158 個出版團體、321 位個人發起「No Books, No AI」聯署，要求 AI 公司公開用了哪些書來訓練並付錢，還點名 Anthropic 涉嫌大量購入韓文書。創作者版權跟 AI 的拉扯又多一國加入。",
+          "why": "你做的影片、字卡未來也可能被拿去訓練，版權這條線值得持續關注。",
+          "links": [
+            {
+              "t": "The New Publishing Standard",
+              "u": "https://thenewpublishingstandard.com/2026/10/17/korean-publishers-ai-compensation-appeal/"
+            }
+          ]
+        },
+        {
+          "cat": "etc",
+          "title": "英航：戴 AI 眼鏡偷拍可能被趕下機",
+          "body": "英國航空收緊規定：用 Meta Ray-Ban 這類智慧眼鏡，沒經同意偷拍或直播機組員、乘客，可能落地就被請下飛機、剩下航段（含回程）都不給搭，嚴重的還會報警。單純戴著沒拍不算違規。",
+          "why": "之後出國拍 Vlog 要注意，機上拍人前先問；「偷拍被抓」也是現成的短片哏。",
+          "links": [
+            {
+              "t": "Live and Let's Fly",
+              "u": "https://liveandletsfly.com/british-airways-meta-smart-glasses-filming/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-18",
       "items": [
@@ -978,80 +1068,6 @@
             {
               "t": "Runway 官方",
               "u": "https://runway.com/news/company-news/introducing-runway-ads"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-02",
-      "items": [
-        {
-          "cat": "ai",
-          "hot": true,
-          "title": "ChatGPT 上線虛擬試衣，自拍就能試穿",
-          "body": "OpenAI 10/1 全球推出新購物功能：在 ChatGPT 購物結果按「Try On」，上傳自拍或全身照就能看到衣服、配件穿在自己身上的樣子，也能丟網頁截圖叫它幫你試。背後用的是新的 ChatGPT Images 2.5 圖像模型，另外加了「收藏」功能可以存商品。",
-          "why": "做電商、穿搭業配片時可以先用它出「穿上去」的示意圖當 B-roll 或對比哏；也能拿來測新圖像模型的光影質感。",
-          "links": [
-            {
-              "t": "TechCrunch",
-              "u": "https://techcrunch.com/2026/10/01/chatgpt-can-now-virtually-try-on-clothes-for-you/"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "DaVinci Resolve 21.1.1 免費小更新",
-          "body": "Blackmagic 10/1 釋出 21.1.1：修好「直式時間軸自動字幕被裁切」的問題，修剪編輯點時可以同時影響所有選取的剪接點並帶聲音預覽，也開始支援 Canon EOS R8 Mark II 的 RAW 檔，Fusion 魔法遮罩變快。",
-          "why": "KK 剪直式短影音用達芬奇上自動字幕的話，這版剛好修掉字幕被切的坑，值得更新。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/10/01/davinci-resolve-21-1-1/"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "富士相機鏡頭漲價最高 15%",
-          "body": "富士 10/1 起在日本調漲多款相機、鏡頭、拍立得與手機相印機價格，GFX 系列漲約 14–15%，X100VI 漲 12%，X-T50、X-E5 漲 7%，原因是零件、製造、物流成本暴漲。外媒預期其他地區會陸續跟進，台灣售價目前未公布。",
-          "why": "有在考慮買富士機身或鏡頭的話，台灣跟漲前可能是最後的入手時機。",
-          "links": [
-            {
-              "t": "Newsshooter",
-              "u": "https://www.newsshooter.com/2026/10/01/fujifilm-increases-its-prices/"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "兩波東北季風報到，北部下週剩 20 度",
-          "body": "第一波東北季風 10/2 起讓桃園以北、東半部轉雨，基隆北海岸、宜蘭要防局部大雨；10/5（週一）第二波更強，可能是入秋最明顯的一波，北部、東部低溫掉到 20 度出頭，國慶連假北台灣偏濕涼，中南部仍熱。網路標題寫「剩 18 度」偏誇張，以氣象署預報為準。",
-          "why": "國慶連假要外拍的話北部要備雨具；天氣轉涼也是貓咪帳號拍「貓窩被窩」季節哏的好時機。",
-          "links": [
-            {
-              "t": "中央社",
-              "u": "https://www.cna.com.tw/news/ahel/202609300270.aspx"
-            },
-            {
-              "t": "NOWnews",
-              "u": "https://www.nownews.com/news/6879613"
-            }
-          ]
-        },
-        {
-          "cat": "tw",
-          "title": "「健康幣」上線：健檢打疫苗能換獎",
-          "body": "國健署健康幣 10/1 正式上路，18 歲以上做健檢、癌篩、打流感或新冠疫苗都能累積點數（每項約 450–1350 點），12/1 起可兌換健康好禮。10/1–11/30 每週抽 3600 人送 200 元數位券，12/7 再抽 200 支 Apple Watch。",
-          "why": "本來就要打流感疫苗的話順便領點數；「打疫苗抽 Apple Watch」也是現成的生活資訊短片題材。",
-          "links": [
-            {
-              "t": "中央社",
-              "u": "https://cna.com.tw/news/ahel/202608270289.aspx"
-            },
-            {
-              "t": "優分析",
-              "u": "https://uanalyze.com.tw/articles/2780755554"
             }
           ]
         }
