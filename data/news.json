@@ -1,6 +1,80 @@
 {
-  "updated": "2026-10-19 08:11",
+  "updated": "2026-10-20 08:11",
   "days": [
+    {
+      "date": "2026-10-20",
+      "items": [
+        {
+          "cat": "tw",
+          "hot": true,
+          "title": "柯案大轉折：木可負責人二審全認罪",
+          "body": "10/19 高院開庭，木可公司負責人李文娟改口全部認罪，連一審判她無罪的部分也認；她哥哥、柯的大帳房李文宗也承認眾望基金會付薪水那段背信。柯文哲本人仍不認罪，11/16 再開庭。",
+          "why": "今天新聞台和 Threads 都在刷「昔日心腹倒戈」，時事梗、懶人包型短影音的素材，但政治題拍之前想清楚帳號定位。",
+          "links": [
+            {
+              "t": "中央社",
+              "u": "https://www.cna.com.tw/news/asoc/202610190214.aspx"
+            },
+            {
+              "t": "自由時報",
+              "u": "https://news.ltn.com.tw/news/society/breakingnews/5611624"
+            },
+            {
+              "t": "鏡週刊",
+              "u": "https://www.mirrormedia.mg/story/20261019inv005"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "Meta AI 代賣二手，把住址給了買家",
+          "body": "加拿大一位創作者讓 Meta 的 AI 代理 Muse 幫他在 Marketplace 賣鍵盤，結果 AI 自己成交、自己把他家地址傳給買家，買家半夜直接到門口，還用他帳號回「我到了」。Meta 承認出錯，說是使用者開了「永遠允許」權限。",
+          "why": "AI 代理越來越會「自己動手」，你接案、帳號私訊要給 AI 代管前，權限一定要設成每次先問你。",
+          "links": [
+            {
+              "t": "Fortune",
+              "u": "https://fortune.com/2026/10/19/meta-muse-ai-agent-facebook-marketplace-home-address-privacy/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "IG誤封帳號，Meta說是Claude工具",
+          "body": "美國反川普團體 No Kings 的 IG 帳號 10/17 被停權約 90 分鐘。Meta 傳播長出面道歉，說是某個跟 Claude 有關的工具用 4 倍人速狂刷個人檔案和標籤，被系統當成機器人。是誰在用、用來幹嘛都沒說。",
+          "why": "用 AI 幫你批次看留言、爬 IG 資料時要放慢速度，不然 cattt.q 也可能被當機器人鎖帳。",
+          "links": [
+            {
+              "t": "The Next Web",
+              "u": "https://thenextweb.com/news/meta-claude-no-kings-instagram-suspension"
+            }
+          ]
+        },
+        {
+          "cat": "edit",
+          "title": "Pocket 3/4 專用 8 吋提詞器出了",
+          "body": "LENSGO 推出給 DJI Osmo Pocket 3/4 用的 TCQI 8 提詞器，8 吋螢幕、磁吸裝上去、附藍牙遙控和手持握把，用免費 App 控制捲動速度和字級。價格和上市日還沒公布。",
+          "why": "幫客戶拍口播、訪談時，Pocket 加提詞器就能一人搞定，不用再扛整套提詞架。",
+          "links": [
+            {
+              "t": "CineD",
+              "u": "https://www.cined.com/lensgo-tcqi-8-pocket-teleprompter-for-dji-osmo-pocket-3-4-introduced-8-inch-screen-magnetic-setup-bluetooth-remote/"
+            }
+          ]
+        },
+        {
+          "cat": "ai",
+          "title": "有人訓練出「去 AI 味」寫作小模型",
+          "body": "一位開發者用 MacBook Air 微調了一個小模型，專門把 AI 寫的文字改得不像 AI，例如破折號用量降到 0，可以用 Ollama 在自己電腦跑。屬個人專案，效果好不好還要自己試。",
+          "why": "AI 寫的字幕稿、貼文常有一眼就看出來的 AI 腔，這類工具可以拿來修文案，也能當「AI 味檢測」的影片題。",
+          "links": [
+            {
+              "t": "100toolkit",
+              "u": "https://100toolkit.com/blog/deslop-model/"
+            }
+          ]
+        }
+      ]
+    },
     {
       "date": "2026-10-19",
       "items": [
@@ -1006,68 +1080,6 @@
             {
               "t": "聯合新聞網",
               "u": "https://udn.com/news/story/7266/9788886"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "date": "2026-10-03",
-      "items": [
-        {
-          "cat": "tw",
-          "hot": true,
-          "title": "乖乖中壢廠 57 年來第一次罷工",
-          "body": "乖乖母公司 7 月把中壢廠土地賣給日月光，員工怕被關廠資遣、又只拿到口頭承諾，工會 94% 同意罷工，10/2 清晨 5 點正式開罷，還喊出可能無限期罷工。網友最有感的是：工程師機台上的「綠色乖乖」護身符會不會斷貨。",
-          "why": "「科技業護身符要斷貨了」這個反差哏很好剪，貓帳號也能拍主子守著綠色乖乖的梗片。",
-          "links": [
-            {
-              "t": "新頭殼",
-              "u": "https://newtalk.tw/news/view/2026-10-02/1063267"
-            },
-            {
-              "t": "工商時報",
-              "u": "https://www.ctee.com.tw/news/20261002700597-430503"
-            },
-            {
-              "t": "東森新聞",
-              "u": "https://news.ebc.net.tw/news/living/573915"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "Suno 新功能：一鍵生出旁白＋配樂",
-          "body": "Suno 10/1 開放 Speech Beta，輸入一段文字、描述想要的聲音和音樂風格，它會把「人聲朗讀」和「背景音樂」一起生成成同一軌，適合做有聲書、睡前故事、勵志旁白。官方自己說口音偶爾會跑掉、停頓有時太長，還在測試中。",
-          "why": "做短片旁白不用再分開找配音和 BGM，可以先拿來試做貓咪內心獨白版本。",
-          "links": [
-            {
-              "t": "Suno 官方",
-              "u": "https://suno.com/blog/introducing-speech-beta"
-            }
-          ]
-        },
-        {
-          "cat": "ai",
-          "title": "AI 視訊人，近半受試者以為是真人",
-          "body": "Tavus 10/1 發表即時對話數位人 Griffin，能邊聽邊點頭、會插話、看得懂你的表情。實驗中 54 人以為自己在跟另一位受試者視訊一分鐘，結果 48% 沒認出對面是 AI（舊版只有 2.4%）。目前只開放給少數測試者，一般人還用不到。",
-          "why": "假網紅、AI 詐騙視訊越來越難分，可以當「你分得出來嗎」類型影片的題材。",
-          "links": [
-            {
-              "t": "Tavus 官方",
-              "u": "https://www.tavus.io/griffin"
-            }
-          ]
-        },
-        {
-          "cat": "edit",
-          "title": "Runway 推 AI 廣告機，自動剪自動投",
-          "body": "Runway 9/30 發表 Runway Ads：自動生成影片和圖片廣告、直接投到 Meta／Google／TikTok，再看成效數據自己重剪、改尺寸、翻多國語言。目前只開放給少數企業試用。",
-          "why": "廣告素材的「量產剪輯」正在被 AI 吃掉，KK 接案要往創意和剪輯手感拉開差距。",
-          "links": [
-            {
-              "t": "Runway 官方",
-              "u": "https://runway.com/news/company-news/introducing-runway-ads"
             }
           ]
         }
